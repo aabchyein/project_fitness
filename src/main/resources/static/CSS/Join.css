@@ -1,0 +1,28 @@
+
+
+  /* 검색창 스타일링 */
+.search-input {
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 70%;
+  max-width: 500px;
+}
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+  }
+.carouselExampleControls {
+  height: 5%;
+}
+
+/* Footer 스타일링 */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+  }
