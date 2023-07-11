@@ -50,7 +50,7 @@ public class CarInforsController {
     }
 
     // delete with MVC
-    @PostMapping("/deleteAndSelectSearch")
+    @GetMapping("/deleteAndSelectSearch")
     public ModelAndView deleteAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView){
         Object result = carInforsService.deleteAndSelectSearch(params);
         modelAndView.addObject("params", params);
@@ -67,7 +67,7 @@ public class CarInforsController {
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
         
-        modelAndView.setViewName("/WEB-INF/views/carinfor/list.jsp");
+        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         return modelAndView;
     }
 
@@ -85,7 +85,7 @@ public class CarInforsController {
     }
 
     // create
-    @PostMapping("/insert")
+    @GetMapping("/insert")
     public ResponseEntity insert(@RequestBody Map paramMap){
         Object result = carInforsService.insert(paramMap);
         return ResponseEntity.ok().body(result);
