@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,36 +9,16 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <style>
-    /* 추가적인 스타일링을 위한 CSS 코드 */
-    /* 상단 로고와 글씨 스타일링 */
-    .logo {
-      font-weight: bold;
-      font-size: 24px;
-    }
-
-    /* 검색창 스타일링 */
-    .search-input {
-      display: flex;
-      justify-content: flex-end;
-      flex-basis: 70%;
-      max-width: 500px;
-    }
-
-    /* Footer 스타일링 */
-    .footer {
-      background-color: #f8f9fa;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="../CSS/reserve.css">
+  
 </head>
+
 <body>
   <!-- 상단 네비게이션 바 -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="./gym3.png.png" alt="로고" height="80">
+        <img src="../Image/gym2.png.png" alt="로고" height="80">
       </a>
       <!-- 검색창 -->
       <form class="d-flex col-lg-5">
@@ -45,37 +26,41 @@
         <button class="btn btn-outline-success" type="submit">검색</button>
       </form>
       <div class="col-lg-4 text-lg-end">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="./gym.html">홈</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">소개</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">예약</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">커뮤니티</a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./gym.html">홈</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">소개</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">예약</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">커뮤니티</a>
             <div class="dropdown-menu" aria-labelledby="communityDropdown">
               <a class="dropdown-item" href="./notice.html">공지사항</a>
               <a class="dropdown-item" href="#">게시판</a>
               <a class="dropdown-item" href="#">후기</a>
             </div>
           </li>
-  
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="./Login.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">로그아웃</a>
+            <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">로그인</a>
             <div class="dropdown-menu" aria-labelledby="loginDropdown">
               <a class="dropdown-item" href="./Logout.html" >로그아웃</a>
               <a class="dropdown-item" href="./mypage.html">마이페이지</a>
               <a class="dropdown-item" href="#">회원정보수정</a>
             </div>
           </li>
-  
-       
-      </ul>
-    </div>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">회원가입</a>
+          </li>
+        </ul>
+      </div>
   </nav>
 
   <!-- 상담 예약 -->
@@ -84,14 +69,14 @@
   </div>
   <div class="container mt-5">
     <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">상담 프로세스</h5>
-                <p class="card-text">여기에 상담 프로세스 설명을 추가하세요.</p>
-              </div>
-            </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">상담 프로세스</h5>
+            <p class="card-text">여기에 상담 프로세스 설명을 추가하세요.</p>
           </div>
+        </div>
+      </div>
       <div class="col-md-6">
         <div class="card">
           <div class="card-body">
@@ -128,11 +113,12 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script>
-    $(function() {
+    $(function () {
       $("#datepicker").datepicker({
         minDate: 0 // 오늘 이전 날짜 선택 불가
       });
     });
   </script>
 </body>
+
 </html>
