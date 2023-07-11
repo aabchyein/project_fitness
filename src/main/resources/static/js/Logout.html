@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>홈페이지</title>
+    <!-- 부트스트랩 링크 추가 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- 로그아웃 확인 알람 -->
+    <div class="alert alert-warning fade" id="logoutAlert" role="alert">
+        로그아웃을 진행하시겠습니까?
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="mt-2">
+            <button type="button" class="btn btn-secondary" id="cancelLogoutButton">취소</button>
+            <a href="./login.html" class="btn btn-danger">로그아웃</a> <!-- 로그아웃 요청을 처리하는 URL로 수정해야 함 -->
+        </div>
+    </div>
+
+    <!-- 부트스트랩 스크립트 추가 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // 페이지 로드 시 로그아웃 확인 알람 표시
+        window.addEventListener('load', function () {
+            document.getElementById('logoutAlert').classList.add('show');
+        });
+
+        // 취소 버튼 클릭 시 로그아웃 확인 알람 닫기
+        document.getElementById('cancelLogoutButton').addEventListener('click', function () {
+            document.getElementById('logoutAlert').classList.remove('show');
+        });
+    </script>
+</body>
+
+</html>
