@@ -1,0 +1,51 @@
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  /* 검색창 스타일링 */
+  .search-input {
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 70%;
+    max-width: 500px;
+  }
+
+  .carouselExampleControls {
+    height: 5%;
+  }
+
+  .circle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 10px;
+  }
+  .positive {
+    background-color: #ffb3ba;
+    color: #ff4500;
+  }
+  .change {
+    background-color: #b4eeb4;
+    color: #228b22;
+  }
+  .challenge {
+    background-color: #87cefa;
+    color: #0000cd;
+  }
+
+  /* Footer 스타일링 */
+  .footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+  }
