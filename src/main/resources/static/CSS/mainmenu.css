@@ -3,6 +3,7 @@
   font-size: 24px;
 }
 
+
 /* 검색창 스타일링 */
 .search-input {
   display: flex;
@@ -10,6 +11,7 @@
   flex-basis: 70%;
   max-width: 500px;
 }
+
 
 .carouselExampleControls {
   height: 5%;
