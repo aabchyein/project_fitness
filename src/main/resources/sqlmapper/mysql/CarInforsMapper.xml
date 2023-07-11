@@ -4,30 +4,30 @@
     <!-- 검색 -->
 	<select id="selectSearch" parameterType="Map" resultType="Map">
         SELECT * 
-        FROM project_test.commons_code
-        where 1 =1 ;
+        FROM db_cars.car_infors
+        where 1 = 1 
         <choose>
-            <when test="search == 'ORDER_NUMBER'">
+            <when test="search == 'YEAR'">
             <![CDATA[ 
-            and ORDER_NUMBER > #{words} 
+            and YEAR > #{words} 
             ]]>
             </when>
-            <when test="search == 'NAME'">
-            and NAME like CONCAT(#{words}, '%') 
+            <when test="search == 'CAR_NAME'">
+            and CAR_NAME like CONCAT(#{words}, '%') 
             </when>
         </choose>
         ;
 	</select>
 
-    <!-- mybatis foreach HashMap.put("DESCRIPTION", DESCRIPTION)-->
+    <!-- mybatis foreach HashMap.put("CAR_INFOR_ID_LIST", CAR_INFOR_ID_LIST)-->
 	<select id="selectInUID" parameterType="Map" resultType="Map">
         SELECT * 
-        FROM project_test.commons_code
-        where 1 =1 ;
-        and COMMON_CODE_ID in 
-            <foreach item="COMMON_CODE_ID" index="index" collection="DESCRIPTION"
+        FROM db_cars.car_infors
+        where 1 = 1
+        and CAR_INFOR_ID in 
+            <foreach item="CAR_INFOR_ID" index="index" collection="CAR_INFOR_ID_LIST"
                 open=" (" separator="," close=")" nullable="true">
-                #{COMMON_CODE_ID}
+                #{CAR_INFOR_ID}
             </foreach>
         ;
 	</select>
@@ -35,36 +35,36 @@
     <!-- 전체 -->
 	<select id="selectAll" parameterType="Map" resultType="Map">
         SELECT * 
-        FROM project_test.commons_code
-        where 1 =1 ;
+        FROM db_cars.car_infors
+        where 1 = 1 ;   
 	</select>
 
     <!-- 상세 -->
 	<select id="selectByUID" parameterType="Map" resultType="Map">
         SELECT * 
-        FROM project_test.commons_code
-        where COMMON_CODE_ID = #{COMMON_CODE_ID};
+        FROM db_cars.car_infors
+        where CAR_INFOR_ID = #{CAR_INFOR_ID}
             <!-- 컬럼이름  = #{변수값} -->
 	</select>
 
     <!-- 입력 -->
 	<insert id="insert" parameterType="Map" >
-        insert intocommons_code
-        (COMMON_CODE_ID, NAME, ORDER_NUMBER, ATTRIBUTION_1, ATTRIBUTION_2, DESCRIPTION, SYSTEM_CODE_YN, USE_YN, PARENT_COMMON_CODE_ID, REGISTER_SEQ, REGISTRY_DATE, MODIFIER_SEQ, MODIFY_DATE)
+        insert into car_infors
+        (CAR_NAME, YEAR, CAR_INFOR_ID, COMPANY_ID)
         values
-        (#{COMMON_CODE_ID}, #{NAME}, #{ORDER_NUMBER}, #{ATTRIBUTION_1}, #{ATTRIBUTION_2}, #{DESCRIPTION}, #{SYSTEM_CODE_YN}, #{USE_YN}, #{PARENT_COMMON_CODE_ID}, #{REGISTER_SEQ}, #{REGISTRY_DATE}, #{MODIFIER_SEQ}, #{MODIFY_DATE});
+        (#{CAR_NAME}, #{YEAR}, #{CAR_INFOR_ID}, #{COMPANY_ID})
     </insert>
 
     <!-- 수정 -->
     <update id="update" parameterType="Map" >
-        update commons_code
-        set NAME = #{NAME}
-        where COMMON_CODE_ID = #{COMMON_CODE_ID}
+        update car_infors
+        set CAR_NAME = #{CAR_NAME}
+        where CAR_INFOR_ID = #{CAR_INFOR_ID}
     </update>
 
     <!-- 삭제 -->
     <delete id="delete" parameterType="Map" >
-        delete from commons_code
-        where COMMON_CODE_ID = #{COMMON_CODE_ID}
+        delete from car_infors
+        where CAR_INFOR_ID = #{CAR_INFOR_ID}
     </delete>
 </mapper>
