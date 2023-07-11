@@ -3,6 +3,9 @@
     font-size: 24px;
   }
 
+.navbar a {
+  font-size: 18px;
+}
   /* 검색창 스타일링 */
   .search-input {
     display: flex;

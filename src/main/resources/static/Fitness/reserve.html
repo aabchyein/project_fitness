@@ -10,13 +10,35 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="../CSS/reserve.css">
-  
 </head>
+<style>
+/* 추가적인 스타일링을 위한 CSS 코드 */
+    body {
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
+    .container {
+      max-width: 500px;
+    }
+
+    .form-group {
+      text-align: left;
+    }
+
+    .checkbox-label {
+      font-size: 14px;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+    }
+  </style>
 <body>
   <!-- 상단 네비게이션 바 -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="../Image/gym2.png.png" alt="로고" height="80">
       </a>
@@ -64,23 +86,53 @@
   </nav>
 
   <!-- 상담 예약 -->
-  <div class="text-center mt-5 py-3">
-    <h2>예약 시간을 설정해주세요.</h2>
-  </div>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">상담 프로세스</h5>
-            <p class="card-text">여기에 상담 프로세스 설명을 추가하세요.</p>
+
+  <div class="container-fluid m-5">
+    <h2 class="text-center">상담 예약하기</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">이름</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="contact">연락처</label>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" id="contact" placeholder="첫 번째 연락처" required>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="두 번째 연락처" required>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="세 번째 연락처" required>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">상담 예약</h5>
+      <div class="form-group">
+        <label>성별 선택</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="male" required>
+          <label class="form-check-label" for="male">남성</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="female" required>
+          <label class="form-check-label" for="female">여성</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>헬스및 P.T 상담선택</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="consultation" id="health" required>
+          <label class="form-check-label" for="health">헬스상담</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="consultation" id="pt" required>
+          <label class="form-check-label" for="pt">PT상담</label>
+        </div>
+      </div>
+
+  <div class="container m-5">
+            <h5>상담 예약</h5>
             <form>
               <div class="form-group" >
                 <label for="datepicker">날짜 선택: <input type="date" name="date" id="datepicker">
