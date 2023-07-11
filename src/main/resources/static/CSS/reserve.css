@@ -50,3 +50,28 @@
   background-color: #ffe100;  /* 선택된 날짜 배경색 */
   color: #fff;  /* 선택된 날짜 텍스트 색상 */
 }
+
+
+.footer-section.links a {
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-bottom p {
+  font-size: 12px
+}
+
+.footer-center p {
+  font-size: 13px;
+  margin: 0;
+}
+
+#callcenter p {
+  font-size: 14px;
+}
+
+#infors p {
+  margin: 0;
+  font-size: 12px;
+}
