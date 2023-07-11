@@ -98,16 +98,6 @@ public class CarInforsController {
         return ResponseEntity.ok().body(result);
     }
 
-    // 2PC create
-    @PostMapping("/insertDouble")
-    public ResponseEntity insertDouble(@RequestBody Map paramMap){
-        Object result = null;
-        try {
-            result = carInforsService.insertDouble(paramMap);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(result);
-        }
-        return ResponseEntity.ok().body(result);
-    }
+
 
 }
