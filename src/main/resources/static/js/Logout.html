@@ -8,15 +8,25 @@
 </head>
 
 <body>
-    <!-- 로그아웃 확인 알람 -->
-    <div class="alert alert-warning fade" id="logoutAlert" role="alert">
-        로그아웃을 진행하시겠습니까?
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="mt-2">
-            <button type="button" class="btn btn-secondary" id="cancelLogoutButton">취소</button>
-            <a href="./login.html" class="btn btn-danger">로그아웃</a> <!-- 로그아웃 요청을 처리하는 URL로 수정해야 함 -->
+    <!-- 로그아웃 확인 모달 -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">로그아웃 확인</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    로그아웃을 진행하시겠습니까?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                    <a href="./gym.html" class="btn btn-danger">로그아웃</a> <!-- 로그아웃 요청을 처리하는 URL로 수정해야 함 -->
+                </div>
+            </div>
         </div>
     </div>
 
@@ -26,14 +36,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // 페이지 로드 시 로그아웃 확인 알람 표시
+        // 페이지 로드 시 로그아웃 확인 모달 표시
         window.addEventListener('load', function () {
-            document.getElementById('logoutAlert').classList.add('show');
+            $('#logoutModal').modal('show');
         });
 
-        // 취소 버튼 클릭 시 로그아웃 확인 알람 닫기
+        // 취소 버튼 클릭 시 로그아웃 확인 모달 닫기
         document.getElementById('cancelLogoutButton').addEventListener('click', function () {
-            document.getElementById('logoutAlert').classList.remove('show');
+            $('#logoutModal').modal('hide');
         });
     </script>
 </body>
