@@ -108,13 +108,5 @@ public class CarInforsService {
         return result;
     }
 
-    // 2PC
-    public Object insertDouble(Map dataMap) {
-        String sqlMapId = "CarInfors.insert";
-        // sucess
-        Object result = sharedDao.insert(sqlMapId, dataMap);
-        // error
-        result = sharedDao.insert(sqlMapId, dataMap);
-        return result;
-    }
+
 }
