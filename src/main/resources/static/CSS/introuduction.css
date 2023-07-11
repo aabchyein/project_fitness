@@ -49,3 +49,7 @@
     padding: 20px;
     text-align: center;
   }
+
+  .navbar a {
+    font-size : 18px;
+  }
