@@ -39,6 +39,7 @@
     <%
     HashMap params = (HashMap) request.getAttribute("params");
     String searchStr = (String) params.getOrDefault("search", "");
+    HashMap result = (HashMap) request.getAttribute("result");
     %>
     <!-- Main Content -->
     <div class="container mt-4">
@@ -65,14 +66,15 @@
                             <th>ID</th>
                             <th>Manufacturer ID</th>
                             <th>Delete</th>
+                            
                         </tr>
                     </thead>
                     <tbody id="carTableBody">
                         <% 
-                        ArrayList resultList = (ArrayList)request.getAttribute("result");
+                        ArrayList resultList = (ArrayList)result.get("resultList");
                         for(int i=0; i < resultList.size(); i=i+1){
                             HashMap record = (HashMap)resultList.get(i);
-                    %>
+                        %>
                     <form>
                         <input type="hidden" name="CAR_INFOR_ID" value='<%= record.get("CAR_INFOR_ID") %>' id="">
                         <tr>
@@ -80,7 +82,8 @@
                             <td><%= record.get("CAR_NAME") %></td>                      
                             <td><%= record.get("CAR_INFOR_ID") %></td>
                             <td><%= record.get("COMPANY_ID") %></td>
-                            <td><button formaction="/carInfor/deleteAndSelectSearch" formmethod="post">Del</button></td>
+                            <td><button formaction="/carInfor/deleteAndSelectSearch" formmethod="get">Del</button></td>
+                            <th><button formaction="/carInfor/insert" formmethod="get">insert</button></th>
                         </tr>
                     </form>
                     <%
