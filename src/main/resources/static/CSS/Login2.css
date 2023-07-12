@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300&family=Noto+Sans+KR:wght@100,400,500,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;400&display=swap');
+
 
 * {
     margin: 0;
@@ -6,32 +8,44 @@
     box-sizing: border-box;
 }
 
+img {
+    position: relative;
+    top: 1cm;
+}
+.form-section {
+    margin-top: 5cm;
+    transform: scale(0.8);
+  }
+  
+
 .brown {
-    color: brown;
-  }
-  
-  .red {
-    color: red;
-  }
-  
-  .yellow {
-    color: yellow;
-  }
-  
-  .green {
-    color: green;
+    color: white;
 }
 
+.red {
+    color: rgb(19, 19, 102);
+}
+
+.yellow {
+    color: yellow;
+}
+
+.green {
+    color: red;
+}
 
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url("bg.png") no-repeat center;
-    background-size: cover;
+    background-color: whitesmoke;
 }
+
+ h1 {
+        margin-left: -1cm;
+    }
 
 body::before {
     content: "";
@@ -141,19 +155,16 @@ body::before {
 }
 
 .btn-area {
-    margin-top: 10px; /* 회원가입 버튼과 구분선 사이의 간격 조정을 위한 마진 설정 */
-  }
-  
-  hr {
+    margin-top: 10px;
+}
+
+hr {
     border: none;
     border-top: 1px solid #ccc;
-    margin: 10px 0; /* 구분선의 위아래 여백 조정을 위한 마진 설정 */
-  }
-  
- 
+    margin: 10px 0;
+}
 
-
-  #signup-btn {
+#signup-btn {
     width: 100%;
     height: 50px;
     background: #fff;
@@ -163,4 +174,3 @@ body::before {
     border-radius: 15px;
     cursor: pointer;
 }
-
