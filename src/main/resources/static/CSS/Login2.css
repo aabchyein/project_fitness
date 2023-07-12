@@ -40,7 +40,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
 }
 
  h1 {
@@ -55,7 +55,7 @@ body::before {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    /* background-color: rgba(0, 0, 0, 0.7); */
 }
 
 .login-form {
@@ -96,7 +96,7 @@ body::before {
     left: 10px;
     top: 15px;
     font-size: 18px;
-    color: #999;
+    /* color: #999; */
     transition: top 0.5s ease;
 }
 
