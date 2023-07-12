@@ -7,10 +7,13 @@
   <title>상담 예약 페이지</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.11.0/dist/css/bootstrap-datepicker.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   <link rel="stylesheet" href="./CSS/reserve.css">
-</head>
+
+
 
 <body>
   <!-- 상단 네비게이션 바 -->
@@ -70,7 +73,7 @@
               <div class="form-group m-5" >
                 <label for="datepicker">날짜 선택:</label>
                   <input class="datepicker my-custom-calendar" type="date" name="date" id="datepicker">
-
+                
               </div>
               <div class="form-group m-5">
                 <label for="timepicker">시간 선택:</label>
@@ -90,9 +93,8 @@
                 </select>
               </div>
               <div class="form-group m-5" >
-                <label for="notes">센터명
-                </label>
-                <textarea class="form-control" id="notes" rows="2" required=""></textarea>
+                <label for="centerName">센터명</label>
+                <textarea class="form-control" id="centerName" rows="2" required=""></textarea>
               </div>
               <div class="form-group m-5" >
                 <label for="notes">상담 시 참고할 부분을 적어주세요. (병력 및 신체 이상, 원하시는 점이나 기대하는 점)
@@ -101,8 +103,32 @@
               </div>
               <div class="row">
               <div class="col-md-12 text-center">
-              <a href="./gym.html" class="btn btn-secondary">취소</a>
-              <button type="submit" class="btn btn-primary">완료</button>
+                <a href="./gym.html" class="btn btn-secondary">취소</a>
+                <button type="submit" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#Modal">완료</button>
+
+                <!-- Reservation modal -->
+  <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reservationModalLabel">상담 신청 완료</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+         
+<p>상담 신청이 완료되었습니다.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+                
               </div>
               </div>
             </form>
@@ -154,6 +180,8 @@
         minDate: 0 // 오늘 이전 날짜 선택 불가
       });
     });
+
+
   </script>
 </body>
 
