@@ -41,9 +41,9 @@
             $('#logoutModal').modal('show');
         });
 
-        // 취소 버튼 클릭 시 로그아웃 확인 모달 닫기
-        document.getElementById('cancelLogoutButton').addEventListener('click', function () {
-            $('#logoutModal').modal('hide');
+        // 취소 버튼 클릭 시 gym.html로 이동
+        document.querySelector('#logoutModal .modal-footer .btn-secondary').addEventListener('click', function () {
+            window.location.href = "./gym_login.html";
         });
     </script>
 </body>
