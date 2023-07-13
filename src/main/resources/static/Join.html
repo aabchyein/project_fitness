@@ -58,9 +58,9 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1>회원가입</h1>
-    <p><em class="required">*</em> 해당 표시가 돼있는 항목은 필수 입력사항입니다.</p>
+  <div class="container p-5">
+    <h2 class="text-center fw-bold p-3">회원 가입</h2>
+    <p class="text-center "><em class="required">*</em> 해당 표시가 돼있는 항목은 필수 입력사항입니다.</p>
     <form>
         
       <div class="mb-3">
@@ -95,7 +95,6 @@
           </div>
         </div>
       </div>
-      <p>E-mail로 발송된 내용을 확인한 후 인증하셔야 회원가입이 완료됩니다.</p>
       <div class="mb-3">
         <label for="inputPhoneNumber" class="form-label">휴대폰번호</label>
         <div class="input-group">
@@ -133,7 +132,9 @@
         <label for="inputNote" class="form-label">참고항목</label>
         <textarea class="form-control" id="inputNote" rows="2"></textarea>
       </div>
-      <button type="button" class="btn btn-primary" onclick="window.location.href='gym.html'">회원가입</button>
+      <div class="text-end">
+      <button type="button" class="btn btn-dark" onclick="window.location.href='gym.html'">회원가입</button>
+      </div>
     </form>
   </div>
   <footer class="footer mt-4 container">
