@@ -1,0 +1,154 @@
+#navbarFilterMenu a:hover {
+  cursor: pointer;
+  border-bottom: 2px solid rgb(127, 127, 127);
+}
+.navbarFilter a:hover {
+  border-bottom: 2px solid rgb(127, 127, 127);
+}
+.page-link {
+  color: black;
+  background-color: white;
+  border-color: white;
+}
+.page-link:focus,
+.page-link:hover {
+  color: white;
+  background-color: black;
+}
+.admin-content {
+  margin-top: 5cm;
+}
+.admin-header {
+  text-align: center;
+}
+.admin-table {
+  margin-top: 2cm;
+}
+.admin-table th {
+  text-align: center;
+}
+.admin-actions {
+  text-align: center;
+}
+
+
+
+
+
+
+
+#navbarFilterMenu a:hover {
+  cursor: pointer;
+  border-bottom: 2px solid rgb(127, 127, 127);
+}
+
+.navbarFilter a:hover {
+  border-bottom: 2px solid rgb(127, 127, 127);
+}
+
+.page-link {
+  color: black;
+  background-color: white;
+  border-color: white;
+}
+
+.page-link:focus,
+.page-link:hover {
+  color: white;
+  background-color: black;
+}
+
+.admin-content {
+  margin-top: 0cm;
+  margin-bottom: 2cm;
+}
+
+/* 컨테이너.css */
+.container{
+  margin-top: 0cm;
+}
+
+.admin-table {
+  margin-top: 2cm;
+  margin-left: 3cm;
+  
+ }
+
+
+/* 관리자페이지.css */
+.admin-nav {
+  margin-left: -0cm;
+}
+
+/* GH1 회원관리) */
+.admin-header {
+  text-align: center;
+  margin-bottom: 1cm;
+  color: black;
+}
+
+/* 총 몇명) */
+.text-left{
+  margin-left: 0;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+.navbar a {
+  font-size: 17px;
+}
+
+.card-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-content {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.my-custom-calendar {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ddd;
+}
+
+.my-custom-calendar .datepicker-days td {
+  font-weight: bold;
+}
+
+.my-custom-calendar .datepicker table tr td span.active {
+  background-color: #ffe100;
+  color: #fff;
+}
+
+.footer-section.links a {
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+}
+
+.footer-center p {
+  font-size: 13px;
+  margin: 0;
+}
+
+#callcenter p {
+  font-size: 14px;
+}
+
+#infors p {
+  margin: 0;
+  font-size: 12px;
+}
