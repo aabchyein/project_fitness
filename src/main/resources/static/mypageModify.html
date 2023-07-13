@@ -48,10 +48,6 @@
 
             </div>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">회원가입</a>
-          </li>
         </ul>
       </div>
   </nav>
@@ -81,7 +77,7 @@
             <div class="mb-3">
               <label for="password" class="form-label">비밀번호 확인</label>
               <em class="required" style="color:red">*</em>
-              <input type="password" id="password" class="form-control" value="1234">
+              <input type="password" id="passwordcheck" class="form-control" value="1234">
             </div>
             <div class="mb-3">
               <label for="birthdate" class="form-label">생년월일</label>
@@ -110,7 +106,9 @@
         </div>
         <div class="card-footer d-flex justify-content-end">
           <a href="./mypage.html" type="button" class="btn btn-secondary me-2">취소</a>
-          <button type="submit" class="btn btn-dark">완료</button>
+          <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#completionModal" formaction="./mypage.html" onclick="showConfirmation()">
+            완료
+          </button>
         </div>
 
       </div>
@@ -155,6 +153,27 @@
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+    function showConfirmation() {
+        // Perform any necessary validation or checks before showing the confirmation alert
+        const name = document.getElementById("name").value;
+        const password = document.getElementById("password").value;
+        const passwordcheck = document.getElementById("passwordcheck").value;
+        const gender = document.getElementById("gender").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const address = document.getElementById("address").value;
+
+
+        if (name && password && passwordcheck && gender && phone && email && address) {
+          // All fields are filled, show confirmation alert
+          alert("정보 변경이 완료되었습니다");
+        } else {
+          // Show error message or perform any necessary actions if the fields are not filled
+          alert("정보를 입력해주세요");
+        }
+      }
+  </script>
 </body>
 
 </html>
