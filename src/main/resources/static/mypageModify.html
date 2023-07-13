@@ -56,76 +56,65 @@
       </div>
   </nav>
   <!-- 마이페이지 -->
-  <div class="container p-5">
-    <div class="row">
-      <div class="col-md-4">
-        <h2>회원정보</h2>
-        <div class="fs-5 fw-bold border-bottom border-3 border-dark border-opacity-50 pb-2 text-dark"></div>
-        <table class="table boder-top">
-          <tr>
-            <th>아이디</th>
-            <td>Park</td>
-          </tr>
-          <tr>
-            <th>이름</th>
-            <td>홍길동</td>
-          </tr>
-          <tr>
-            <th>비밀번호</th>
-            <td>1234</td>
-          </tr>
-          <tr>
-            <th>생년월일</th>
-            <td>1995-05-21</td>
-          </tr>
-          <tr>
-            <th>성별</th>
-            <td>남자</td>
-          </tr>
-          <tr>
-            <th>휴대전화</th>
-            <td>010-0000-0000</td>
-          </tr>
-          <tr>
-            <th>이메일</th>
-            <td>abcde@naver.com</td>
-          </tr>
-          <tr>
-            <th>주소</th>
-            <td>서울시 구로구 행복동</td>
-          </tr>
-        </table>
-        <div class="text-lg-end">
-          <a href="./mypageModify.html" type="submit" class="btn btn-dark" style="opacity: 0.8;">회원정보수정</a>
+  <div class="container p-5 align-items-center">
+    <div class="card">
+        <div class="card-header text-center fw-bold p-3">
+        <h2>회원 정보 수정</h2>
         </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="id" class="form-label">아이디</label>
+              <em class="required" style="color:red">*</em>
+              <input type="text" id="id" class="form-control" value="Park" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">이름</label>
+              <em class="required" style="color:red">*</em>
+              <input type="text" id="name" class="form-control" value="홍길동">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">비밀번호</label>
+              <em class="required" style="color:red">*</em>
+              <input type="password" id="password" class="form-control" value="1234">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">비밀번호 확인</label>
+              <em class="required" style="color:red">*</em>
+              <input type="password" id="password" class="form-control" value="1234">
+            </div>
+            <div class="mb-3">
+              <label for="birthdate" class="form-label">생년월일</label>
+              <input type="date" id="birthdate" class="form-control" value="1995-05-21">
+            </div>
+            <div class="mb-3">
+              <label for="gender" class="form-label">성별</label>
+              <select id="gender" class="form-control">
+                <option value="남자">남자</option>
+                <option value="여자">여자</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">휴대전화</label>
+              <input type="text" id="phone" class="form-control" value="010-0000-0000">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">이메일</label>
+              <input type="email" id="email" class="form-control" value="abcde@naver.com">
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">주소</label>
+              <input type="text" id="address" class="form-control" value="서울시 구로구 행복동">
+            </div>
+          </form>
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+          <a href="./mypage.html" type="button" class="btn btn-secondary me-2">취소</a>
+          <button type="submit" class="btn btn-dark">완료</button>
+        </div>
+
       </div>
-      <div class="col-md-8">
-      <h2>예약 내역</h2>
-      <div class="fs-5 fw-bold border-bottom border-3 border-dark border-opacity-50 pb-2 text-dark"></div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>예약 날짜</th>
-            <th>예약 시간</th>
-            <th>센터명</th>
-            <th>참고사항</th>
-            <th>수정</th>
-            <th>삭제</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2023-07-10</td>
-            <td>10:00 - 11:00</td>
-            <td>센터명 표시</td>
-            <td>참고 내용 표시</td>
-            <th><button type="submit" class="btn btn-dark mx-1" style="opacity: 0.8;">수정</button></th>
-            <th><button type="submit" class="btn btn-dark mx-1" style="opacity: 0.8;">삭제</button></th>
-          </tr>
-          <!-- 다른 예약 내역 추가 -->
-        </tbody>
-      </table>
-      </div>
+
     </div>
   </div>
   
