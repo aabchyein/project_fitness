@@ -5,14 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/mainmenu.css">
     <title>리뷰 작성</title>
 </head>
 
 <body>
+<!-- 상단 네비게이션 바 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="./gym.html">
+        <img src="./Image/gym2.png.png" alt="로고" height="100">
+      </a>
+      <!-- 검색창 -->
+      <form class="d-flex col-lg-5">
+        <input class="form-control search-input me-2" type="search" placeholder="원하시는 업체명이나 지역을 검색해 보세요" aria-label="Search">
+        <button class="btn btn-outline-success" formaction="./Search.html">검색</button>
+      </form>
+  
+      <div class="col-lg-4 text-lg-end">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./gym.html">홈</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="./Login2.html">예약</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">커뮤니티</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="./notice.html">게시판</a>
+              <a class="dropdown-item" href="./Review.html">후기</a>
+            </div>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="./Logout.html">로그아웃</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+
+  <!-- 리뷰 작성 -->
     <div class="container p-5">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">리뷰 작성</h5>
+                <h5 class="card-title text-center">Review 작성</h5>
                 <form id="reviewForm">
                     <div class="form-group">
                         <label for="id">ID:</label>
@@ -59,9 +99,43 @@
         </div>
     </div>
 
+    <!-- Footer -->
+ <footer class="footer mt-4 container">
+  <div class="row">
+    <div class="col-9">
+      <div>
+        <div class="footer-content">
+          <div class="footer-section links" style="text-align: left;">
+            <a href="#">홈 | </a></li>
+            <a href="#"> 서비스 |</a></li>
+            <a href="#"> 제품 | </a></li>
+            <a href="#"> 블로그</a></li>
+          </div>
+        </div>
+      </div>
+      <div class="footer-center" style="text-align: left;">
+        <p>더글로리Co.| 대표:백구 | 개인정보보호책임자 : 백구 | 사업자등록번호 : 23-202307121</P>
+        <p>통신판매신고번호 : 2023-직업학교-0711 | 주소 : 서울시 구로구</p>
+      </div>
+      <div class="footer-bottom" style="text-align: left;">
+        <p>저작권 © 더글로리Co. All rights reserved.</p>
+      </div>
+
+    </div>
+    <div class="col-3" style="text-align: left;">
+      <div id="callcenter">
+        <P>고객센터 : 09 ~ 18시</P>
+      </div>
+      <div id="infors">
+        <p>전화번호 : 032-1587-4824</p>
+        <P>E-MAIL : theGlroy@glroy.com</P>
+      </div>
+    </div>
+  </div>
+</footer>
 
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 <script>
     const ratingDropdown = document.querySelector('.rating-dropdown');
