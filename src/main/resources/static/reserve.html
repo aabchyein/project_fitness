@@ -46,8 +46,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">커뮤니티</a>
             <div class="dropdown-menu" aria-labelledby="communityDropdown">
-              <a class="dropdown-item" href="./notice.html">공지사항</a>
-              <a class="dropdown-item" href="#">후기</a>
+              <a class="dropdown-item" href="./notice.html">게시판</a>
+              <a class="dropdown-item" href="./Review.html">후기</a>
             </div>
           </li>
 
@@ -106,9 +106,9 @@
           <div class="row">
             <div class="col-md-12 text-center">
               <a href="./gym_login.html" class="btn btn-secondary">취소</a>
-
-              <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#completionModal"
-                onclick="showConfirmation()">완료</button>
+              <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#completionModal" onclick="showConfirmation()">
+                완료
+              </button>
             </div>
           </div>
         </form>
@@ -154,13 +154,6 @@
           minDate: 0 // 오늘 이전 날짜 선택 불가
         });
       });
-      function gymloginconnect() {
-        window.location.href = "./gym_login.html"
-      }
-      function gymloginNoconnect() {
-        window.location.href = "./reserve.html"
-      }
-
 
       function showConfirmation() {
         // Perform any necessary validation or checks before showing the confirmation alert
@@ -179,6 +172,15 @@
           gymloginNoconnect();
         }
       }
+
+      function gymloginconnect() {
+        window.location.href = "./gym_login.html";
+      }
+      function gymloginNoconnect() {
+        window.location.href = "./reserve.html";
+      }
+
+
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
