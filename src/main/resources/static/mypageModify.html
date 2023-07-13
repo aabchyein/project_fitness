@@ -106,7 +106,7 @@
         </div>
         <div class="card-footer d-flex justify-content-end">
           <a href="./mypage.html" type="button" class="btn btn-secondary me-2">취소</a>
-          <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#completionModal" formaction="./mypage.html" onclick="showConfirmation()">
+          <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#completionModal"  onclick="showConfirmation()">
             완료
           </button>
         </div>
@@ -163,15 +163,20 @@
         const phone = document.getElementById("phone").value;
         const email = document.getElementById("email").value;
         const address = document.getElementById("address").value;
-
+     
 
         if (name && password && passwordcheck && gender && phone && email && address) {
           // All fields are filled, show confirmation alert
           alert("정보 변경이 완료되었습니다");
+          move();
         } else {
           // Show error message or perform any necessary actions if the fields are not filled
           alert("정보를 입력해주세요");
         }
+      }
+
+      function move (){
+        window.location.href="./mypage.html"
       }
   </script>
 </body>
