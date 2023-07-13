@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>운동 시설 찾아주는 홈페이지</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="../../../../resources/static/CSS/Basic.CSS">
+      <link rel="stylesheet" href="/CSS/mainmenu.CSS">
     </head>
 
     <body>
@@ -17,7 +17,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <a class="navbar-brand" href="#">
-            <img src="../../../../resources/static/Image/gym2.png.png" alt="로고" height="100">
+            <img src="/Image/gym2.png.png" alt="로고" height="100">
           </a>
           <!-- 검색창 -->
           <form class="d-flex col-lg-5">
@@ -62,13 +62,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="../../../../resources/static/Image/IMG_2389.jpg" class="d-block w-100" alt="이미지1">
+              <img src="/Image/IMG_2389.jpg" class="d-block w-100" alt="이미지1">
             </div>
             <div class="carousel-item">
-              <img src="../../../../resources/static/Image/IMG_2405.jpg" class="d-block w-100" alt="이미지2">
+              <img src="/Image/IMG_2405.jpg" class="d-block w-100" alt="이미지2">
             </div>
             <div class="carousel-item">
-              <img src="../../../../resources/static/Image/SJ1_2779-1.jpg" class="d-block w-100" alt="이미지3">
+              <img src="/Image/SJ1_2779-1.jpg" class="d-block w-100" alt="이미지3">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -85,9 +85,38 @@
       </div>
 
       <!-- Footer -->
-      <footer class="footer mt-4">
-        <img src="./Fitness/foot.png" alt="로고" height="80" class="mb-5">
-        <p>저희 홈페이지에 방문해 주셔서 감사합니다.</p>
+      <footer class="footer mt-4 container">
+        <div class="row">
+          <div class="col-9">
+            <div>
+              <div class="footer-content">
+                <div class="footer-section links" style="text-align: left;">
+                  <a href="#">홈 | </a></li>
+                  <a href="#"> 서비스 |</a></li>
+                  <a href="#"> 제품 | </a></li>
+                  <a href="#"> 블로그</a></li>
+                </div>
+              </div>
+            </div>
+            <div class="footer-center" style="text-align: left;">
+              <p>더글로리Co.| 대표:백구 | 개인정보보호책임자 : 백구 | 사업자등록번호 : 23-202307121</P>
+              <p>통신판매신고번호 : 2023-직업학교-0711 | 주소 : 서울시 구로구</p>
+            </div>
+            <div class="footer-bottom" style="text-align: left;">
+              <p>저작권 © 더글로리Co. All rights reserved.</p>
+            </div>
+    
+          </div>
+          <div class="col-3" style="text-align: left;">
+            <div id="callcenter">
+              <P>고객센터 : 09 ~ 18시</P>
+            </div>
+            <div id="infors">
+              <p>전화번호 : 032-1587-4824</p>
+              <P>E-MAIL : theGlroy@glroy.com</P>
+            </div>
+          </div>
+        </div>
       </footer>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
