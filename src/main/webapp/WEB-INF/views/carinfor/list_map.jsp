@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+    <!-- <%@ include file="/WEB-INF/views/commons/header.jsp" %>  헤더부분 불러오는 메소드-->
     <!-- Menu -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -137,6 +137,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../../resources/static/js/list_fetch.js"></script>
 </body>
 
 </html>

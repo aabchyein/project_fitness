@@ -45,12 +45,12 @@ public class CommonService {
         return result;
     }
 
-    public Object selectAll(Map dataMap) {
+    public Object selectAll(Map cAR_INFOR_ID) {
         // Object getOne(String sqlMapId, Object dataMap)
         String sqlMapId = "Common.selectAll"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
 
 
-        Object result = sharedDao.getList(sqlMapId, dataMap);
+        Object result = sharedDao.getList(sqlMapId, cAR_INFOR_ID);
         return result;
     }
 
@@ -128,5 +128,9 @@ public class CommonService {
         result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
+
+	public Object selectAll_Com(String cOMMON_CODE_ID) {
+		return null;
+	}
 }
 
