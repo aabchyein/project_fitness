@@ -3,7 +3,7 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -12.000000286102303,
+    "scrollTop": -14.400000343322763,
     "scrollLeft": 0,
     "zoomLevel": 1,
     "show": {
@@ -44,7 +44,7 @@
     "tables": [
       {
         "name": "BOARD",
-        "comment": "게시판",
+        "comment": "게시판 리스트",
         "columns": [
           {
             "name": "NUMBER",
@@ -116,6 +116,29 @@
             "id": "5589d9a0-fc13-41a6-8a47-c84615cd1a05"
           },
           {
+            "name": "CONTENTS",
+            "comment": "내용",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 73.5,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "28806c4f-0057-444c-bff6-a529f577bf71"
+          },
+          {
             "name": "DATE",
             "comment": "날짜",
             "dataType": "VARCHAR(50)",
@@ -164,11 +187,11 @@
         ],
         "ui": {
           "active": false,
-          "left": 485.6,
-          "top": 80.8,
-          "zIndex": 52,
+          "left": 234.8,
+          "top": 96.4,
+          "zIndex": 2,
           "widthName": 60,
-          "widthComment": 60
+          "widthComment": 83.61181640625
         },
         "visible": true,
         "id": "b191c548-f32a-46e8-8b0b-f1fbb7d0caba"
