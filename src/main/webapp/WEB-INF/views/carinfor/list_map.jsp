@@ -47,13 +47,13 @@
             <div class="col-md-8">
                 <h2>Search</h2>
                 <div class="input-group mb-3">
-                    <form action="/carInfor/selectSearch" method="get">
+                    <form action="/common/selectSearch" method="post">
                         <select class="form-select" name="search">
                             <option >Select an option...</option>
                             <option value="YEAR" <%= (searchStr.equals("YEAR")) ? "selected" : "" %>>YEAR</option>
                             <option value="CAR_NAME" <%= (searchStr.equals("CAR_NAME")) ? "selected" : "" %>>CAR_NAME</option>
                         </select>
-                        <input type="text" name="words" value="<%= params.getOrDefault("words", "") %>" class="form-control" placeholder="Search..." id="keydownEnter">
+                        <input type="text" name="words" value='<%= params.getOrDefault("words", "") %>' class="form-control" placeholder="Search..." id="keydownEnter">
                         <button class="btn btn-primary" type="submit" >Go</button>
                     </form>
                 </div>
@@ -61,29 +61,53 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Year</th>
+                            <!-- <th>Year</th>
                             <th>Car Name</th>                           
                             <th>ID</th>
-                            <th>Manufacturer ID</th>
+                            <th>Manufacturer ID</th> -->
+                            <th>COMMON_CODE_ID</th>                           
+                            <th>NAME</th>
+                            <th>ORDER_NUMBER</th>
+                            <th>ATTRIBUTION_1</th>                           
+                            <th>ATTRIBUTION_2</th>
+                            <th>DESCRIPTION</th>
+                            <th>SYSTEM_CODE_YN</th>                           
+                            <th>USE_YN</th>
+                            <th>PARENT_COMMON_CODE_ID</th>
+                            <th>REGISTER_SEQ</th>                           
+                            <th>REGISTRY_DATE</th>
+                            <th>MODIFIER_SEQ</th>
+                            <th>MODIFY_DATE</th>
                             <th>Delete</th>
-                            
+                            <th>insert</th>
+                            <th>update</th>
                         </tr>
                     </thead>
                     <tbody id="carTableBody">
                         <% 
                         ArrayList resultList = (ArrayList)result.get("resultList");
                         for(int i=0; i < resultList.size(); i=i+1){
-                            HashMap record = (HashMap)resultList.get(i);
+                        HashMap record = (HashMap)resultList.get(i);
                         %>
                     <form>
-                        <input type="hidden" name="CAR_INFOR_ID" value='<%= record.get("CAR_INFOR_ID") %>' id="">
+                        <input type="hidden" name="COMMON_CODE_ID" value='<%= record.get("COMMON_CODE_ID") %>' id="">
                         <tr>
-                            <td><%= record.get("YEAR") %></td>
-                            <td><%= record.get("CAR_NAME") %></td>                      
-                            <td><%= record.get("CAR_INFOR_ID") %></td>
-                            <td><%= record.get("COMPANY_ID") %></td>
-                            <td><button formaction="/carInfor/deleteAndSelectSearch" formmethod="get">Del</button></td>
-                            <th><button formaction="/carInfor/insert" formmethod="get">insert</button></th>
+                            <td><%= record.get("COMMON_CODE_ID") %></td>
+                            <td><%= record.get("NAME") %></td>                      
+                            <td><%= record.get("ORDER_NUMBER") %></td>
+                            <td><%= record.get("ATTRIBUTION_1") %></td>
+                            <td><%= record.get("ATTRIBUTION_2") %></td>                      
+                            <td><%= record.get("DESCRIPTION") %></td>
+                            <td><%= record.get("SYSTEM_CODE_YN") %></td>
+                            <td><%= record.get("USE_YN") %></td>                      
+                            <td><%= record.get("PARENT_COMMON_CODE_ID") %></td>
+                            <td><%= record.get("REGISTER_SEQ") %></td>
+                            <td><%= record.get("REGISTRY_DATE") %></td>
+                            <td><%= record.get("MODIFIER_SEQ") %></td>
+                            <td><%= record.get("MODIFY_DATE") %></td>
+                            <td><button formaction="/common/DeleteAndSelectSearch" formmethod="get">Del</button></td>
+                            <th><button formaction="/common/InsertAndcome" formmethod="get">insert</button></th>
+                            <th><button formaction="/common/UpdateAndcome" formmethod="get">update</button></th>
                         </tr>
                     </form>
                     <%
