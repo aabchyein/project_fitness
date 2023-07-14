@@ -11,13 +11,13 @@ import com.the_glory.project_fitness.dao.SharedDao;
 
 @Service
 @Transactional
-public class CarInforsService {
+public class CommonService {
     @Autowired
     SharedDao sharedDao;
 
     // foreach HashMap.put("CAR_INFOR_ID_LIST", CAR_INFOR_ID_LIST)
     public Object selectInUID(Map dataMap) {
-        String sqlMapId = "CarInfors.selectInUID";
+        String sqlMapId = "Common.selectInUID";
 
         Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
@@ -27,7 +27,7 @@ public class CarInforsService {
     // 검색(조건-search : YEAR, CAR_NAME)
     public Object selectSearch(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "CarInfors.selectSearch";
+        String sqlMapId = "Common.selectSearch";
 
         Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
@@ -36,7 +36,7 @@ public class CarInforsService {
     // 검색(조건-search : YEAR, CAR_NAME)
     public Object selectSearch(String search, String words) {
         // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "CarInfors.selectSearch";
+        String sqlMapId = "Common.selectSearch";
         HashMap dataMap = new HashMap<>();
         dataMap.put("search", search);
         dataMap.put("words", words);
@@ -45,11 +45,10 @@ public class CarInforsService {
         return result;
     }
 
-    public Object selectAll(String CAR_INFOR_ID) {
+    public Object selectAll(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "CarInfors.selectAll"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
-        HashMap dataMap = new HashMap<>();
-        dataMap.put("CAR_INFOR_ID", CAR_INFOR_ID);
+        String sqlMapId = "Common.selectAll"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
+
 
         Object result = sharedDao.getList(sqlMapId, dataMap);
         return result;
@@ -57,7 +56,7 @@ public class CarInforsService {
 
     public Object selectDetail(String CAR_INFOR_ID) {
         // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "CarInfors.selectByUID"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
+        String sqlMapId = "Common.selectByUID"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
         HashMap dataMap = new HashMap<>();
         dataMap.put("CAR_INFOR_ID", CAR_INFOR_ID);
 
@@ -66,20 +65,20 @@ public class CarInforsService {
     }
 
     public Object insert(Map dataMap) {
-        String sqlMapId = "CarInfors.insert";
+        String sqlMapId = "Common.insert";
         Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
 
     public Object update(Map dataMap) {
-        String sqlMapId = "CarInfors.update";
+        String sqlMapId = "Common.update";
         Object result = sharedDao.update(sqlMapId, dataMap);
         return result;
     }
 
     // MVC view
     public Object delete(Map dataMap) {
-        String sqlMapId = "CarInfors.delete";
+        String sqlMapId = "Common.delete";
 
         Object result = sharedDao.delete(sqlMapId, dataMap);
         return result;
@@ -88,49 +87,46 @@ public class CarInforsService {
     // MVC view
     public Object deleteAndSelectSearch(Map dataMap) {
         HashMap result = new HashMap<>();
-        // String sqlMapId = "CarInfors.delete";
-        // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
         result.put("deleteCount", this.delete(dataMap));
 
-        // sqlMapId = "CarInfors.selectSearch";
-        // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
         result.put("resultList", this.selectSearch(dataMap));
         return result;
     }
 
     public Object insertAndSelectSearch(Map dataMap) {
         HashMap result = new HashMap<>();
-        // String sqlMapId = "CarInfors.insert";
-        // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
         result.put("insertCount", this.insert(dataMap));
 
-        // sqlMapId = "CarInfors.selectSearch";
-        // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
         result.put("resultList", this.selectSearch(dataMap));
         return result;
     }
 
     public Object updateAndSelectSearch(Map dataMap) {
         HashMap result = new HashMap<>();
-        // String sqlMapId = "CarInfors.update";
-        // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
-        result.put("insertCount", this.update(dataMap));
+        result.put("updateCount", this.update(dataMap));
 
-        // sqlMapId = "CarInfors.selectSearch";
-        // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
         result.put("resultList", this.selectSearch(dataMap));
         return result;
     }
 
     // rest api
-    public Object delete(String CAR_INFOR_ID) {
-        String sqlMapId = "CarInfors.delete";
+    public Object delete(String COMMON_CODE_ID) {
+        String sqlMapId = "Common.delete";
         HashMap dataMap = new HashMap<>();
-        dataMap.put("CAR_INFOR_ID", CAR_INFOR_ID);
+        dataMap.put("COMMON_CODE_ID", COMMON_CODE_ID);
 
         Object result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }
 
-
+    // 2PC
+    public Object insertDouble(Map dataMap) {
+        String sqlMapId = "Common.insert";
+        // sucess
+        Object result = sharedDao.insert(sqlMapId, dataMap);
+        // error
+        result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
 }
+
