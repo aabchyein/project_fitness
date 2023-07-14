@@ -25,9 +25,9 @@ public class CommonController {
 
     @GetMapping({ "/", "/home", "/main" })
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
-        // Object result = commonService.selectAll(params);
-        // modelAndView.addObject("params", params);
-        // modelAndView.addObject("result", result);
+        Object result = commonService.selectAll(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
         
         modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         return modelAndView;

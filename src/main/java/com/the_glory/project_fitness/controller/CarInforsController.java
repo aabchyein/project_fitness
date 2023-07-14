@@ -28,7 +28,8 @@ public class CarInforsController {
     @GetMapping({ "/", "/home", "/main" })
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("params", "result");
-        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
         return modelAndView;
     }
 
@@ -53,7 +54,8 @@ public class CarInforsController {
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
 
-        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
         return modelAndView;
     }
 
@@ -64,7 +66,8 @@ public class CarInforsController {
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
         
-        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
         return modelAndView;
     }
 
@@ -75,7 +78,8 @@ public class CarInforsController {
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
         
-        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
         return modelAndView;
     }
 
@@ -106,14 +110,15 @@ public class CarInforsController {
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
         
-        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
         return modelAndView;
     }
 
     @GetMapping("/insertAndcome")
     public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView modelAndView){
         
-        modelAndView.setViewName("/WEB-INF/views/carinfor/insert.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/insert.jsp");
         return modelAndView;
     }
 
@@ -131,14 +136,15 @@ public class CarInforsController {
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
         
-        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
         return modelAndView;
     }
 
     @GetMapping("/updateAndcome")
     public ModelAndView updatetAndcome(@RequestParam Map params, ModelAndView modelAndView){
         
-        modelAndView.setViewName("/WEB-INF/views/carinfor/update.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/update.jsp");
         return modelAndView;
     }
 
