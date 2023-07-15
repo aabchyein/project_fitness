@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.CarInforsService;
-import com.the_glory.project_fitness.service.FitnessService;
+import com.the_glory.project_fitness.service.CommonService;
 
 @Controller
 
 public class FitnessController {
     @Autowired
-    FitnessService fitnessService;
+    CommonService fitnessService;
 
     @GetMapping({ "/", "/home", "/main" })
     public ModelAndView main(ModelAndView modelAndView) {
@@ -77,7 +77,7 @@ public class FitnessController {
     }
 
     @GetMapping("/fitnessSelectAll/{CAR_INFOR_ID}")
-    public ResponseEntity selectAll(@PathVariable String CAR_INFOR_ID) {
+    public ResponseEntity selectAll(@PathVariable Map CAR_INFOR_ID) {
         Object result = fitnessService.selectAll(CAR_INFOR_ID);
         return ResponseEntity.ok().body(result);
     }
