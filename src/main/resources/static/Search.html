@@ -10,63 +10,53 @@
 </head>
 
 <body>
+  <!-- 상단 네비게이션 바 -->
+  <nav class="navbar navbar-expand-lg bg-black">
     <div class="container">
-        <!-- 상단 네비게이션 바 -->
-        <nav class="navbar navbar-expand-lg bg-black">
-            <div class="container">
-                <a class="navbar-brand" href="./gym.html">
-                    <img src="./Image/gym2.png.png" alt="로고" height="100">
-                </a>
-                <!-- 검색창 -->
-                <form class="d-flex col-lg-5">
-                    <input class="form-control search-input me-2" type="search" placeholder="검색" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">검색</button>
-                </form>
-                </form>
-                <div class="col-lg-4 text-lg-end">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./gym.html">홈</a>
-                        </li>
+      <a class="navbar-brand" href="./gym.html">
+        <img src="./Image/로고2.png" alt="로고" height="90">
+      </a>
+      <!-- 검색창 -->
+      <form class="d-flex col-lg-5">
+        <input class="form-control search-input me-2" type="search" placeholder="원하시는 업체명이나 지역을 검색해 보세요" aria-label="Search">
+        <button class="btn " style="background-color: #8B0000; color: white;" formaction="./Search.html">검색</button>
+      </form>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="./reserve.html">예약</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">커뮤니티</a>
-                            <div class="dropdown-menu" aria-labelledby="communityDropdown">
-                               
-                                <a class="dropdown-item" href="./notice.html">게시판</a>
-                                
-                            </div>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="./Login.html">로그인</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="./Join.html">회원가입</a>
-                        </li>
-                    </ul>
-                </div>
+      <div class="col-lg-4 text-lg-ende">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./gym.html">홈</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="./Login2.html">예약</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">커뮤니티</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="./notice.html">게시판</a>
+              <a class="dropdown-item" href="./Login2.html">후기</a>
             </div>
-        </nav>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./Login2.html">로그인</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./Join.html">회원가입</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./AdminLogin.html">
+              <img src="./Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="container m-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="text-center">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.924500875203!2d126.89206931137151!3d37.486107971942964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9e3cab83f0b1%3A0x8566603f90167621!2z7ISc7Jq47Yq567OE7IucIOq1rOuhnOq1rCDrlJTsp4DthLjroZwzM-q4uCAyNw!5e0!3m2!1sko!2skr!4v1689072373069!5m2!1sko!2skr"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+  </nav>
 
  <!-- Footer -->
  <footer class="footer container-fluid text-white">
