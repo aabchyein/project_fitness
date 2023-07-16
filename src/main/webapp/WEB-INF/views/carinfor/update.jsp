@@ -26,6 +26,7 @@
               <input type="text" name="REGISTER_SEQ">
               <div>MODIFIER_SEQ</div>
               <input type="text" name="MODIFIER_SEQ">
+              <input type="hidden" name="COMMON_CODE_ID" value="<%= request.getParameter("COMMON_CODE_ID") %>">
               <button type="submit" formaction='/common/UpdateAndSelectSearch' formmethod="post">전송</button>
             </form>
         </body>

@@ -50,7 +50,8 @@ public class CarInforsController {
     // /selectSearch/CAR_NAME/소
     @GetMapping("/selectSearch")
     public ModelAndView selectSearch(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = carInforsService.selectSearch(params);
+        //Object result = carInforsService.selectSearch(params);
+        Object result = carInforsService.selectSearchWithPagination(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
 

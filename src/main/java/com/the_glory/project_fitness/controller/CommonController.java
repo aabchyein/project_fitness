@@ -1,5 +1,6 @@
 package com.the_glory.project_fitness.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +51,13 @@ public class CommonController {
     @GetMapping("/SelectSearch")
     public ModelAndView selectSearch(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = commonService.selectSearch(params);
+        //Object result = commonService.selectAll(params);
+
+        HashMap rtnTmp = new HashMap<>();
+        rtnTmp.put("resultList", result);
+
         modelAndView.addObject("params", params);
-        modelAndView.addObject("result", result);
+        modelAndView.addObject("result", rtnTmp);
 
         modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         return modelAndView;

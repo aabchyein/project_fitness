@@ -5,11 +5,16 @@
 	<select id="selectSearch" parameterType="Map" resultType="Map">
         SELECT * 
         FROM project_test.commons_code
-        where 1 =1 ;
+        where 1 =1
         <choose>           
+            <when test="search == 'COMMON_CODE_ID'">
+            and COMMON_CODE_ID like CONCAT(#{words}, '%') 
+            </when>
             <when test="search == 'NAME'">
             and NAME like CONCAT(#{words}, '%') 
             </when>
+            <otherwise>
+            </otherwise>
         </choose>
         ;
 	</select>

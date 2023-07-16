@@ -1,4 +1,4 @@
-<%@ page import="java.util.HashMap, java.util.ArrayList" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +84,7 @@
                     </table>
                 </div>
                 <!-- 페이지 넘어가는 표시 -->
-                <div class="text-center mt-4">
+                <!-- <div class="text-center mt-4">
                     <ul class="pagination justify-content-center">
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
@@ -100,7 +100,42 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
+
+                <%
+                Paginations paginations = (Paginations)result.get("paginations"); 
+                %>
+                <div>총 갯수 : <%= paginations.getTotalCount() %></div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="/carInfor/selectSearch?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
+                        </li>
+
+                        <%
+                        for(int i=paginations.getBlockStart();i <= paginations.getBlockEnd(); i=i+1){
+                        %>
+                        <li class="page-item">
+                            <a class="page-link" href="/carInfor/selectSearch?currentPage=<%= i %>"><%= i %></a>
+                        </li>
+                        <%
+                        }
+                        %>
+                        <!--li class="page-item">
+                            <a class="page-link" href="/carInfor/map/selectSearch?currentPage=1">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="/carInfor/map/selectSearch?currentPage=2">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="/carInfor/map/selectSearch?currentPage=3">3</a>
+                        </li-->
+
+                        <li class="page-item">
+                            <a class="page-link" href="/carInfor/selectSearch?currentPage=<%= paginations.getNextPage() %>">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
