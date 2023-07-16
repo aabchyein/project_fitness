@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>고객게시판</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./CSS/mainmenu.css">
+</head>
+<body>
+    <!-- 상단 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg bg-black">
+      <div class="container">
+        <a class="navbar-brand" href="./gym.html">
+          <img src="./Image/gym2.png.png" alt="로고" height="100">
+        </a>
+        <!-- 검색창 -->
+        <form class="d-flex col-lg-5">
+          <input class="form-control search-input me-2" type="search" placeholder="원하시는 업체명이나 지역을 검색해 보세요" aria-label="Search">
+          <button class="btn btn-outline-success" formaction="./Search.html">검색</button>
+        </form>
+  
+        <div class="col-lg-4 text-lg-ende">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./gym.html">홈</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./Login2.html">예약</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">커뮤니티</a>
+              <div class="dropdown-menu" aria-labelledby="communityDropdown">
+                <a class="dropdown-item text-white" href="./notice.html">게시판</a>
+                <a class="dropdown-item text-white" href="./Login2.html">후기</a>
+              </div>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="./Login2.html">로그인</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="./Join.html">회원가입</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="./AdminLogin.html">
+                <img src="./Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <div class="container mt-5">
+    <h2>고객게시판</h2>
+    <form>
+      <div class="form-group">
+        <label for="title">제목:</label>
+        <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
+      </div>
+      <div class="form-group">
+        <label for="author">작성자:</label>
+        <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
+      </div>
+      <div class="form-group">
+        <label for="email">이메일:</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="email" placeholder="이메일을 입력하세요">
+          <div class="input-group-append">
+            <select class="form-control">
+              <option value="naver.com">naver.com</option>
+              <option value="daum.net">daum.net</option>
+              <option value="nate.com">nate.com</option>
+              <option value="hotmail.com">hotmail.com</option>
+              <option value="gmail.com">gmail.com</option>
+              <option value="직접입력">직접입력</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="content">내용:</label>
+        <textarea class="form-control" id="content" rows="5" placeholder="내용을 입력하세요"></textarea>
+      </div>
+      <div class="d-flex justify-content-between">
+          <a href="./notice_login.html" class="btn btn-outline-primary">목록</a>
+        <div>
+            <a href="./notice_login.html" class="btn btn-primary">등록</a>
+            <a href="./notice_login.html" class="btn btn-light">취소</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-4 container-fluid text-white">
+      <div class="row">
+        <div class="col-10 justify-content-center">
+          <div>
+            <div class="footer-content">
+              <div class="footer-section links" style="text-align: left;">
+                <a href="#">홈 | </a></li>
+                <a href="#"> 서비스 |</a></li>
+                <a href="#"> 제품 | </a></li>
+                <a href="#"> 블로그</a></li>
+              </div>
+            </div>
+          </div>
+          <div class="footer-center" style="text-align: left;">
+            <p>더글로리Co.| 대표:백구 | 개인정보보호책임자 : 백구 | 사업자등록번호 : 23-202307121</P>
+            <p>통신판매신고번호 : 2023-직업학교-0711 | 주소 : 서울시 구로구</p>
+          </div>
+          <div class="footer-bottom" style="text-align: left;">
+            <p>저작권 © 더글로리Co. All rights reserved.</p>
+          </div>
+  
+        </div>
+        <div class="col-2" style="text-align: left;">
+          <div id="callcenter">
+            <P>고객센터 : 09 ~ 18시</P>
+          </div>
+          <div id="infors">
+            <p>전화번호 : 032-1587-4824</p>
+            <P>E-MAIL : theGlroy@glroy.com</P>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
