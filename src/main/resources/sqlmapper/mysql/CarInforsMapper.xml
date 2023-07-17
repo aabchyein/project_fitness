@@ -67,4 +67,30 @@
         delete from car_infors
         where CAR_INFOR_ID = #{CAR_INFOR_ID}
     </delete>
+
+    <!-- 검색 with pagination -->
+	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM project_test.car_infors
+        where 1 = 1 
+        <choose>
+            <when test="search == 'YEAR'">
+            <![CDATA[
+            and YEAR > #{words}
+            ]]>
+            </when>
+            <when test="search == 'CAR_NAME'">
+            and CAR_NAME like CONCAT(#{words}, '%')
+            </when>
+        </choose>  
+        limit #{pageBegin}, #{pageScale} 
+        ;
+	</select>
+
+    <!-- total count -->
+	<select id="selectTotal" parameterType="Map" resultType="int">
+        select count(*) as cnt
+        from project_test.car_infors
+        ;
+	</select>
 </mapper>
