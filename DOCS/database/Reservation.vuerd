@@ -164,11 +164,12 @@
         ],
         "ui": {
           "active": false,
-          "left": 206,
-          "top": 99,
-          "zIndex": 103,
+          "left": 196,
+          "top": 154,
+          "zIndex": 107,
           "widthName": 148.40869140625,
-          "widthComment": 60
+          "widthComment": 60,
+          "color": "#FF9800"
         },
         "visible": true,
         "id": "794c3ef8-3048-4522-9113-4de3ffecb20e"
