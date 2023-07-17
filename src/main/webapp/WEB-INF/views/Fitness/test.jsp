@@ -17,7 +17,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <a class="navbar-brand" href="#">
-            <img src="/Image/gym2.png.png" alt="로고" height="100">
+            <img src="/Image/로고2.png.png" alt="로고" height="100">
           </a>
           <!-- 검색창 -->
           <form class="d-flex col-lg-5">
