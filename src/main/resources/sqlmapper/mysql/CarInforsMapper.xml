@@ -64,7 +64,7 @@
 
     <!-- 삭제 -->
     <delete id="delete" parameterType="Map" >
-        delete from car_infors
+        delete from project_test.car_infors
         where CAR_INFOR_ID = #{CAR_INFOR_ID}
     </delete>
 
