@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="./gym.html">
-            <img src="./Image/gym2.png.png" alt="로고" height="80">
+            <img src="/Image/로고2.png" alt="로고" height="80">
         </a>
         <!-- 검색창 -->
         <div class="col-lg-4 text-lg-end">

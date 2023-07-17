@@ -18,7 +18,7 @@
       "relationship": true
     },
     "database": "MySQL",
-    "databaseName": "",
+    "databaseName": "DB_REVIEW",
     "canvasType": "ERD",
     "language": "GraphQL",
     "tableCase": "pascalCase",
@@ -46,6 +46,29 @@
         "name": "REVIEW",
         "comment": "후기",
         "columns": [
+          {
+            "name": "REVIEW_ID",
+            "comment": "리뷰ID",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 73.5126953125,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "a8ec92c7-6714-4f39-b038-da2cbfdfd930"
+          },
           {
             "name": "ID",
             "comment": "아이디",
@@ -140,10 +163,10 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 260,
-          "top": 84.4,
-          "zIndex": 1,
+          "active": true,
+          "left": 83,
+          "top": 73.4,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
