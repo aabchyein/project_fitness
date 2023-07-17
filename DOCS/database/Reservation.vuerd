@@ -47,7 +47,7 @@
         "comment": "예약내역",
         "columns": [
           {
-            "name": "USER_ID",
+            "name": "USERID",
             "comment": "예약ID",
             "dataType": "VARCHAR(50)",
             "default": "",
@@ -163,10 +163,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 206,
           "top": 99,
-          "zIndex": 103,
+          "zIndex": 4,
           "widthName": 148.40869140625,
           "widthComment": 60
         },

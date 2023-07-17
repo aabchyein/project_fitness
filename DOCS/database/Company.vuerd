@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -4.800000114440921,
-    "scrollLeft": 0,
+    "scrollTop": -2.4000000572204607,
+    "scrollLeft": -1.2000000286102301,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -46,6 +46,29 @@
         "name": "COMPANY",
         "comment": "업체정보",
         "columns": [
+          {
+            "name": "COMPANYID",
+            "comment": "업체ID",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 79.76513671875,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "bde552b5-030a-467c-a9c6-c5daa6aebea4"
+          },
           {
             "name": "COMPANY_NAME",
             "comment": "업체명",
@@ -140,10 +163,10 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 202.4,
           "top": 102.4,
-          "zIndex": 42,
+          "zIndex": 13,
           "widthName": 66.76513671875,
           "widthComment": 60
         },

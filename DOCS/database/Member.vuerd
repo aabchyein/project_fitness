@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -4,
-    "scrollLeft": -3,
+    "scrollTop": -218.8000051212313,
+    "scrollLeft": -40.80000097274784,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -18,7 +18,7 @@
       "relationship": true
     },
     "database": "MySQL",
-    "databaseName": "",
+    "databaseName": "DB_MEMBERS",
     "canvasType": "ERD",
     "language": "GraphQL",
     "tableCase": "pascalCase",
@@ -47,29 +47,6 @@
         "comment": "회원정보",
         "columns": [
           {
-            "name": "MEMBER_INFORMATION_ID",
-            "comment": "PK",
-            "dataType": "VARCHAR(50)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": true,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": true,
-              "fk": false,
-              "pfk": false,
-              "widthName": 176.5478515625,
-              "widthComment": 60,
-              "widthDataType": 87.71875,
-              "widthDefault": 60
-            },
-            "id": "d9915b24-00ec-4304-aebd-0ffe07d78bcf"
-          },
-          {
             "name": "NAME",
             "comment": "이름",
             "dataType": "VARCHAR(50)",
@@ -78,7 +55,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -93,22 +70,22 @@
             "id": "62f614cf-5ece-488b-8d6e-fdc6a919ba9a"
           },
           {
-            "name": "USERNAME",
+            "name": "USERID",
             "comment": "회원ID",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
-              "primaryKey": false,
+              "primaryKey": true,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
-              "pk": false,
+              "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 75.67724609375,
+              "widthName": 60,
               "widthComment": 60,
               "widthDataType": 87.71875,
               "widthDefault": 60
@@ -124,7 +101,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -147,7 +124,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -170,7 +147,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -193,7 +170,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -216,7 +193,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -239,7 +216,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -256,9 +233,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 142,
-          "top": 111,
-          "zIndex": 179,
+          "left": 156.4,
+          "top": 277.8,
+          "zIndex": 36,
           "widthName": 156.31787109375,
           "widthComment": 60,
           "color": "#FF9800"
@@ -271,52 +248,6 @@
         "comment": "예약내역",
         "columns": [
           {
-            "name": "MEMBER_INFORMATION_ID",
-            "comment": "FK",
-            "dataType": "VARCHAR(50)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 176.5478515625,
-              "widthComment": 60,
-              "widthDataType": 87.71875,
-              "widthDefault": 60
-            },
-            "id": "b707eb81-b173-4073-81c0-6ace99e4dd0e"
-          },
-          {
-            "name": "RESERVATION HISTORY_ID",
-            "comment": "PK",
-            "dataType": "VARCHAR(50)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": true,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": true,
-              "fk": false,
-              "pfk": false,
-              "widthName": 174.173828125,
-              "widthComment": 60,
-              "widthDataType": 87.71875,
-              "widthDefault": 60
-            },
-            "id": "eb5d4cd9-d9ab-475d-bad9-886f0fffa716"
-          },
-          {
             "name": "RESERVATION_DATE",
             "comment": "예약날짜",
             "dataType": "VARCHAR(50)",
@@ -325,7 +256,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -348,7 +279,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -371,7 +302,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -394,7 +325,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -407,13 +338,36 @@
               "widthDefault": 60
             },
             "id": "d3dde83f-0ba1-4db8-bca1-c60baa0bf515"
+          },
+          {
+            "name": "USERID",
+            "comment": "회원ID",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "b11c3873-5b57-4da6-b8be-662fd24a2cc0"
           }
         ],
         "ui": {
           "active": false,
-          "left": 141,
-          "top": 483,
-          "zIndex": 189,
+          "left": 153,
+          "top": 727.8,
+          "zIndex": 32,
           "widthName": 153.94384765625,
           "widthComment": 60,
           "color": "#2196F3"
@@ -436,24 +390,24 @@
         "start": {
           "tableId": "6e1cad0e-c090-47eb-a35a-5dc0977dd426",
           "columnIds": [
-            "d9915b24-00ec-4304-aebd-0ffe07d78bcf"
+            "d0b7abee-e7c5-487e-b5a6-9e9fe59c65e5"
           ],
-          "x": 391.13330078125,
-          "y": 364.5,
+          "x": 373.157080078125,
+          "y": 510.8,
           "direction": "bottom"
         },
         "end": {
           "tableId": "6bef06c5-4d8a-4df6-8498-29c0c2c91550",
           "columnIds": [
-            "b707eb81-b173-4073-81c0-6ace99e4dd0e"
+            "b11c3873-5b57-4da6-b8be-662fd24a2cc0"
           ],
-          "x": 386.63330078125,
-          "y": 483,
+          "x": 377.3369140625,
+          "y": 727.8,
           "direction": "top"
         },
         "constraintName": "fk_member_information_to_reservation history",
         "visible": true,
-        "id": "6bdb3724-8a29-4422-be60-974be4b859ea"
+        "id": "8675d375-1a09-473d-9930-c9f8f4c9f129"
       }
     ]
   }

@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -14.400000343322763,
-    "scrollLeft": 0,
+    "scrollTop": -39.600000944137584,
+    "scrollLeft": -142.80000340461737,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -189,12 +189,158 @@
           "active": false,
           "left": 234.8,
           "top": 96.4,
-          "zIndex": 1,
+          "zIndex": 40,
           "widthName": 60,
           "widthComment": 83.61181640625
         },
         "visible": true,
         "id": "b191c548-f32a-46e8-8b0b-f1fbb7d0caba"
+      },
+      {
+        "name": "NOTICE",
+        "comment": "공지사항",
+        "columns": [
+          {
+            "name": "ADMIN_ID",
+            "comment": "관리자ID",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 64.1181640625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "3347f687-314c-428b-8c63-a725f67c2914"
+          },
+          {
+            "name": "NOTICE_TITLE",
+            "comment": "공지제목",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 93.736328125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "d20af081-24be-492b-9aff-9a975e37b3ef"
+          },
+          {
+            "name": "NOTICE_CONTENTS",
+            "comment": "공지내용",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 129.841796875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2c30cca1-c7a1-4502-96f0-30e1b530ae09"
+          },
+          {
+            "name": "NOTICE_DATE",
+            "comment": "공지일",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 92.0478515625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "6620be8c-c63a-41fc-a4a1-b17e7d8bfa22"
+          },
+          {
+            "name": "",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c84f9e6b-0f94-48c8-a160-1e883a34d4d3"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 214.4,
+          "top": 416.8,
+          "zIndex": 36,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "d13c8362-3969-4392-9a07-30c223977d19"
+      },
+      {
+        "name": "",
+        "comment": "",
+        "columns": [],
+        "ui": {
+          "active": false,
+          "left": 250,
+          "top": 164.40000034332274,
+          "zIndex": 38,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "60dd8cf2-6f0d-4c48-89ae-a4adafe58daa"
       }
     ],
     "indexes": []
