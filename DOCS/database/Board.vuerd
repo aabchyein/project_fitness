@@ -44,7 +44,7 @@
     "tables": [
       {
         "name": "BOARD",
-        "comment": "게시판 리스트",
+        "comment": "게시판",
         "columns": [
           {
             "name": "NUMBER",
@@ -186,12 +186,12 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 234.8,
-          "top": 96.4,
-          "zIndex": 1,
+          "active": true,
+          "left": 28.8,
+          "top": 192.4,
+          "zIndex": 10,
           "widthName": 60,
-          "widthComment": 83.61181640625
+          "widthComment": 60
         },
         "visible": true,
         "id": "b191c548-f32a-46e8-8b0b-f1fbb7d0caba"
