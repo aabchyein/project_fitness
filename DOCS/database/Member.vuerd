@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -3,
-    "scrollLeft": 0,
+    "scrollTop": -4,
+    "scrollLeft": -3,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -44,7 +44,7 @@
     "tables": [
       {
         "name": "MEMBER_INFORMATION",
-        "comment": "회원정보 ",
+        "comment": "회원정보",
         "columns": [
           {
             "name": "MEMBER_INFORMATION_ID",
@@ -53,13 +53,13 @@
             "default": "",
             "option": {
               "autoIncrement": false,
-              "primaryKey": false,
+              "primaryKey": true,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
-              "pk": false,
+              "pk": true,
               "fk": false,
               "pfk": false,
               "widthName": 176.5478515625,
@@ -67,7 +67,7 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "3151f1c6-df24-49c0-afb3-84ab53b51d1f"
+            "id": "d9915b24-00ec-4304-aebd-0ffe07d78bcf"
           },
           {
             "name": "NAME",
@@ -90,11 +90,11 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "11131952-7552-4b4c-95e3-d0b49e839fd7"
+            "id": "62f614cf-5ece-488b-8d6e-fdc6a919ba9a"
           },
           {
             "name": "USERNAME",
-            "comment": "회원ID(FK)",
+            "comment": "회원ID",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
@@ -109,11 +109,11 @@
               "fk": false,
               "pfk": false,
               "widthName": 75.67724609375,
-              "widthComment": 66.27001953125,
+              "widthComment": 60,
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "296ddae3-cbbb-4e5d-81f3-8eae93446918"
+            "id": "d0b7abee-e7c5-487e-b5a6-9e9fe59c65e5"
           },
           {
             "name": "PASSWORD",
@@ -136,7 +136,7 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "8e0ca31d-882d-4a0e-a5ff-6e059e28db57"
+            "id": "3ed23c70-4ba4-474c-b0f3-a1305d05499d"
           },
           {
             "name": "BIRTHDATE",
@@ -159,7 +159,7 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "3050bfee-3023-4bc5-af82-aa1aeb38fbc3"
+            "id": "0aa27014-cdae-4041-8ee8-03b16c86b859"
           },
           {
             "name": "GENDER",
@@ -182,7 +182,7 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "d5dbce02-f7a2-4dfb-9574-3e18233fd908"
+            "id": "4837ac5d-5b63-4da0-ad6d-733124f7d810"
           },
           {
             "name": "PHONE_NUMBER",
@@ -205,7 +205,7 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "a714f9c3-6bb5-43b8-9196-cbc7d18e6865"
+            "id": "9cf3c470-b652-4f70-ba8d-878f9e0f324e"
           },
           {
             "name": "EMAIL_ADDRESS",
@@ -228,11 +228,11 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "b41b571e-95cf-4c62-a702-c56371d3c635"
+            "id": "2a066ade-0c99-42ae-89a5-9e876f63b24f"
           },
           {
             "name": "ADDRESS",
-            "comment": "주소 ",
+            "comment": "주소",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
@@ -251,51 +251,74 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "31a35b63-f12d-435f-a975-5b728a9c23e4"
+            "id": "d65c65ec-4dd7-4639-95e5-9496555d2a60"
           }
         ],
         "ui": {
           "active": false,
-          "left": 229,
-          "top": 101,
-          "zIndex": 94,
+          "left": 142,
+          "top": 111,
+          "zIndex": 179,
           "widthName": 156.31787109375,
           "widthComment": 60,
           "color": "#FF9800"
         },
         "visible": true,
-        "id": "5fe89d10-65f2-4afe-a847-c41f66f1206e"
+        "id": "6e1cad0e-c090-47eb-a35a-5dc0977dd426"
       },
       {
-        "name": "MEMBERS_LOGIN",
-        "comment": "회원로그인",
+        "name": "RESERVATION HISTORY",
+        "comment": "예약내역",
         "columns": [
           {
-            "name": "MEMBERS_LOGIN_ID",
+            "name": "MEMBER_INFORMATION_ID",
+            "comment": "FK",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 176.5478515625,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "b707eb81-b173-4073-81c0-6ace99e4dd0e"
+          },
+          {
+            "name": "RESERVATION HISTORY_ID",
             "comment": "PK",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
               "autoIncrement": false,
-              "primaryKey": false,
+              "primaryKey": true,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
-              "pk": false,
+              "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 135.6435546875,
+              "widthName": 174.173828125,
               "widthComment": 60,
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "475d382f-fac2-4104-b3aa-3591954196d3"
+            "id": "eb5d4cd9-d9ab-475d-bad9-886f0fffa716"
           },
           {
-            "name": "USERNAME",
-            "comment": "회원ID(FK)",
+            "name": "RESERVATION_DATE",
+            "comment": "예약날짜",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
@@ -309,16 +332,16 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 75.67724609375,
-              "widthComment": 66.27001953125,
+              "widthName": 133.955078125,
+              "widthComment": 60,
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "8ab99f3e-f3ec-45d7-8bbb-6cc88b3e2b59"
+            "id": "b2a3ccc7-3ec7-4b31-9f96-d060e9158de6"
           },
           {
-            "name": "PASSWORD",
-            "comment": "비밀번호",
+            "name": "RESERVATION_TIME",
+            "comment": "예약시간",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
@@ -332,25 +355,71 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 76.876953125,
+              "widthName": 131.3017578125,
               "widthComment": 60,
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "7a53ca43-b57e-4beb-bfc7-bc02c6160156"
+            "id": "fd8f1e4f-fde9-4cc8-b067-f8a187597bb9"
+          },
+          {
+            "name": "NOTES",
+            "comment": "참고사항",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "3cf8867a-b63a-4343-9846-9f10ea4e98ab"
+          },
+          {
+            "name": "CENTER_NAME",
+            "comment": "센터명",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 100.236328125,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "d3dde83f-0ba1-4db8-bca1-c60baa0bf515"
           }
         ],
         "ui": {
           "active": false,
-          "left": 226,
-          "top": 448,
-          "zIndex": 99,
-          "widthName": 115.41357421875,
-          "widthComment": 67,
-          "color": "#4CAF50"
+          "left": 141,
+          "top": 483,
+          "zIndex": 189,
+          "widthName": 153.94384765625,
+          "widthComment": 60,
+          "color": "#2196F3"
         },
         "visible": true,
-        "id": "e1bebc3a-afa6-4073-8bda-8ca778da49be"
+        "id": "6bef06c5-4d8a-4df6-8498-29c0c2c91550"
       }
     ],
     "indexes": []
@@ -359,6 +428,33 @@
     "memos": []
   },
   "relationship": {
-    "relationships": []
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "6e1cad0e-c090-47eb-a35a-5dc0977dd426",
+          "columnIds": [
+            "d9915b24-00ec-4304-aebd-0ffe07d78bcf"
+          ],
+          "x": 391.13330078125,
+          "y": 364.5,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "6bef06c5-4d8a-4df6-8498-29c0c2c91550",
+          "columnIds": [
+            "b707eb81-b173-4073-81c0-6ace99e4dd0e"
+          ],
+          "x": 386.63330078125,
+          "y": 483,
+          "direction": "top"
+        },
+        "constraintName": "fk_member_information_to_reservation history",
+        "visible": true,
+        "id": "6bdb3724-8a29-4422-be60-974be4b859ea"
+      }
+    ]
   }
 }

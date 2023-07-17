@@ -43,12 +43,12 @@
   "table": {
     "tables": [
       {
-        "name": "REVIEW",
-        "comment": "후기",
+        "name": "RESEVATION_HISTORY",
+        "comment": "예약내역",
         "columns": [
           {
-            "name": "ID",
-            "comment": "아이디",
+            "name": "USER_ID",
+            "comment": "예약ID",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
@@ -67,11 +67,11 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "a1f35e01-6aba-472a-a04b-f0e869b89369"
+            "id": "e582eb85-d307-4fd5-af02-07558c6138c7"
           },
           {
-            "name": "COMPANY_NAME",
-            "comment": "업체명",
+            "name": "RESEVATION_DATE",
+            "comment": "예약날짜",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
@@ -85,16 +85,39 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 111.55419921875,
+              "widthName": 124.8017578125,
               "widthComment": 60,
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "45293f66-49bf-43fd-bc90-5e42515c60af"
+            "id": "a312100e-fcca-4005-8b48-b124d586be24"
           },
           {
-            "name": "REVIEW",
-            "comment": "리뷰",
+            "name": "RESEVATION_TIME",
+            "comment": "예약시간",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 122.1484375,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "7b2833ba-2a7f-43e5-8f01-b61adfa68b58"
+          },
+          {
+            "name": "NOTES",
+            "comment": "참고사항",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
@@ -113,11 +136,11 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "6dce0d3c-9e62-4518-900e-8274030cd30c"
+            "id": "1a836d3a-36fc-44b2-b25b-81cd762c981c"
           },
           {
-            "name": "GRADE",
-            "comment": "평점",
+            "name": "CENTER_NAME",
+            "comment": "센터명",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
@@ -131,24 +154,24 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 100.236328125,
               "widthComment": 60,
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
-            "id": "c2189b48-3756-447a-a0a5-8b26b1576d44"
+            "id": "4e43b212-2050-456a-88ce-19d86f10c5f5"
           }
         ],
         "ui": {
           "active": false,
-          "left": 260,
-          "top": 84.4,
-          "zIndex": 1,
-          "widthName": 60,
+          "left": 206,
+          "top": 99,
+          "zIndex": 103,
+          "widthName": 148.40869140625,
           "widthComment": 60
         },
         "visible": true,
-        "id": "14ebcfcf-20de-4d4a-a21e-e12dd2f5c34f"
+        "id": "794c3ef8-3048-4522-9113-4de3ffecb20e"
       }
     ],
     "indexes": []
