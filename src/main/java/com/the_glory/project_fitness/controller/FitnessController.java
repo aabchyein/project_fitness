@@ -26,7 +26,7 @@ public class FitnessController {
     @GetMapping({ "/", "/home", "/main" })
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/test.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
         return modelAndView;
     }
 
