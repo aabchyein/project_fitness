@@ -342,9 +342,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 226,
-          "top": 448,
-          "zIndex": 99,
+          "left": 219,
+          "top": 407,
+          "zIndex": 100,
           "widthName": 115.41357421875,
           "widthComment": 67,
           "color": "#4CAF50"
