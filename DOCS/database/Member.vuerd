@@ -256,8 +256,8 @@
         ],
         "ui": {
           "active": false,
-          "left": 4,
-          "top": 16,
+          "left": 255,
+          "top": 44,
           "zIndex": 3,
           "widthName": 156.31787109375,
           "widthComment": 60,
@@ -387,7 +387,7 @@
           },
           {
             "name": "CENTER_NAME",
-            "comment": "센터명",
+            "comment": "명",
             "dataType": "VARCHAR(50)",
             "default": "",
             "option": {
@@ -410,10 +410,10 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 8,
-          "top": 378,
-          "zIndex": 4,
+          "active": true,
+          "left": 299,
+          "top": 445,
+          "zIndex": 8,
           "widthName": 153.94384765625,
           "widthComment": 60,
           "color": "#2196F3"
@@ -438,8 +438,8 @@
           "columnIds": [
             "d9915b24-00ec-4304-aebd-0ffe07d78bcf"
           ],
-          "x": 253.13330078125,
-          "y": 269.5,
+          "x": 504.13330078125,
+          "y": 297.5,
           "direction": "bottom"
         },
         "end": {
@@ -447,8 +447,8 @@
           "columnIds": [
             "b707eb81-b173-4073-81c0-6ace99e4dd0e"
           ],
-          "x": 253.63330078125,
-          "y": 378,
+          "x": 544.63330078125,
+          "y": 445,
           "direction": "top"
         },
         "constraintName": "fk_member_information_to_reservation history",
