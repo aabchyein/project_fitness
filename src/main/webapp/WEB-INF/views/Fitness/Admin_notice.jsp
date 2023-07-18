@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,39 +15,8 @@
 </head>
 
 <body>
-        <!-- 상단 네비게이션 바 -->
-        <nav class="navbar navbar-expand-lg bg-black">
-            <div class="container">
-                <a class="navbar-brand" href="./gym.html">
-                    <img src="./Image/로고1.png" alt="로고" height="80">
-                </a>
-                <!-- 검색창 -->
-                <div class="col-lg-4 text-lg-end">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./gym.html">홈</a>
-                        </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="./AdminPage.html">관리자</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">로그아웃</a>
-                            <div class="dropdown-menu" aria-labelledby="loginDropdown">
-                                <a class="dropdown-item" href="./Logout.html">로그아웃</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./AdminLogin.html">
-                                <img src="./Image/house.jpg.png"
-                                    style="width: 35px; height: 35px;  margin-top: -0.5em;">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<!-- 상단 네비게이션 바 -->
+<%@ include file="/WEB-INF/views/Fitness/Admin_header.jsp" %>
 
     <div class="container-fluid">
         <!-- 관리자 페이지 content -->
@@ -71,7 +41,7 @@
                 </div>
             </nav>
             <!-- 회원관리 데이터 -->
-            <div class="col-10 mt-5 admin-content">
+            <div class="col-9 mt-5 admin-content">
                 <h1 class="admin-header">공지사항 관리</h1>
                 <div class="admin-table">
                     <table class="table table-bordered">
@@ -167,41 +137,9 @@
         </div>
     </div>
 
-   <!-- Footer -->
-   <footer class="footer container-fluid text-white">
-    <div class="row">
-      <div class="col-10 justify-content-center">
-        <div>
-          <div class="footer-content">
-            <div class="footer-section links" style="text-align: left;">
-              <a href="#">홈 | </a></li>
-              <a href="#"> 서비스 |</a></li>
-              <a href="#"> 제품 | </a></li>
-              <a href="#"> 블로그</a></li>
-            </div>
-          </div>
-        </div>
-        <div class="footer-center" style="text-align: left;">
-          <p>더글로리Co.| 대표:백구 | 개인정보보호책임자 : 백구 | 사업자등록번호 : 23-202307121</P>
-          <p>통신판매신고번호 : 2023-직업학교-0711 | 주소 : 서울시 구로구</p>
-        </div>
-        <div class="footer-bottom" style="text-align: left;">
-          <p>저작권 © 더글로리Co. All rights reserved.</p>
-        </div>
+<!-- footer -->
+<%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
 
-      </div>
-      <div class="col-2" style="text-align: left;">
-        <div id="callcenter">
-          <P>고객센터 : 09 ~ 18시</P>
-        </div>
-        <div id="infors">
-          <p>전화번호 : 032-1587-4824</p>
-          <P>E-MAIL : theGlroy@glroy.com</P>
-        </div>
-      </div>
-    </div>
-  </footer>
-    <script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

@@ -78,7 +78,7 @@
                                 <td><%= record.get("CAR_INFOR_ID") %></td>
                                 <td><%= record.get("COMPANY_ID") %></td>
                                 <td><button class="btn btn-danger" formaction='/carInfor/selectDetail/<%= record.get("CAR_INFOR_ID") %>' formmethod="get" >상세정보</button></td>
-                                <td><button class="btn btn-danger" formaction="/carInfor/deleteAndSelectSearch" formmethod="get">삭제</button></td>
+                                <td><button class="btn btn-danger" formaction="/carInfor/deleteAndSelectSearch" formmethod="get" onclick="alert()">삭제</button></td>
                                 </td>
                             </tr>
                             <!-- 다른 게시글 데이터 추가 -->
