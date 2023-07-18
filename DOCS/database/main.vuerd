@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -94,
-    "scrollLeft": -91,
+    "scrollTop": -137,
+    "scrollLeft": -214,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -172,7 +172,7 @@
         "columns": [
           {
             "id": "e6e1bee5-83ca-473e-b85e-693675b2e37f",
-            "name": "UNIQUE_ID_AUTH_NAMES",
+            "name": "UNIQUE_ID",
             "comment": "접근권한 대표값",
             "dataType": "VARCHAR(200)",
             "default": "",
@@ -187,7 +187,7 @@
               "pk": false,
               "fk": false,
               "pfk": true,
-              "widthName": 168.8671875,
+              "widthName": 72.7890625,
               "widthComment": 96.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
@@ -221,7 +221,7 @@
           "active": false,
           "left": 986.314,
           "top": 47.5,
-          "zIndex": 12,
+          "zIndex": 14,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1830,7 +1830,7 @@
           "columnIds": [
             "e6e1bee5-83ca-473e-b85e-693675b2e37f"
           ],
-          "x": 1250.0278671874999,
+          "x": 1201.9888046874999,
           "y": 157.5,
           "direction": "bottom"
         },
