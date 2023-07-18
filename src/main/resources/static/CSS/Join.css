@@ -15,6 +15,14 @@
   height: 5%;
 }
 
+.required {
+  color: red;
+}
+
+.gender-radio {
+  margin-right: 50px; /* 라디오 버튼 간격을 조절하기 위한 스타일 */
+}
+
 /* Footer 스타일링 */
 .footer {
   background-color: #f8f9fa;
