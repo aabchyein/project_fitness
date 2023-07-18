@@ -1,5 +1,6 @@
 package com.the_glory.project_fitness.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,10 @@ public class MypageController {
     }
 
     @GetMapping("/mypage")
-    public ModelAndView Mypage(@PathVariable Map paramMap, ModelAndView modelAndView) {
+    public ResponseEntity Mypage(@PathVariable Map paramMap, ModelAndView modelAndView) {
         Object result = mypageService.selectDetail(paramMap);
-        
-        return modelAndView;
+        modelAndView.addObject("result", result);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
+        return ResponseEntity.ok().body(result);
     }
 }

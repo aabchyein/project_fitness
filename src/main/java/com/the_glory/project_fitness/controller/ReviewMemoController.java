@@ -8,13 +8,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.the_glory.project_fitness.service.FitnessService;
 
 @Controller
-<<<<<<<< HEAD:src/main/java/com/the_glory/project_fitness/controller/Review_memoController.java
-public class Review_memoController {
-========
+
 
 public class ReviewMemoController {
 
->>>>>>>> 0c83d2a03b0b5ad4598c233976f4043f89ef2a9b:src/main/java/com/the_glory/project_fitness/controller/ReviewMemoController.java
+
     @Autowired
     FitnessService fitnessService;
 

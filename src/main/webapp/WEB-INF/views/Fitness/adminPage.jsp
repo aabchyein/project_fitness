@@ -16,40 +16,8 @@
     </head>
 
     <body class="bg-light">
-        <header>
             <!-- 상단 네비게이션 바 -->
             <%@ include file="/WEB-INF/views/Fitness/Admin_header.jsp" %>
-
-                <!-- 검색창 -->
-                <div class="col-lg-4 text-lg-end">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./gym.html">홈</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="./AdminPage.html">관리자</a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">로그아웃</a>
-                            <div class="dropdown-menu" aria-labelledby="loginDropdown">
-                                <a class="dropdown-item" href="./Logout.html">로그아웃</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./AdminLogin.html">
-                                <img src="./Image/house.jpg.png" alt=""
-                                    style="width: 35px; height: 35px;  margin-top: -0.5em;">
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-                </div>
-                </nav>
-        </header>
 
         <div class="container-fluid">
             <!-- 관리자 페이지 content -->
