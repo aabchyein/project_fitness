@@ -9,45 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous" />
     <link rel="stylesheet" href="./CSS/mainmenu.css">
     <title>리뷰 작성</title>
   </head>
 
   <body>
     <!-- 상단 네비게이션 바 -->
-    <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
-
-      <!-- 검색창 -->
-      <form class="d-flex col-lg-5">
-        <input class="form-control search-input me-2" type="search" placeholder="원하시는 업체명이나 지역을 검색해 보세요"
-          aria-label="Search">
-        <button class="btn btn-outline-success" formaction="./Search.html">검색</button>
-      </form>
-
-      <div class="col-lg-4 text-lg-end">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="./gym.html">홈</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="./Login2.html">예약</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">커뮤니티</a>
-            <div class="dropdown-menu" aria-labelledby="communityDropdown">
-              <a class="dropdown-item" href="./notice.html">게시판</a>
-              <a class="dropdown-item" href="./Review.html">후기</a>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="./Logout.html">로그아웃</a>
-          </li>
-        </ul>
-      </div>
-      </nav>
+    <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
 
       <!-- 리뷰 작성 -->
       <div class="container p-5">

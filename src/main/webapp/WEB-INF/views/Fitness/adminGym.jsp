@@ -14,7 +14,7 @@
 
   <body>
     <!-- 상단 네비게이션 바 -->
-    <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
+    <%@ include file="/WEB-INF/views/Fitness/Admin_header.jsp" %>
 
       <!-- 검색창 -->
       <form class="d-flex col-lg-5">
