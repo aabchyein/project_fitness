@@ -56,11 +56,11 @@ public class CommonService {
         return result;
     }
 
-    public Object selectDetail(String CAR_INFOR_ID) {
+    public Object selectDetail(Map paramMap) {
         // Object getOne(String sqlMapId, Object dataMap)
         String sqlMapId = "Common.selectByUID"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
         HashMap dataMap = new HashMap<>();
-        dataMap.put("CAR_INFOR_ID", CAR_INFOR_ID);
+        dataMap.put("CAR_INFOR_ID", paramMap);
 
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;

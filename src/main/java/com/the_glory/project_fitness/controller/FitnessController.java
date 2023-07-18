@@ -84,7 +84,7 @@ public class FitnessController {
 
     // /selectDetail/CI002
     @GetMapping("/fitnesSelectDetail/{CAR_INFOR_ID}")
-    public ResponseEntity selectDetail(@PathVariable String CAR_INFOR_ID) {
+    public ResponseEntity selectDetail(@PathVariable Map CAR_INFOR_ID) {
         Object result = fitnessService.selectDetail(CAR_INFOR_ID);
         return ResponseEntity.ok().body(result);
     }
