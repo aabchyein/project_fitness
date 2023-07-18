@@ -1,6 +1,7 @@
 package com.the_glory.project_fitness.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,11 @@ public class CarInforsService {
     public Object selectSearch(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap)
         String sqlMapId = "CarInfors.selectSearch";
-
         Object result = sharedDao.getList(sqlMapId, dataMap);
-        return result;
+        // result.put("resultList", this.selectSearch(dataMap));
+        HashMap result1 = new HashMap<>();
+        result1.putAll(this.selectSearchWithPagination(dataMap));
+        return result1;
     }
 
     // 검색(조건-search : YEAR, CAR_NAME)
@@ -43,6 +46,9 @@ public class CarInforsService {
         dataMap.put("words", words);
 
         Object result = sharedDao.getList(sqlMapId, dataMap);
+
+        HashMap result1 = new HashMap<>();
+        result1.putAll(this.selectSearchWithPagination(dataMap));
         return result;
     }
 
@@ -56,15 +62,29 @@ public class CarInforsService {
         return result;
     }
 
-    public Object selectDetail(String CAR_INFOR_ID) {
-        // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "CarInfors.selectByUID"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
-        HashMap dataMap = new HashMap<>();
-        dataMap.put("CAR_INFOR_ID", CAR_INFOR_ID);
+    public Object selectDetail(String CAR_INFOR_ID, Map dataMap) {
+    // Object getOne(String sqlMapId, Object dataMap)
+    String sqlMapId = "CarInfors.selectByUID"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
+    dataMap.put("CAR_INFOR_ID", CAR_INFOR_ID);
 
-        Object result = sharedDao.getOne(sqlMapId, dataMap);
-        return result;
+    Object result = sharedDao.getOne(sqlMapId, dataMap);
+    return result;
     }
+
+    // CAR_INFOR_ID 값에 따른 상세 정보를 가져오는 메소드
+    // public Object selectDetail(HashMap map) {
+    //     // CarInfors.xml에서 작성한 쿼리 ID를 입력
+    //     String sqlMapId = "CarInfors.selectByUID";
+
+    //     // 맵을 이용하여 쿼리에 입력될 CAR_INFOR_ID 값 셋팅
+    //     HashMap dataMap = new HashMap<>();
+    //     dataMap.put("CAR_INFOR_ID", map);
+
+    //     // DAO를 이용하여 데이터 가져오기
+    //     Object result = sharedDao.getOne(sqlMapId, dataMap);
+
+    //     return result;
+    // }
 
     public Object insert(Map dataMap) {
         String sqlMapId = "CarInfors.insert";
@@ -93,9 +113,7 @@ public class CarInforsService {
         // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
         result.put("deleteCount", this.delete(dataMap));
 
-        // sqlMapId = "CarInfors.selectSearch";
-        // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
-        result.put("resultList", this.selectSearch(dataMap));
+        result.putAll(this.selectSearchWithPagination(dataMap));
         return result;
     }
 
@@ -105,9 +123,7 @@ public class CarInforsService {
         // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
         result.put("insertCount", this.insert(dataMap));
 
-        // sqlMapId = "CarInfors.selectSearch";
-        // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
-        result.put("resultList", this.selectSearch(dataMap));
+        result.putAll(this.selectSearchWithPagination(dataMap));
         return result;
     }
 
@@ -115,11 +131,9 @@ public class CarInforsService {
         HashMap result = new HashMap<>();
         // String sqlMapId = "CarInfors.update";
         // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
-        result.put("insertCount", this.update(dataMap));
+        result.put("updateCount", this.update(dataMap));
 
-        // sqlMapId = "CarInfors.selectSearch";
-        // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
-        result.put("resultList", this.selectSearch(dataMap));
+        result.putAll(this.selectSearchWithPagination(dataMap));
         return result;
     }
 
@@ -137,10 +151,10 @@ public class CarInforsService {
     public Map selectSearchWithPagination(Map dataMap) {
         // 페이지 형성 위한 계산
         int totalCount = (int) this.selectTotal(dataMap);
-        
+
         int currentPage = 1;
-        if(dataMap.get("currentPage") != null) {
-            currentPage = Integer.parseInt((String)dataMap.get("currentPage"));    // from client in param
+        if (dataMap.get("currentPage") != null) {
+            currentPage = Integer.parseInt((String) dataMap.get("currentPage")); // from client in param
         }
 
         Paginations paginations = new Paginations(totalCount, currentPage);
@@ -151,7 +165,7 @@ public class CarInforsService {
         String sqlMapId = "CarInfors.selectSearchWithPagination";
         dataMap.put("pageScale", paginations.getPageScale());
         dataMap.put("pageBegin", paginations.getPageBegin());
-        
+
         result.put("resultList", sharedDao.getList(sqlMapId, dataMap)); // 표현된 레코드 정보
         return result;
     }
@@ -161,6 +175,6 @@ public class CarInforsService {
 
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
-    } 
+    }
 
 }

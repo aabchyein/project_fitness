@@ -38,7 +38,7 @@
                             <a href="./AdminPage.html" class="text-decoration-none nav-link">회원 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
-                            <a href="./NoticePage.html" class="text-decoration-none nav-link">게시판 관리</a>
+                            <a href="../Fitness/common_noticePage_test.jsp" class="text-decoration-none nav-link">게시판 관리</a>
                         </li>
                     </ul>
                 </div>
@@ -55,6 +55,12 @@
                                 <th>년도</th>
                                 <th style="width: 27%;">자동차 ID</th>
                                 <th style="width: 10%;">회사 ID</th>
+                                <th>상세정보</th>
+                                <th>삭제</th>
+                                <form>
+                                <th><button class="btn btn-secondary" formaction="/carInfor/insertAndcome" formmethod="get">등록</button></th>
+                                <th><button class="btn btn-secondary" formaction="/carInfor/selectDetail/{CAR_INFOR_ID}" formmethod="get">버튼</button></th>
+                                </form>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,12 +72,12 @@
                             <form >
                                 <input type="hidden" name="CAR_INFOR_ID" value='<%= record.get("CAR_INFOR_ID") %>' id="">
                             <tr>
-                                <td><%= i %></td>
+                                <td><%= i+1 %></td>
                                 <td><%= record.get("CAR_NAME") %></td>
                                 <td><%= record.get("YEAR") %></td>                      
                                 <td><%= record.get("CAR_INFOR_ID") %></td>
                                 <td><%= record.get("COMPANY_ID") %></td>
-                                <th><button class="btn btn-secondary" formaction="/carInfor/insertAndcome" formmethod="get">등록</button></th>
+                                <td><button class="btn btn-danger" formaction='/carInfor/selectDetail/<%= record.get("CAR_INFOR_ID") %>' formmethod="get" >상세정보</button></td>
                                 <td><button class="btn btn-danger" formaction="/carInfor/deleteAndSelectSearch" formmethod="get">삭제</button></td>
                                 </td>
                             </tr>
