@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -261,
-    "scrollLeft": -225,
-    "zoomLevel": 0.8,
+    "scrollTop": -94,
+    "scrollLeft": -91,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -97,7 +97,7 @@
           "active": false,
           "left": 33.75,
           "top": 83.9614,
-          "zIndex": 43,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60
         },
@@ -159,7 +159,7 @@
           "active": false,
           "left": 1080.904,
           "top": 251.5861,
-          "zIndex": 59,
+          "zIndex": 7,
           "widthName": 90.84814453125,
           "widthComment": 67
         },
@@ -170,29 +170,6 @@
         "name": "AUTHS",
         "comment": "권한들",
         "columns": [
-          {
-            "id": "3bcf0247-5ac2-4c8d-aa13-fd1b97fa80bb",
-            "name": "UNIQUE_ID_USERS",
-            "comment": "대표값",
-            "dataType": "VARCHAR(200)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": true,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": true,
-              "fk": false,
-              "pfk": false,
-              "widthName": 124.80810546875,
-              "widthComment": 60,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            }
-          },
           {
             "id": "e6e1bee5-83ca-473e-b85e-693675b2e37f",
             "name": "UNIQUE_ID_AUTH_NAMES",
@@ -244,7 +221,7 @@
           "active": false,
           "left": 986.314,
           "top": 47.5,
-          "zIndex": 54,
+          "zIndex": 12,
           "widthName": 60,
           "widthComment": 60
         },
@@ -329,7 +306,7 @@
           "active": false,
           "left": 88.6587,
           "top": 1004.4767,
-          "zIndex": 46,
+          "zIndex": 3,
           "widthName": 112.51904296875,
           "widthComment": 67
         },
@@ -460,7 +437,7 @@
           "active": false,
           "left": 1559.255859375,
           "top": 499.2063,
-          "zIndex": 61,
+          "zIndex": 9,
           "widthName": 66.76513671875,
           "widthComment": 60
         },
@@ -591,7 +568,7 @@
           "active": false,
           "left": 980.1917,
           "top": 614.2936,
-          "zIndex": 60,
+          "zIndex": 8,
           "widthName": 60,
           "widthComment": 60
         },
@@ -745,7 +722,7 @@
           "active": false,
           "left": 500.94,
           "top": 787.2421,
-          "zIndex": 45,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 83.61181640625
         },
@@ -899,7 +876,7 @@
           "active": false,
           "left": 1061.1174,
           "top": 394.5961,
-          "zIndex": 57,
+          "zIndex": 6,
           "widthName": 93.01904296875,
           "widthComment": 60
         },
@@ -1076,7 +1053,7 @@
           "active": false,
           "left": 30.5355,
           "top": 586.5763,
-          "zIndex": 65,
+          "zIndex": 11,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1299,7 +1276,7 @@
           "active": false,
           "left": 544.8217,
           "top": 272.7709,
-          "zIndex": 56,
+          "zIndex": 5,
           "widthName": 156.31787109375,
           "widthComment": 60
         },
@@ -1614,7 +1591,7 @@
           "active": false,
           "left": 1095.8949,
           "top": 815.9144,
-          "zIndex": 64,
+          "zIndex": 10,
           "widthName": 116.1181640625,
           "widthComment": 60
         },
@@ -1854,7 +1831,7 @@
             "e6e1bee5-83ca-473e-b85e-693675b2e37f"
           ],
           "x": 1250.0278671874999,
-          "y": 178,
+          "y": 157.5,
           "direction": "bottom"
         },
         "constraintName": "",
@@ -1906,7 +1883,7 @@
             "f467c490-e1f5-4c57-8d43-771b394edf11"
           ],
           "x": 986.314,
-          "y": 112.75,
+          "y": 102.5,
           "direction": "left"
         },
         "constraintName": "fk_member_information_to_auths",
