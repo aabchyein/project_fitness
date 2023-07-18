@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>운동 시설 찾아주는 홈페이지</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./CSS/mypage.css">
-  <link rel="stylesheet" href="./CSS/mainmenu.css">
+  <link rel="stylesheet" href="/CSS/mypage.css">
+  <link rel="stylesheet" href="/CSS/mainmenu.css">
 </head>
 
 <body>
@@ -57,7 +57,7 @@
           </tr>
         </table>
         <div class="text-lg-end">
-          <a href="./mypageModify.html" type="submit" class="btn btn-secondary" style="opacity: 0.8;">회원정보수정</a>
+          <a href="/mypageModify.html" type="submit" class="btn btn-secondary" style="opacity: 0.8;">회원정보수정</a>
         </div>
       </div>
       <div class="col-md-8">
