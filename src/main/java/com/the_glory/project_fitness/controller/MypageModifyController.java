@@ -16,7 +16,9 @@ import com.the_glory.project_fitness.service.FitnessService;
 import com.the_glory.project_fitness.service.MypageModifyService;
 
 @Controller
+
 public class MypageModifyController {
+
     @Autowired
     MypageModifyService mypageModifyService;
 

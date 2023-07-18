@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.the_glory.project_fitness.service.CarInforsService;
-import com.the_glory.project_fitness.service.CommonService;
+import com.the_glory.project_fitness.service.NoticeService;
 
 @Controller
+@RequestMapping("/fitness")
 public class NoticeController {
     @Autowired
-    CommonService fitnessService;
+    NoticeService noticeService;
 
     @GetMapping({"/Notice"})
     public ModelAndView main(ModelAndView modelAndView) {
@@ -28,4 +28,19 @@ public class NoticeController {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Notice.jsp");
         return modelAndView;
     }
+
+    @GetMapping({"/NoticeAll"})
+    public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.selectAll(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+        
+        // modelAndView.addObject("params", "result");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice.jsp");
+        return modelAndView;
+    }
+
+
+
+
 }
