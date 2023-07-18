@@ -28,4 +28,5 @@ public class Admin_board {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
         return modelAndView;
     }
+
 }
