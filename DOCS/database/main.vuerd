@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -137,
-    "scrollLeft": -214,
+    "scrollTop": -186,
+    "scrollLeft": -100,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -159,7 +159,7 @@
           "active": false,
           "left": 1080.904,
           "top": 251.5861,
-          "zIndex": 7,
+          "zIndex": 6,
           "widthName": 90.84814453125,
           "widthComment": 67
         },
@@ -221,7 +221,7 @@
           "active": false,
           "left": 986.314,
           "top": 47.5,
-          "zIndex": 14,
+          "zIndex": 11,
           "widthName": 60,
           "widthComment": 60
         },
@@ -300,13 +300,36 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             }
+          },
+          {
+            "name": "BOARD_ID",
+            "comment": "게시판ID",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 68.4599609375,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "46807943-55e1-44a8-a4ba-7dcfeb51bf4d"
           }
         ],
         "ui": {
           "active": false,
-          "left": 88.6587,
-          "top": 1004.4767,
-          "zIndex": 3,
+          "left": 69.6587,
+          "top": 1081.4767,
+          "zIndex": 34,
           "widthName": 112.51904296875,
           "widthComment": 67
         },
@@ -437,7 +460,7 @@
           "active": false,
           "left": 1559.255859375,
           "top": 499.2063,
-          "zIndex": 9,
+          "zIndex": 8,
           "widthName": 66.76513671875,
           "widthComment": 60
         },
@@ -568,7 +591,7 @@
           "active": false,
           "left": 980.1917,
           "top": 614.2936,
-          "zIndex": 8,
+          "zIndex": 7,
           "widthName": 60,
           "widthComment": 60
         },
@@ -581,7 +604,7 @@
         "columns": [
           {
             "id": "8f93b94b-a534-48bb-b805-af44d61281fe",
-            "name": "",
+            "name": "NUMBER",
             "comment": "번호",
             "dataType": "INTEGER",
             "default": "",
@@ -673,7 +696,7 @@
           },
           {
             "id": "2958a294-8125-4142-ac1a-734fecb2fc95",
-            "name": "",
+            "name": "DATE",
             "comment": "날짜",
             "dataType": "VARCHAR(50)",
             "default": "",
@@ -716,13 +739,36 @@
               "widthDataType": 60,
               "widthDefault": 60
             }
+          },
+          {
+            "name": "BOARD_ID",
+            "comment": "게시판ID",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 68.4599609375,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "3e190c84-b47c-4373-8858-754310267890"
           }
         ],
         "ui": {
           "active": false,
           "left": 500.94,
           "top": 787.2421,
-          "zIndex": 2,
+          "zIndex": 31,
           "widthName": 60,
           "widthComment": 83.61181640625
         },
@@ -876,7 +922,7 @@
           "active": false,
           "left": 1061.1174,
           "top": 394.5961,
-          "zIndex": 6,
+          "zIndex": 5,
           "widthName": 93.01904296875,
           "widthComment": 60
         },
@@ -1053,7 +1099,7 @@
           "active": false,
           "left": 30.5355,
           "top": 586.5763,
-          "zIndex": 11,
+          "zIndex": 10,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1276,7 +1322,7 @@
           "active": false,
           "left": 544.8217,
           "top": 272.7709,
-          "zIndex": 5,
+          "zIndex": 4,
           "widthName": 156.31787109375,
           "widthComment": 60
         },
@@ -1591,7 +1637,7 @@
           "active": false,
           "left": 1095.8949,
           "top": 815.9144,
-          "zIndex": 10,
+          "zIndex": 9,
           "widthName": 116.1181640625,
           "widthComment": 60
         },
@@ -1631,30 +1677,6 @@
         "constraintName": "",
         "visible": true,
         "id": "7bc9d742-f20c-42ee-b01b-b347a0188f63"
-      },
-      {
-        "identification": true,
-        "relationshipType": "ZeroN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "987b6a40-e503-4eec-baf4-d85ecdf6e708",
-          "columnIds": [
-            "985f8ac3-fd24-447a-ac1d-108a3cf75f56"
-          ],
-          "x": 556.1264734375,
-          "y": 1069.7267000000002,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "bce1ad28-9eca-453a-91b7-a74a18cb050d",
-          "columnIds": [],
-          "x": 695.049375,
-          "y": 979.2421,
-          "direction": "bottom"
-        },
-        "constraintName": "",
-        "visible": true,
-        "id": "5419e112-3d22-4116-9ec3-9058df42a702"
       },
       {
         "identification": false,
@@ -1889,6 +1911,32 @@
         "constraintName": "fk_member_information_to_auths",
         "visible": true,
         "id": "c909d1dd-c726-4196-abd1-989a20c4ac59"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "bce1ad28-9eca-453a-91b7-a74a18cb050d",
+          "columnIds": [
+            "3e190c84-b47c-4373-8858-754310267890"
+          ],
+          "x": 695.049375,
+          "y": 999.7421,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "987b6a40-e503-4eec-baf4-d85ecdf6e708",
+          "columnIds": [
+            "46807943-55e1-44a8-a4ba-7dcfeb51bf4d"
+          ],
+          "x": 537.1264734375,
+          "y": 1156.9767,
+          "direction": "right"
+        },
+        "constraintName": "fk_board_to_board_answer",
+        "visible": true,
+        "id": "93388df8-44ef-4f68-9eef-ed03d1e5a056"
       }
     ]
   }
