@@ -18,7 +18,7 @@ import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
 
 @Controller
-public class Admin_board {
+public class AdminBoardController {
     @Autowired
     CommonService fitnessService;
 
