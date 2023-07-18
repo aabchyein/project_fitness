@@ -8,14 +8,14 @@ import org.springframework.web.servlet.ModelAndView;
 import com.the_glory.project_fitness.service.FitnessService;
 
 @Controller
-public class  Admin_gym {
+public class Admin_PageController {
     @Autowired
     FitnessService fitnessService;
 
-    @GetMapping({"/adminGym"})
+    @GetMapping({ "/adminPage" })
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/adminGym.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/adminPage.jsp");
         return modelAndView;
     }
 }

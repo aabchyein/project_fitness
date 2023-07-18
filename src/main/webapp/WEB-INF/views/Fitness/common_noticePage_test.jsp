@@ -67,7 +67,7 @@
                             <% 
                             ArrayList resultList = (ArrayList)result.get("resultList");
                             for(int i=0; i < resultList.size(); i=i+1){
-                            HashMap record = (HashMap)resultList.get(i);
+                            ArrayList record = (ArrayList)resultList.get(i);
                             %>
                             <form >
                                 <input type="hidden" name="CAR_INFOR_ID" value='<%= record.get("CAR_INFOR_ID") %>' id="">
@@ -117,7 +117,6 @@
                         <li class="page-item">
                             <a class="page-link" href="/carInfor/selectSearch?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
                         </li>
-
                         <%
                         for(int i=paginations.getBlockStart();i <= paginations.getBlockEnd(); i=i+1){
                         %>

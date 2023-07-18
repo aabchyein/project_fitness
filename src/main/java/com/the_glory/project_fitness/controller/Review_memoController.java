@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.the_glory.project_fitness.service.FitnessService;
 
 @Controller
-public class Review_memo {
+public class Review_memoController {
     @Autowired
     FitnessService fitnessService;
 
