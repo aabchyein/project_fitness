@@ -12,7 +12,7 @@ public class  Admin_gymController {
     @Autowired
     FitnessService fitnessService;
 
-    @GetMapping({"/adminGym"})
+    @GetMapping({"/adminGymDD"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
         modelAndView.setViewName("/WEB-INF/views/Fitness/adminGym.jsp");

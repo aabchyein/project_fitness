@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList" %>
   <!DOCTYPE html>
   <html lang="en">
 
@@ -15,6 +16,11 @@
     <!-- 상단 네비게이션 바 -->
     <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
 
+    <%
+    HashMap params = (HashMap) request.getAttribute("params");
+    String searchStr = (String) params.getOrDefault("search", "");
+    HashMap result = (HashMap) request.getAttribute("result");
+    %>
       <!-- 마이페이지 -->
       <div class="container p-5">
         <h2 class="text-center fw-bold p-3">회원 정보 수정</h2>
@@ -63,7 +69,8 @@
               <div class="mb-3">
                 <label for="inputPhoneNumber" class="form-label">휴대폰번호</label>
                 <div class="input-group">
-                  <input type="tel" class="form-control" id="inputPhoneNumber" name="phonenumber" value=<%=  %>>
+                  <input type="tel" class="form-control" id="inputPhoneNumber" name="phonenumber" value='<%= result.get("PHONE_NUMBER") %>'>
+                  
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <div class="input-group-text">

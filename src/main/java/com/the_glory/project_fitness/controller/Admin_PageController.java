@@ -12,7 +12,7 @@ public class Admin_PageController {
     @Autowired
     FitnessService fitnessService;
 
-    @GetMapping({ "/adminPage" })
+    @GetMapping({ "/adminPageDDD" })
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
         modelAndView.setViewName("/WEB-INF/views/Fitness/adminPage.jsp");
