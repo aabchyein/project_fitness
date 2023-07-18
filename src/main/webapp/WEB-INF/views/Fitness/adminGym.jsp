@@ -16,40 +16,6 @@
     <!-- 상단 네비게이션 바 -->
     <%@ include file="/WEB-INF/views/Fitness/Admin_header.jsp" %>
 
-      <!-- 검색창 -->
-      <form class="d-flex col-lg-5">
-        <input class="form-control search-input me-2" type="search" placeholder="원하시는 업체명이나 지역을 검색해 보세요"
-          aria-label="Search">
-        <button class="btn btn-outline-success" formaction="./Search.html">검색</button>
-      </form>
-
-      <div class="col-lg-4 text-lg-end">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="./gym.html">홈</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="./AdminPage.html">관리자</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="./Join.html">회원가입</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="./AdminLogin.html">
-              <img src="./Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">
-            </a>
-          </li>
-
-
-        </ul>
-      </div>
-      </div>
-      </nav>
-
-
       <!-- Carousel -->
       <div class="carousel-container">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -79,7 +45,6 @@
           </button>
         </div>
       </div>
-
 
       <!-- Footer -->
       <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>

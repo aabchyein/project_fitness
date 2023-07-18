@@ -18,21 +18,25 @@
       <div class="container p-5">
         <h2 class="text-center fw-bold p-3">회원 가입</h2>
         <p class="text-center "><em class="required">*</em> 해당 표시가 돼있는 항목은 필수 입력사항입니다.</p>
-        <form>
+        <form class="m-4">
           <div class="mb-3">
-            <label for="inputName" class="form-label"><em class="required">*</em> 이름</label>
+            <label for="inputName" class="form-label">이름</label>
+            <em class="required" style="color:red">*</em>
             <input type="text" class="form-control" id="inputName" name="name" required>
           </div>
           <div class="mb-3">
-            <label for="inputUsername" class="form-label"><em class="required">*</em> 아이디</label>
+            <label for="inputUsername" class="form-label">아이디</label>
+            <em class="required" style="color:red">*</em>
             <input type="text" class="form-control" id="inputUsername" name="ID" required>
           </div>
           <div class="mb-3">
-            <label for="inputPassword" class="form-label"><em class="required">*</em> 비밀번호</label>
+            <label for="inputPassword" class="form-label">비밀번호</label>
+            <em class="required" style="color:red">*</em>
             <input type="password" class="form-control" id="inputPassword" name="password" required>
           </div>
           <div class="mb-3">
-            <label for="inputConfirmPassword" class="form-label"><em class="required">*</em> 비밀번호 확인</label>
+            <label for="inputConfirmPassword" class="form-label">비밀번호 확인</label>
+            <em class="required" style="color:red">*</em>
             <input type="password" class="form-control" id="inputConfirmPassword" name="confirmpassword" required>
           </div>
           <div class="mb-3">
@@ -69,7 +73,8 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="inputEmail" class="form-label"><em class="required">*</em> 이메일</label>
+              <label for="inputEmail" class="form-label">이메일</label>
+              <em class="required" style="color:red">*</em>
               <div class="input-group">
                 <input type="email" class="form-control" id="inputEmail" name="email" required>
                 <div class="input-group-append">
