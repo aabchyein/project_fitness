@@ -25,24 +25,24 @@ public class BoardMemoController {
 
     @GetMapping({"/boardmemo"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = noticeService.selectSearch(params);
+        Object result = noticeService.selectAll(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
 
         // modelAndView.addObject("params", "result");
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/BoardMemo.jsp");
         return modelAndView;
     }
 
-    @PostMapping("/insertAndSelectSearch")
+    @PostMapping("/memoinsertAndSelectSearch")
     public ModelAndView insertAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = noticeService.insertAndSelectSearch(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeLogin.jsp");
         return modelAndView;
     }
 }
