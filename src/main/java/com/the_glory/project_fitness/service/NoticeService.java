@@ -2,10 +2,12 @@ package com.the_glory.project_fitness.service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.the_glory.project_fitness.UniqueID.UniqueID;
 import com.the_glory.project_fitness.dao.SharedDao;
 import com.the_glory.project_fitness.utils.Paginations;
 
@@ -56,9 +58,9 @@ public class NoticeService {
     }
 
     public Object insertAndSelectSearch(Map dataMap) {
+        // UniqueID uniqueid = new UniqueID();
+        // String uuid = uniqueid.generatUuid();
         HashMap result = new HashMap<>();
-        // String sqlMapId = "Notice.insert";
-        // result.put("insertCount", sharedDao.insert(sqlMapId, dataMap));
         result.put("insertCount", this.insert(dataMap));
 
         result.putAll(this.selectSearchWithPagination(dataMap));

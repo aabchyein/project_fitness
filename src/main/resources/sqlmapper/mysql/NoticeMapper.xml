@@ -39,9 +39,9 @@
     <!-- 입력 -->
 	<insert id="insert" parameterType="Map" >
         insert into db_fitness.notice
-        (NOTICE_TITLE, ID, NOTICE_CONTENTS)
+        (NOTICE_ID, NOTICE_TITLE, ID, NOTICE_DATE, NOTICE_VIEWS, NOTICE_CONTENTS)
         values
-        (#{NOTICE_TITLE}, #{ID}, #{NOTICE_CONTENTS})
+        (#{NOTICE_ID}, #{NOTICE_TITLE}, #{ID}, now(), #{NOTICE_VIEWS}, #{NOTICE_CONTENTS})
     </insert>
 
  </mapper>
