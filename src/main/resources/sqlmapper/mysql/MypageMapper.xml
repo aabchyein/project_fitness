@@ -14,4 +14,22 @@
           and member.ID LIKE 'davids'
       ;
     </select>
+
+    <update id="MypageUpdate" parameterType="Map">
+    update reservation
+    set reservation_date = '2023-12-34',
+        reservation_time = '12:34-56:78',
+        notes = 'hello'
+    where reservation_id = 'reser07'
+    ;
+    </update>
+
+    
+    
+    <delete id="MypageDelete" parameterType="Map">
+    delete
+    from reservation
+    where reservation_id = 'reser07';
+    </delete>
+
 </mapper>

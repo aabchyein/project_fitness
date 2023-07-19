@@ -23,9 +23,9 @@ public class MypageController {
 
     // @GetMapping({ "/mypageconnect" })
     // public ModelAndView main(ModelAndView modelAndView) {
-    //     modelAndView.addObject("name", "bwh");
-    //     modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
-    //     return modelAndView;
+    // modelAndView.addObject("name", "bwh");
+    // modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
+    // return modelAndView;
     // }
 
     @GetMapping("/mypage/{ID}")
@@ -34,12 +34,24 @@ public class MypageController {
         modelAndView.addObject("result", result);
         modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
 
-        // ArrayList arrayList =("result");
-        // for (int i=0 ; i< arrayList.size(); i=i+1) {
-        // ArrayList record = (ArrayList) arrayList.get(i);
-        // }
         return modelAndView;
     }
 
+    @GetMapping("/mypageupdate/{ID}")
+    public ModelAndView Mypageupdate(@PathVariable String ID, @RequestParam Map paramMap, ModelAndView modelAndView) {
+        Object result = mypageService.mypageUpdate(ID, paramMap);
+        modelAndView.addObject("result", result);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
 
+        return modelAndView;
+    }
+
+        @GetMapping("/mypagedelete/{ID}")
+    public ModelAndView Mypagedelete(@PathVariable String ID, @RequestParam Map paramMap, ModelAndView modelAndView) {
+        Object result = mypageService.mypageDelete(ID, paramMap);
+        modelAndView.addObject("result", result);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
+
+        return modelAndView;
+    }
 }
