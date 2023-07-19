@@ -94,7 +94,7 @@ public class CommonController {
 
     // /selectDetail/CI002
     @GetMapping("/SelectDetail/{COMMON_CODE_ID}")
-    public ResponseEntity selectDetail(@PathVariable String CAR_INFOR_ID) {
+    public ResponseEntity selectDetail(@PathVariable Map CAR_INFOR_ID) {
         Object result = commonService.selectDetail(CAR_INFOR_ID);
         return ResponseEntity.ok().body(result);
     }

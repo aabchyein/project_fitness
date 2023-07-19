@@ -76,7 +76,7 @@
         <choose>
             <when test="search == 'YEAR'">
             <![CDATA[
-            and YEAR > #{words}
+            and YEAR > #{words}  
             ]]>
             </when>
             <when test="search == 'CAR_NAME'">
