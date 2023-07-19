@@ -15,6 +15,7 @@ public class AdminBoardService {
    
     @Autowired
     private SharedDao sharedDao;
+    AdminBoardAnswerService adminBoardAnswerService;
 
     // 전체 검색
     public Object selectAll(Map dataMap){
@@ -69,25 +70,25 @@ public class AdminBoardService {
     // }
 
     // MVC view
-    public Object delete(Map dataMap) {
-        String sqlMapId = "AdminBoard.delete";
-        String sqlMapId_1 = "AdminBoardAnswer.delete";
-        Object result = sharedDao.delete(sqlMapId, dataMap);
-        Object result_1 = sharedDao.delete(sqlMapId_1, dataMap);
+    public Object delete(Map params) {
+        String sqlMapId = "AdminBoardAnswer.delete";
+        String sqlMapId_1 = "AdminBoard.delete";
+        Object result = sharedDao.delete(sqlMapId, params);
+        Object result_1 = sharedDao.delete(sqlMapId_1, params);
         return result; 
     }
 
     // MVC view -delete2 
-    public Object deleteAndSelectSearch(Map dataMap, Object BOARD_ID) {
+    public Object deleteAndSelectSearch(Map params) {
         HashMap result = new HashMap<>();
         // String sqlMapId = "CarInfors.delete";
         // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
-        result.put("deleteCount", this.delete(dataMap));
+        result.put("deleteCount", this.delete(params));
 
         // sqlMapId = "CarInfors.selectSearch";
         // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
         
-        result.putAll(this.selectSearchWithPagination(dataMap));
+        // result.putAll(this.selectSearchWithPagination(dataMap));
         return result;
     }
 

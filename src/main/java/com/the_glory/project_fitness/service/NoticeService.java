@@ -72,4 +72,9 @@ public class NoticeService {
         Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
+
+    public Object selectSearch(Map map){
+        Object result = "";
+        return result;
+    }
 }

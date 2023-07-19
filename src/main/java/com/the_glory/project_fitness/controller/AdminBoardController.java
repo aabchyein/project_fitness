@@ -25,12 +25,12 @@ public class AdminBoardController {
     AdminBoardAnswerService adminBoardAnswerService;
 
 
-    @GetMapping({"/AdminBoard"})
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
-        return modelAndView;
-    }
+    // @GetMapping({"/AdminBoard"})
+    // public ModelAndView main(ModelAndView modelAndView) {
+    //     modelAndView.addObject("name", "bwh");
+    //     modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
+    //     return modelAndView;
+    // }
 
     @GetMapping({"/AdminBoardAll"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
@@ -44,13 +44,13 @@ public class AdminBoardController {
     }
 
     @GetMapping("/deleteAndSelectSearch")
-    public ModelAndView deleteAndSelectSearch(@RequestParam Map params, Object BOARD_ID, ModelAndView modelAndView) {
-        Object result = adminBoardService.deleteAndSelectSearch(params,BOARD_ID );
+    public ModelAndView deleteAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = adminBoardService.deleteAndSelectSearch(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
+        modelAndView.setViewName("http://192.168.0.46:8080/fitness/AdminBoardAll");
         return modelAndView;
     }
 }
