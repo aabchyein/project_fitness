@@ -13,14 +13,14 @@
 
 <body>
   <!-- 상단 네비게이션 바 -->
-  <%@ include file="/WEB-INF/views/Fitness/Header.jsp" %>
+  <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
   <!-- Carousel -->
   <div class="carousel-container">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/js/Image/헬스3.jpg" class="d-block w-100" alt="이미지1">
+          <img src="/Image/헬스3.jpg" class="d-block w-100" alt="이미지1">
         </div>
         <div class="carousel-item">
           <img src="/Image/헬스4.jpg" class="d-block w-100" alt="이미지2">

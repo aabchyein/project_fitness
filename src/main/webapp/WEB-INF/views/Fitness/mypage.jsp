@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ page import="java.util.HashMap, java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +15,9 @@
 <body>
   <!-- 상단 네비게이션 바 -->
   <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
-
+  <%
+   
+   %>
   <!-- 마이페이지 -->
   <div class="container p-5">
     <div class="row">
@@ -25,35 +27,35 @@
         <table class="table boder-top">
           <tr>
             <th>이름</th>
-            <td>홍길동</td>
+            <td><%= record.get("NAME") %></td>
           </tr>
           <tr>
             <th>아이디</th>
-            <td>honggildong</td>
+            <td><%= record.get("ID") %></td>
           </tr>
           <tr>
             <th>비밀번호</th>
-            <td>1234</td>
+            <td><%=record.get("PASSWORD")%></td>
           </tr>
           <tr>
             <th>생년월일</th>
-            <td>1995-05-21</td>
+            <td><%=record.get("NAME")%></td>
           </tr>
           <tr>
             <th>성별</th>
-            <td>남자</td>
+            <td><%=record.get("NAME")%></td>
           </tr>
           <tr>
             <th>휴대전화</th>
-            <td>010-0000-0000</td>
+            <td><%=result.get("PHONE_NUMBER")%></td>
           </tr>
           <tr>
             <th>이메일</th>
-            <td>abcde@naver.com</td>
+            <td><%=result.get("EMAIL_ADDRESS")%></td>
           </tr>
           <tr>
             <th>주소</th>
-            <td>서울시 구로구 행복동</td>
+            <td><%=result.get("ADDRESS")%></td>
           </tr>
         </table>
         <div class="text-lg-end">
@@ -76,10 +78,10 @@
         </thead>
         <tbody>
           <tr>
-            <td>2023-07-10</td>
-            <td>10:00 - 11:00</td>
-            <td>센터명 표시</td>
-            <td>참고 내용 표시</td>
+            <td><%= result.get("RESERVATION_DATE") %></td>
+            <td><%= result.get("RESERVATION_TIME") %></td>
+            <td><%= result.get("COMPANY_NAME") %></td>
+            <td><%= result.get("NOTES") %></td>
             <th><button type="submit" class="btn btn-outline-secondary mx-1" style="opacity: 0.8;">수정</button></th>
             <th><button type="submit" class="btn btn-danger mx-1" style="opacity: 0.8;">삭제</button></th>
           </tr>

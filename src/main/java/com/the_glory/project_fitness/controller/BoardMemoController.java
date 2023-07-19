@@ -19,25 +19,30 @@ import com.the_glory.project_fitness.service.CommonService;
 import com.the_glory.project_fitness.service.NoticeService;
 
 @Controller
-public class NoticeLoginController {
+public class BoardMemoController {
     @Autowired
     NoticeService noticeService;
 
-    @GetMapping({"/Noticelogin1"})
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeLogin.jsp");
+    @GetMapping({"/boardmemo"})
+    public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.selectSearch(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        // modelAndView.addObject("params", "result");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
         return modelAndView;
     }
 
-    @GetMapping({"/Noticelogin"})
-    public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = noticeService.selectAll(params);
+    @PostMapping("/insertAndSelectSearch")
+    public ModelAndView insertAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.insertAndSelectSearch(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
-        
-        // modelAndView.addObject("params", "result");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeLogin.jsp");
+
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
         return modelAndView;
     }
 }

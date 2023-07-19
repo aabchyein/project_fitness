@@ -17,19 +17,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.the_glory.project_fitness.service.NoticeService;
 
 @Controller
-@RequestMapping("/fitness")
+@RequestMapping("/notice")
 public class NoticeController {
     @Autowired
     NoticeService noticeService;
 
     @GetMapping({"/Notice"})
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice.jsp");
-        return modelAndView;
-    }
-
-    @GetMapping({"/NoticeAll"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = noticeService.selectAll(params);
         modelAndView.addObject("params", params);
@@ -39,5 +32,13 @@ public class NoticeController {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Notice.jsp");
         return modelAndView;
     }
+
+   @GetMapping({"/LoginFromNotice"})
+    public ModelAndView main(ModelAndView modelAndView) {
+        modelAndView.addObject("name", "bwh");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Login2.jsp");
+        return modelAndView;
+    }
+
 
 }
