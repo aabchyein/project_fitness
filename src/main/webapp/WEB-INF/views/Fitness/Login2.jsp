@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./CSS/Login2.css">
+    <link rel="stylesheet" href="/CSS/Login2.css">
     
 </head>
 
@@ -15,8 +15,8 @@
  
     <section class="login-form">
         <h1>
-            <a href="./gym.html">
-            <img src="./Image/로고2.png" alt="로고" width="100" height="100">
+            <a href="/gym.html">
+            <img src="/Image/로고2.png" alt="로고" width="100" height="100">
           </a>
           
             <span class="brown">F</span>
@@ -29,7 +29,7 @@
             <span class="yellow">M</span>
 
         </h1>
-        <form action="./gym_login.html">
+        <form action="/gym_login.html">
             <div class="int-area">
                 <input type="username" name="id" id="id" autocomplete="off" required>
                 <label for="id">USER NAME</label>
@@ -43,7 +43,7 @@
             </div>
         </form>
         <hr> <!-- 구분선 -->
-        <form action="./Join.html">
+        <form action="/Join.html">
             <div class="btn-area">
                 <button id="signup-btn" type="submit" >회원가입</button> <!-- 회원가입 버튼 -->
             </div>

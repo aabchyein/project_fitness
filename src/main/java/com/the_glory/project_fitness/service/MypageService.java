@@ -15,9 +15,10 @@ public class MypageService {
     @Autowired
     SharedDao sharedDao;
 
-    public Object selectDetail(Map dataMap){
+    public Object selectDetail(String ID, Map dataMap){
         String sqlMapId = "Mypage.MypageDetail";
-        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+
         return result;
     }
 

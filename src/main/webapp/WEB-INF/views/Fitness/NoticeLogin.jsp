@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="./CSS/notice.css">
-    <link rel="stylesheet" href="./CSS/mainmenu.css">
+    <link rel="stylesheet" href="/CSS/notice.css">
+    <link rel="stylesheet" href="/CSS/mainmenu.css">
 
 </head>
 
@@ -86,7 +86,7 @@
      </div>
       <!-- 글작성 버튼 -->
    <div class="container text-end">
-     <a href="./Review_memo.html" class="btn btn-secondary">글작성</a>
+     <a href="/Review_memo.html" class="btn btn-secondary">글작성</a>
    </div>
    </div>
  </div>
