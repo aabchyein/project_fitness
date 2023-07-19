@@ -16,15 +16,27 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
+import com.the_glory.project_fitness.service.NoticeService;
 
 @Controller
 public class NoticeLoginController {
     @Autowired
-    CommonService fitnessService;
+    NoticeService noticeService;
 
-    @GetMapping({"/Noticelogin"})
+    @GetMapping({"/Noticelogin1"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeLogin.jsp");
+        return modelAndView;
+    }
+
+    @GetMapping({"/Noticelogin"})
+    public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.selectAll(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+        
+        // modelAndView.addObject("params", "result");
         modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeLogin.jsp");
         return modelAndView;
     }
