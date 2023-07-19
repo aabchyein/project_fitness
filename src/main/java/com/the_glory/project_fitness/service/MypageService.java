@@ -22,4 +22,17 @@ public class MypageService {
         return result;
     }
 
+    public Object mypageUpdate(String ID, Map dataMap) {
+        String sqlMapId = "Mypage.MypageUpdate";
+        Object result = sharedDao.update(sqlMapId, dataMap);
+
+        return result;
+    }
+
+    public Object mypageDelete(String ID, Map dataMap) {
+        String sqlMapId = "Mypage.MypageDelete";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
+
+        return result;
+    }
 }
