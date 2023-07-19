@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
 
 @Controller
