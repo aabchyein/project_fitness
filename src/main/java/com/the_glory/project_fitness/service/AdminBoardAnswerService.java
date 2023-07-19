@@ -19,7 +19,7 @@ public class AdminBoardAnswerService {
     // 전체 검색
     public Object selectAll(Map dataMap){
         // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "AdminBoard.selectAll";
+        String sqlMapId = "AdminBoardAnswer.selectAll";
         Object result = sharedDao.getList(sqlMapId, dataMap);
         // result.put("resultList", this.selectSearch(dataMap));
         HashMap result1 = new HashMap<>();
@@ -42,7 +42,7 @@ public class AdminBoardAnswerService {
         result.put("paginations", paginations); // 페이지에 대한 정보
 
         // page record 수
-        String sqlMapId = "AdminBoard.selectSearchWithPagination";
+        String sqlMapId = "AdminBoardAnswer.selectSearchWithPagination";
         dataMap.put("pageScale", paginations.getPageScale());
         dataMap.put("pageBegin", paginations.getPageBegin());
 
@@ -53,7 +53,7 @@ public class AdminBoardAnswerService {
     
     // selectTotal 수
     public Object selectTotal(Map dataMap) {
-        String sqlMapId = "AdminBoard.selectTotal";
+        String sqlMapId = "AdminBoardAnswer.selectTotal";
 
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
@@ -69,23 +69,23 @@ public class AdminBoardAnswerService {
     // }
 
     // MVC view
-    public Object delete(Map dataMap){
-        String sqlMapId = "AdminBoard.delete";
-        Object result = sharedDao.delete(sqlMapId, dataMap);
+    public Object delete(Map params){
+        String sqlMapId = "AdminBoardAnswer.delete";
+        Object result = sharedDao.delete(sqlMapId, params);
         return result;
     }
 
     // MVC view -delete2 
-    public Object deleteAndSelectSearch(Map dataMap, Object BOARD_ID) {
+    public Object deleteAndSelectSearch(Map params) {
         HashMap result = new HashMap<>();
         // String sqlMapId = "CarInfors.delete";
         // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
-        result.put("deleteCount", this.delete(dataMap));
+        result.put("deleteCount", this.delete(params));
 
         // sqlMapId = "CarInfors.selectSearch";
         // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
         
-        result.putAll(this.selectSearchWithPagination(dataMap));
+        // result.putAll(this.selectSearchWithPagination(dataMap));
         return result;
     }
 
@@ -93,7 +93,7 @@ public class AdminBoardAnswerService {
 
     // 2PC delete
     public Object deleteDouble(Map dataMap) {
-        String sqlMapId = "AdminBoard.delete";
+        String sqlMapId = "AdminBoardAnswer.delete";
         // sucess
         Object result = sharedDao.insert(sqlMapId, dataMap);
         // error

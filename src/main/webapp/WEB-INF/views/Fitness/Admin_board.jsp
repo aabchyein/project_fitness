@@ -57,19 +57,22 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <form>
+                                <input type="hidden" name="BOARD_ID" value="BOARD01">
                             <tr>
-                                <td>1</td>
-                                <td>김지영</td>
-                                <td>kimjiyoung</td>
-                                <td>기구 관련 질문</td>
-                                <td>미답변</td>
-                                <td>2023-07-01</td>
+                                <td value="1">1</td>
+                                <td name="name">김지영</td>
+                                <td name="ID">kimjiyoung</td>
+                                <td name="title">기구 관련 질문</td>
+                                <td name="content">미답변</td>
+                                <td name="date">2023-07-01</td>
                                 <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
+                                    <button type="submit" class="btn btn-secondary" data-bs-toggle="modal"
                                         data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
+                                    <button class="btn btn-danger" formaction="/fitness/deleteAndSelectSearch" formmethod="get">삭제</button>
                                 </td>
                             </tr>
+                            </form>
                             <!-- 다른 게시글 데이터 추가 -->
                             <tr>
                                 <td>2</td>
@@ -189,6 +192,7 @@
                                     <button class="btn btn-danger">삭제</button>
                                 </td>
                             </tr>
+
                         </tbody>
 
                          </table>

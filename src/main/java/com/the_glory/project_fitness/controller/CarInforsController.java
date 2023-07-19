@@ -41,6 +41,7 @@ public class CarInforsController {
     @GetMapping("/selectInUID")
     public ResponseEntity selectInUID(@RequestBody Map paramMap) {
         Object result = null;
+        
         try {
             result = carInforsService.selectInUID(paramMap);
         } catch (Exception e) {
