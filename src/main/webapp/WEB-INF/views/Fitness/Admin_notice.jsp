@@ -10,8 +10,8 @@
     <title>관리자 게시판 페이지</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./CSS/AdminPage.css">
-    <link rel="stylesheet" href="./CSS/mainmenu.css">
+    <link rel="stylesheet" href="/CSS/AdminPage.css">
+    <link rel="stylesheet" href="/CSS/mainmenu.css">
 </head>
 
 <body>
@@ -25,17 +25,17 @@
                 <div>
                     <ul class="list-unstyled navbar-nav">
                         <li class="d-flex align-items-center">
-                            <a href="./AdminPage.html"
+                            <a href="/AdminPage.html"
                                 class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
                         </li>
                         <li class="d-flex align-items-center">
-                            <a href="./AdminPage.html" class="text-decoration-none nav-link">회원 관리</a>
+                            <a href="/AdminPage.html" class="text-decoration-none nav-link">회원 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
-                            <a href="./Admin_board.html" class="text-decoration-none nav-link">게시판 관리</a>
+                            <a href="/Admin_board.html" class="text-decoration-none nav-link">게시판 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
-                            <a href="./Admin_notice.html" class="text-decoration-none nav-link">공지사항 관리</a>
+                            <a href="/Admin_notice.html" class="text-decoration-none nav-link">공지사항 관리</a>
                         </li>
                     </ul>
                 </div>

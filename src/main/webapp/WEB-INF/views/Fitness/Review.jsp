@@ -8,13 +8,13 @@
   <title>운동 시설 찾아주는 홈페이지</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./CSS/mainmenu.css">
-  <link rel="stylesheet" href="./CSS/reviews.css">
+  <link rel="stylesheet" href="/CSS/mainmenu.css">
+  <link rel="stylesheet" href="/CSS/reviews.css">
 </head>
 <body>
 <!-- 상단 네비게이션 바 -->
   <!-- 상단 네비게이션 바 -->
-  <%@ include file="/WEB-INF/views/Fitness/Header.jsp" %>
+  <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
 
   <!-- 검색 부분 -->
@@ -93,7 +93,7 @@
       </div>
        <!-- 글작성 버튼 -->
     <div class="container text-end">
-      <a href="./Login2.html" class="btn btn-secondary">글작성</a>
+      <a href="/Login2.html" class="btn btn-secondary">글작성</a>
     </div>
     </div>
   </div>

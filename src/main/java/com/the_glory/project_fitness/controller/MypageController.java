@@ -1,5 +1,6 @@
 package com.the_glory.project_fitness.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,18 +21,25 @@ public class MypageController {
     @Autowired
     MypageService mypageService;
 
-    @GetMapping({ "/mypageconnect" })
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
+    // @GetMapping({ "/mypageconnect" })
+    // public ModelAndView main(ModelAndView modelAndView) {
+    //     modelAndView.addObject("name", "bwh");
+    //     modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
+    //     return modelAndView;
+    // }
+
+    @GetMapping("/mypage/{ID}")
+    public ModelAndView Mypage(@PathVariable String ID, @RequestParam Map paramMap, ModelAndView modelAndView) {
+        Object result = mypageService.selectDetail(ID, paramMap);
+        modelAndView.addObject("result", result);
         modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
+
+        // ArrayList arrayList =("result");
+        // for (int i=0 ; i< arrayList.size(); i=i+1) {
+        // ArrayList record = (ArrayList) arrayList.get(i);
+        // }
         return modelAndView;
     }
 
-    @GetMapping("/mypage")
-    public ResponseEntity Mypage(@PathVariable Map paramMap, ModelAndView modelAndView) {
-        Object result = mypageService.selectDetail(paramMap);
-        modelAndView.addObject("result", result);
-        modelAndView.setViewName("/WEB-INF/views/Fitness/mypage.jsp");
-        return ResponseEntity.ok().body(result);
-    }
+
 }

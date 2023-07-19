@@ -18,14 +18,14 @@ import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
 
 @Controller
-public class NoticeMemoController {
+public class BoardMemoController {
     @Autowired
     CommonService fitnessService;
 
-    @GetMapping({"/Noticememo"})
+    @GetMapping({"/boardmemo"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeMemo.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/BoardMemo.jsp");
         return modelAndView;
     }
 }

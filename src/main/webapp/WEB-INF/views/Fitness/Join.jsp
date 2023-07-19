@@ -13,7 +13,7 @@
 
   <body>
     <!-- 상단 네비게이션 바 -->
-    <%@ include file="/WEB-INF/views/Fitness/Header.jsp" %>
+    <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
       <div class="container p-5">
         <h2 class="text-center fw-bold p-3">회원 가입</h2>
