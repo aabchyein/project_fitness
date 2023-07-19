@@ -16,7 +16,7 @@
   <!-- 상단 네비게이션 바 -->
   <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
   <%
-   
+
    %>
   <!-- 마이페이지 -->
   <div class="container p-5">

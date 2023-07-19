@@ -38,7 +38,7 @@
 
     <!-- 입력 -->
 	<insert id="insert" parameterType="Map" >
-        insert into car_infors
+        insert into db_fitness.notice
         (NOTICE_TITLE, ID, NOTICE_CONTENTS)
         values
         (#{NOTICE_TITLE}, #{ID}, #{NOTICE_CONTENTS})
