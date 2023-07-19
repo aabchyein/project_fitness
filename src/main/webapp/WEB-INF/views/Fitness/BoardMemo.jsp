@@ -23,7 +23,7 @@
       </div>
       <div class="form-group">
         <label for="author">작성자:</label>
-        <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
+        <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요" readonly>
       </div>
       
       <div class="form-group">
