@@ -23,7 +23,7 @@
       </div>
       <div class="form-group">
         <label for="author">작성자:</label>
-        <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
+        <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요" readonly>
       </div>
       
       <div class="form-group">
@@ -31,10 +31,10 @@
         <textarea class="form-control" id="content" rows="5" placeholder="내용을 입력하세요"></textarea>
       </div>
       <div class="d-flex justify-content-between">
-          <a href="/notice_login.html" class="btn btn-outline-primary">목록</a>
+          <a href="Noticelogin" class="btn btn-outline-primary">목록</a>
         <div>
-            <a href="/notice_login.html" class="btn btn-primary">등록</a>
-            <a href="/notice_login.html" class="btn btn-light">취소</a>
+            <a href="./notice_login.html" class="btn btn-primary">등록</a>
+            <a href="Noticelogin" class="btn btn-light">취소</a>
         </div>
       </div>
     </form>

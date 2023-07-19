@@ -11,7 +11,7 @@ import com.the_glory.project_fitness.utils.Paginations;
 
 @Service
 
-public class AdminBoardService {
+public class AdminBoardAnswerService {
    
     @Autowired
     private SharedDao sharedDao;
@@ -69,12 +69,10 @@ public class AdminBoardService {
     // }
 
     // MVC view
-    public Object delete(Map dataMap) {
+    public Object delete(Map dataMap){
         String sqlMapId = "AdminBoard.delete";
-        String sqlMapId_1 = "AdminBoardAnswer.delete";
         Object result = sharedDao.delete(sqlMapId, dataMap);
-        Object result_1 = sharedDao.delete(sqlMapId_1, dataMap);
-        return result; 
+        return result;
     }
 
     // MVC view -delete2 

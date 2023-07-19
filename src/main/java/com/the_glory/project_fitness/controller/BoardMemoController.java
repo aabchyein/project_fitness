@@ -16,16 +16,33 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
+import com.the_glory.project_fitness.service.NoticeService;
 
 @Controller
 public class BoardMemoController {
     @Autowired
-    CommonService fitnessService;
+    NoticeService noticeService;
 
     @GetMapping({"/boardmemo"})
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/BoardMemo.jsp");
+    public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.selectSearch(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        // modelAndView.addObject("params", "result");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
+        return modelAndView;
+    }
+
+    @PostMapping("/insertAndSelectSearch")
+    public ModelAndView insertAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.insertAndSelectSearch(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
         return modelAndView;
     }
 }

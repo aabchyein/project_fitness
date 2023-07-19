@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,8 @@
 
  <!-- 게시판 하단 -->
 
+ <% HashMap params=(HashMap) request.getAttribute("params"); String searchStr=(String)
+    params.getOrDefault("search", "" ); HashMap result=(HashMap) request.getAttribute("result"); %>
  <h1 style="text-align: center; margin-top: 1cm; margin-bottom: 1cm;"><strong>게시판</strong></h1>
  <div class="container">
    <div class="row justify-content-center">
@@ -31,9 +34,9 @@
          <div class="input-group-prepend">
            <select class="btn btn-outline-secondary custom-select" type="button" id="search-option">
             <option value="choose">선택</option>
-            <option value="title">제목</option>
-            <option value="content">내용</option>
-            <option value="author">작성자</option>
+            <option value="NOTICE_TITLE" <%=(searchStr.equals("NOTICE_TITLE")) ? "selected" : "" %>>제목</option>
+            <option value="NOTICE_CONTENTS" <%=(searchStr.equals("NOTICE_CONTENTS")) ? "selected" : "" %>>내용</option>
+            <option value="ID" <%=(searchStr.equals("ID")) ? "selected" : "" %>>작성자</option>
            </select>
          </div>
          <input type="text" class="form-control" placeholder="검색어를 입력하세요" id="search-input">
@@ -60,55 +63,64 @@
            </tr>
          </thead>
          <tbody>
-           <tr>
-             <td>1</td>
-             <td>축하드립니다.</td>
-             <td>ADMIN</td>
-             <td>2023.07.11</td>
-             <td>143</td>
-           </tr>
-           <tr>
-             <td>2</td>
-             <td>관계자님!!! </td>
-             <td>ADMIN</td>
-             <td>2023.07.11</td>
-             <td>300</td>
-           </tr>
-           <tr>
-             <td>3</td>
-             <td>홈페이지 개설 축하합니다 </td>
-             <td>ADMIN</td>
-             <td>2023.07.11</td>
-             <td>250</td>
-           </tr>
+          <% ArrayList resultList=(ArrayList)result.get("resultList"); for(int i=0; i < resultList.size();
+          i=i+1){ HashMap record=(HashMap)resultList.get(i); %>
+          <tr>
+            <td>
+              <%= i+1 %>
+            </td>
+            <td>
+              <%= record.get("NOTICE_TITLE") %>
+            </td>
+            <td>
+              <%= record.get("ID") %>
+            </td>
+            <td>
+              <%= record.get("NOTICE_DATE") %>
+            </td>
+            <td>
+              <%= record.get("NOTICE_VIEWS") %>
+            </td>
+          </tr>
+          <% } %>
          </tbody>
        </table>
      </div>
       <!-- 글작성 버튼 -->
    <div class="container text-end">
-     <a href="/Review_memo.html" class="btn btn-secondary">글작성</a>
+     <a href="/boardmemo" class="btn btn-secondary">글작성</a>
    </div>
    </div>
  </div>
 
 <!-- 페이지 넘어가는 표시 -->
+<% Paginations paginations=(Paginations)result.get("paginations"); %>
+<div>총 갯수 : <%= paginations.getTotalCount() %>
 <div class="text-center mt-4">
    <ul class="pagination justify-content-center">
        <li class="page-item">
-           <a class="page-link" href="#" aria-label="Previous">
+        <a class="page-link"
+        href="/Noticelogin?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
                <span aria-hidden="true">&lt;</span>
            </a>
-       </li>
-       <li class="page-item"><a class="page-link" href="#">1</a></li>
-       <li class="page-item"><a class="page-link" href="#">2</a></li>
-       <li class="page-item"><a class="page-link" href="#">3</a></li>
-       <li class="page-item">
-           <a class="page-link" href="#" aria-label="Next">
-               <span aria-hidden="true">&gt;</span>
-           </a>
-       </li>
-   </ul>
-</div>
+          </li>
+          <% 
+          for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd(); i=i+1){ 
+          %>
+            <li class="page-item">
+              <a class="page-link" href="/Noticelogin?currentPage=<%= i %>"><%= i %></a>
+            </li>
+            <% } %>
+              <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+              <li class="page-item">
+                <a class="page-link" href="/Noticelogin?currentPage=<%= paginations.getNextPage() %>">Next</a>
+                  <span aria-hidden="true">&gt;</span>
+                </a>
+              </li>
+        </ul>
+      </div>
 
   <!-- footer -->
   <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>

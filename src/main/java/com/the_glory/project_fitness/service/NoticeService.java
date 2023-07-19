@@ -54,4 +54,20 @@ public class NoticeService {
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
     }
+
+    public Object insertAndSelectSearch(Map dataMap) {
+        HashMap result = new HashMap<>();
+        // String sqlMapId = "Notice.insert";
+        // result.put("insertCount", sharedDao.insert(sqlMapId, dataMap));
+        result.put("insertCount", this.insert(dataMap));
+
+        result.putAll(this.selectSearchWithPagination(dataMap));
+        return result;
+    }
+
+    public Object insert(Map dataMap) {
+        String sqlMapId = "Notice.insert";
+        Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
 }

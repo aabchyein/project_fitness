@@ -14,29 +14,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.the_glory.project_fitness.service.NoticeService;
+import com.the_glory.project_fitness.service.AdminBoardAnswerService;
+import com.the_glory.project_fitness.service.AdminBoardService;
 
 @Controller
 @RequestMapping("/fitness")
 public class AdminBoardController {
     @Autowired
-    NoticeService AdminBoardService;
+    AdminBoardService adminBoardService;
+    AdminBoardAnswerService adminBoardAnswerService;
+
 
     @GetMapping({"/AdminBoard"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/AdminBoard.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
         return modelAndView;
     }
 
     @GetMapping({"/AdminBoardAll"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = AdminBoardService.selectAll(params);
+        Object result = adminBoardService.selectAll(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
         
-        // modelAndView.addObject("params", "result");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/AdminBoard.jsp");
+        modelAndView.addObject("params", "result");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
+        return modelAndView;
+    }
+
+    @GetMapping("/deleteAndSelectSearch")
+    public ModelAndView deleteAndSelectSearch(@RequestParam Map params, Object BOARD_ID, ModelAndView modelAndView) {
+        Object result = adminBoardService.deleteAndSelectSearch(params,BOARD_ID );
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
         return modelAndView;
     }
 }
+
