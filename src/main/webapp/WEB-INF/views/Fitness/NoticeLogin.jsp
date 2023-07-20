@@ -88,7 +88,7 @@
      </div>
       <!-- 글작성 버튼 -->
    <div class="container text-end">
-     <a href="/Review_memo.html" class="btn btn-secondary">글작성</a>
+     <a href="/boardmemo" class="btn btn-secondary">글작성</a>
    </div>
    </div>
  </div>
@@ -100,7 +100,7 @@
    <ul class="pagination justify-content-center">
        <li class="page-item">
         <a class="page-link"
-        href="/noticelogin1?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
+        href="/Noticelogin?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
                <span aria-hidden="true">&lt;</span>
            </a>
           </li>
@@ -108,14 +108,14 @@
           for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd(); i=i+1){ 
           %>
             <li class="page-item">
-              <a class="page-link" href="/noticelogin1?currentPage=<%= i %>"><%= i %></a>
+              <a class="page-link" href="/Noticelogin?currentPage=<%= i %>"><%= i %></a>
             </li>
             <% } %>
               <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
               <li class="page-item"><a class="page-link" href="#">3</a></li> -->
               <li class="page-item">
-                <a class="page-link" href="/noticelogin1?currentPage=<%= paginations.getNextPage() %>">Next</a>
+                <a class="page-link" href="/Noticelogin?currentPage=<%= paginations.getNextPage() %>">Next</a>
                   <span aria-hidden="true">&gt;</span>
                 </a>
               </li>

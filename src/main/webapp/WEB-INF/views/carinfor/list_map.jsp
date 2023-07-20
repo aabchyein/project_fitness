@@ -44,7 +44,7 @@
                             <h2>Search</h2>
                             <div class="input-group mb-3">
                                 <form action="/common/SelectSearch" method="get">
-                                    <select class="form-select" name="search">
+                                    <select class="form-select" name="search" type="button">
                                         <option>Select an option...</option>
                                         <option value="COMMON_CODE_ID" <%=(searchStr.equals("COMMON_CODE_ID")) ? "selected" : "" %>>COMMON_CODE_ID</option>
                                         <option value="NAME" <%=(searchStr.equals("NAME")) ? "selected" : "" %>>NAME</option>

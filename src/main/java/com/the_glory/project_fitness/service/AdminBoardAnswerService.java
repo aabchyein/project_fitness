@@ -11,16 +11,15 @@ import com.the_glory.project_fitness.utils.Paginations;
 
 @Service
 
-public class AdminBoardService {
+public class AdminBoardAnswerService {
    
     @Autowired
     private SharedDao sharedDao;
-    AdminBoardAnswerService adminBoardAnswerService;
 
     // 전체 검색
     public Object selectAll(Map dataMap){
         // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "AdminBoard.selectAll";
+        String sqlMapId = "AdminBoardAnswer.selectAll";
         Object result = sharedDao.getList(sqlMapId, dataMap);
         // result.put("resultList", this.selectSearch(dataMap));
         HashMap result1 = new HashMap<>();
@@ -43,7 +42,7 @@ public class AdminBoardService {
         result.put("paginations", paginations); // 페이지에 대한 정보
 
         // page record 수
-        String sqlMapId = "AdminBoard.selectSearchWithPagination";
+        String sqlMapId = "AdminBoardAnswer.selectSearchWithPagination";
         dataMap.put("pageScale", paginations.getPageScale());
         dataMap.put("pageBegin", paginations.getPageBegin());
 
@@ -54,7 +53,7 @@ public class AdminBoardService {
     
     // selectTotal 수
     public Object selectTotal(Map dataMap) {
-        String sqlMapId = "AdminBoard.selectTotal";
+        String sqlMapId = "AdminBoardAnswer.selectTotal";
 
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;
@@ -70,12 +69,10 @@ public class AdminBoardService {
     // }
 
     // MVC view
-    public Object delete(Map params) {
+    public Object delete(Map params){
         String sqlMapId = "AdminBoardAnswer.delete";
-        String sqlMapId_1 = "AdminBoard.delete";
         Object result = sharedDao.delete(sqlMapId, params);
-        Object result_1 = sharedDao.delete(sqlMapId_1, params);
-        return result; 
+        return result;
     }
 
     // MVC view -delete2 
@@ -96,7 +93,7 @@ public class AdminBoardService {
 
     // 2PC delete
     public Object deleteDouble(Map dataMap) {
-        String sqlMapId = "AdminBoard.delete";
+        String sqlMapId = "AdminBoardAnswer.delete";
         // sucess
         Object result = sharedDao.insert(sqlMapId, dataMap);
         // error

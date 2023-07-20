@@ -16,16 +16,33 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
+import com.the_glory.project_fitness.service.NoticeService;
 
 @Controller
 public class BoardMemoController {
     @Autowired
-    CommonService fitnessService;
+    NoticeService noticeService;
 
     @GetMapping({"/boardmemo"})
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
+    public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.selectAll(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        // modelAndView.addObject("params", "result");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         modelAndView.setViewName("/WEB-INF/views/Fitness/BoardMemo.jsp");
+        return modelAndView;
+    }
+
+    @PostMapping("/memoinsertAndSelectSearch")
+    public ModelAndView insertAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.insertAndSelectSearch(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeLogin.jsp");
         return modelAndView;
     }
 }

@@ -20,7 +20,7 @@ import com.the_glory.project_fitness.service.CommonService;
 @Controller
 public class SearchLoginController {
     @Autowired
-    CommonService fitnessService;
+    CommonService commonService;
 
     @GetMapping({"/Searchlogin"})
     public ModelAndView main(ModelAndView modelAndView) {

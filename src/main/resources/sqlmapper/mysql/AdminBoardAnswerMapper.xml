@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AdminBoardAnswer">
+
+    <!-- 전체 -->
+	<select id="selectAll" parameterType="Map" resultType="Map">
+        SELECT NUMBER, ID ,TITLE,CONTENTS,VIEWS
+        FROM db_fitness.board
+        WHERE 1 = 1 ;  
+	</select>
+
+
+    <!-- Answer 삭제 -->
+    <delete id="delete" parameterType="Map">
+       DELETE FROM db_fitness.board_answer
+       WHERE BOARD_ANSWER_ID = #{BOARD_ANSWER_ID}
+    </delete>
+
+
+    <!-- 검색 with pagination -->
+	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM db_fitness.board
+        WHERE 1 = 1
+        <choose>
+            <when test="search == 'ID'">
+            and ID like CONCAT(#{words}, '%')
+            </when>
+            <when test="search == 'TITLE'">
+            and TITLE like CONCAT(#{words}, '%')
+            </when>
+        </choose>  
+        limit #{pageBegin}, #{pageScale} 
+        ;
+	</select>
+
+    <!-- total count -->
+	<select id="selectTotal" parameterType="Map" resultType="int">
+        select count(*) as cnt
+        from db_fitness.board
+        ;
+	</select>
+
+ </mapper>

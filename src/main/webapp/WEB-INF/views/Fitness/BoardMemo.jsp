@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.UniqueID.UniqueID" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -16,25 +18,33 @@
 
   <div class="container mt-5">
     <h2>고객게시판</h2>
-    <form>
+    <form  method="post">
+      <% UniqueID uniqueid = new UniqueID();
+      String uuid = uniqueid.generatUuid(); %>
+      <input type="hidden" name="NOTICE_ID" value="<%= uuid %>">
       <div class="form-group">
         <label for="title">제목:</label>
-        <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
+        <input type="text" class="form-control" name="NOTICE_TITLE" id="title" placeholder="제목을 입력하세요">
       </div>
       <div class="form-group">
-        <label for="author">작성자:</label>
-        <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요" readonly>
+        <label for="author" >작성자:</label>
+        <input type="text" class="form-control" name="ID" id="author" placeholder="작성자를 입력하세요" >
       </div>
-      
+      <div>
+        <input type="hidden" name="NOTICE_DATE">
+      </div>
+      <div>
+        <input type="hidden" name="NOTICE_VIEWS" value="0">
+      </div>
       <div class="form-group">
         <label for="content">내용:</label>
-        <textarea class="form-control" id="content" rows="5" placeholder="내용을 입력하세요"></textarea>
+        <textarea class="form-control" name="NOTICE_CONTENTS" id="content" rows="5" placeholder="내용을 입력하세요"></textarea>
       </div>
       <div class="d-flex justify-content-between">
-          <a href="noticelogin" class="btn btn-outline-primary">목록</a>
+          <a href="/Noticelogin" class="btn btn-outline-primary">목록</a>
         <div>
-            <a href="./notice_login.html" class="btn btn-primary">등록</a>
-            <a href="noticelogin" class="btn btn-light">취소</a>
+            <button type="submit" class="btn btn-primary" formaction="/memoinsertAndSelectSearch" formmethod="post">등록</button>
+            <a href="/Noticelogin" class="btn btn-light">취소</a>
         </div>
       </div>
     </form>
