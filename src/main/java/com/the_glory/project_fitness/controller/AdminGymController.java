@@ -16,7 +16,7 @@ public class  AdminGymController {
     @GetMapping({"/adminGym"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/adminGym.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminGym.jsp");
         return modelAndView;
     }
 }

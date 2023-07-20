@@ -29,14 +29,14 @@ public class NoticeController {
         modelAndView.addObject("result", result);
         
         // modelAndView.addObject("params", "result");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/Notice.jsp");
         return modelAndView;
     }
 
    @GetMapping({"/LoginFromNotice"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Login2.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Login/Login2.jsp");
         return modelAndView;
     }
 

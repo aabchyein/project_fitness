@@ -17,7 +17,7 @@ public class ReviewMemoController {
     @GetMapping({"/Reviewmemo"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Review_memo.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Review/Review_memo.jsp");
         return modelAndView;
     }
 }

@@ -27,7 +27,7 @@ public class SearchController {
     @GetMapping({"/Search"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Search.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Search/Search.jsp");
         return modelAndView;
     }
 }

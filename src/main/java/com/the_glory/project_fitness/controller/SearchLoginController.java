@@ -25,7 +25,7 @@ public class SearchLoginController {
     @GetMapping({"/Searchlogin"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/SearchLogin.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness//Search/SearchLogin.jsp");
         return modelAndView;
     }
 }

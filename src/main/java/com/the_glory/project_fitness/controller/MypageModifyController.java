@@ -25,7 +25,7 @@ public class MypageModifyController {
     @GetMapping({ "/mypageModify" })
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/mypageModify.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Mypage/mypageModify.jsp");
         return modelAndView;
     }
 
@@ -37,7 +37,7 @@ public class MypageModifyController {
         ModelAndView.addObject("result", result);   
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        ModelAndView.setViewName("/WEB-INF/views/Fitness/mypageModify.jsp");
+        ModelAndView.setViewName("/WEB-INF/views/Fitness/Mypage/mypageModify.jsp");
         return ModelAndView;
     }
 

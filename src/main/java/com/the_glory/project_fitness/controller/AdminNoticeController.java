@@ -24,7 +24,7 @@ public class AdminNoticeController {
     @GetMapping({"/Adminnotice"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_notices.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_notices.jsp");
         return modelAndView;
     }
 }

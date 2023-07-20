@@ -15,7 +15,7 @@ public class MypageService {
     @Autowired
     SharedDao sharedDao;
 
-    public Object selectDetail(String ID, Map dataMap){
+    public Object selectDetail(Map dataMap){
         String sqlMapId = "Mypage.MypageDetail";
         Object result = sharedDao.getList(sqlMapId, dataMap);
 

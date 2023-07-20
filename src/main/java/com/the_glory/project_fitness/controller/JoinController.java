@@ -27,7 +27,7 @@ public class JoinController {
     @GetMapping({"/Join"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Join.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Join/Fitness/Join.jsp");
         return modelAndView;
     }
 }

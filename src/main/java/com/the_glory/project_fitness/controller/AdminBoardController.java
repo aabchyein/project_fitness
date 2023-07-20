@@ -39,7 +39,7 @@ public class AdminBoardController {
         modelAndView.addObject("result", result);
         
         modelAndView.addObject("params", "result");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
         return modelAndView;
     }
 
@@ -50,7 +50,7 @@ public class AdminBoardController {
         modelAndView.addObject("result", result);
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
         return modelAndView;
     }
 }
