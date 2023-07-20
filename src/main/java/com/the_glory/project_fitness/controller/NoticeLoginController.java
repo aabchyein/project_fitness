@@ -26,7 +26,7 @@ public class NoticeLoginController {
     @GetMapping({"/Noticelogin1"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeLogin.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeLogin.jsp");
         return modelAndView;
     }
 
@@ -37,7 +37,7 @@ public class NoticeLoginController {
         modelAndView.addObject("result", result);
         
         // modelAndView.addObject("params", "result");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeLogin.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeLogin.jsp");
         return modelAndView;
     }
 }

@@ -25,7 +25,7 @@ public class ReviewController {
     @GetMapping({"/Review"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Review.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Review/Review.jsp");
         return modelAndView;
     }
 }

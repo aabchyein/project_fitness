@@ -22,12 +22,12 @@ public class MypageModifyController {
     @Autowired
     MypageModifyService mypageModifyService;
 
-    // @GetMapping({ "/mypageModify" })
-    // public ModelAndView main(ModelAndView modelAndView) {
-    //     modelAndView.addObject("name", "bwh");
-    //     modelAndView.setViewName("/WEB-INF/views/Fitness/mypageModify.jsp");
-    //     return modelAndView;
-    // }
+    @GetMapping({ "/mypageModify" })
+    public ModelAndView main(ModelAndView modelAndView) {
+        modelAndView.addObject("name", "bwh");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Mypage/mypageModify.jsp");
+        return modelAndView;
+    }
 
     // /carInfor/selectDetail/{CAR_INFOR_ID} 경로로 GET 요청이 들어오면 실행되는 메소드
     @GetMapping("/selectDetail/{ID}")
@@ -37,7 +37,7 @@ public class MypageModifyController {
         ModelAndView.addObject("result", result);   
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        ModelAndView.setViewName("/WEB-INF/views/Fitness/mypageModify.jsp");
+        ModelAndView.setViewName("/WEB-INF/views/Fitness/Mypage/mypageModify.jsp");
         return ModelAndView;
     }
 

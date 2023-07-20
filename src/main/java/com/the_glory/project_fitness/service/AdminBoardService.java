@@ -69,7 +69,7 @@ public class AdminBoardService {
     //     return result;
     // }
 
-    // MVC view
+    // MVC  view- delete1 
     public Object delete(Map params) {
         String sqlMapId = "AdminBoardAnswer.delete";
         String sqlMapId_1 = "AdminBoard.delete";
@@ -103,6 +103,27 @@ public class AdminBoardService {
         result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
+
+    // MVC view -insertAndSelectSearch(등록)
+    public Object insertAndSelectSearch(Map dataMap) {
+        // UniqueID uniqueid = new UniqueID();
+        // String uuid = uniqueid.generatUuid();
+        HashMap result = new HashMap<>();
+        result.put("insertCount", this.insert(dataMap));
+
+        result.putAll(this.selectSearchWithPagination(dataMap));
+        return result;
+    }
+    
+    // MVC view -insert(등록)
+    public Object insert(Map dataMap) {
+        String sqlMapId = "AdminBoard.insert";
+        Object result = sharedDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+
+
 
 
 }

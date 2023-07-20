@@ -50,6 +50,7 @@
                             <tr>
                                 <th >번호</th>
                                 <th >아이디</th>
+                                <th >시설명</th>
                                 <th >제목</th>
                                 <th >내용</th>
                                 <th >등록일</th>
@@ -69,6 +70,7 @@
                             <tr>
                                 <td name="number"><%= i+1 %></td>
                                 <td name="ID"><%= record.get("ID") %></td>
+                                <td name="center"><%= record.get("CENTER") %></td>
                                 <td name="title"><%= record.get("TITLE") %></td>
                                 <td name="content"><%= record.get("CONTENTS") %></td>
                                 <td name="date"><%= record.get("DATE") %></td>
@@ -129,15 +131,8 @@
                             <label for="name" class="form-label">작성자</label>
                             <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요">
                         </div>
-                        <div class="mb-3">
-                            <label for="date" class="form-label">작성일자</label>
-                            <input type="date" class="form-control" id="date">
-                        </div>
-                        <div class="mb-3">
-                            <label for="title" class="form-label">제목</label>
-                            <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
-                        </div>
-                        <div class="mb-3">
+                       
+                         <div class="mb-3">
                             <label for="question" class="form-label">질문 내용</label>
                             <textarea class="form-control" id="question" rows="3" placeholder="질문 내용을 입력하세요"></textarea>
                         </div>

@@ -31,7 +31,7 @@ public class BoardMemoController {
 
         // modelAndView.addObject("params", "result");
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/BoardMemo.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Board/BoardMemo.jsp");
         return modelAndView;
     }
 
@@ -42,7 +42,7 @@ public class BoardMemoController {
         modelAndView.addObject("result", result);
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/NoticeLogin.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeLogin.jsp");
         return modelAndView;
     }
 }

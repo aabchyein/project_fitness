@@ -32,6 +32,7 @@ public class AdminBoardController {
     //     return modelAndView;
     // }
 
+    // 전체 화면  
     @GetMapping({"/AdminBoardAll"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = adminBoardService.selectAll(params);
@@ -39,10 +40,11 @@ public class AdminBoardController {
         modelAndView.addObject("result", result);
         
         modelAndView.addObject("params", "result");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
         return modelAndView;
     }
-
+    
+    // delete 삭제 버튼 
     @GetMapping("/deleteAndSelectSearch")
     public ModelAndView deleteAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = adminBoardService.deleteAndSelectSearch(params);
@@ -50,8 +52,16 @@ public class AdminBoardController {
         modelAndView.addObject("result", result);
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
         return modelAndView;
     }
+
+       // insert 답변 등록 버튼 
+       @GetMapping("/insertAndSelectSearch")
+       public ResponseEntity insertAndSelectSearch(@RequestBody Map paramMap) {
+           Object result = adminBoardService.insertAndSelectSearch(paramMap);
+           return ResponseEntity.ok().body(result);
+       }
+    
 }
 

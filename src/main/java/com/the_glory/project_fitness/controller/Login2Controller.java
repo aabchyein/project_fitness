@@ -26,7 +26,7 @@ public class Login2Controller {
     @GetMapping({"/Login2"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Login2.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Login/Login2.jsp");
         return modelAndView;
     }
     
