@@ -26,7 +26,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-                    <a href="./gym.html" class="btn btn-danger">로그아웃</a> <!-- 로그아웃 요청을 처리하는 URL로 수정해야 함 -->
+                    <a href="/" class="btn btn-danger">로그아웃</a> <!-- 로그아웃 요청을 처리하는 URL로 수정해야 함 -->
                 </div>
             </div>
         </div>

@@ -23,10 +23,15 @@
    
     <!-- 게시판 삭제 버튼  -->
     <delete id="delete" parameterType="Map">
-        DELETE FROM db_fitness.board
-       WHERE BOARD_ID = #{BOARD_ID}
+    DELETE FROM db_fitness.board
+    WHERE BOARD_ID = #{BOARD_ID}
     </delete>
 
+    <!-- 회원 정보 삭제 -->
+    <delete id="memdelete" parameterType="Map">
+    DELETE FROM board
+    WHERE ID = #{ID};
+    </delete>
 
     <!-- 검색 with pagination -->
 	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">

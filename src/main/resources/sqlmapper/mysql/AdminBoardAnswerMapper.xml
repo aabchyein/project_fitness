@@ -16,6 +16,11 @@
        WHERE BOARD_ANSWER_ID = #{BOARD_ANSWER_ID}
     </delete>
 
+    <!-- 회원 정보 삭제 -->
+    <delete id="memdelete" parameterType="Map">
+    DELETE FROM board_answer
+    WHERE BOARD_ID = #{BOARD_ID};
+    </delete>
 
     <!-- 입력 버튼  -->
 	<insert id="insert" parameterType="Map" >
