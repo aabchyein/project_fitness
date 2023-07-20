@@ -108,7 +108,7 @@
                     <form>
                         <div class="mb-3">
                             <label for="name" class="form-label">작성자</label>
-                            <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요">
+                            <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요" readonly>>
                         </div>
                         <div class="mb-3">
                             <label for="date" class="form-label">작성일자</label>
@@ -116,11 +116,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="title" class="form-label">제목</label>
-                            <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
+                            <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="question" class="form-label">질문 내용</label>
-                            <textarea class="form-control" id="question" rows="3" placeholder="질문 내용을 입력하세요"></textarea>
+                            <textarea class="form-control" id="question" rows="3" placeholder="질문 내용을 입력하세요" readonly></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="answer" class="form-label">답변 내용</label>
