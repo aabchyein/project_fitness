@@ -67,6 +67,14 @@ public class AdminBoardAnswerService {
     //     Object result = sharedDao.getOne(sqlMapId, dataMap);
     //     return result;
     // }
+ // MVC view
+    public Object insert(Map params){
+        String sqlMapId = "AdminBoardAnswer.insert";
+        Object result = sharedDao.insert(sqlMapId, params);
+        return result;
+    }
+
+
 
     // MVC view
     public Object delete(Map params){

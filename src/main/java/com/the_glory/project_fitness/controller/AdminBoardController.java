@@ -56,7 +56,26 @@ public class AdminBoardController {
         return modelAndView;
     }
 
-       // insert 답변 등록 버튼 
+    // Mypageupdate 업데이트 버튼 
+    // @GetMapping("/AdminBoardupdate/{ID}")
+    // public ModelAndView update(@PathVariable String ID, @RequestParam Map paramMap, ModelAndView modelAndView) {
+    //     Object result = adminBoardService.AdminBoardupdate(ID, paramMap);
+    //     modelAndView.addObject("result", result);
+    //     modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
+
+    //     return modelAndView;
+    // }
+
+
+   // insert답변 등록 버튼 
+   @PostMapping("/insert")
+       public ResponseEntity insert(@RequestBody Map paramMap) {
+           Object result = adminBoardAnswerService.insert(paramMap);
+           return ResponseEntity.ok().body(result);
+       }
+
+
+       // insertAndSelectSearch답변 등록 버튼 
        @GetMapping("/insertAndSelectSearch")
        public ResponseEntity insertAndSelectSearch(@RequestBody Map paramMap) {
            Object result = adminBoardService.insertAndSelectSearch(paramMap);
