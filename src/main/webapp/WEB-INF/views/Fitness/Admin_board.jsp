@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,25 +48,32 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th style="width: 9%;">번호</th>
-                                <th style="width: 20%;">이름</th>
-                                <th style="width: 1%;">아이디</th>
-                                <th style="width: 27%;">글제목</th>
-                                <th style="width: 10%;">답변상태</th>
-                                <th style="width: 15%;">등록일</th>
-                                <th style="width: 30%;">확인</th>
+                                <th >번호</th>
+                                <th >아이디</th>
+                                <th >제목</th>
+                                <th >내용</th>
+                                <th >등록일</th>
+                                <th >조회수</th>
+                                <th >확인</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <% 
+                            ArrayList arrayList = (ArrayList) request.getAttribute("result");
+                            for (int i=0; i < arrayList.size(); i=i+1) {
+                                HashMap record = (HashMap) arrayList.get(i);
+                            %>
                             <form>
-                                <input type="hidden" name="BOARD_ID" value="BOARD01">
+                                <input type="hidden" name="BOARD_ID" value='<%= record.get("BOARD_ID") %>'>
+                                <input type="hidden" name="BOARD_ANSWER_ID" value='<%= record.get("BOARD_ANSWER_ID") %>'>
                             <tr>
-                                <td value="1">1</td>
-                                <td name="name">김지영</td>
-                                <td name="ID">kimjiyoung</td>
-                                <td name="title">기구 관련 질문</td>
-                                <td name="content">미답변</td>
-                                <td name="date">2023-07-01</td>
+                                <td value="1"><%= i+1 %></td>
+                                <td name="ID"><%= record.get("ID") %></td>
+                                <td name="title"><%= record.get("TITLE") %></td>
+                                <td name="content"><%= record.get("CONTENTS") %></td>
+                                <td name="date"><%= record.get("DATE") %></td>
+                                <td name="date"><%= record.get("VIEWS") %></td>
+                              
                                 <td class="admin-actions">
                                     <button type="submit" class="btn btn-secondary" data-bs-toggle="modal"
                                         data-bs-target="#registrationModal">등록</button>
@@ -73,128 +81,11 @@
                                 </td>
                             </tr>
                             </form>
+                            <%
+                            } 
+                            %>
                             <!-- 다른 게시글 데이터 추가 -->
-                            <tr>
-                                <td>2</td>
-                                <td>이영희</td>
-                                <td>leeyounghee</td>
-                                <td>식단문의!!</td>
-                                <td>답변완료</td>
-                                <td>2023-06-28</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <!-- 추가 게시글 데이터 -->
-                            <tr>
-                                <td>3</td>
-                                <td>홍길동</td>
-                                <td>honggildong</td>
-                                <td>구로구 운영시간 문의드려요</td>
-                                <td>미답변</td>
-                                <td>2023-07-07</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>신동훈</td>
-                                <td>shindonghoon</td>
-                                <td>유산소 기간 문의</td>
-                                <td>답변완료</td>
-                                <td>2023-07-03</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>박민수</td>
-                                <td>parkminsus</td>
-                                <td>스트레칭 문의드려요</td>
-                                <td>미답변</td>
-                                <td>2023-06-30</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>김철수</td>
-                                <td>kimcheolsu</td>
-                                <td>가장 효과적인 기구 문의</td>
-                                <td>답변완료</td>
-                                <td>2023-07-02</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>황미영</td>
-                                <td>hwangmiyoung</td>
-                                <td>식단 문의!!!</td>
-                                <td>미답변</td>
-                                <td>2023-07-06</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>정민지</td>
-                                <td>jeongminji</td>
-                                <td>근력 기구 운동 문의</td>
-                                <td>답변완료</td>
-                                <td>2023-07-04</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>장승호</td>
-                                <td>jangseungho</td>
-                                <td> 트레이너 관련 문의~</td>
-                                <td>미답변</td>
-                                <td>2023-07-09</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>이철호</td>
-                                <td>leechulho</td>
-                                <td>위치 문의!!</td>
-                                <td>답변완료</td>
-                                <td>2023-07-05</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-
                         </tbody>
-
                          </table>
                 </div>
 

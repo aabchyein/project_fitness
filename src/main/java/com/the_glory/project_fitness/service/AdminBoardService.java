@@ -88,7 +88,7 @@ public class AdminBoardService {
         // sqlMapId = "CarInfors.selectSearch";
         // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
         
-        // result.putAll(this.selectSearchWithPagination(dataMap));
+        // result.putAll(this.selectSearchWithPagination(params));
         return result;
     }
 

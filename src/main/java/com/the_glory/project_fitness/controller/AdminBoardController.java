@@ -50,7 +50,7 @@ public class AdminBoardController {
         modelAndView.addObject("result", result);
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("http://192.168.0.46:8080/fitness/AdminBoardAll");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin_board.jsp");
         return modelAndView;
     }
 }

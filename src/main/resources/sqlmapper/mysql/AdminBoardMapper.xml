@@ -4,9 +4,11 @@
 
     <!-- 전체 -->
 	<select id="selectAll" parameterType="Map" resultType="Map">
-        SELECT NUMBER, ID ,TITLE,CONTENTS,VIEWS
-        FROM db_fitness.board
-        WHERE 1 = 1 ;  
+    select *
+    from board
+	inner join board_answer
+    on board.board_id = board_answer.BOARD_ID
+    ;  
 	</select>
 
 
