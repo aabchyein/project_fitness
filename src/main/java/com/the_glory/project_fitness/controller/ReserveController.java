@@ -16,19 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
-
 @Controller
-public class JoinController {
-
-
-    @Autowired
-    CommonService fitnessService;
-
-    @GetMapping({"/Join"})
+public class ReserveController {  
+    @GetMapping({"/reserve"})
     public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Join/Join.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Reserve/reserve.jsp");
         return modelAndView;
     }
 }
-    

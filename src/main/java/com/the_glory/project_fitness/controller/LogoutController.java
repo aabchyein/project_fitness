@@ -1,5 +1,6 @@
 package com.the_glory.project_fitness.controller;
 
+
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,21 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
 
 @Controller
-public class JoinController {
-
-
-    @Autowired
-    CommonService fitnessService;
-
-    @GetMapping({"/Join"})
+public class LogoutController {
+    @GetMapping({"/Logout"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Join/Join.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Logout/Logout.jsp");
         return modelAndView;
     }
-}
     
+}

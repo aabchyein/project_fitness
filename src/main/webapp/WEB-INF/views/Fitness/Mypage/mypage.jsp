@@ -75,7 +75,7 @@
                     </tr>
               </table>
               <div class="text-lg-end">
-                <a href="/mypageModify.html" type="submit" class="btn btn-secondary" style="opacity: 0.8;">회원정보수정</a>
+                <a href='/selectDetail/<%=result.get("ID")%>' type="submit" class="btn btn-secondary" style="opacity: 0.8;" id="ID" value='<%= result.get("ID") %>'>회원정보수정</a>
               </div>
             </div>
             <div class="col-md-8">
@@ -112,7 +112,7 @@
                         <th><button type="submit" class="btn btn-outline-secondary mx-1"
                             style="opacity: 0.8;">수정</button>
                         </th>
-                        <th><button type="submit" class="btn btn-danger mx-1" style="opacity: 0.8;">삭제</button></th>
+                        <th><button type="submit" class="btn btn-danger mx-1" style="opacity: 0.8;" name="re">삭제</button></th>
                       </tr>
 
                       <!-- 다른 예약 내역 추가 -->

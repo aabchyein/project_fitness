@@ -37,19 +37,21 @@ public class MypageController {
         return modelAndView;
     }
 
-    @GetMapping("/mypageupdate/{ID}")
-    public ModelAndView Mypageupdate(@PathVariable String ID, @RequestParam Map paramMap, ModelAndView modelAndView) {
-        Object result = mypageService.mypageUpdate(ID, paramMap);
+    @GetMapping("/mypageupdate")
+    public ModelAndView Mypageupdate(@RequestParam Map paramMap, ModelAndView modelAndView) {
+        Object result = mypageService.mypageUpdate(paramMap);
         modelAndView.addObject("result", result);
+        modelAndView.addObject("paramMap", paramMap);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Mypage/mypage.jsp");
 
         return modelAndView;
     }
 
-        @GetMapping("/mypagedelete/{ID}")
-    public ModelAndView Mypagedelete(@PathVariable String ID, @RequestParam Map paramMap, ModelAndView modelAndView) {
-        Object result = mypageService.mypageDelete(ID, paramMap);
+    @GetMapping("/mypagedelete")
+    public ModelAndView Mypagedelete(@RequestParam Map paramMap, ModelAndView modelAndView) {
+        Object result = mypageService.mypageDelete(paramMap);
         modelAndView.addObject("result", result);
+        modelAndView.addObject("paramMap", paramMap);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Mypage/mypage.jsp");
 
         return modelAndView;
