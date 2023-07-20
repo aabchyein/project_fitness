@@ -67,7 +67,7 @@
                                 <input type="hidden" name="BOARD_ID" value='<%= record.get("BOARD_ID") %>'>
                                 <input type="hidden" name="BOARD_ANSWER_ID" value='<%= record.get("BOARD_ANSWER_ID") %>'>
                             <tr>
-                                <td value="1"><%= i+1 %></td>
+                                <td name="number"><%= i+1 %></td>
                                 <td name="ID"><%= record.get("ID") %></td>
                                 <td name="title"><%= record.get("TITLE") %></td>
                                 <td name="content"><%= record.get("CONTENTS") %></td>
