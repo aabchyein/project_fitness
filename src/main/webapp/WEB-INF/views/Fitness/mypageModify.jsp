@@ -22,7 +22,7 @@
     HashMap result = (HashMap) request.getAttribute("result");
     %>
       <!-- 마이페이지 -->
-      <div class="container p-5">
+      <div class="container p-5">  
         <h2 class="text-center fw-bold p-3">회원 정보 수정</h2>
         <div class="card-body">
           <form class="m-4">

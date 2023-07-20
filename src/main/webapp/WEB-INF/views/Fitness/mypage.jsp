@@ -16,8 +16,14 @@
   <!-- 상단 네비게이션 바 -->
   <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
   <%
-   
-   %>
+  ArrayList resultList = (ArrayList) 
+  
+  
+  (result);
+  for(int i=0; i< resultList.size(); i=i+1) {
+   HashMap record = (HashMap) resultList.get(i);
+  }
+  %>
   <!-- 마이페이지 -->
   <div class="container p-5">
     <div class="row">
@@ -39,11 +45,11 @@
           </tr>
           <tr>
             <th>생년월일</th>
-            <td><%=record.get("NAME")%></td>
+            <td><%=record.get("BIRTHDATE")%></td>
           </tr>
           <tr>
             <th>성별</th>
-            <td><%=record.get("NAME")%></td>
+            <td><%=record.get("GENDER")%></td>
           </tr>
           <tr>
             <th>휴대전화</th>
