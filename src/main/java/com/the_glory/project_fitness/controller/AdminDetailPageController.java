@@ -9,7 +9,9 @@ public class AdminDetailPageController {
     @GetMapping({"/AdminDetailPage"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/AdminDetailPage.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminPage.jsp");
         return modelAndView;
     }
+
+
 }

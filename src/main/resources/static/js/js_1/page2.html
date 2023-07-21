@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+<title>서울 헬스클럽 비교</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  body {
+    background-color: #f8f8f8;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 1rem;
+  }
+
+  .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececec;
+    padding: 1rem;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  nav a:hover {
+    background-color: #dbdbdb;
+    color: #2b2b2b;
+    transition-duration: 0.3s;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  h1, h3, .intro, .description {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .row > .col-md-3 {
+    padding: 1rem;
+  }
+
+  .col-md-3 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  footer {
+    background-color: #333;
+    padding: 1rem 0;
+    text-align: center;
+    color: white;
+  }
+
+  .reservation-form {
+    margin: 2rem 0;
+  }
+  
+  .reservation-form label {
+    font-weight: bold;
+  }
+  
+  .reservation-form input,
+  .reservation-form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .reservation-form button {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  .reservation-form button:hover {
+    background-color: #666;
+    transition-duration: 0.3s;
+  }
+</style>
+</head>
+<body>
+<header>
+  <a href="#" class="logo">서울 헬스클럽 비교</a>
+  <nav>
+    <a href="#">홈</a>
+    <a href="#reservation-form">예약</a>
+    <a href="https://simplybook.me/ko/sport/scheduling-software-for-fitness-classes" target="_blank">예약 사이트 정보</a>
+    <a href="#">커뮤니티</a>
+    <a href="#">회원가입</a>
+    <a href="#">로그인</a>
+  </nav>
+</header>
+<div class="container">
+  <h1>서울의 모든 헬스클럽을 한곳에서 비교해보세요!</h1>
+  <p class="intro">가격, 시설, 이벤트 등 다양한 정보를 제공하여 고객님들이 가장 적합한 헬스클럽을 선택할 수 있습니다.</p>
+  <div class="row">
+    <!-- 각각의 헬스클럽 정보 -->
+    <!-- 예약 FORM -->
+  </div>
+  <div class="reservation-form" id="reservation-form">
+    <h2>예약 신청</h2>
+    <form>
+      <label for="name">이름</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">이메일</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="phone">전화번호</label>
+      <input type="tel" id="phone" name="phone" required>
+      
+      <label for="gym">헬스클럽 선택</label>
+      <select id="gym" name="gym">
+          <option value="gym0">선택</option> 
+        <option value="gym1">구로구</option>
+        <option value="gym2">동작구</option>
+        <option value="gym3">강남구</option>
+      </select>
+      
+      <label for="date">예약 날짜</label>
+      <input type="date" id="date" name="date" required>
+      
+      <button type="submit">예약 신청</button>
+    </form>
+  </div>
+</div>
+<footer>
+  <p>© 2023 서울 헬스클럽 비교. 모든 권리 보유.</p>
+</footer>
+</body>
+</html>

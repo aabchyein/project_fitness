@@ -9,16 +9,15 @@ import org.springframework.stereotype.Service;
 import com.the_glory.project_fitness.dao.SharedDao;
 
 @Service
-public class MypageModifyService {
+public class AdminReserveService {
     @Autowired
     SharedDao sharedDao;
 
-        public Object selectDetail(Map dataMap) {
-        // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "Mypage.selectByUID"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
+    // 회원 정보 삭제
+    public Object memberdelete(Map params) {
+        String sqlMapId = "AdminReserve.memdelete";
 
-        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        Object result = sharedDao.delete(sqlMapId, params);
         return result;
     }
-
 }

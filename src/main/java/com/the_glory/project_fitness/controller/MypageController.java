@@ -37,6 +37,16 @@ public class MypageController {
         return modelAndView;
     }
 
+    @GetMapping("/mypageReserve")
+    public ModelAndView selectDetail(@RequestParam Map params, ModelAndView ModelAndView) {
+        Object result1 = mypageService.ReserveList(params);
+        ModelAndView.addObject("params", params);
+        ModelAndView.addObject("result1", result1);   
+
+        ModelAndView.setViewName("/WEB-INF/views/Fitness/Mypage/mypage.jsp");
+        return ModelAndView;
+    }
+
     @GetMapping("/mypageupdate")
     public ModelAndView Mypageupdate(@RequestParam Map paramMap, ModelAndView modelAndView) {
         Object result = mypageService.mypageUpdate(paramMap);

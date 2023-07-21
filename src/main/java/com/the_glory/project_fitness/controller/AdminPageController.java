@@ -23,7 +23,7 @@ public class AdminPageController {
     public ModelAndView selectAll(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = adminpageService.selectAll(params);
         modelAndView.addObject("result", result);
-        modelAndView.setViewName("/WEB-INF/views/Fitness/adminPage.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminPage.jsp");
         return modelAndView;
     }
 
@@ -32,9 +32,7 @@ public class AdminPageController {
     public  ModelAndView selectDetail(@RequestParam Map params, ModelAndView modelAndView) {
         Object result1 = adminpageService.selectDetail(params);
         modelAndView.addObject("result1", result1);
-        Object result = adminpageService.selectAll(params);
-        modelAndView.addObject("result", result);
-        modelAndView.setViewName("/WEB-INF/views/Fitness/adminPage.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminDetailPage.jsp");
         return modelAndView;
     }
 
@@ -44,7 +42,7 @@ public class AdminPageController {
         Object result = adminpageService.deleteAndSelectSearch(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
-        modelAndView.setViewName("/WEB-INF/views/Fitness/adminPage.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminPage.jsp");
         return modelAndView;
     }
 }

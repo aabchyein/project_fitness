@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+<title>헬스 정보</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  body {
+    background-color: #f8f8f8;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 1rem;
+  }
+
+  .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececec;
+    padding: 1rem;
+  }
+
+  .menu a {
+    display: block;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .menu a:hover {
+    background-color: #dbdbdb;
+    color: #2b2b2b;
+    transition-duration: 0.3s;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  h1, h2, .content {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .content img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  footer {
+    background-color: #333;
+    padding: 1rem 0;
+    text-align: center;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<header>
+  <a href="#" class="logo">헬스 정보</a>
+</header>
+<div class="menu">
+  <a href="#exercise">운동 정보</a>
+  <a href="#nutrition">식단 정보</a>
+  <a href="#stretching">스트레칭 정보</a>
+</div>
+
+<div class="container">
+  <h1 id="exercise">운동 정보</h1>
+
+<h2>근력운동</h2>
+<div class="content">
+  <img src="https://via.placeholder.com/550x300" alt="근력운동 사진">
+  <p>
+    근력운동은 근육의 힘을 증가시키고, 근골격계를 강화하는 데 도움이 되는 운동입니다. 대표적인 근력 운동으로는 스쿼트, 데드리프트, 벤치 프레스, 턱걸이 등이 있습니다. 이러한 운동들은 정확한 자세와 기술이 중요하며, 꾸준한 훈련을 통해 효과를 극대화할 수 있습니다.
+  </p>
+</div>
+
+<h2>유산소 운동</h2>
+<div class="content">
+  <img src="https://via.placeholder.com/550x300" alt="유산소운동 사진">
+  <p>
+    유산소 운동은 심폐 기능을 향상시키고, 체력을 높이며, 체중 관리에 도움이 되는 운동입니다. 대표적인 유산소 운동으로는 달리기, 자전거 타기, 수영 등이 있습니다. 적절한 강도와 지속 시간을 조절하여 유산소 운동을 계획하면, 건강한 심장 및 폐활동을 유지할 수 있습니다.
+  </p>
+</div>
+
+<h2>하이브리드 운동</h2>
+<div class="content">
+  <img src="https://via.placeholder.com/550x300" alt="하이브리드운동 사진">
+  <p>
+    하이브리드 운동은 근력운동과 유산소운동을 결합한 운동입니다. 대표적인 하이브리드 운동으로는 버피(Burpee), 인터벌 트레이닝(HIIT), 크로스핏(CrossFit) 등이 있습니다. 이러한 운동은 근육력 향상과 체력 향상을 동시에 이룰 수 있으며, 다양한 목표를 가진 운동자들에게 이상적입니다.
+  </p>
+</div>
+</div>
+
+<footer>
+  <p>© 2023 헬스 정보. 모든 권리 보유.</p>
+</footer>
+</body>
+</html>

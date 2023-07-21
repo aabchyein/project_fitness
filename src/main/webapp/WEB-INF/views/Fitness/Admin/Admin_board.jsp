@@ -33,6 +33,9 @@
                             <a href="/AdminPage.html" class="text-decoration-none nav-link">회원 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
+                            <a href="./Admin_reserve.jsp" class="text-decoration-none nav-link">예약 관리</a>
+                        </li>
+                        <li class="d-flex align-items-center">
                             <a href="/Admin_board.html" class="text-decoration-none nav-link">게시판 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
@@ -76,9 +79,9 @@
                                 <td name="date"><%= record.get("DATE") %></td>
                                 <td name="date"><%= record.get("VIEWS") %></td>
                               
-                                <td class="admin-actions">
-                                    <button type="submit" class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
+                                <td class="admin-actions"> 
+                                    <button type="submit" class="btn btn-secondary" 
+                                        formaction="/fitness/insertAndcome">등록</button>
                                     <button class="btn btn-danger" formaction="/fitness/deleteAndSelectSearch" formmethod="get">삭제</button>
                                 </td>
                             </tr>
@@ -114,7 +117,7 @@
         </div>
     </div>
 
-    <!-- 등록 모달 -->
+    <!-- 등록 모달
     <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -125,7 +128,7 @@
                 </div>
                 <form>
                 <div class="modal-body">
-                    <!-- 등록 폼 내용 -->
+                    등록 폼 내용
 
                         <div class="mb-3">
                             <label for="name" class="form-label">작성자</label>
@@ -150,7 +153,7 @@
             </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
  <!-- footer -->
  <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>

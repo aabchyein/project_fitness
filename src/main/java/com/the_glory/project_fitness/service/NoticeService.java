@@ -98,4 +98,11 @@ public class NoticeService {
         result1.putAll(this.selectSearchWithPagination(dataMap));
         return result;
     }
+
+    // 회원 정보 삭제
+    public Object memdelete(Map dataMap) {
+        String sqlMapId = "Notice.memdelete";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
+        return result;
+    }
 }

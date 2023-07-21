@@ -63,4 +63,9 @@
         ;
 	</select>
 
+    <!-- 회원 정보 삭제 -->
+    <delete id="memdelete" parameterType="Map">
+    DELETE FROM db_fitness.notice
+    WHERE ID = #{ID};
+    </delete>
  </mapper>

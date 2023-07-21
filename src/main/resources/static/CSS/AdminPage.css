@@ -184,3 +184,8 @@
   margin: 0;
   font-size: 12px;
 }
+
+
+.form-control {
+  border-width: 2px; /* 두껍게 변경 */
+}

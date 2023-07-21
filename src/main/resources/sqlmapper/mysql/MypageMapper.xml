@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Mypage">
-<!-- 회원 상세정보 및 예약내역 -->
+    <!-- 회원 상세정보 -->
     <select id="MypageDetail" parameterType="Map" resultType="Map">   
-     SELECT *
-      FROM member_information AS member
-        INNER JOIN reservation AS reser
-          ON member.ID = reser.ID
-          INNER JOIN gender AS gen
-          ON member.GENDER_ID = gen.GENDER_ID
-          INNER JOIN company AS com
-          ON reser.COMPANY_ID = com.COMPANY_ID
-          and member.ID LIKE 'davids'
-      ;
+        SELECT * 
+        FROM member_information
+        where ID = #{ID};
+    </select>
+
+    <!-- 회원 예약정보 -->
+    <select id="ReserveList" parameterType="Map" resultType="Map">   
+    SELECT *
+    FROM reservation
+    WHERE ID = #{ID};
     </select>
 
     <update id="MypageUpdate" parameterType="Map">
