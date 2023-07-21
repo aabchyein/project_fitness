@@ -13,11 +13,9 @@ public class MypageModifyService {
     @Autowired
     SharedDao sharedDao;
 
-        public Object selectDetail(String ID, Map datMap) {
+        public Object selectDetail(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap)
         String sqlMapId = "Mypage.selectByUID"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
-        HashMap dataMap = new HashMap<>();
-        dataMap.put("ID", ID);
 
         Object result = sharedDao.getOne(sqlMapId, dataMap);
         return result;

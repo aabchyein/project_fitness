@@ -17,9 +17,16 @@ public class MypageService {
 
     public Object selectDetail(Map dataMap){
         String sqlMapId = "Mypage.MypageDetail";
-        Object result = sharedDao.getList(sqlMapId, dataMap);
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
 
         return result;
+    }
+
+    public Object ReserveList(Map dataMap){
+    String sqlMapId = "Mypage.ReserveList";
+    Object result = sharedDao.getList(sqlMapId, dataMap);
+
+       return result;
     }
 
     public Object mypageUpdate(Map dataMap) {

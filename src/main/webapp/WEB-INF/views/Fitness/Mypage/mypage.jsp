@@ -23,8 +23,14 @@
               <h2>회원정보</h2>
               <div class="fs-5 fw-bold border-bottom border-3 border-dark border-opacity-50 pb-2 text-dark"></div>
               <table class="table boder-top">
-                <% ArrayList list1=(ArrayList)request.getAttribute("result"); %>
-                  <% HashMap result=(HashMap)list1.get(0); %>
+                <tbody>
+                <%
+                ArrayList list1=(ArrayList) request.getAttribute("result");
+                for(int i=0; i < list1.size(); i=i+1) {
+                  HashMap result = (HashMap) list1.get(i);
+                %>
+                  <form>
+                    <input type="hidden" name="ID" value='<%= result.get("ID") %>'>
                     <tr>
                       <th>이름</th>
                       <td>
@@ -73,9 +79,14 @@
                         <%=result.get("ADDRESS")%>
                       </td>
                     </tr>
+                  </form>
+                  <%
+                  }
+                  %>
+                  </tbody>
               </table>
               <div class="text-lg-end">
-                <a href='/selectDetail/<%=result.get("ID")%>' type="submit" class="btn btn-secondary" style="opacity: 0.8;" id="ID" value='<%= result.get("ID") %>'>회원정보수정</a>
+                <button class="btn btn-secondary" style="opacity: 0.8;" id="" formaction="mypageModify" formmethod="get">회원정보수정</a>
               </div>
             </div>
             <div class="col-md-8">
