@@ -1,5 +1,6 @@
 package com.the_glory.project_fitness.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,13 +44,18 @@ public class AdminPageService {
     public Object delete(Map params) {
         String sqlMapId1 = "AdminBoardAnswer.memdelete";
         String sqlMapId2 = "AdminBoard.memdelete";
-        String sqlMapId3 = "AdminPage.memdelete";
-        String sqlMapId = "AdminPage.selectAll";
+        String sqlMapId3 = "Notice.memdelete";
+        String sqlMapId4 = "AdminReserve.memdelete";
+        String sqlMapId5 = "AdminPage.memdelete";
+
         Object result1 = sharedDao.delete(sqlMapId1, params);
         Object result2 = sharedDao.delete(sqlMapId2, params);
         Object result3 = sharedDao.delete(sqlMapId3, params);
-        Object result = sharedDao.getList(sqlMapId, params);
+        Object result4 = sharedDao.delete(sqlMapId4, params);
+        Object result5 = sharedDao.delete(sqlMapId3, params);
 
+        ArrayList result = new ArrayList<>();
+        result.add(this.selectAll(params));
         return result;
     }
 }
