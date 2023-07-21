@@ -77,4 +77,11 @@ public class NoticeService {
         Object result = "";
         return result;
     }
+
+    // 회원 정보 삭제
+    public Object memdelete(Map dataMap) {
+        String sqlMapId = "Notice.memdelete";
+        Object result = sharedDao.delete(sqlMapId, dataMap);
+        return result;
+    }
 }

@@ -14,12 +14,11 @@
 </head>
 
 <body>
-    <header>
         <!-- 상단 네비게이션 바 -->
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container">
                 <a class="navbar-brand" href="./gym.html">
-                    <img src="./Image/로고2.png" alt="로고" height="80">
+                    <img src="./Image/로고1.png" alt="로고" height="80">
                 </a>
                 <!-- 검색창 -->
                 <div class="col-lg-4 text-lg-end">
@@ -40,7 +39,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./AdminLogin.html">
-                                <img src="./Image/house.jpg.png" alt=""
+                                <img src="./Image/house.jpg.png"
                                     style="width: 35px; height: 35px;  margin-top: -0.5em;">
                             </a>
                         </li>
@@ -48,7 +47,6 @@
                 </div>
             </div>
         </nav>
-    </header>
 
     <div class="container-fluid">
         <!-- 관리자 페이지 content -->
@@ -64,7 +62,7 @@
                             <a href="./AdminPage.html" class="text-decoration-none nav-link">회원 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
-                            <a href="./Admin_reserve.html" class="text-decoration-none nav-link">예약 관리</a>
+                            <a href="./Admin_reserve.jsp" class="text-decoration-none nav-link">예약 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
                             <a href="./Admin_board.html" class="text-decoration-none nav-link">게시판 관리</a>
@@ -77,150 +75,32 @@
             </nav>
             <!-- 회원관리 데이터 -->
             <div class="col-10 mt-5 admin-content">
-                <h1 class="admin-header">게시판 관리</h1>
-                <div class="container admin-table">
+                <h1 class="admin-header">예약 관리</h1>
+                <div class="admin-table">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th style="width: 9%;">번호</th>
-                                <th style="width: 20%;">이름</th>
-                                <th style="width: 1%;">아이디</th>
-                                <th style="width: 27%;">글제목</th>
-                                <th style="width: 10%;">답변상태</th>
-                                <th style="width: 15%;">등록일</th>
-                                <th style="width: 30%;">확인</th>
+                                <th>번호</th>
+                                <th>이름</th>
+                                <th>아이디</th>
+                                <th>예약날짜</th>
+                                <th>예약시간</th>
+                                <th>센터명</th>
+                                <th>참고사항</th>
+                                <th>확인</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>김지영</td>
-                                <td>kimjiyoung</td>
-                                <td>기구 관련 질문</td>
-                                <td>미답변</td>
-                                <td>2023-07-01</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <!-- 다른 게시글 데이터 추가 -->
-                            <tr>
-                                <td>2</td>
-                                <td>이영희</td>
-                                <td>leeyounghee</td>
-                                <td>식단문의!!</td>
-                                <td>답변완료</td>
-                                <td>2023-06-28</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <!-- 추가 게시글 데이터 -->
-                            <tr>
-                                <td>3</td>
                                 <td>홍길동</td>
                                 <td>honggildong</td>
-                                <td>구로구 운영시간 문의드려요</td>
-                                <td>미답변</td>
-                                <td>2023-07-07</td>
+                                <td>2023-07-01</td>
+                                <td>10:00-11:00</td>
+                                <td>구로센터</td>
+                                <td>처음 운동 시작</td>
                                 <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>신동훈</td>
-                                <td>shindonghoon</td>
-                                <td>유산소 기간 문의</td>
-                                <td>답변완료</td>
-                                <td>2023-07-03</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>박민수</td>
-                                <td>parkminsus</td>
-                                <td>스트레칭 문의드려요</td>
-                                <td>미답변</td>
-                                <td>2023-06-30</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>김철수</td>
-                                <td>kimcheolsu</td>
-                                <td>가장 효과적인 기구 문의</td>
-                                <td>답변완료</td>
-                                <td>2023-07-02</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>황미영</td>
-                                <td>hwangmiyoung</td>
-                                <td>식단 문의!!!</td>
-                                <td>미답변</td>
-                                <td>2023-07-06</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>정민지</td>
-                                <td>jeongminji</td>
-                                <td>근력 기구 운동 문의</td>
-                                <td>답변완료</td>
-                                <td>2023-07-04</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>장승호</td>
-                                <td>jangseungho</td>
-                                <td> 트레이너 관련 문의~</td>
-                                <td>미답변</td>
-                                <td>2023-07-09</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
-                                    <button class="btn btn-danger">삭제</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>이철호</td>
-                                <td>leechulho</td>
-                                <td>위치 문의!!</td>
-                                <td>답변완료</td>
-                                <td>2023-07-05</td>
-                                <td class="admin-actions">
-                                    <button class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#registrationModal">등록</button>
+                                    <button class="btn btn-light">수정</button>
                                     <button class="btn btn-danger">삭제</button>
                                 </td>
                             </tr>
@@ -228,8 +108,6 @@
 
                          </table>
                 </div>
-
-                
                 <!-- 페이지 넘어가는 표시 -->
                 <div class="text-center mt-4">
                     <ul class="pagination justify-content-center">
@@ -258,7 +136,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="registrationModalLabel">답변 등록</h5>
+                    <h5 class="modal-title" id="registrationModalLabel">게시글 등록</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -285,6 +163,7 @@
                             <label for="answer" class="form-label">답변 내용</label>
                             <textarea class="form-control" id="answer" rows="3" placeholder="답변 내용을 입력하세요"></textarea>
                         </div>
+                        
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -295,8 +174,8 @@
         </div>
     </div>
 
-  <!-- Footer -->
-  <footer class="footer container-fluid text-white">
+   <!-- Footer -->
+   <footer class="footer container-fluid text-white">
     <div class="row">
       <div class="col-10 justify-content-center">
         <div>
@@ -329,7 +208,7 @@
       </div>
     </div>
   </footer>
-
+    <script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
