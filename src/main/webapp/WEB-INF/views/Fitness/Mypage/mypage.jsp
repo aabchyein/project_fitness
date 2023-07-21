@@ -105,8 +105,11 @@
                 </thead>
 
                 <tbody>
-                  <% ArrayList list=(ArrayList)request.getAttribute("result"); %>
-                    <% for(int i=0; i<list.size(); i++){ HashMap record=(HashMap)list.get(i); %>
+                  <%
+                  ArrayList list = (ArrayList) request.getAttribute("result1");
+                  for(int i=0; i < list.size() ; i=i+1) {
+                    HashMap record = (HashMap) list.get(i);
+                  %>
                       <tr>
                         <td>
                           <%= record.get("RESERVATION_DATE") %>
