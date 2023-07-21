@@ -67,20 +67,44 @@ public class AdminBoardController {
     // }
 
 
-   // insert답변 등록 버튼 
-   @PostMapping("/insert")
-       public ResponseEntity insert(@RequestBody Map paramMap) {
-           Object result = adminBoardAnswerService.insert(paramMap);
-           return ResponseEntity.ok().body(result);
-       }
+//    // insert답변 등록 버튼 
+//    @PostMapping("/insert")
+//        public ResponseEntity insert(@RequestBody Map paramMap) {
+//            Object result = adminBoardAnswerService.insert(paramMap);
+//            return ResponseEntity.ok().body(result);
+//        }
 
 
-       // insertAndSelectSearch답변 등록 버튼 
-       @GetMapping("/insertAndSelectSearch")
-       public ResponseEntity insertAndSelectSearch(@RequestBody Map paramMap) {
-           Object result = adminBoardService.insertAndSelectSearch(paramMap);
-           return ResponseEntity.ok().body(result);
-       }
+//        // insertAndSelectSearch답변 등록 버튼 
+//        @GetMapping("/insertAndSelectSearch")
+//        public ResponseEntity insertAndSelectSearch(@RequestBody Map paramMap) {
+//            Object result = adminBoardService.insertAndSelectSearch(paramMap);
+//            return ResponseEntity.ok().body(result);
+//        }
+
+ // insert and selectsearch
+ @PostMapping("/insertAndSelectSearch")
+ public ModelAndView insertAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+     Object result = adminBoardService.insertAndSelectSearch(params);
+     modelAndView.addObject("params", params);
+     modelAndView.addObject("result", result);
+
+     // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+     modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
+     return modelAndView;
+ }
+// 등록버튼 링크 
+ @GetMapping("/insertAndcome")
+ public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView modelAndView) {
+  Object result = adminBoardService.insertAndSelectSearch(params);
+     modelAndView.addObject("params", params);
+     modelAndView.addObject("result", result);
+
+     modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
+     return modelAndView;
+ }
+
+
     
 }
 
