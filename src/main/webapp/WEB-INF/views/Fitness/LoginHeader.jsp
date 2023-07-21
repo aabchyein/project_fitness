@@ -3,43 +3,44 @@
   <!-- 메뉴 navbar -->
   <nav class="navbar navbar-expand-lg bg-black">
     <div class="container">
-      <a class="navbar-brand" href="/gym.html">
+      <a class="navbar-brand" href="/Gym_Login">
         <img src="/Image/로고2.png" alt="로고" height="90">
       </a>
       <!-- 검색창 -->
       <form class="d-flex col-lg-5">
-        <input class="form-control search-input me-2" type="search" placeholder="업체명이나 지역을 검색해 보세요"
+        <input class="form-control search-input me-2" type="search" id="search" placeholder="업체명이나 지역을 검색해 보세요"
            aria-label="Search">
-        <button class="btn" style="background-color: #8B0000; color: white;" type="submit"
-          formaction="/Search.html">검색</button>
+        <button class="btn" id="search" style="background-color: #8B0000; color: white;" type="submit"
+          formaction="/Searchlogin">검색</button>
       </form>
       <div class="col-lg-4 text-lg-end">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/gym_login.html">홈</a>
+            <a class="nav-link" href="/Gym_Login">홈</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/reserve.html">예약</a>
+            <a class="nav-link" href="/reserve">예약</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">커뮤니티</a>
             <div class="dropdown-menu" aria-labelledby="communityDropdown">
-              <a class="dropdown-item" href="/notice.html">게시판</a>
-              <a class="dropdown-item" href="/notice.html">후기</a>
+              <a class="dropdown-item" href="/Noticelogin">게시판</a>
+              <a class="dropdown-item" href="/Review">후기</a>
             </div>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/Login.html" id="loginDropdown" role="button"
+            <a class="nav-link dropdown-toggle" href="" id="loginDropdown" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">로그아웃</a>
             <div class="dropdown-menu" aria-labelledby="loginDropdown">
-              <a class="dropdown-item" href="/Logout.html">로그아웃</a>
-              <a class="dropdown-item" href="/mypage.html">마이페이지</a>
+              <a class="dropdown-item" href="/Logout">로그아웃</a>
+              <a class="dropdown-item" href="/mypage">마이페이지</a>
 
             </div>
           </li>
         </ul>
       </div>
   </nav>
+  <script src="/src/main/resources/static/js/search.js"></script>

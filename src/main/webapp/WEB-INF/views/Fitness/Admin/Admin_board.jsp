@@ -87,8 +87,8 @@
                             </tr>
                             </form>
                             <%
-                            } 
-                            %>
+                        } 
+                        %>
                             <!-- 다른 게시글 데이터 추가 -->
                         </tbody>
                          </table>
@@ -126,13 +126,13 @@
                     <h5 class="modal-title" id="registrationModalLabel">게시글 등록</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form>
                 <div class="modal-body">
                     <!-- 등록 폼 내용 -->
-                 
-                    <form>
+
                         <div class="mb-3">
                             <label for="name" class="form-label">작성자</label>
-                            <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요">
+                            <div type="text" class="form-control" id="name">작성자</div>
                         </div>
                        
                          <div class="mb-3">
@@ -144,12 +144,13 @@
                             <textarea class="form-control" id="answer" rows="3" placeholder="답변 내용을 입력하세요"></textarea>
                         </div>
                         
-                    </form>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">등록</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" formaction="/fitness/insertAndSelectSearch">등록</button>
                     
                 </div>
+            </form>
             </div>
         </div>
     </div>

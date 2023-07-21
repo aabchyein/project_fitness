@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="AdminBoardAnswer">
 
-    <!-- 전체 -->
+    <!-- 전체  -->
 	<select id="selectAll" parameterType="Map" resultType="Map">
         SELECT NUMBER, ID ,TITLE,CONTENTS,VIEWS
         FROM db_fitness.board
@@ -21,6 +21,13 @@
     DELETE FROM board_answer
     WHERE BOARD_ID = #{BOARD_ID};
     </delete>
+
+    <!-- 입력 버튼  -->
+	<insert id="insert" parameterType="Map" >
+        insert into board_answer (ADMIN_ID,ANSWER,BOARD_ANSWER_ID,BOARD_ID)
+        value ('ADMIN01', '답변5', 'uuid', 'BOARD05');
+    </insert>
+
 
     <!-- 검색 with pagination -->
 	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">

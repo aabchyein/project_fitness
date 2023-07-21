@@ -15,7 +15,7 @@ public class  gym_loginController {
     @GetMapping({"/Gym_Login"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/GYM/Gym_Login.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/GYM/gym_login.jsp");
         return modelAndView;
     }
 }
