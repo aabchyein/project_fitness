@@ -57,7 +57,7 @@ public class CommonController {
         rtnTmp.put("resultList", result);
 
         modelAndView.addObject("params", params);
-        modelAndView.addObject("result", rtnTmp);
+        modelAndView.addObject("result", result);
 
         modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         return modelAndView;

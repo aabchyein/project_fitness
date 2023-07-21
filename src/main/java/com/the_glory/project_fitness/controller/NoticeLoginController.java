@@ -1,5 +1,6 @@
 package com.the_glory.project_fitness.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +33,27 @@ public class NoticeLoginController {
 
     @GetMapping({"/Noticelogin"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = noticeService.selectAll(params);
+        Object result = noticeService.selectSearch(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
         
         // modelAndView.addObject("params", "result");
         modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeLogin.jsp");
+        return modelAndView;
+    }
+
+    @GetMapping("/Noticelogin2")
+    public ModelAndView selectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.selectSearch(params);
+        //Object result = commonService.selectAll(params);
+
+        HashMap rtnTmp = new HashMap<>();
+        rtnTmp.put("resultList", result);
+
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         return modelAndView;
     }
 }

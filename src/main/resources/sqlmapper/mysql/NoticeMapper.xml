@@ -44,4 +44,23 @@
         (#{NOTICE_ID}, #{NOTICE_TITLE}, #{ID}, now(), #{NOTICE_VIEWS}, #{NOTICE_CONTENTS})
     </insert>
 
+    <!-- 검색 -->
+	<select id="selectSearch" parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM db_fitness.notice
+        where 1 = 1 
+        <choose>
+            <when test="search == 'NOTICE_TITLE'">
+            and NOTICE_TITLE like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'NOTICE_CONTENTS'">
+            and NOTICE_CONTENTS like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ID'">
+            and ID like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>
+        ;
+	</select>
+
  </mapper>
