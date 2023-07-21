@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="/CSS/reviews.css">
 </head>
 <body>
-<!-- 상단 네비게이션 바 -->
   <!-- 상단 네비게이션 바 -->
   <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
