@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+<title>서울 헬스클럽 비교</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  body {
+    background-color: #f8f8f8;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 1rem;
+  }
+
+  .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececec;
+    padding: 1rem;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  nav a:hover {
+    background-color: #dbdbdb;
+    color: #2b2b2b;
+    transition-duration: 0.3s;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  h1, h3, .intro, .description {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .row > .col-md-3 {
+    padding: 1rem;
+  }
+
+  .col-md-3 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  footer {
+    background-color: #333;
+    padding: 1rem 0;
+    text-align: center;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<header>
+  <a href="#" class="logo">서울 헬스클럽 비교</a>
+  <nav>
+    <a href="#">홈</a>
+    <a href="#">예약</a>
+    <a href="#">커뮤니티</a>
+    <a href="#">회원가입</a>
+    <a href="#">로그인</a>
+  </nav>
+</header>
+<div class="container">
+  <h1>서울의 모든 헬스클럽을 한곳에서 비교해보세요!</h1>
+  <p class="intro">가격, 시설, 이벤트 등 다양한 정보를 제공하여 고객님들이 가장 적합한 헬스클럽을 선택할 수 있습니다.</p>
+  <div class="row">
+    <div class="col-md-3">
+      <img src="https://source.unsplash.com/450x350/?gym" class="d-block w-100" alt="헬스클럽 이미지1">
+      <h3>가격 비교</h3>
+      <p class="description">서울 시내 다양한 헬스클럽의 멤버십 가격 정보를 비교해보세요.</p>
+    </div>
+    <div class="col-md-3">
+      <img src="https://source.unsplash.com/450x350/?fitness" class="d-block w-100" alt="헬스클럽 이미지2">
+      <h3>시설 안내</h3>
+      <p class="description">각 헬스클럽의 시설을 살펴보고 여러분의 운동목표에 맞는 곳을 선택하세요.</p>
+    </div>
+    <div class="col-md-3">
+      <img src="https://source.unsplash.com/450x350/?event" class="d-block w-100" alt="헬스클럽 이미지3">
+      <h3>이벤트 정보</h3>
+      <p class="description">서울의 헬스클럽에서 진행되는 다양한 이벤트 정보를 확인하세요.</p>
+    </div>
+    <div class="col-md-3">
+      <img src="https://source.unsplash.com/450x350/?exercise" class="d-block w-100" alt="헬스클럽 이미지4">
+      <h3>프로그램 제공</h3>
+      <p class="description">서울 헬스클럽에서 제공하는 다양한 운동 프로그램을 알아보세요.</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>© 2023 서울 헬스클럽 비교. 모든 권리 보유.</p>
+</footer>
+</body>
+</html> 
