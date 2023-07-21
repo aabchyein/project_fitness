@@ -18,7 +18,7 @@
 
         <body>
             <!-- 상단 네비게이션 바 -->
-            <%@ include file="/WEB-INF/views/Fitness/Admin_header.jsp"%>
+            <%@ include file="/WEB-INF/views/Fitness/Admin_header.jsp" %>
 
                 <div class="container-fluid">
                     <!-- 관리자 페이지 content -->
@@ -43,6 +43,7 @@
                             </div>
                         </nav>
 
+                       
                         <!-- 게시판 답변 등록 폼 -->
                         <div class="col-10 mt-5 admin-content">
                             <h1 class="admin-header">게시판 답변 등록</h1>
@@ -52,19 +53,21 @@
                                         <div class="mb-3">
                                             <label for="name" class="form-label">작성자</label>
                                             <input type="text" class="form-control" id="name"
-                                                value='<%= record.get("name") %>'>
+                                                value='<%= record.get(" NAME") %>' readonly>
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="question" class="form-label">질문 내용</label>
-                                            <textarea class="form-control" id="question"
-                                                rows="3"><%= record.get("question") %></textarea>
+                                            <input type="text" class="form-control" id="CONTENTES"
+                                                value='<%= record.get("CONTENTES") %>' readonly>
                                         </div>
+
                                         <div class="mb-3">
                                             <label for="answer" class="form-label">답변 내용</label>
-                                            <textarea class="form-control" id="answer" rows="3"
-                                                placeholder="답변 내용을 입력하세요"><%= record.get("answer") %></textarea>
+                                            <input type="text" class="form-control" id="answer"
+                                                placeholder="답변 내용을 입력하세요">
                                         </div>
+
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-primary">등록</button>
                                         </div>
