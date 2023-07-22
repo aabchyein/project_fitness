@@ -6,12 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.AdminPageService;
-import com.the_glory.project_fitness.service.FitnessService;
+
 
 @Controller
 public class AdminPageController {
@@ -24,7 +23,7 @@ public class AdminPageController {
     public ModelAndView selectAll(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = adminpageService.selectAll(params);
         modelAndView.addObject("result", result);
-        modelAndView.setViewName("/WEB-INF/views/Fitness/adminPage.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminPage.jsp");
         return modelAndView;
     }
 
@@ -33,9 +32,7 @@ public class AdminPageController {
     public  ModelAndView selectDetail(@RequestParam Map params, ModelAndView modelAndView) {
         Object result1 = adminpageService.selectDetail(params);
         modelAndView.addObject("result1", result1);
-        Object result = adminpageService.selectAll(params);
-        modelAndView.addObject("result", result);
-        modelAndView.setViewName("/WEB-INF/views/Fitness/adminPage.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminDetailPage.jsp");
         return modelAndView;
     }
 
@@ -45,7 +42,7 @@ public class AdminPageController {
         Object result = adminpageService.deleteAndSelectSearch(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
-        modelAndView.setViewName("/WEB-INF/views/Fitness/adminPage.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminPage.jsp");
         return modelAndView;
     }
 }

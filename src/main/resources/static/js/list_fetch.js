@@ -8,7 +8,7 @@ keydownObject.addEventListener('keydown', (event) => { // keydown은 내가 하�
 
 function comOption() {
     // url 입력
-    let url = `http://192.168.0.51:8080/notice/Notice`; // 입력값을 url에 넣는 방법
+    let url = `http://192.168.0.51:8080/Noticelogin`; // 입력값을 url에 넣는 방법
     // fetch 사용
     return fetch(url)
       .then(response => {

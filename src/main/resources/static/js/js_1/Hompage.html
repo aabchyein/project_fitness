@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+<title>헬스클럽 홈페이지</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  body {
+    background-color: #f8f8f8;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 1rem;
+  }
+
+  .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ececec;
+  }
+
+  nav a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
+  }
+
+  nav a:hover {
+    background-color: #dbdbdb;
+    color: #2b2b2b;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .search-form input[type="text"] {
+    width: 50%;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .search-form button {
+    background-color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .search-form button:hover {
+    background-color: #4d4d4d;
+  }
+
+  .img-container {
+    max-width: 100%;
+  }
+
+  .img-container img {
+    max-width: 100%;
+  }
+
+  .content {
+    margin-top: 1rem;
+  }
+
+  .welcome {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .content-text {
+    margin-bottom: 1rem;
+  }
+
+  button.more-info {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+  }
+
+  button.more-info:hover {
+    background-color: #4d4d4d;
+  }
+
+  footer {
+    background-color: #333;
+    padding: 1rem 0;
+    text-align: center;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<header>
+  <a href="#" class="logo">헬스클럽</a>
+  <nav>
+    <a href="#">홈</a>
+    <a href="#">예약</a>
+    <a href="#">커뮤니티</a>
+    <a href="#">로그인</a>
+    <a href="#">회원가입</a>
+  </nav>
+</header>
+<div class="container">
+  <!-- 검색창 시작 -->
+  <form class="search-form">
+    <input type="text" placeholder="헬스클럽 검색">
+    <button type="submit">검색</button>
+  </form>
+  <!-- 검색창 끝 -->
+  <div id="carouselExampleControls" class="carousel slide img-container" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="4000">
+        <img src="https://source.unsplash.com/1200x500/?gym" class="d-block w-100" alt="헬스클럽 사진1">
+      </div>
+      <div class="carousel-item" data-interval="4000">
+        <img src="https://source.unsplash.com/1200x500/?fitness" class="d-block w-100" alt="헬스클럽 사진2">
+      </div>
+      <div class="carousel-item" data-interval="4000">
+        <img src="https://source.unsplash.com/1200x500/?workout" class="d-block w-100" alt="헬스클럽 사진3">
+      </div>
+    </div>
+ 
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">이전</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">다음</span>
+    </a>
+  </div>
+  <div class="content">
+    <h2 class="welcome">환영합니다!</h2>
+    <p class="content-text">저희 홈페이지에서는 서울 전체 헬스클럽에 대한 정보를 제공합니다.</p>
+    <p class="content-text">항상 여러분을 도와줄 준비가 되어 있으니, 건강한 라이프스타일을 시작하는데 도움이 필요하시다면 언제든지 문의남겨주세요!</p>
+    <button class="more-info">자세히 알아보기</button>
+  </div>
+</div>
+<footer>
+  <p>© 2023 다 잡아 헬스클럽. 모든 권리 보유.</p>
+</footer>
+</body>
+</html> 

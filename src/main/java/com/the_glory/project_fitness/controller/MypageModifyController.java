@@ -22,17 +22,10 @@ public class MypageModifyController {
     @Autowired
     MypageModifyService mypageModifyService;
 
-    @GetMapping({ "/mypageModify" })
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Mypage/mypageModify.jsp");
-        return modelAndView;
-    }
-
     // /carInfor/selectDetail/{CAR_INFOR_ID} 경로로 GET 요청이 들어오면 실행되는 메소드
-    @GetMapping("/selectDetail/{ID}")
-    public ModelAndView selectDetail(@PathVariable String ID, @RequestParam Map params, ModelAndView ModelAndView) {
-        Object result = mypageModifyService.selectDetail(ID, params);
+    @GetMapping("/mypageModify")
+    public ModelAndView selectDetail(@RequestParam Map params, ModelAndView ModelAndView) {
+        Object result = mypageModifyService.selectDetail(params);
         ModelAndView.addObject("params", params);
         ModelAndView.addObject("result", result);   
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>운동 정보 홈페이지</title>
+    <style>
+        body {
+            font-family: 'Nanum Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .expert {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+
+        .expert img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .expert h2 {
+            margin-bottom: 1rem;
+        }
+
+        .expert p {
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 1rem auto;
+        }
+
+        th, td {
+            border: 2px solid #333;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        th {
+            background-color: #355c7d;
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        tbody tr:nth-child(1) td {
+            background-color: #c06c84;
+        }
+
+        tbody tr:nth-child(2) td {
+            background-color: #6c5b7b;
+        }
+        
+        tbody tr:nth-child(3) td {
+            background-color: #f67280;
+        }
+
+        td {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>운동 정보 홈페이지</h1>
+    <!-- 전문가 캐릭터   역 -->
+    <section class="expert">
+        <img src="./로고_6.png" alt="전문가 캐릭터 이미지">
+        <h2>전문가 추천 운동 프로그램</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>프로그램 유형</th>
+                    <th>추천 운동 예시</th>
+                    <th>적합한 대상</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>초보자용 프로그램</td>
+                    <td>스쿼트, 런지, 푸시업, 레그 프레스</td>
+                    <td>운동 경험이 적은 분들</td>
+                </tr>
+                <tr>
+                    <td>다이어트 프로그램</td>
+                    <td>유산소 운동, HIIT, 지방 연소 운동</td>
+                    <td>체중 감량을 원하는 분들</td>
+                </tr>
+                <tr>
+                    <td>근력 증가 프로그램</td>
+                    <td>웨이트 트레이닝, 맨몸 운동, 저항 밴드 운동</td>
+                    <td>근육 양과 힘을 높이고 싶은 분들</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>운동을 시작하기 전에는 반드시 전문가의 의견을 듣고, 본인의 건강상태와 특성을 고려해 적합한 프로그램을 선택하는 것이 중요합니다.</p>
+    </section>
+</body>
+</html>

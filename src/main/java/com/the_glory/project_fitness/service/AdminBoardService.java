@@ -122,6 +122,14 @@ public class AdminBoardService {
         return result;
     }
 
+    // MVC view -AdminBoardupdate(업데이트)
+
+    public Object AdminBoardupdate(String ID, Map dataMap) {
+        String sqlMapId = "AdminBoard.AdminBoardupdate";
+        Object result = sharedDao.update(sqlMapId, dataMap);
+
+        return result;
+    }
 
 
 

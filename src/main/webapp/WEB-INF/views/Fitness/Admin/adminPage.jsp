@@ -80,7 +80,7 @@
                                                     <%= record.get("EMAIL_ADDRESS") %>
                                                 </td>
                                                 <td class="admin-actions">
-                                                    <button class="btn btn-secondary" id="detailBtn" formaction="/adminPageDetail" formmethod="get">조회</button>
+                                                    <button class="btn btn-secondary" id="" formaction="/adminPageDetail" formmethod="get">조회</button>
                                                     <button class="btn btn-danger" formaction="/adminPageDelete" formmethod="get">삭제</button>
                                                 </td>
                                             </tr>
@@ -88,51 +88,6 @@
                                         <% } %>
                                     </tbody>
                                 </table>
-
-                            </div>
-                            <div id="detailModal" class="modal">
-                                <div class="modal-content">
-                                    <span class="close">&times;</span>
-                                    <h2>상세조회</h2>
-                                    <!-- 상세조회 내용을 표시할 요소들을 추가 -->
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <td name="NAME">이름</td>
-                                                <td name="GENDER">성별</td>
-                                                <td name="ID">아이디</td>
-                                                <td name="EMAIL_ADDRESS">이메일</td>
-                                                <td name="PHONE_NUMBER">휴대폰번호</td>
-                                                <td name="ADDRESS">주소</td>
-                                            </tr>
-                                        </thead>
-                                            <tbody>
-                                                <%
-                                                HashMap result= (HashMap) request.getAttribute("result1");
-                                                %>
-                                                <tr>
-                                                    <td>
-                                                        <%= result.get("NAME") %>
-                                                    </td>
-                                                    <td>
-                                                        <%= result.get("GENDER") %>
-                                                    </td>
-                                                    <td>
-                                                        <%= result.get("ID") %>
-                                                    </td>
-                                                    <td>
-                                                        <%= result.get("EMAIL_ADDRESS") %>
-                                                    </td>
-                                                    <td>
-                                                        <%= result.get("PHONE_NUMBER") %>
-                                                    </td>
-                                                    <td>
-                                                        <%= result.get("ADDRESS") %>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                    </table>
-                                </div>
                             </div>
 
                             <!-- 페이지 넘어가는 표시 -->
@@ -158,36 +113,6 @@
                 </div>
                 <!-- Footer -->
                 <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
-
-                    <script>
-                        // 버튼 클릭 시 모달 열기
-                        document.getElementById("detailBtn").addEventListener("click", function () {
-                            document.getElementById("detailModal").style.display = "block";
-                             // Fetch API로 서버에 데이터 요청
-                            fetch('/adminPageDetail')
-                            .then((response) => response.json())
-                            .then((data) => {
-                            // 데이터를 모달창에 출력
-                            modal.innerHTML = `<div>${data.NAME}</div><div>${data.GENDER}</div><div>${data.ID}</div><div>${data.EMAIL_ADDRESS}</div><div>${data.PHONE_NUMBER}</div><div>${data.ADDRESS}</div>`;
-                            });
-                        }
-                        );
-
-                        // 모달 닫기 버튼 클릭 시 모달 닫기
-                        document.getElementsByClassName("close")[0].addEventListener("click", function () {
-                            document.getElementById("detailModal").style.display = "none";
-                        });
-                        0
-                        // 모달 외부 클릭 시 모달 닫기
-                        window.addEventListener("click", function (event) {
-                            var modal = document.getElementById("detailModal");
-                            if (event.target == modal) {
-                                modal.style.display = "none";
-                            }
-                        });
-
-                    </script>
-
 
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
                         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

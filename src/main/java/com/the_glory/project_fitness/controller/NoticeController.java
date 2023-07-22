@@ -40,5 +40,13 @@ public class NoticeController {
         return modelAndView;
     }
 
+    @GetMapping("/memberDelete")
+    public Object memberdelete(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.memdelete(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminPage.jsp");
+        return modelAndView;
+    }
 
 }

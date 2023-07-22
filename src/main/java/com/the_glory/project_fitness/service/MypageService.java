@@ -34,6 +34,13 @@ public class MypageService {
         return result;
     }
 
+    public Object ReserveList(Map dataMap){
+    String sqlMapId = "Mypage.ReserveList";
+    Object result = sharedDao.getList(sqlMapId, dataMap);
+
+       return result;
+    }
+
     public Object mypageUpdate(Map dataMap) {
         String sqlMapId = "Mypage.MypageUpdate";
         Object result = sharedDao.update(sqlMapId, dataMap);
