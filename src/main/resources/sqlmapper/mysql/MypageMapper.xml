@@ -2,25 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Mypage">
 <!-- 회원 상세정보 및 예약내역 -->
-    <select id="MypageDetail" parameterType="Map" resultType="Map">   
-     SELECT *
-      FROM member_information AS member
-        INNER JOIN reservation AS reser
-          ON member.ID = reser.ID
-          INNER JOIN gender AS gen
-          ON member.GENDER_ID = gen.GENDER_ID
-          INNER JOIN company AS com
-          ON reser.COMPANY_ID = com.COMPANY_ID
-          and member.ID LIKE 'davids'
-      ;
+    <select id="memDetail" parameterType="Map" resultType="Map">   
+    Select *
+    from member_information as mem
+    inner join gender
+    on mem.GENDER_ID = gender.GENDER_ID
+    and mem.ID = #{ID}
+    ;
+    </select>
+    <select id="reserDetail" parameterType="Map" resultType="Map">
+    Select *
+    from reservation as reser
+    inner join company
+    on reser.COMPANY_ID = company.COMPANY_ID
+    and reser.ID = #{ID}
+    ;
     </select>
 
     <update id="MypageUpdate" parameterType="Map">
     update reservation
-    set reservation_date = '2023-12-34',
-        reservation_time = '12:34-56:78',
-        notes = 'hello'
-    where reservation_id = 'reser07'
+    set reservation_date = #{RESERVATION_DATE},
+        reservation_time = #{RESERVATION_TIME},
+        notes = #{NOTES}
+    where reservation_id = #{RESERVATION_ID}
     ;
     </update>
 
@@ -29,7 +33,7 @@
     <delete id="MypageDelete" parameterType="Map">
     delete
     from reservation
-    where reservation_id = 'reser07';
+    where reservation_id = #{RESERVATION_ID};
     </delete>
 
 </mapper>

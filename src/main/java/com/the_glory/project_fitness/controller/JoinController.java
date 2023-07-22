@@ -16,19 +16,26 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
+import com.the_glory.project_fitness.service.JoinService;
 
 @Controller
 public class JoinController {
 
-
     @Autowired
-    CommonService fitnessService;
+    JoinService joinService;
 
-    @GetMapping({"/Join"})
+    @GetMapping({ "/Join" })
     public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
         modelAndView.setViewName("/WEB-INF/views/Fitness/Join/Join.jsp");
         return modelAndView;
     }
+
+    @PostMapping({ "/joininsert" })
+    public ModelAndView Joininsert(@RequestParam Map datamap, ModelAndView modelAndView) {
+        Object result = joinService.JoinInsert(datamap);
+        modelAndView.addObject("datamap", datamap);
+        modelAndView.addObject("result", result);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/GYM/gym.jsp");
+        return modelAndView;
+    }
 }
-    

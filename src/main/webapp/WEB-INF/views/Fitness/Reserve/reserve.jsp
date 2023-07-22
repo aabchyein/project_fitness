@@ -36,13 +36,13 @@
         <form>
           <div class="form-group m-5">
             <label for="datepicker">날짜 선택:</label>
-            <input class="datepicker my-custom-calendar" type="date" name="date" id="datepicker">
+            <input class="datepicker my-custom-calendar" type="date" name="RESERVATION_DATE" id="datepicker">
 
           </div>
           <div id="custom-calendar"></div>
           <div class="form-group m-5">
             <label for="timepicker">시간 선택:</label>
-            <select class="form-control" id="timepicker" required>
+            <select class="form-control" id="timepicker" name="RESERVATION_TIME" required>
               <option>원하는 시간대를 선택하세요</option>
               <option>10:00 - 11:00</option>
               <option>11:00 - 12:00</option>
@@ -59,16 +59,16 @@
           </div>
           <div class="form-group m-5">
             <label for="centerName">센터명</label>
-            <textarea class="form-control" id="centerName" rows="2" required=""></textarea>
+            <textarea class="form-control" name="COMPANY_ID" id="centerName" rows="2" required=""></textarea>
           </div>
           <div class="form-group m-5">
             <label for="notes">상담 시 참고할 부분을 적어주세요. (병력 및 신체 이상, 원하시는 점이나 기대하는 점)
             </label>
-            <textarea class="form-control" id="notes" rows="2" required=""></textarea>
+            <textarea class="form-control" name="NOTES" id="notes" rows="2" required=""></textarea>
           </div>
           <div class="row">
             <div class="col-md-12 text-center">
-              <a href="./gym_login.html" class="btn btn-secondary">취소</a>
+              <a href="/gym_login" class="btn btn-secondary">취소</a>
 
               <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#completionModal"
                 onclick="showConfirmation();">완료</button>
@@ -81,7 +81,7 @@
 
   <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
 
-    <script>
+    <!-- <script>
       $(function () {
         $("#datepicker").datepicker({
           minDate: 0 // 오늘 이전 날짜 선택 불가
@@ -107,14 +107,14 @@
       }
 
       function gymloginconnect() {
-        window.location.href = "./gym_login.html";
+        window.location.href = "/Gym_Login";
       }
       function gymloginNoconnect() {
-        window.location.href = "./reserve.html";
+        window.location.href = "/reserve";
       }
 
 
-    </script>
+    </script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -15,120 +15,148 @@
 
     <body>
       <!-- 상단 네비게이션 바 -->
-      <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
-        <!-- 마이페이지 -->
-        <div class="container p-5">
-          <div class="row">
-            <div class="col-md-4">
-              <h2>회원정보</h2>
-              <div class="fs-5 fw-bold border-bottom border-3 border-dark border-opacity-50 pb-2 text-dark"></div>
-              <table class="table boder-top">
-                <% ArrayList list1=(ArrayList)request.getAttribute("result"); %>
-                  <% HashMap result=(HashMap)list1.get(0); %>
-                    <tr>
-                      <th>이름</th>
-                      <td>
-                        <%= result.get("NAME")%>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>아이디</th>
-                      <td>
-                        <%= result.get("ID") %>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>비밀번호</th>
-                      <td>
-                        <%=result.get("PASSWORD")%>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>생년월일</th>
-                      <td>
-                        <%=result.get("BIRTHDATE")%>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>성별</th>
-                      <td>
-                        <%=result.get("GENDER")%>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>휴대전화</th>
-                      <td>
-                        <%=result.get("PHONE_NUMBER")%>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>이메일</th>
-                      <td>
-                        <%=result.get("EMAIL_ADDRESS")%>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>주소</th>
-                      <td>
-                        <%=result.get("ADDRESS")%>
-                      </td>
-                    </tr>
-              </table>
-              <div class="text-lg-end">
-                <a href='/selectDetail/<%=result.get("ID")%>' type="submit" class="btn btn-secondary" style="opacity: 0.8;" id="ID" value='<%= result.get("ID") %>'>회원정보수정</a>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <h2>예약 내역</h2>
-              <div class="fs-5 fw-bold border-bottom border-3 border-dark border-opacity-50 pb-2 text-dark"></div>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>예약 날짜</th>
-                    <th>예약 시간</th>
-                    <th>센터명</th>
-                    <th>참고사항</th>
-                    <th>수정</th>
-                    <th>삭제</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <% ArrayList list=(ArrayList)request.getAttribute("result"); %>
-                    <% for(int i=0; i<list.size(); i++){ HashMap record=(HashMap)list.get(i); %>
+      <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+        <% HashMap map=(HashMap)request.getAttribute("result"); %>
+          <!-- 마이페이지 -->
+          <div class="container p-5">
+            <div class="row">
+              <div class="col-md-4">
+                <h2>회원정보</h2>
+                <div class="fs-5 fw-bold border-bottom border-3 border-dark border-opacity-50 pb-2 text-dark"></div>
+                <table class="table boder-top">
+                  <% ArrayList list=(ArrayList)map.get("result"); %>
+                    <% HashMap result=(HashMap)list.get(0); %>
                       <tr>
+                        <th>이름</th>
                         <td>
-                          <%= record.get("RESERVATION_DATE") %>
+                          <%= result.get("NAME")%>
                         </td>
+                      </tr>
+                      <tr>
+                        <th>아이디</th>
                         <td>
-                          <%= record.get("RESERVATION_TIME") %>
+                          <%= result.get("ID") %>
                         </td>
+                      </tr>
+                      <tr>
+                        <th>비밀번호</th>
                         <td>
-                          <%= record.get("COMPANY_NAME") %>
+                          <%=result.get("PASSWORD")%>
                         </td>
+                      </tr>
+                      <tr>
+                        <th>생년월일</th>
                         <td>
-                          <%= record.get("NOTES") %>
+                          <%=result.get("BIRTHDATE")%>
                         </td>
-                        <th><button type="submit" class="btn btn-outline-secondary mx-1"
-                            style="opacity: 0.8;">수정</button>
-                        </th>
-                        <th><button type="submit" class="btn btn-danger mx-1" style="opacity: 0.8;" name="re">삭제</button></th>
+                      </tr>
+                      <tr>
+                        <th>성별</th>
+                        <td>
+                          <%=result.get("GENDER")%>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>휴대전화</th>
+                        <td>
+                          <%=result.get("PHONE_NUMBER")%>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>이메일</th>
+                        <td>
+                          <%=result.get("EMAIL_ADDRESS")%>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>주소</th>
+                        <td>
+                          <%=result.get("ADDRESS")%>
+                        </td>
                       </tr>
 
-                      <!-- 다른 예약 내역 추가 -->
-                      <% } %>
-                </tbody>
-              </table>
+                </table>
+                <div class="text-lg-end">
+                  <a href='/selectDetail/<%=result.get("ID")%>' type="submit" class="btn btn-secondary"
+                    style="opacity: 0.8;" id="ID" value='<%= result.get("ID") %>'>회원정보수정</a>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h2>예약 내역</h2>
+                <div class="fs-5 fw-bold border-bottom border-3 border-dark border-opacity-50 pb-2 text-dark"></div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>예약 날짜</th>
+                      <th>예약 시간</th>
+                      <th>센터명</th>
+                      <th>참고사항</th>
+                      <th>수정</th>
+                      <th>삭제</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    <% ArrayList reserlist=(ArrayList)map.get("result1"); %>
+                      <% for(int i=0; i<reserlist.size(); i++) { %>
+                        <!-- 예약이 없을때 나는 오류 방어 -->
+                        <% if (reserlist !=null) { %>
+                          <% HashMap reser=(HashMap)reserlist.get(i); %>
+
+                            <tr>
+                              <td>
+                                <%= reser.get("RESERVATION_DATE") %>
+                              </td>
+                              <td>
+                                <%= reser.get("RESERVATION_TIME") %>
+                              </td>
+                              <td>
+                                <%= reser.get("COMPANY_NAME") %>
+                              </td>
+                              <td>
+                                <%= reser.get("NOTES") %>
+                              </td>
+                              <form action="">
+                                <th>
+                                  <input type="hidden" name="ID" value='<%= result.get("ID") %>'>
+                                  <input type="hidden" name="RESERVATION_ID" value='<%= reser.get("RESERVATION_ID") %>'>
+                                  <button type="submit" class="btn btn-outline-secondary mx-1" style="opacity: 0.8;"
+                                    formaction="/mypagereserve">수정</button>
+                                </th>
+                              </form>
+                              <form action="">
+                                <th>
+                                  <input type="hidden" name="ID" value='<%= result.get("ID") %>'>
+                                  <button type="submit" class="btn btn-danger mx-1" style="opacity: 0.8;"
+                                    name="RESERVATION_ID" value='<%= reser.get("RESERVATION_ID") %>'
+                                    formaction='/mypagedelete' formmethod="post">삭제</button>
+                                </th>
+                              </form>
+                            </tr>
+                            <!-- 다른 예약 내역 추가 -->
+                            <!-- 예약내용이 없을때 나오는 출력 문구 -->
+                            <% } else if (reserlist==null) { %>
+                              <tr>
+                                <td>
+                                  예약내용 이 없습니다.
+                                </td>
+                              </tr>
+                              <% } else { %>
+                                <% } %>
+                                  <% } %>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
 
 
-        <!-- Footer -->
-        <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
+          <!-- Footer -->
+          <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
 
-          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </body>
 
     </html>
