@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.the_glory.project_fitness.service.FitnessService;
 import com.the_glory.project_fitness.service.MypageModifyService;
+
+import ch.qos.logback.core.model.Model;
 
 @Controller
 
@@ -22,7 +25,6 @@ public class MypageModifyController {
     @Autowired
     MypageModifyService mypageModifyService;
 
-    // /carInfor/selectDetail/{CAR_INFOR_ID} 경로로 GET 요청이 들어오면 실행되는 메소드
     @GetMapping("/mypageModify")
     public ModelAndView selectDetail(@RequestParam Map params, ModelAndView ModelAndView) {
         Object result = mypageModifyService.selectDetail(params);
@@ -34,5 +36,13 @@ public class MypageModifyController {
         return ModelAndView;
     }
 
+    @GetMapping("/updateAndSelect")
+    public ModelAndView updateAndSelect(@RequestParam Map params, ModelAndView ModelAndView){
+        Object result = mypageModifyService.updateAndSelect(params);
+
+        ModelAndView.addObject("result", result);   
+        ModelAndView.setViewName("/WEB-INF/views/Fitness/Mypage/mypage.jsp");
+        return ModelAndView;
+    }
     
 }
