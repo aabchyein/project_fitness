@@ -42,18 +42,18 @@ public class NoticeLoginController {
         return modelAndView;
     }
 
-    @GetMapping("/Noticelogin2")
-    public ModelAndView selectSearch(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = noticeService.selectSearch(params);
-        //Object result = commonService.selectAll(params);
+    // @GetMapping("/Noticelogin2")
+    // public ModelAndView selectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+    //     Object result = noticeService.selectSearch(params);
+    //     //Object result = commonService.selectAll(params);
 
-        HashMap rtnTmp = new HashMap<>();
-        rtnTmp.put("resultList", result);
+    //     HashMap rtnTmp = new HashMap<>();
+    //     rtnTmp.put("resultList", result);
 
-        modelAndView.addObject("params", params);
-        modelAndView.addObject("result", result);
+    //     modelAndView.addObject("params", params);
+    //     modelAndView.addObject("result", result);
 
-        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        return modelAndView;
-    }
+    //     modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+    //     return modelAndView;
+    // }
 }
