@@ -10,18 +10,6 @@
 	</select>
 
 
-      
-    <!-- Admin_Answer입력 버튼  -->
-    <insert id="insertAnswer" parameterType="Map" >
-        insert into db_fitness.board
-        (ADMIN_ID, ANSWER, BOARD_ANSWER_ID, BOARD_ID)
-        values
-        (#{ADMIN_ID}, #{ANSWER}, #{BOARD_ANSWER_ID}, #{BOARD_ID})
-    </insert>
-
-
-
-
     <!-- Answer 삭제
     <delete id="delete" parameterType="Map">
        DELETE FROM db_fitness.board_answer

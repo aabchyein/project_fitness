@@ -65,7 +65,20 @@
         ;
 	</select>
 
-   
+    <!-- Admin_Answer입력 버튼  -->
+    <insert id="insertAnswer" parameterType="Map" >
+        insert into db_fitness.board
+        (ADMIN_ID, ANSWER, BOARD_ANSWER_ID, BOARD_ID)
+        values
+        (#{ADMIN_ID}, #{ANSWER}, #{BOARD_ANSWER_ID}, #{BOARD_ID})
+    </insert>
 
+    <!-- detail  -->
+	<select id="selectSearch" parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM db_fitness.board
+        where BOARD_ID = #{BOARD_ID}
+        ;
+	</select>
 
  </mapper>

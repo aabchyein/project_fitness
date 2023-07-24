@@ -71,25 +71,25 @@ public class AdminBoardAnswerService {
     // 검색(조건-search : YEAR, CAR_NAME)
     
     
-    public Object selectSearch(Map dataMap) {
-        // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "AdminBoardAnswer.selectSearch";
+    // public Object selectSearch(Map dataMap) {
+    //     // Object getOne(String sqlMapId, Object dataMap)
+    //     String sqlMapId = "AdminBoardAnswer.selectSearch";
 
-        Object result = sharedDao.getList(sqlMapId, dataMap);
-        return result;
-    }
+    //     Object result = sharedDao.getList(sqlMapId, dataMap);
+    //     return result;
+    // }
 
-    // 검색(조건-search : YEAR, CAR_NAME)
-    public Object selectSearch(String search, String words) {
-        // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "AdminBoardAnswer.selectSearch";
-        HashMap dataMap = new HashMap<>();
-        dataMap.put("search", search);
-        dataMap.put("words", words);
+    // // 검색(조건-search : YEAR, CAR_NAME)
+    // public Object selectSearch(String search, String words) {
+    //     // Object getOne(String sqlMapId, Object dataMap)
+    //     String sqlMapId = "AdminBoardAnswer.selectSearch";
+    //     HashMap dataMap = new HashMap<>();
+    //     dataMap.put("search", search);
+    //     dataMap.put("words", words);
 
-        Object result = sharedDao.getList(sqlMapId, dataMap);
-        return result;
-    }
+    //     Object result = sharedDao.getList(sqlMapId, dataMap);
+    //     return result;
+    // }
 
 
 
