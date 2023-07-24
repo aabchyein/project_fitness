@@ -4,23 +4,35 @@
 
     <!-- 전체  -->
 	<select id="selectAll" parameterType="Map" resultType="Map">
-        SELECT NUMBER, ID ,TITLE,CONTENTS,VIEWS
-        FROM db_fitness.board
-        WHERE 1 = 1 ;  
+      SELECT  ADMIN_ID,ANSWER,BOARD_ANSWER_ID,BOARD_ID
+      FROM db_fitness.board_answer
+      WHERE 1 = 1;
 	</select>
 
 
-    <!-- Answer 삭제 -->
+      
+    <!-- Admin_Answer입력 버튼  -->
+    <insert id="insertAnswer" parameterType="Map" >
+        insert into db_fitness.board
+        (ADMIN_ID, ANSWER, BOARD_ANSWER_ID, BOARD_ID)
+        values
+        (#{ADMIN_ID}, #{ANSWER}, #{BOARD_ANSWER_ID}, #{BOARD_ID})
+    </insert>
+
+
+
+
+    <!-- Answer 삭제
     <delete id="delete" parameterType="Map">
        DELETE FROM db_fitness.board_answer
        WHERE BOARD_ANSWER_ID = #{BOARD_ANSWER_ID}
-    </delete>
+    </delete> -->
 
-    <!-- 회원 정보 삭제 -->
+    <!-- 회원 정보 삭제
     <delete id="memdelete" parameterType="Map">
     DELETE FROM board_answer
     WHERE BOARD_ID = #{BOARD_ID};
-    </delete>
+    </delete> -->
 
     <!-- 입력 버튼  -->
 	<insert id="insert" parameterType="Map" >
@@ -29,7 +41,7 @@
     </insert>
 
 
-    <!-- 검색 with pagination -->
+    <!-- 검색 with pagination
 	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
         SELECT *
         FROM db_fitness.board
@@ -44,13 +56,13 @@
         </choose>  
         limit #{pageBegin}, #{pageScale} 
         ;
-	</select>
+	</select> -->
 
-    <!-- total count -->
+    <!-- total count
 	<select id="selectTotal" parameterType="Map" resultType="int">
         select count(*) as cnt
         from db_fitness.board
         ;
-	</select>
+	</select> -->
 
  </mapper>

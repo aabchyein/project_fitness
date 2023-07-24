@@ -98,9 +98,9 @@ public class AdminBoardService {
     public Object deleteDouble(Map dataMap) {
         String sqlMapId = "AdminBoard.delete";
         // sucess
-        Object result = sharedDao.insert(sqlMapId, dataMap);
+        Object result = sharedDao.delete(sqlMapId, dataMap);
         // error
-        result = sharedDao.insert(sqlMapId, dataMap);
+        result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }
 
