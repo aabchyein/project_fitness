@@ -51,14 +51,14 @@
                                 <% HashMap record=(HashMap)request.getAttribute("record"); %>
                                         <div class="mb-3">
                                             <label for="name" class="form-label">작성자</label>
-                                            <input type="text" class="form-control" id="name"
-                                                value='<%= record.get(" NAME") %>' readonly>
+                                            <input type="text" class="form-control" id="ID"
+                                                  value="ID" name="ID" readonly>
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="question" class="form-label">질문 내용</label>
                                             <input type="text" class="form-control" id="CONTENTES"
-                                                value='<%= record.get("CONTENTES") %>' readonly>
+                                                   value="CONTENTES" name="CONTENTES"readonly>
                                         </div>
                                         
                                         <form id="answer-form">
@@ -70,7 +70,7 @@
                                         </div>
 
                                         <div>
-                                            <input type="hidden" name="ADMIN_ID" value="">
+                                            <input type="hidden" name="ADMIN_ID" value=" ">
                                         </div>
                                         <div>
                                             <input type="hidden" name="ANSWER" value="">

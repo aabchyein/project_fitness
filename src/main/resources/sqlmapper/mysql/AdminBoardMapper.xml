@@ -22,9 +22,9 @@
       <!-- 입력 버튼  -->
 	<insert id="insert" parameterType="Map" >
         insert into db_fitness.board
-        (NOTICE_ID, NOTICE_TITLE, ID, NOTICE_DATE, NOTICE_VIEWS, NOTICE_CONTENTS)
+        (NUMBER, ID, TITLE,CONTENTS, DATE,VIEWS,BOARD_ID)
         values
-        (#{NOTICE_ID}, #{NOTICE_TITLE}, #{ID}, now(), #{NOTICE_VIEWS}, #{NOTICE_CONTENTS})
+        (#{NUMBER}, #{ID}, #{TITLE},  #{CONTENTS}, #{DATE},#{VIEWS} ,#{BOARD_ID})
     </insert>
 
 

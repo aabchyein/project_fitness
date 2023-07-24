@@ -104,16 +104,16 @@ public class AdminBoardService {
         return result;
     }
 
-    // MVC view -insertAndSelectSearch(등록)
-    public Object insertAndSelectSearch(Map dataMap) {
-        // UniqueID uniqueid = new UniqueID();
-        // String uuid = uniqueid.generatUuid();
-        HashMap result = new HashMap<>();
-        result.put("insertCount", this.insert(dataMap));
+    // // MVC view -insertAndSelectSearch(등록)
+    // public Object insertAndSelectSearch(Map dataMap) {
+    //     // UniqueID uniqueid = new UniqueID();
+    //     // String uuid = uniqueid.generatUuid();
+    //     // HashMap result = new HashMap<>();
+    //     // result.put("insertCount", this.insert(dataMap));
 
-        result.putAll(this.selectSearchWithPagination(dataMap));
-        return result;
-    }
+    //     result.putAll(this.selectSearchWithPagination(dataMap));
+    //     return result;
+    // }
     
     // MVC view -insert(등록)
     public Object insert(Map dataMap) {
