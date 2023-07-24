@@ -24,7 +24,7 @@ public class NoticeController {
 
     @GetMapping({"/Notice"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = noticeService.selectAll(params);
+        Object result = noticeService.selectSearch(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
         

@@ -34,7 +34,7 @@ public class CarInforsController {
 
         // modelAndView.addObject("params", "result");
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/test/common_noticePage_test.jsp");
         return modelAndView;
     }
 
@@ -61,7 +61,7 @@ public class CarInforsController {
         modelAndView.addObject("result", result);
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/test/common_noticePage_test.jsp");
         return modelAndView;
     }
 
