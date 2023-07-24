@@ -35,7 +35,7 @@
                     <form>
                       <div class="input-group">
                         <div class="input-group-prepend">
-                          <select class="btn btn-outline-secondary custom-select" type="button" id="search-option">
+                          <select class="btn btn-outline-secondary custom-select" type="button" id="search-option" name="search">
                             <option value="choose">선택</option>
                             <option value="NOTICE_TITLE" <%=(searchStr.equals("NOTICE_TITLE")) ? "selected" : "" %>>제목</option>
                             <option value="NOTICE_CONTENTS" <%=(searchStr.equals("NOTICE_CONTENTS")) ? "selected" : "" %>>내용</option>
