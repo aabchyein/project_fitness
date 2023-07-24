@@ -36,12 +36,12 @@
                 <div class="mb-3">
                   <label for="password" class="form-label">비밀번호</label>
                   <em class="required">*</em>
-                  <input type="password" id="password" class="form-control" name="password" value="">
+                  <input type="password" id="password" class="form-control" name="password" value='<%= result.get("PASSWORD")%>'>
                 </div>
                 <div class="mb-3">
                   <label for="password" class="form-label">비밀번호 확인</label>
                   <em class="required">*</em>
-                  <input type="password" id="passwordcheck" class="form-control" name="confirmpassword" value="">
+                  <input type="password" id="passwordcheck" class="form-control" name="confirmpassword" value='<%= result.get("PASSWORD")%>'>
                 </div>
                 <div class="mb-3">
                   <label for="gender">성별</label>

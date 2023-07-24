@@ -92,3 +92,10 @@ VALUES
   ('ADMIN02', '답변8', 'ANS08', 'BOARD08'),
   ('ADMIN01', '답변9', 'ANS09', 'BOARD09'),
   ('ADMIN02', '답변10', 'ANS10', 'BOARD10');
+  
+insert into AUTH_NAMES 
+(UNIQUE_ID,AUTH_NAME)
+values
+('ROLE_ADMIN','ADMIN'),
+('ROLE_GUEST','GUEST')
+;
