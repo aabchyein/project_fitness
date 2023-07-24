@@ -85,26 +85,46 @@ public class AdminBoardController {
  // insert and selectsearch
  @PostMapping("/insertAndSelectSearch")
  public ModelAndView insertAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
-     Object result = adminBoardService.insertAndSelectSearch(params);
+     Object result = adminBoardService.selectSearchWithPagination(params);
      modelAndView.addObject("params", params);
      modelAndView.addObject("result", result);
 
      // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-     modelAndView.setViewName("/WEB-INF/views/Fitness/common_noticePage_test.jsp");
+     modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
      return modelAndView;
  }
 // 등록버튼 링크 
- @GetMapping("/insertAndcome")
- public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView modelAndView) {
-  Object result = adminBoardService.insertAndSelectSearch(params);
-     modelAndView.addObject("params", params);
-     modelAndView.addObject("result", result);
+@GetMapping("/insertAndcome")
+public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView modelAndView) {
+    // Object result = adminBoardService.insertAndSelectSearch(params);
+    //  modelAndView.addObject("params", params);
+    //  modelAndView.addObject("result", result);
+    modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
+    return modelAndView;
+}
+//  insertAnswer답변 등록 버튼 
 
-     modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
-     return modelAndView;
- }
+
+@GetMapping("/Adminboardinsert")
+public ModelAndView Adminboardinsert(@RequestParam Map paramMap,ModelAndView modelAndView) {
+    modelAndView.addObject("paramMap", paramMap);
+    modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
+
+    return modelAndView;
+}
 
 
-    
+@GetMapping("/selectSearch")
+public ModelAndView selectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+    Object result = adminBoardService.selectSearch(params);
+    modelAndView.addObject("params", params);
+    modelAndView.addObject("result", result);
+    modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
+    return modelAndView;
+}
+
+
+
+
 }
 
