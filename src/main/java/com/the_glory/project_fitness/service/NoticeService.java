@@ -76,8 +76,8 @@ public class NoticeService {
 
     public Object selectSearch(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "Notice.selectSearch";
-        Object result = sharedDao.getList(sqlMapId, dataMap);
+        // String sqlMapId = "Notice.selectSearch";
+        // Object result = sharedDao.getList(sqlMapId, dataMap);
         // result.put("resultList", this.selectSearch(dataMap));
         HashMap result1 = new HashMap<>();
         result1.putAll(this.selectSearchWithPagination(dataMap));
