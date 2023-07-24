@@ -62,12 +62,44 @@ public class AdminBoardService {
 
     // // selectSearch 수
 
-    //  public Object selectSearch(Map dataMap) {
-    //     String sqlMapId = "AdminBoard.selectSearch";
+    public Object selectSearch(Map dataMap) {
+        // Object getOne(String sqlMapId, Object dataMap)
+        String sqlMapId = "AdminBoard.selectSearch";
+
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    // 검색(조건-search : YEAR, CAR_NAME)
+    public Object selectSearch(String search, String words) {
+        // Object getOne(String sqlMapId, Object dataMap)
+        String sqlMapId = "AdminBoard.selectSearch";
+        HashMap dataMap = new HashMap<>();
+        dataMap.put("search", search);
+        dataMap.put("words", words);
+
+        Object result = sharedDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    // public Object selectDetail(Map paramMap) {
+    //     // Object getOne(String sqlMapId, Object dataMap)
+    //     String sqlMapId = "AdminBoard.selectSearch"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
+    //     HashMap dataMap = new HashMap<>();
+    //     dataMap.put("BOARD_ID", paramMap);
 
     //     Object result = sharedDao.getOne(sqlMapId, dataMap);
     //     return result;
     // }
+
+    public Object selectDetail(Map paramMap) {
+        String sqlMapId = "AdminBoard.selectSearch"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
+       
+    
+        Object result = sharedDao.getOne(sqlMapId, paramMap);
+        return result;
+    }
+    
 
     // MVC  view- delete1 
     public Object delete(Map params) {
