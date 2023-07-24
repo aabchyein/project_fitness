@@ -98,22 +98,22 @@ public class AdminBoardService {
     public Object deleteDouble(Map dataMap) {
         String sqlMapId = "AdminBoard.delete";
         // sucess
-        Object result = sharedDao.insert(sqlMapId, dataMap);
+        Object result = sharedDao.delete(sqlMapId, dataMap);
         // error
-        result = sharedDao.insert(sqlMapId, dataMap);
+        result = sharedDao.delete(sqlMapId, dataMap);
         return result;
     }
 
-    // MVC view -insertAndSelectSearch(등록)
-    public Object insertAndSelectSearch(Map dataMap) {
-        // UniqueID uniqueid = new UniqueID();
-        // String uuid = uniqueid.generatUuid();
-        HashMap result = new HashMap<>();
-        result.put("insertCount", this.insert(dataMap));
+    // // MVC view -insertAndSelectSearch(등록)
+    // public Object insertAndSelectSearch(Map dataMap) {
+    //     // UniqueID uniqueid = new UniqueID();
+    //     // String uuid = uniqueid.generatUuid();
+    //     // HashMap result = new HashMap<>();
+    //     // result.put("insertCount", this.insert(dataMap));
 
-        result.putAll(this.selectSearchWithPagination(dataMap));
-        return result;
-    }
+    //     result.putAll(this.selectSearchWithPagination(dataMap));
+    //     return result;
+    // }
     
     // MVC view -insert(등록)
     public Object insert(Map dataMap) {

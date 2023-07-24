@@ -109,14 +109,14 @@
                       <span aria-hidden="true">&lt;</span>
                       </a>
                     </li>
+                    
                     <% for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd(); i=i+1){ %>
                       <li class="page-item">
-                        <a class="page-link" href="/Noticelogin?currentPage=<%= i %>">
+                        <a class="page-link" href='/Noticelogin?currentPage=<%= i %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>
                           <%= i %>
                         </a>
                       </li>
                       <% } %>
-
                         <li class="page-item">
                           <a class="page-link" href="/Noticelogin?currentPage=<%= paginations.getNextPage() %>">Next</a>
                           <span aria-hidden="true">&gt;</span>

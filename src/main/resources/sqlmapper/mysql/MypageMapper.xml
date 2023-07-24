@@ -30,10 +30,11 @@
 
     <!-- pagination -->
 	<select id="MypagePagination" parameterType="Map" resultType="Map">
-        SELECT * 
-        FROM db_fitness.reservation
-        where 1 = 1 
-       
+        Select *
+        from reservation as reser
+        inner join company
+        on reser.COMPANY_ID = company.COMPANY_ID
+        and reser.ID = #{ID}
         limit #{pageBegin}, #{pageScale} 
         ;
 	</select>
