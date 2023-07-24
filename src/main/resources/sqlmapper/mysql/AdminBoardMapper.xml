@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="AdminBoard">
+
+<mapper namespace="AdminBoard"> 
+        
+    <!--call AdminBoard.selectBoard 화면 -->
+
 
     <!-- 전체화면 -->
 	<select id="selectAll" parameterType="Map" resultType="Map">
@@ -8,6 +12,10 @@
     from board
 	inner join board_answer
     on board.board_id = board_answer.BOARD_ID
+      <if test="pageScale != null">
+            ORDER BY DATE DESC
+            LIMIT #{pageBegin}, #{pageScale}
+    </if>
     ;  
 	</select>
 
