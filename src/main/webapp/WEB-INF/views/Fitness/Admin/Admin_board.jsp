@@ -67,9 +67,8 @@
                             for (int i=0; i < arrayList.size(); i=i+1) {
                                 HashMap record = (HashMap) arrayList.get(i);
                             %>
-                            <form>
-                                <input type="hidden" name="BOARD_ID" value='<%= record.get("BOARD_ID") %>'>
-                                <input type="hidden" name="BOARD_ANSWER_ID" value='<%= record.get("BOARD_ANSWER_ID") %>'>
+                            <input type="hidden" name="BOARD_ANSWER_ID" value='<%= record.get("BOARD_ANSWER_ID") %>'>
+                            <input type="hidden" name="BOARD_ID" value='<%= record.get("BOARD_ID") %>'>
                             <tr>
                                 <td name="number"><%= i+1 %></td>
                                 <td name="ID"><%= record.get("ID") %></td>
@@ -78,14 +77,21 @@
                                 <td name="content"><%= record.get("CONTENTS") %></td>
                                 <td name="date"><%= record.get("DATE") %></td>
                                 <td name="date"><%= record.get("VIEWS") %></td>
-                              
+                                <form>
                                 <td class="admin-actions"> 
+                                    <form action="">
+                                    <input type="hidden" name="BOARD_ANSWER_ID" value='<%= record.get("BOARD_ANSWER_ID") %>'>
+                                    <input type="hidden" name="BOARD_ID" value='<%= record.get("BOARD_ID") %>'>
+                                   <input type="hidden" name="CONTENTES" value='<%= record.get("CONTENTS") %>'>
                                     <button type="submit" class="btn btn-secondary" 
-                                        formaction="/fitness/insertAndcome">등록</button>
+                                        formaction="/fitness/insertAndcome" formmethod="get">등록</button>
+                                    </form>
+                                    <form action="">
                                     <button class="btn btn-danger" formaction="/fitness/deleteAndSelectSearch" formmethod="get">삭제</button>
+                                </form>
                                 </td>
                             </tr>
-                            </form>
+                        
                             <%
                         } 
                         %>

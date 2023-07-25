@@ -30,20 +30,22 @@
  <div class="container">
    <div class="row justify-content-center">
      <div class="col-md-6">
+      <form>
        <div class="input-group">
          <div class="input-group-prepend">
-           <select class="btn btn-outline-secondary custom-select" type="button" id="search-option">
+           <select class="btn btn-outline-secondary custom-select" type="button" id="search-option" name="search">
             <option value="choose">선택</option>
             <option value="NOTICE_TITLE" <%=(searchStr.equals("NOTICE_TITLE")) ? "selected" : "" %>>제목</option>
             <option value="NOTICE_CONTENTS" <%=(searchStr.equals("NOTICE_CONTENTS")) ? "selected" : "" %>>내용</option>
             <option value="ID" <%=(searchStr.equals("ID")) ? "selected" : "" %>>작성자</option>
            </select>
          </div>
-         <input type="text" class="form-control" placeholder="검색어를 입력하세요" id="search-input">
+         <input type="text" class="form-control" name="words" placeholder="검색어를 입력하세요" id="search-input">
          <div class="input-group-append">
-           <button class="btn btn-primary" type="submit">검색</button>
+           <button class="btn btn-primary" type="submit" formaction="/notice/Notice" formmethod="get">검색</button>
          </div>
        </div>
+      </form>
      </div>
    </div>
  </div>
@@ -132,6 +134,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+      $(document).ready(function() {
+                    $('#keydownEnter').on('keydown', function(event) {
+                      if (event.keyCode === 13) {  // 엔터키를 누르면
+                        event.preventDefault();   // 기본 이벤트 실행 취소
+                        $("#keydownEnter").closest('form').submit(); // 가장 가까운 form을 찾아 submit() 실행
+                      }
+                    });
+                  });
+
+
         $(document).ready(function () {
             $('.dropdown-toggle').dropdown();
         });

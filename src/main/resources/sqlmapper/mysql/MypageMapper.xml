@@ -28,7 +28,23 @@
     ;
     </update>
 
-    
+    <!-- pagination -->
+	<select id="MypagePagination" parameterType="Map" resultType="Map">
+        Select *
+        from reservation as reser
+        inner join company
+        on reser.COMPANY_ID = company.COMPANY_ID
+        and reser.ID = #{ID}
+        limit #{pageBegin}, #{pageScale} 
+        ;
+	</select>
+
+    <!-- total count -->
+	<select id="selectTotal" parameterType="Map" resultType="int">
+    select count(*)
+    from reservation
+    where RESERVATION_ID = #{RESERVATION_ID};
+	</select>
     
     <delete id="MypageDelete" parameterType="Map">
     delete

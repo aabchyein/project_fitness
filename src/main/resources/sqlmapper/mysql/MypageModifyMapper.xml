@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Mypage">
+<mapper namespace="MypageModify">
     <!-- 상세 -->
 	<select id="selectByUID" parameterType="Map" resultType="Map">
         SELECT * 
-        FROM member_information
-        where ID = #{ID};
+        FROM member_information AS MEM
+            INNER JOIN GENDER AS GEN
+            ON MEM.GENDER_ID = GEN.GENDER_ID
+        where MEM.ID = #{ID};
 	</select>
+
+    <!-- 회원 정보 수정 -->
+    <update id="mypagemodify" parameterType="Map">
+    update member_information
+    set NAME = #{name},
+        PASSWORD = #{password},
+        PHONE_NUMBER = #{phonenumber},
+        EMAIL_ADDRESS = #{email},
+        ADDRESS = #{address},
+        GENDER_ID = #{GENDER_ID}
+    where ID = #{ID};
+    </update>
 </mapper>

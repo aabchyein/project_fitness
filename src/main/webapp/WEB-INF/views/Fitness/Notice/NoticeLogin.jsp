@@ -35,7 +35,7 @@
                     <form>
                       <div class="input-group">
                         <div class="input-group-prepend">
-                          <select class="btn btn-outline-secondary custom-select" type="button" id="search-option">
+                          <select class="btn btn-outline-secondary custom-select" type="button" id="search-option" name="search">
                             <option value="choose">선택</option>
                             <option value="NOTICE_TITLE" <%=(searchStr.equals("NOTICE_TITLE")) ? "selected" : "" %>>제목</option>
                             <option value="NOTICE_CONTENTS" <%=(searchStr.equals("NOTICE_CONTENTS")) ? "selected" : "" %>>내용</option>
@@ -44,7 +44,7 @@
                         </div>
                         <input type="text" class="form-control" name="words" value='<%= params.getOrDefault("words", "") %>' placeholder="검색어를 입력하세요" id="keydownEnter"/>
                         <div class="input-group-append">
-                          <button class="btn btn-primary" type="submit" formaction="Noticelogin" formmethod="get" onclick="comOption()">검색</button>
+                          <button class="btn btn-primary" type="submit" formaction="" formmethod="get" onclick="comOption()">검색</button>
                         </div>
                       </div>
                     </form>
@@ -109,16 +109,14 @@
                       <span aria-hidden="true">&lt;</span>
                       </a>
                     </li>
+                    
                     <% for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd(); i=i+1){ %>
                       <li class="page-item">
-                        <a class="page-link" href="/Noticelogin?currentPage=<%= i %>">
+                        <a class="page-link" href='/Noticelogin?currentPage=<%= i %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>
                           <%= i %>
                         </a>
                       </li>
                       <% } %>
-                        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
                         <li class="page-item">
                           <a class="page-link" href="/Noticelogin?currentPage=<%= paginations.getNextPage() %>">Next</a>
                           <span aria-hidden="true">&gt;</span>

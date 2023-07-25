@@ -49,23 +49,35 @@
                             <h1 class="admin-header">게시판 답변 등록</h1>
                             <div class="container">
                                 <% HashMap record=(HashMap)request.getAttribute("record"); %>
-                                    <form id="answer-form">
                                         <div class="mb-3">
                                             <label for="name" class="form-label">작성자</label>
-                                            <input type="text" class="form-control" id="name"
-                                                value='<%= record.get(" NAME") %>' readonly>
+                                            <input type="text" class="form-control" value='<%= record.get("ID") %>'  readonly>
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="question" class="form-label">질문 내용</label>
-                                            <input type="text" class="form-control" id="CONTENTES"
-                                                value='<%= record.get("CONTENTES") %>' readonly>
+                                            <input type="text" class="form-control" value='<%= record.get("CONTENTS") %>' readonly>
                                         </div>
+                                        
+                                        <form id="answer-form">
 
                                         <div class="mb-3">
                                             <label for="answer" class="form-label">답변 내용</label>
                                             <input type="text" class="form-control" id="answer"
                                                 placeholder="답변 내용을 입력하세요">
+                                        </div>
+
+                                        <div>
+                                            <input type="hidden" name="ADMIN_ID" value=" ">
+                                        </div>
+                                        <div>
+                                            <input type="hidden" name="ANSWER" value="">
+                                        </div>
+                                        <div>
+                                            <input type="hidden" name="BOARD_ANSWER_ID" value="">
+                                        </div>
+                                        <div>
+                                            <input type="hidden" name="BOARD_ID" value="">
                                         </div>
 
                                         <div class="modal-footer">
@@ -74,6 +86,7 @@
                                     </form>
                             </div>
                         </div>
+
                         <!-- footer -->
                         <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
 

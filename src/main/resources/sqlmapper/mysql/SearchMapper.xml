@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Search">
+        <!-- 운동시설 검색 with pagination -->
+	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM db_fitness.company
+        where 1 = 1
+        <choose>
+            <when test="search == 'COMPANY_NAME'">
+            and COMPANY_NAME like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ADDRESS'">
+            or ADDRESS like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ROAD_ADDRESS'">
+            or ROAD_ADDRESS like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>  
+        ;
+	</select>
+
+</mapper>
