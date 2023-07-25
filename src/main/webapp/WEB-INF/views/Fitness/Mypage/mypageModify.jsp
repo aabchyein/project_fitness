@@ -22,7 +22,7 @@
           <div class="container p-5">
             <h2 class="text-center fw-bold p-3">회원 정보 수정</h2>
             <div class="card-body">
-              <form class="m-4">
+              <form action="" class="m-4">
                 <div class="mb-3">
                   <label for="name" class="form-label">이름</label>
                   <em class="required">*</em>
@@ -36,12 +36,14 @@
                 <div class="mb-3">
                   <label for="password" class="form-label">비밀번호</label>
                   <em class="required">*</em>
-                  <input type="password" id="password" class="form-control" name="password" value='<%= result.get("PASSWORD")%>'>
+                  <input type="password" id="password" class="form-control" name="password"
+                    value='<%= result.get("PASSWORD")%>'>
                 </div>
                 <div class="mb-3">
                   <label for="password" class="form-label">비밀번호 확인</label>
                   <em class="required">*</em>
-                  <input type="password" id="passwordcheck" class="form-control" name="confirmpassword" value='<%= result.get("PASSWORD")%>'>
+                  <input type="password" id="passwordcheck" class="form-control" name="confirmpassword"
+                    value='<%= result.get("PASSWORD")%>'>
                 </div>
                 <div class="mb-3">
                   <label for="gender">성별</label>
@@ -49,11 +51,11 @@
                   <div class="form-check form-check-inline row">
                     <div class="col-sm-10 mb-3">
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="GENDER_ID" value='<%=result.get("GENDER_ID") %>'>
+                        <input class="form-check-input" type="radio" name="GENDER_ID" value='GEN01'>
                         <label class="form-check-label" for="gender_male">남성</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="GENDER_ID" value='<%=result.get("GENDER_ID") %>'>
+                        <input class="form-check-input" type="radio" name="GENDER_ID" value='GEN02'>
                         <label class="form-check-label" for="gender_female">여성</label>
                       </div>
                     </div>
@@ -61,7 +63,7 @@
                   <div class="mb-3">
                     <label for="birthdate">생년월일:</label>
                     <input type="text" class="form-control" id="birthdate" name="birthdate" placeholder="YYYY-MM-DD"
-                      value='<%= result.get("BIRTHDATE")%>' oninput="formatDate(this)">
+                      readonly value='<%= result.get("BIRTHDATE")%>' oninput="formatDate(this)">
                   </div>
                   <div class="mb-3">
                     <label for="inputPhoneNumber" class="form-label">휴대폰번호</label>
@@ -100,17 +102,19 @@
                         value='<%= result.get("ADDRESS")%>'>
                     </div>
                   </div>
-              </form>
+                </div>
+                <form action="">
+                  <div class="card-footer d-flex justify-content-end">
+                    <a href="/mypage" type="button" class="btn btn-secondary me-2">취소</a>
+                    <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#completionModal"
+                      onclick="showConfirmation()" formaction="/updateAndSelect">
+                      완료
+                    </button>
+                </form>
             </div>
-            <form action="">
-            <div class="card-footer d-flex justify-content-end">
-              <a href="/mypage" type="button" class="btn btn-secondary me-2">취소</a>
-              <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#completionModal"
-                onclick="showConfirmation()" formaction="/mypage">
-                완료
-              </button>
-            </form>
-            </div>
+
+          </div>
+          </div>
           </div>
 
 
@@ -120,7 +124,7 @@
 
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-           
+
             <script src="/src/main/resources/static/js/mypageModify.js"></script>
     </body>
 

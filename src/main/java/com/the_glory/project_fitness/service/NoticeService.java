@@ -33,7 +33,7 @@ public class NoticeService {
         // 페이지 형성 위한 계산
         int totalCount = (int) this.selectSearchTotal(dataMap);
         
-        int currentPage = 1;
+        int currentPage =1;
         if (dataMap.get("currentPage") != null) {
             currentPage = Integer.parseInt((String) dataMap.get("currentPage")); // from client in param
         }
@@ -93,20 +93,20 @@ public class NoticeService {
         return result1;
     }
 
-    // 검색(조건-search : YEAR, CAR_NAME)
-    public Object selectSearch(String search, String words) {
-        // Object getOne(String sqlMapId, Object dataMap)
-        String sqlMapId = "Notice.selectSearch";
-        HashMap dataMap = new HashMap<>();
-        dataMap.put("search", search);
-        dataMap.put("words", words);
+    // // 검색(조건-search : YEAR, CAR_NAME)
+    // public Object selectSearch(String search, String words) {
+    //     // Object getOne(String sqlMapId, Object dataMap)
+    //     String sqlMapId = "Notice.selectSearch";
+    //     HashMap dataMap = new HashMap<>();
+    //     dataMap.put("search", search);
+    //     dataMap.put("words", words);
 
-        Object result = sharedDao.getList(sqlMapId, dataMap);
+    //     Object result = sharedDao.getList(sqlMapId, dataMap);
 
-        HashMap result1 = new HashMap<>();
-        result1.putAll(this.selectSearchWithPagination(dataMap));
-        return result;
-    }
+    //     HashMap result1 = new HashMap<>();
+    //     result1.putAll(this.selectSearchWithPagination(dataMap));
+    //     return result;
+    // }
 
 
     // 회원 정보 삭제

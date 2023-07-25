@@ -44,7 +44,7 @@
                         </div>
                         <input type="text" class="form-control" name="words" value='<%= params.getOrDefault("words", "") %>' placeholder="검색어를 입력하세요" id="keydownEnter"/>
                         <div class="input-group-append">
-                          <button class="btn btn-primary" type="submit" formaction="Noticelogin" formmethod="get" onclick="comOption()">검색</button>
+                          <button class="btn btn-primary" type="submit" formaction="" formmethod="get" onclick="comOption()">검색</button>
                         </div>
                       </div>
                     </form>
@@ -117,10 +117,6 @@
                         </a>
                       </li>
                       <% } %>
-                      
-                        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
                         <li class="page-item">
                           <a class="page-link" href="/Noticelogin?currentPage=<%= paginations.getNextPage() %>">Next</a>
                           <span aria-hidden="true">&gt;</span>

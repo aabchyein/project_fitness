@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <%@ page import="java.util.HashMap, java.util.ArrayList" %>
+  <%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -74,11 +74,13 @@
                           <%=result.get("ADDRESS")%>
                         </td>
                       </tr>
-
                 </table>
+
                 <div class="text-lg-end">
-                  <a href='/selectDetail/<%=result.get("ID")%>' type="submit" class="btn btn-secondary"
-                    style="opacity: 0.8;" id="ID" value='<%= result.get("ID") %>'>회원정보수정</a>
+                  <form action="">
+                  <button type="submit" class="btn btn-secondary"
+                    style="opacity: 0.8;" name="ID" value='<%= result.get("ID") %>' formaction="/mypageModify" formmethod="get">회원정보수정</a>
+                  </form>
                 </div>
               </div>
               <div class="col-md-8">
@@ -97,13 +99,11 @@
                   </thead>
 
                   <tbody>
-
                     <% ArrayList reserlist=(ArrayList)map.get("result1"); %>
                       <% for(int i=0; i<reserlist.size(); i++) { %>
-                        <!-- 예약이 없을때 나는 오류 방어 -->
                         <% if (reserlist !=null) { %>
+                        <!-- 예약이 없을때 나는 오류 방어 -->
                           <% HashMap reser=(HashMap)reserlist.get(i); %>
-
                             <tr>
                               <td>
                                 <%= reser.get("RESERVATION_DATE") %>
@@ -120,8 +120,8 @@
                               <form action="">
                                 <th>
                                   <input type="hidden" name="ID" value='<%= result.get("ID") %>'>
-                                  <input type="hidden" name="RESERVATION_ID" value='<%= reser.get("RESERVATION_ID") %>'>
                                   <button type="submit" class="btn btn-outline-secondary mx-1" style="opacity: 0.8;"
+                                    name="RESERVATION_ID" value='<%= reser.get("RESERVATION_ID") %>'
                                     formaction="/mypagereserve">수정</button>
                                 </th>
                               </form>
@@ -147,8 +147,39 @@
                                   <% } %>
                   </tbody>
                 </table>
+<!-- 페이지 넘어가는 표시 -->
+<% HashMap record = (HashMap) map.get("result2"); %>
+<% Paginations paginations=(Paginations)record.get("paginations"); %>
+
+<% if ( paginations != null){ %>
+<div>
+<div class="text-center mt-4">
+   <ul class="pagination justify-content-center">
+       <li class="page-item">
+        <a class="page-link"
+        href="/mypage?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
+           </a>
+          </li>
+          <% 
+          for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd(); i=i+1){ 
+          %>
+            <li class="page-item">
+              <a class="page-link" href="/mypage?currentPage=<%= i %>"><%= i %></a>
+            </li>
+            <% } %>
+              <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+              <li class="page-item">
+                <a class="page-link" href="/mypage?currentPage=<%= paginations.getNextPage() %>">Next</a>
+                </a>
+              </li>
+        </ul>
+      </div>
               </div>
-            </div>
+              <% } else { %>
+             <% } %>             
+              </div>
           </div>
 
 
