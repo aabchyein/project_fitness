@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,18 +15,46 @@
   <!-- 상단 네비게이션 바 -->
   <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
+ <!-- 검색 후 보여지는 화면 -->
   <div class="container m-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="text-center">
-                <iframe id="map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.924500875203!2d126.89206931137151!3d37.486107971942964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9e3cab83f0b1%3A0x8566603f90167621!2z7ISc7Jq47Yq567OE7IucIOq1rOuhnOq1rCDrlJTsp4DthLjroZwzM-q4uCAyNw!5e0!3m2!1sko!2skr!4v1689072373069!5m2!1sko!2skr"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+        <div>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>COMPANY_NAME</th>
+                    <th>PHONE_NUMBER</th>
+                    <th>ADDRESS</th>
+                    <th>ROAD_ADDRESS</th>
+                    <th>예약</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%
+                  HashMap params=(HashMap) request.getAttribute("params");
+                  String searchStr=(String) params.getOrDefault("search", "");
+                  ArrayList list = (ArrayList) request.getAttribute("result");
+                  for(int i=0; i < list.size(); i = i+1) {
+                    HashMap record=(HashMap) list.get(i);
+                 %>
+                  <tr>
+                    <td><%= record.get("COMPANY_NAME") %></td>
+                    <td><%= record.get("PHONE_NUMBER") %></td>
+                    <td><%= record.get("ADDRESS") %></td>
+                    <td><%= record.get("ROAD_ADDRESS") %></td>
+                    <form>
+                    <th>
+                      <button class="btn btn-primary" type="submit" formaction="/reserve">예약</button>
+                    </th>
+                    </form>
+                  </tr>
+                  <%
+                  }
+                  %>
+                </tbody>
+              </table>
             </div>
         </div>
-    </div>
 </div>
   <!-- footer -->
   <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
