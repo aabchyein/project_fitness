@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
 @Controller
+@RequestMapping("/guest")
 public class ReserveController {  
     @GetMapping({"/reserve"})
     public ModelAndView main(ModelAndView modelAndView) {

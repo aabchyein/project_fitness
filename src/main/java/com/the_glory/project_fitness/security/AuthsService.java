@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.the_glory.project_fitness.dao.SharedDao;
+import com.the_glory.project_fitness.utils.Commons;
 
 @Service
 @Transactional
@@ -24,7 +25,7 @@ public class AuthsService {
     public Object insert(Map dataMap) {
         List authList = new ArrayList<>();
         authList.add("ROLE_GUEST");  // default auth
-        authList.add(dataMap.get("auth"));  // choosed auth
+        // authList.add(dataMap.get("auth"));  // choosed auth
         dataMap.put("authList", authList);
 
         String sqlMapId = "Auths.insert";

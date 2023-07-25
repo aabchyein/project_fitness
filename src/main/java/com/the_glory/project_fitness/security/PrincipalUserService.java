@@ -13,15 +13,15 @@ import org.springframework.stereotype.Service;
 public class PrincipalUserService implements UserDetailsService {
 
     @Autowired
-    UsersService usersService;
+    JoinsService joinsService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // query select with ID
         Map dataMap = new HashMap<>();
-        dataMap.put("USERNAME", username);
+        dataMap.put("ID", username);
         Object usernameObj = username;
-        Map resultMap = (Map) usersService.selectByUIDWithAuths(dataMap);
+        Map resultMap = (Map) joinsService.selectByUIDWithAuths(dataMap);
 
         // session 등록
         PrincipalUser principalUser = new PrincipalUser(resultMap);
@@ -29,6 +29,4 @@ public class PrincipalUserService implements UserDetailsService {
         return principalUser;
     }
 
-
 }
-

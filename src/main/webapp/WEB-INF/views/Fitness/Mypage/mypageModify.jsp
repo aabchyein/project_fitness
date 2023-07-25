@@ -14,7 +14,7 @@
 
     <body>
       <!-- 상단 네비게이션 바 -->
-      <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+      <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
         <% HashMap params=(HashMap) request.getAttribute("params"); String searchStr=(String)
           params.getOrDefault("search", "" ); HashMap result=(HashMap) request.getAttribute("result"); %>

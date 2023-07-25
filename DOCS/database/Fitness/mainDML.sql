@@ -99,3 +99,10 @@ values
 ('ROLE_ADMIN','ADMIN'),
 ('ROLE_GUEST','GUEST')
 ;
+
+insert into auths
+(UNIQUE_ID,ID)
+values
+('ROLE_ADMIN','admin123'),
+('ROLE_GUEST','admin123')
+;

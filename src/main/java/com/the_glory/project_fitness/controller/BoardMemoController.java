@@ -19,6 +19,7 @@ import com.the_glory.project_fitness.service.CommonService;
 import com.the_glory.project_fitness.service.NoticeService;
 
 @Controller
+@RequestMapping("/guest")
 public class BoardMemoController {
     @Autowired
     NoticeService noticeService;

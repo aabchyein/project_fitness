@@ -88,7 +88,7 @@
      </div>
       <!-- 글작성 버튼 -->
    <div class="container text-end">
-    <form action="/Login2">
+    <form action="/guest/boardmemo" method="get">
       <button class="btn btn-primary" type="submit">글작성</button>
     </form>
    </div>
