@@ -19,7 +19,7 @@
 
     <body>
       <!-- 상단 네비게이션 바 -->
-      <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+      <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
 
         <!-- 게시판 하단 -->

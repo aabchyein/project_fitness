@@ -22,7 +22,7 @@
 
 <body>
   <!-- 상단 네비게이션 바 -->
-  <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+  <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
   <!-- 상담 예약 -->
   <div class="container p-5">

@@ -1,6 +1,5 @@
 package com.the_glory.project_fitness.controller;
 
-
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +18,11 @@ import com.the_glory.project_fitness.service.CommonService;
 
 @Controller
 public class LogoutController {
-    @GetMapping({"/Logout"})
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Logout/Logout.jsp");
+
+    @GetMapping({ "/Logout" }) // 로그아웃 폼 작성
+    public ModelAndView logoutForm(ModelAndView modelAndView) {
+        String viewName = "/WEB-INF/views/Fitness/Logout/Logout.jsp";
+        modelAndView.setViewName(viewName);
         return modelAndView;
     }
-    
 }

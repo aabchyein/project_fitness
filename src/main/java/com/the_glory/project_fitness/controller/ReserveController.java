@@ -19,11 +19,16 @@ import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
 import com.the_glory.project_fitness.service.ReserveService;
 @Controller
-public class ReserveController {
 
+
+    
+
+
+
+@RequestMapping("/guest")
+public class ReserveController {  
     @Autowired
     ReserveService reserveService;
-
 
     @GetMapping({"/reserve"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {

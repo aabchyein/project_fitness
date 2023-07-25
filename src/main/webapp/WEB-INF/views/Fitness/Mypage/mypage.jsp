@@ -15,7 +15,7 @@
 
     <body>
       <!-- 상단 네비게이션 바 -->
-      <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+      <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
         <% HashMap map=(HashMap)request.getAttribute("result"); %>
           <!-- 마이페이지 -->
           <div class="container p-5">
@@ -75,14 +75,14 @@
                         </td>
                       </tr>
                 </table>
+                <form action="">
+                  <div class="text-lg-end">
 
-                <div class="text-lg-end">
-                  <form action="">
-                    <input type="hidden" name="GENDER_ID" value='<%= result.get("GENDER_ID") %>'>
-                  <button type="submit" class="btn btn-secondary"
-                    style="opacity: 0.8;" name="ID" value='<%= result.get("ID") %>' formaction="/mypageModify" formmethod="get">회원정보수정</a>
-                  </form>
-                </div>
+                    <button type="submit" class="btn btn-secondary" style="opacity: 0.8;" name="ID"
+                      value='${userDetailsBean.username}'
+                      formaction="/mypageModify">회원정보수정</button>
+                  </div>
+                </form>
               </div>
               <div class="col-md-8">
                 <h2>예약 내역</h2>
@@ -120,7 +120,8 @@
                               </td>
                               <form action="">
                                 <th>
-                                  <input type="hidden" name="ID" value='<%= result.get("ID") %>'>
+                                  <input type="hidden" name="ID" value='${userDetailsBean.username}'>
+                                  <input type="hidden" name="RESERVATION_ID" value='<%= reser.get("RESERVATION_ID") %>'>
                                   <button type="submit" class="btn btn-outline-secondary mx-1" style="opacity: 0.8;"
                                     name="RESERVATION_ID" value='<%= reser.get("RESERVATION_ID") %>'
                                     formaction="/mypagereserve">수정</button>
@@ -128,7 +129,7 @@
                               </form>
                               <form action="">
                                 <th>
-                                  <input type="hidden" name="ID" value='<%= result.get("ID") %>'>
+                                  <input type="hidden" name="ID" value='${userDetailsBean.username}'>
                                   <button type="submit" class="btn btn-danger mx-1" style="opacity: 0.8;"
                                     name="RESERVATION_ID" value='<%= reser.get("RESERVATION_ID") %>'
                                     formaction='/mypagedelete' formmethod="post">삭제</button>
