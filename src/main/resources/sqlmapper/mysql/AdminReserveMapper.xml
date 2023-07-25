@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="AdminReserve">
-    <!-- 회원 정보 삭제 -->
-	<delete id="memdelete" parameterType="Map">
+    <!-- 모든 회원 예약 정보 조회 -->
+    <select id="reserveselectAll" parameterType="Map" resultType="Map">
+    SELECT *
+    FROM reservation AS res
+        INNER JOIN company AS com
+        ON res.COMPANY_ID = com.COMPANY_ID
+        INNER JOIN member_information AS mem
+        ON res.ID = mem.ID
+    </select>
+
+    <!-- 예약 정보 삭제 -->
+	<delete id="reservedelete" parameterType="Map">
         DELETE FROM reservation
         where ID = #{ID};
 	</delete>
+
+    <!-- 에약 정보 수정 -->
+    <update id="reserveupdate" parameterType="Map">
+        update reservation AS res
+            INNER JOIN company AS com
+            ON res.COMPANY_ID = com.COMPANY_ID
+        set res.RESERVATION_DATE = #{RESERVATION_DATE},
+            res.RESERVATION_TIME = #{RESERVATION_TIME},
+            com.COMPANY_NAME = #{COMPANY_NAME}
+        where ID = #{ID};
+    </update>
 </mapper>

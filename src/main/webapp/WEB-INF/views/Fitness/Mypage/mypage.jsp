@@ -78,6 +78,7 @@
 
                 <div class="text-lg-end">
                   <form action="">
+                    <input type="hidden" name="GENDER_ID" value='<%= result.get("GENDER_ID") %>'>
                   <button type="submit" class="btn btn-secondary"
                     style="opacity: 0.8;" name="ID" value='<%= result.get("ID") %>' formaction="/mypageModify" formmethod="get">회원정보수정</a>
                   </form>
@@ -180,6 +181,7 @@
               <% } else { %>
              <% } %>             
               </div>
+          </div>
           </div>
 
 

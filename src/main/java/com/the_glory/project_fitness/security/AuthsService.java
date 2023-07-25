@@ -31,7 +31,7 @@ public class AuthsService {
         Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
     }
-    //권한을 같인 넣어주는것
+    //권한을 같이 넣어주는것
     public Map selectWithUSERNAME(Map dataMap) {
         String sqlMapId = "Auths.selectWithUSERNAME";
         

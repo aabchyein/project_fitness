@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,38 +17,7 @@
 
 <body>
         <!-- 상단 네비게이션 바 -->
-        <nav class="navbar navbar-expand-lg bg-black">
-            <div class="container">
-                <a class="navbar-brand" href="./gym.html">
-                    <img src="./Image/로고1.png" alt="로고" height="80">
-                </a>
-                <!-- 검색창 -->
-                <div class="col-lg-4 text-lg-end">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="./gym.html">홈</a>
-                        </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="./AdminPage.html">관리자</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">로그아웃</a>
-                            <div class="dropdown-menu" aria-labelledby="loginDropdown">
-                                <a class="dropdown-item" href="./Logout.html">로그아웃</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./AdminLogin.html">
-                                <img src="./Image/house.jpg.png"
-                                    style="width: 35px; height: 35px;  margin-top: -0.5em;">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <%@ include file="/WEB-INF/views/Fitness/Admin_header.jsp" %>
 
     <div class="container-fluid">
         <!-- 관리자 페이지 content -->
@@ -76,6 +47,7 @@
             <!-- 회원관리 데이터 -->
             <div class="col-10 mt-5 admin-content">
                 <h1 class="admin-header">예약 관리</h1>
+                <form>
                 <div class="admin-table">
                     <table class="table table-bordered">
                         <thead>
@@ -91,22 +63,30 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <%
+                            ArrayList list = (ArrayList) request.getAttribute("result");
+                            for(int i=0; i < list.size(); i=i+1) {
+                                HashMap record = (HashMap) list.get(i);
+                            %>
                             <tr>
-                                <td>1</td>
-                                <td>홍길동</td>
-                                <td>honggildong</td>
-                                <td>2023-07-01</td>
-                                <td>10:00-11:00</td>
-                                <td>구로센터</td>
-                                <td>처음 운동 시작</td>
+                                <td><%= i+1 %></td>
+                                <td name="NAME" value='<%= record.get("NAME") %>'><%= record.get("NAME") %></td>
+                                <td name="ID" value='<%= record.get("ID") %>'><%= record.get("ID") %></td>
+                                <td><input type="text" name="RESERVATION_DATE" value='<%= record.get("RESERVATION_DATE") %>'></td>
+                                <td><input type="text" name="RESERVATION_TIME" value='<%= record.get("RESERVATION_TIME") %>'></td>
+                                <td><input type="text" name="COMPANY_NAME" value='<%= record.get("COMPANY_NAME") %>'></td>
+                                <td name="NOTES" value='<%= record.get("NOTES") %>'><%= record.get("NOTES") %></td>
                                 <td class="admin-actions">
                                     <button class="btn btn-light">수정</button>
                                     <button class="btn btn-danger">삭제</button>
                                 </td>
                             </tr>
+                            <%
+                            }
+                            %>
                         </tbody>
-
                          </table>
+                    </form>
                 </div>
                 <!-- 페이지 넘어가는 표시 -->
                 <div class="text-center mt-4">
@@ -208,7 +188,6 @@
       </div>
     </div>
   </footer>
-    <script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

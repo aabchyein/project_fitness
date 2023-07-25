@@ -51,11 +51,21 @@
                   <div class="form-check form-check-inline row">
                     <div class="col-sm-10 mb-3">
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="GENDER_ID" value='GEN01'>
+                        <%
+                        String genderId = (String) result.get("GENDER_ID"); 
+                        String maleChecked = "";
+                        String femaleChecked = "";
+                        if("GEN01".equals(genderId)) {
+                          maleChecked = "checked";
+                        } else if("GEN02".equals(genderId)) {
+                          femaleChecked = "checked";        
+                        }
+                        %>
+                        <input class="form-check-input" type="radio" name="GENDER_ID" value='GEN01' id="male" <%= maleChecked %>>
                         <label class="form-check-label" for="gender_male">남성</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="GENDER_ID" value='GEN02'>
+                        <input class="form-check-input" type="radio" name="GENDER_ID" value='GEN02' id="female" <%= femaleChecked %>>
                         <label class="form-check-label" for="gender_female">여성</label>
                       </div>
                     </div>
