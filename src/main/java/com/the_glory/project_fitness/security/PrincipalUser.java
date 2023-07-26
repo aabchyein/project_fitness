@@ -27,7 +27,8 @@ public class PrincipalUser implements UserDetails {
         Collection<GrantedAuthority> collections = new ArrayList<>();
         List<Map<String, Object>> resultList = (List) userInfo.get("resultList");
         for (Map item : resultList) {
-            collections.add(new SimpleGrantedAuthority((String) item.get("ID")));
+            // 권한에 입력된 값을 비교한다.
+            collections.add(new SimpleGrantedAuthority((String) item.get("UNIQUE_ID")));
         }
         return collections;
     }

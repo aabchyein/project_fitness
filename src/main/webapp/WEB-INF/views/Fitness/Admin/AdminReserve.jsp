@@ -22,24 +22,23 @@
     <div class="container-fluid">
         <!-- 관리자 페이지 content -->
         <div class="row g-20 vh-50">
-            <nav class="p-5 bg-dark navbar-dark d-md-block col-2">
+            <nav class="p-5 bg-dark navbar-dark d-md-block col-2 ">
                 <div>
                     <ul class="list-unstyled navbar-nav">
                         <li class="d-flex align-items-center">
-                            <a href="./AdminPage.html"
-                                class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
+                            <a href="/" class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
                         </li>
                         <li class="d-flex align-items-center">
-                            <a href="./AdminPage.html" class="text-decoration-none nav-link">회원 관리</a>
+                            <a href="/adminPage" class="text-decoration-none nav-link">회원 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
-                            <a href="./Admin_reserve.jsp" class="text-decoration-none nav-link">예약 관리</a>
+                            <a href="/fitness/AdminBoardAll" class="text-decoration-none nav-link">게시판 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
-                            <a href="./Admin_board.html" class="text-decoration-none nav-link">게시판 관리</a>
+                            <a href="/Adminnotice" class="text-decoration-none nav-link">공지사항 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
-                            <a href="./Admin_notice.html" class="text-decoration-none nav-link">공지사항 관리</a>
+                            <a href="/NoticePage.html" class="text-decoration-none nav-link">관리자설정</a>
                         </li>
                     </ul>
                 </div>
@@ -77,7 +76,7 @@
                                 <td><input type="text" name="COMPANY_NAME" value='<%= record.get("COMPANY_NAME") %>'></td>
                                 <td name="NOTES" value='<%= record.get("NOTES") %>'><%= record.get("NOTES") %></td>
                                 <td class="admin-actions">
-                                    <button class="btn btn-light">수정</button>
+                                    <button type="submit" class="btn btn-light" formaction="">수정</button>
                                     <button class="btn btn-danger">삭제</button>
                                 </td>
                             </tr>
