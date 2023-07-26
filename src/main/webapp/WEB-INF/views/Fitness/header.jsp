@@ -36,7 +36,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">커뮤니티</a>
                 <div class="dropdown-menu" aria-labelledby="communityDropdown">
-                  <a class="dropdown-item" href="/notice/Notice">게시판</a>
+                  <a class="dropdown-item" href="/Noticelogin">게시판</a>
                   <a class="dropdown-item" href="/Review">후기</a>
                 </div>
               </li>

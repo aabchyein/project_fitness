@@ -25,4 +25,10 @@
     DELETE FROM member_information
     WHERE ID = #{ID};
     </delete>
+
+    <insert id="insert" parameterType="Map" >
+       insert into auths(UNIQUE_ID,ID)
+        values
+        (#{UNIQUE_ID},#{ID});
+    </insert>
 </mapper>

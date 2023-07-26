@@ -125,12 +125,12 @@ public class AdminBoardAnswerService {
 
 
 
-    // // MVC view
-    // public Object delete(Map params){
-    //     String sqlMapId = "AdminBoardAnswer.delete";
-    //     Object result = sharedDao.delete(sqlMapId, params);
-    //     return result;
-    // }
+    // MVC view
+    public Object delete(Map params){
+        String sqlMapId = "AdminBoardAnswer.delete";
+        Object result = sharedDao.delete(sqlMapId, params);
+        return result;
+    }
 
     // // MVC view -delete2 
     // public Object deleteAndSelectSearch(Map params) {

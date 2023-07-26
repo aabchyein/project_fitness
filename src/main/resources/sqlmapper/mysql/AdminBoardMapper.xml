@@ -35,6 +35,9 @@
     WHERE BOARD_ID = #{BOARD_ID}
     </delete>
 
+    
+
+
     <!-- 회원 정보 삭제 -->
     <delete id="memdelete" parameterType="Map">
     DELETE FROM board

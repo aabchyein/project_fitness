@@ -27,6 +27,13 @@ public class AdminPageController {
         return modelAndView;
     }
 
+    @GetMapping({ "/adminPowerSetting" })
+    public ModelAndView AdminPowerSetting(ModelAndView modelAndView) {
+      
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminPowerSetting.jsp");
+        return modelAndView;
+    }
+
     // 회원 상세정보
         @GetMapping({ "/adminPageDetail" })
     public  ModelAndView selectDetail(@RequestParam Map params, ModelAndView modelAndView) {
@@ -45,4 +52,13 @@ public class AdminPageController {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminPage.jsp");
         return modelAndView;
     }
+ 
+     @GetMapping("/admininsert")
+    public Object Admininsert(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = adminpageService.AdminInsert(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminPage.jsp");
+        return modelAndView;
+    }   
 }

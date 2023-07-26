@@ -24,7 +24,7 @@ public class BoardMemoController {
     @Autowired
     NoticeService noticeService;
 
-    @GetMapping({"/boardmemo"})
+    @GetMapping({ "/boardmemo" })
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = noticeService.selectAll(params);
         modelAndView.addObject("params", params);
@@ -44,6 +44,18 @@ public class BoardMemoController {
 
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeLogin.jsp");
+        return modelAndView;
+    }
+
+    @GetMapping({ "/boardmemoDetail/{NOTICE_ID}" })
+    public ModelAndView selectDetail(@PathVariable String NOTICE_ID, @RequestParam Map params, ModelAndView modelAndView) {
+        Object record = noticeService.selectDetail(NOTICE_ID, params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("record", record);
+
+        // modelAndView.addObject("params", "result");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Board/BoardMemoDetail.jsp");
         return modelAndView;
     }
 }

@@ -9,6 +9,13 @@
         where 1 = 1 ;   
 	</select>
 
+    <!-- 전체 -->
+	<select id="selectDetail" parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM db_fitness.notice
+        where NOTICE_ID = #{NOTICE_ID}; 
+	</select>
+
     <!-- 검색 with pagination -->
 	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
         SELECT * 
@@ -34,6 +41,25 @@
         select count(*) as cnt
         from db_fitness.notice
         ;
+	</select>
+
+    
+    <!-- total count -->
+	<select id="selectSearchTotal" parameterType="Map" resultType="int">
+        select count(*) as cnt
+        from db_fitness.notice
+        where 1 = 1
+        <choose>
+            <when test="search == 'NOTICE_TITLE'">
+            and NOTICE_TITLE like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'NOTICE_CONTENTS'">
+            and NOTICE_CONTENTS like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ID'">
+            and ID like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>  
 	</select>
 
     <!-- 입력 -->

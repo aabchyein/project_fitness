@@ -27,19 +27,19 @@
                             <div>
                                 <ul class="list-unstyled navbar-nav">
                                     <li class="d-flex align-items-center">
-                                        <a href="#" class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
+                                        <a href="/" class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <a href="/AdminPage.html" class="text-decoration-none nav-link">회원 관리</a>
+                                        <a href="/adminPage" class="text-decoration-none nav-link">회원 관리</a>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <a href="/NoticePage.html" class="text-decoration-none nav-link">게시판 관리</a>
+                                        <a href="/fitness/AdminBoardAll" class="text-decoration-none nav-link">게시판 관리</a>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <a href="/NoticePage.html" class="text-decoration-none nav-link">공지사항 관리</a>
+                                        <a href="/Adminnotice" class="text-decoration-none nav-link">공지사항 관리</a>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <a href="/NoticePage.html" class="text-decoration-none nav-link">관리자설정</a>
+                                        <a href="/adminPowerSetting" class="text-decoration-none nav-link">관리자 설정</a>
                                     </li>
                                 </ul>
                             </div>
