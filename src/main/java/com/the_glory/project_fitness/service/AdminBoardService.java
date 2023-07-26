@@ -94,12 +94,12 @@ public class AdminBoardService {
 
     public Object selectDetail(Map paramMap) {
         String sqlMapId = "AdminBoard.selectSearch"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
-       
+      
     
         Object result = sharedDao.getOne(sqlMapId, paramMap);
         return result;
     }
-    
+
 
     // MVC  view- delete1 
     public Object delete(Map params) {

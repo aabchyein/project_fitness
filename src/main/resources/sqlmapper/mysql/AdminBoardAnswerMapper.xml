@@ -25,7 +25,7 @@
     <!-- 입력 버튼  -->
 	<insert id="insert" parameterType="Map" >
         insert into board_answer (ADMIN_ID,ANSWER,BOARD_ANSWER_ID,BOARD_ID)
-        value ('ADMIN01', '답변5', 'uuid', 'BOARD05');
+        value (#{ADMIN_ID},#{ANSWER} ,#{BOARD_ANSWER_ID},#{BOARD_ID});
     </insert>
 
 

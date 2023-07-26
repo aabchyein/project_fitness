@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <!-- 상단 네비게이션 바 -->
+  <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
+
   <%
   HashMap params=(HashMap) request.getAttribute("params");
   String searchStr=(String) params.getOrDefault("search", "");
@@ -19,9 +22,6 @@
   for(int i=0; i < list.size(); i = i+1) {
     HashMap record=(HashMap) list.get(i);
  %>
-  <!-- 상단 네비게이션 바 -->
-  <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
-
  <!-- 검색 후 보여지는 화면 -->
   <div class="container m-5">
         <div>

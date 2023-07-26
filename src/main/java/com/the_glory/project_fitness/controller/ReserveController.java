@@ -19,12 +19,6 @@ import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
 import com.the_glory.project_fitness.service.ReserveService;
 @Controller
-
-
-    
-
-
-
 @RequestMapping("/guest")
 public class ReserveController {  
     @Autowired

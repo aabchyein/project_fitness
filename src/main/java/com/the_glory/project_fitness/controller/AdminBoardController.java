@@ -22,6 +22,8 @@ import com.the_glory.project_fitness.service.AdminBoardService;
 public class AdminBoardController {
     @Autowired
     AdminBoardService adminBoardService;
+
+    @Autowired
     AdminBoardAnswerService adminBoardAnswerService;
 
     // @GetMapping({"/AdminBoard"})
@@ -34,8 +36,7 @@ public class AdminBoardController {
     // 전체 화면
     @GetMapping({ "/AdminBoardAll" })
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = adminBoardService.selectAll(params);
-        modelAndView.addObject("params", params);
+        Object result = adminBoardService.selectAll(params);        modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
 
         modelAndView.addObject("params", "result");
@@ -81,12 +82,12 @@ public class AdminBoardController {
     // }
 
     // insert and selectsearch
-    @PostMapping("/insertAndSelectSearch")
+    @GetMapping("/insertAndSelectSearch")
     public ModelAndView insertAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = adminBoardService.selectSearchWithPagination(params);
+        Object result = adminBoardAnswerService.insert(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
-
+        modelAndView.addObject("params", "result");
         // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
         return modelAndView;
@@ -94,26 +95,25 @@ public class AdminBoardController {
 
     // // 등록버튼 링크
     // @GetMapping("/insertAndcome/{BOARD_ID}")
-    // public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView modelAndView) {
-    //     Object result = adminBoardService.selectDetail(params);
-    //     modelAndView.addObject("params", params);
-    //     modelAndView.addObject("result", result);
-    //     modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
-    //     return modelAndView;
+    // public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView
+    // modelAndView) {
+    // Object result = adminBoardService.selectDetail(params);
+    // modelAndView.addObject("params", params);
+    // modelAndView.addObject("result", result);
+    // modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
+    // return modelAndView;
     // }
 
     @GetMapping("/insertAndcome")
     public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView modelAndView) {
-       
-      
-            Object record = adminBoardService.selectDetail(params);
-            modelAndView.addObject("params", params);
-            modelAndView.addObject("record", record);
-        
+
+        Object record = adminBoardService.selectDetail(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("record", record);
+
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
         return modelAndView;
     }
-    
 
     // insertAnswer답변 등록 버튼
 
@@ -136,12 +136,13 @@ public class AdminBoardController {
 
     // // /selectDetail/BOARD01
     // @GetMapping("/SelectDetail/{BOARD_ID}")
-    // public ModelAndView selectDetail(@PathVariable Map BOARD_ID, ModelAndView modelAndView) {
-    //     Object result = adminBoardService.selectDetail(BOARD_ID);
-    //     modelAndView.addObject("params", params);
-    //     modelAndView.addObject("result", result);
-    //     modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
-    //     return modelAndView;
+    // public ModelAndView selectDetail(@PathVariable Map BOARD_ID, ModelAndView
+    // modelAndView) {
+    // Object result = adminBoardService.selectDetail(BOARD_ID);
+    // modelAndView.addObject("params", params);
+    // modelAndView.addObject("result", result);
+    // modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
+    // return modelAndView;
     // }
 
 }

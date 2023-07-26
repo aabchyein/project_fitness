@@ -15,6 +15,9 @@ public class AdminBoardAnswerService {
    
     @Autowired
     private SharedDao sharedDao;
+     
+    @Autowired
+    AdminBoardService adminBoardService;
 
     // 전체 검색
     public Object selectAll(Map dataMap){
@@ -108,7 +111,8 @@ public class AdminBoardAnswerService {
  // MVC view
     public Object insert(Map params){
         String sqlMapId = "AdminBoardAnswer.insert";
-        Object result = sharedDao.insert(sqlMapId, params);
+        sharedDao.insert(sqlMapId, params);
+        Object result = adminBoardService.selectAll(params);
         return result;
     }
 
