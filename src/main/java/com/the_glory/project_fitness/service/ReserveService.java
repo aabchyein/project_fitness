@@ -9,7 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.the_glory.project_fitness.UniqueID.UniqueID;
 import com.the_glory.project_fitness.dao.SharedDao;
-import com.the_glory.project_fitness.security.Commons;
+import com.the_glory.project_fitness.utils.Commons;
+
 
 @Service
 @Transactional

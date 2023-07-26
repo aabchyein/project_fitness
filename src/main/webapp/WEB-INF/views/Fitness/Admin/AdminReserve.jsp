@@ -77,7 +77,7 @@
                                 <td><input type="text" name="COMPANY_NAME" value='<%= record.get("COMPANY_NAME") %>'></td>
                                 <td name="NOTES" value='<%= record.get("NOTES") %>'><%= record.get("NOTES") %></td>
                                 <td class="admin-actions">
-                                    <button class="btn btn-light">수정</button>
+                                    <button type="submit" class="btn btn-light" formaction="">수정</button>
                                     <button class="btn btn-danger">삭제</button>
                                 </td>
                             </tr>
