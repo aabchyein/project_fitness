@@ -60,7 +60,7 @@ public class NoticeService {
 
     public int selectSearchTotal(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap);
-        String sqlMapId = "Notice.selectSearchTotal";
+        String sqlMapId = "Notice.selectTotal";
         // Object result = sharedDao.getList(sqlMapId, dataMap);
         // result.put("resultList", this.selectSearch(dataMap));
         return (int) sharedDao.getOne(sqlMapId, dataMap);
