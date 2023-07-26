@@ -77,7 +77,9 @@
                           <%= i+1 %>
                         </td>
                         <td>
+                          <a href='/guest/boardmemoDetail/<%= record.get("NOTICE_ID") %>'>
                           <%= record.get("NOTICE_TITLE") %>
+                          </a>
                         </td>
                         <td>
                           <%= record.get("ID") %>
@@ -95,7 +97,7 @@
               </div>
               <!-- 글작성 버튼 -->
               <div class="container text-end">
-                <a href="/boardmemo" class="btn btn-secondary">글작성</a>
+                <a href="/guest/boardmemo" class="btn btn-secondary">글작성</a>
               </div>
             </div>
           </div>
