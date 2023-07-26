@@ -31,9 +31,10 @@ public class AdminReserveService {
 
     // 예약 정보 수정
     public Object reserveupdate(Map params) {
-        String sqlMapId = "AdminReserve.reserveupdate";
-
-        Object result = sharedDao.update(sqlMapId, params);
+        HashMap result = new HashMap<>();
+        String sqlMapId =  "AdminReserve.reserveupdate";
+        result.put("update", sharedDao.update(sqlMapId, params));
+        result.putAll((Map) this.reserveSelectAll(params));
         return result;
     }
 }
