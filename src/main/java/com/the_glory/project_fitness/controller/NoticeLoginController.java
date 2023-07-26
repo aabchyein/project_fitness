@@ -24,7 +24,7 @@ public class NoticeLoginController {
     @Autowired
     NoticeService noticeService;
 
-    @GetMapping({"/Noticelogin  "})
+    @GetMapping({"/Noticelogin1"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
         modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeLogin.jsp");
