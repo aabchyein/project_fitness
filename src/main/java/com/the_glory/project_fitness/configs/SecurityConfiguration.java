@@ -11,31 +11,22 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfiguration {
     @Bean
-        public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-                // None using csrf protection
-                httpSecurity.csrf().disable();
-                // 권한에 대한 부분 : url & roles : user url & roles
-                // url, roles from Dao
-                httpSecurity.authorizeHttpRequests() // 로그인
-                        // .requestMatchers("/manager*").hasAnyRole("ADMIN", "MANAGER")  // 둘 중 하나의 권한만 있어도 가능
-                        // .requestMatchers("/admin*").hasRole("ADMIN") // admin uri는 로그인이 필요하다고 지정
-                        // .requestMatchers("/carInfor/map/selectSearch").authenticated()  // 로그인한 모든 사람
-                        // .requestMatchers("/carInfor/map/*").hasRole("USER")  // delete, update, insert를 할 수 있는 것은 로그인한 사람 중 user권한을 가지고 있는 사람
-                        .anyRequest().permitAll()  // 그 외 전체 대상
-                ;
-                httpSecurity.formLogin(login -> login.loginPage("/loginForm")
-                                .failureUrl("/loginForm?fail=true")  
-                                .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/")); // 자발적으로 로그인 폼에 들어갔을 때 로그인 성공 후 연결되는 화면
-                httpSecurity.logout(logout -> logout
-                                .logoutSuccessUrl("/main")
-                                .invalidateHttpSession(true)
-                                .deleteCookies("JSESSIONID"));
+    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
+        // None using csrf protection
+        httpSecurity.csrf().disable();
+        // 권한에 대한 부분 : url & roles : user url & roles
+        // url, roles from Dao
+        httpSecurity.authorizeHttpRequests() // 로그인
+                // .requestMatchers("/manager*").hasAnyRole("ADMIN", "MANAGER") // DB에는 ROLE_ADMIN, ROLE_MANAGER 이러게 넣자.
+                .requestMatchers("/guest*").hasAnyRole("ADMIN")
+                // .requestMatchers("/carInfor/map/selectSearch").authenticated() // 로그인 한 대상
+                // .requestMatchers("/carInfor/map/*").hasRole("USER")
+                .anyRequest().permitAll(); // 그외의 전체 대상
 
-                // There was an unexpected error (type=Forbidden, status=403).
-                // Forbidden 에러가 난 경우 홈화면으로 출력되게 해주는 방어코드
-                httpSecurity.exceptionHandling()
-                                .accessDeniedPage("/home");
+        httpSecurity.formLogin(login -> login.loginPage("/login2")
+                .failureUrl("/login2?fail=true")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/main"));
 
                 return httpSecurity.build();
         }

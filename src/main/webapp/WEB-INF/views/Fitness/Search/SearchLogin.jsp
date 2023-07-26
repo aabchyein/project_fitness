@@ -13,7 +13,7 @@
 
 <body>
   <!-- 상단 네비게이션 바 -->
-  <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+  <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
   <div class="container m-5">
     <div class="row justify-content-center">

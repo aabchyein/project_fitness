@@ -11,12 +11,12 @@
             and COMPANY_NAME like CONCAT('%', #{words}, '%')
             </when>
             <when test="search == 'ADDRESS'">
-            or ADDRESS like CONCAT('%', #{words}, '%')
+            and ADDRESS like CONCAT('%', #{words}, '%')
             </when>
             <when test="search == 'ROAD_ADDRESS'">
-            or ROAD_ADDRESS like CONCAT('%', #{words}, '%')
+            and ROAD_ADDRESS like CONCAT('%', #{words}, '%')
             </when>
-        </choose>  
+        </choose>
         ;
 	</select>
 

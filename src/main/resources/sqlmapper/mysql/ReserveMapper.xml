@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Reserve">
+        <!-- 상담 예약 완료 -->
+        <insert id="insert" parameterType="Map">
+        insert into reservation
+        (RESERVATION_ID, RESERVATION_DATE, RESERVATION_TIME, NOTES, ID, COMPANY_ID)
+        values
+        (#{RESERVATION_ID}, #{RESERVATION_DATE}, #{RESERVATION_TIME}, #{NOTES}, #{ID}, #{COMPANY_ID});
+        </insert>
+
+        <!-- 센터정보 불러오기 -->
+        <select id="select" parameterType="Map" resultType="Map">
+        select *
+        from  reservation as res
+                inner join company as com
+        on res.COMPANY_ID = com.COMPANY_ID
+        where com.COMPANY_ID = #{COMPANY_ID};
+        </select>
+</mapper>

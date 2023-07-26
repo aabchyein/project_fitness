@@ -109,7 +109,7 @@
               <a href="./gym_login.html" class="btn btn-secondary">취소</a>
 
               <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#completionModal"
-                onclick="showConfirmation();">완료</button>
+                onclick="showConfirmation()">완료</button>
             </div>
           </div>
         </form>
@@ -173,16 +173,13 @@
         } else {
           // Show error message or perform any necessary actions if the fields are not filled
           alert("내용이 입력되지 않았습니다.");
-          gymloginNoconnect();
         }
       }
 
       function gymloginconnect() {
-        window.location.href = "./gym_login.html";
+        window.location.href = "/gym.html";
       }
-      function gymloginNoconnect() {
-        window.location.href = "./reserve.html";
-      }
+
 
 
     </script>

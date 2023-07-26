@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -19,13 +19,15 @@
 
     <body>
       <!-- 상단 네비게이션 바 -->
-      <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+      <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
 
         <!-- 게시판 하단 -->
 
-        <% HashMap params=(HashMap) request.getAttribute("params"); String searchStr=(String)
-          params.getOrDefault("search", "" ); HashMap result=(HashMap) request.getAttribute("result"); %>
+        <% HashMap params=(HashMap) request.getAttribute("params");
+        String searchStr=(String)params.getOrDefault("search", "" );
+        HashMap result=(HashMap) request.getAttribute("result");
+        %>
           <h1 style="text-align: center; margin-top: 1cm; margin-bottom: 1cm;"><strong>게시판</strong></h1>
           <div class="container">
             <div class="row justify-content-center">
@@ -105,7 +107,7 @@
                   <ul class="pagination justify-content-center">
                     <li class="page-item">
                       <a class="page-link"
-                        href="/Noticelogin?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
+                        href='/Noticelogin?currentPage=<%= paginations.getPreviousPage() %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>Previous</a>
                       <span aria-hidden="true">&lt;</span>
                       </a>
                     </li>
@@ -118,7 +120,7 @@
                       </li>
                       <% } %>
                         <li class="page-item">
-                          <a class="page-link" href="/Noticelogin?currentPage=<%= paginations.getNextPage() %>">Next</a>
+                          <a class="page-link" href='/Noticelogin?currentPage=<%= paginations.getNextPage() %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>Next</a>
                           <span aria-hidden="true">&gt;</span>
                           </a>
                         </li>

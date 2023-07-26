@@ -1,4 +1,4 @@
-package com.the_glory.project_fitness.security;
+package com.the_glory.project_fitness.utils;
 
 import java.util.UUID;
 

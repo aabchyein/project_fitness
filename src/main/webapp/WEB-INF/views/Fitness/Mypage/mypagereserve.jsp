@@ -26,7 +26,7 @@
 
 
     <!-- 상단 네비게이션 바 -->
-    <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+    <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
       <!-- 상담 예약 -->
       <% HashMap map = (HashMap)request.getAttribute("paramMap"); %>
@@ -70,7 +70,7 @@
 
               <div class="row">
                 <div class="col-md-12 text-center">
-                  <a href="/gym_login" class="btn btn-secondary">취소</a>
+                  <a href="/main" class="btn btn-secondary">취소</a>
 
                   <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#completionModal"
                     onclick="showConfirmation();">완료</button>

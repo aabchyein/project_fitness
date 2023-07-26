@@ -8,17 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>운동 시설 찾아주는 홈페이지</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/CSS/gym_logout.css">
   <link rel="stylesheet" href="/CSS/mainmenu.css">
 </head>
 
-
 <body>
   <!-- 상단 네비게이션 바 -->
-  <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+  <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
-   <!-- Carousel -->
- <div class="carousel-container">
+  <!-- Carousel -->
+  <div class="carousel-container">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -46,18 +44,14 @@
       </button>
     </div>
   </div>
-  
-  
-  
-  
 
- <!-- footer -->
- <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
+  <!-- footer -->
+  <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
