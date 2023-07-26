@@ -16,7 +16,7 @@
           </form>
           <div class="col-lg-6 text-lg-end">
             <ul class="navbar-nav ms-auto">
-              <sec:authorize access="hasRole('ROLE_ADMIN')">
+              <sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_GUEST')" >
                 <li class="nav-item">
                   <a class="nav-link" href="/adminPage">
                     <img src="/Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">

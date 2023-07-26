@@ -39,12 +39,6 @@
                         </td>
                       </tr>
                       <tr>
-                        <th>비밀번호</th>
-                        <td>
-                          <%=result.get("PASSWORD")%>
-                        </td>
-                      </tr>
-                      <tr>
                         <th>생년월일</th>
                         <td>
                           <%=result.get("BIRTHDATE")%>
