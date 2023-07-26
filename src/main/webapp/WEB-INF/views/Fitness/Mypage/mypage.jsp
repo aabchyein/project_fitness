@@ -39,12 +39,6 @@
                         </td>
                       </tr>
                       <tr>
-                        <th>비밀번호</th>
-                        <td>
-                          <%=result.get("PASSWORD")%>
-                        </td>
-                      </tr>
-                      <tr>
                         <th>생년월일</th>
                         <td>
                           <%=result.get("BIRTHDATE")%>
@@ -76,6 +70,7 @@
                       </tr>
                 </table>
                 <form action="">
+                  <input type="hidden" name="GENDER_ID" value='<%= result.get("GENDER_ID") %>'>
                   <div class="text-lg-end">
 
                     <button type="submit" class="btn btn-secondary" style="opacity: 0.8;" name="ID"

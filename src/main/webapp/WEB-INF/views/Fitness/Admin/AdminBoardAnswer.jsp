@@ -24,21 +24,23 @@
                 <div class="container-fluid">
                     <!-- 관리자 페이지 content -->
                     <div class="row g-20 vh-50">
-                        <nav class="p-5 bg-dark navbar-dark d-md-block col-2">
+                        <nav class="p-5 bg-dark navbar-dark d-md-block col-2 ">
                             <div>
                                 <ul class="list-unstyled navbar-nav">
                                     <li class="d-flex align-items-center">
-                                        <a href="./AdminPage.html"
-                                            class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
+                                        <a href="/" class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <a href="./AdminPage.html" class="text-decoration-none nav-link">회원 관리</a>
+                                        <a href="/adminPage" class="text-decoration-none nav-link">회원 관리</a>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <a href="./Admin_board.html" class="text-decoration-none nav-link">게시판 관리</a>
+                                        <a href="/fitness/AdminBoardAll" class="text-decoration-none nav-link">게시판 관리</a>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <a href="./Admin_notice.html" class="text-decoration-none nav-link">공지사항 관리</a>
+                                        <a href="/Adminnotice" class="text-decoration-none nav-link">공지사항 관리</a>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <a href="/adminPowerSetting" class="text-decoration-none nav-link">관리자 설정</a>
                                     </li>
                                 </ul>
                             </div>

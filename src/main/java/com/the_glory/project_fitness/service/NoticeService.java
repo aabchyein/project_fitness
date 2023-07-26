@@ -28,6 +28,15 @@ public class NoticeService {
         return result1;
     }
 
+    public Object selectDetail(String NOTICE_ID, Map dataMap) {
+        String sqlMapId = "Notice.selectDetail";
+        dataMap.put("NOTICE_ID", NOTICE_ID);
+        
+        Object result = sharedDao.getOne(sqlMapId, dataMap);
+        // result.put("resultList", this.selectSearch(dataMap));
+        return result;
+    }
+
     // 검색(조건-search : YEAR, CAR_NAME)
     public Map selectSearchWithPagination(Map dataMap) {
         // 페이지 형성 위한 계산
@@ -60,7 +69,7 @@ public class NoticeService {
 
     public int selectSearchTotal(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap);
-        String sqlMapId = "Notice.selectSearchTotal";
+        String sqlMapId = "Notice.selectTotal";
         // Object result = sharedDao.getList(sqlMapId, dataMap);
         // result.put("resultList", this.selectSearch(dataMap));
         return (int) sharedDao.getOne(sqlMapId, dataMap);
@@ -83,11 +92,7 @@ public class NoticeService {
     }
 
     public Object selectSearch(Map dataMap) {
-        // Object getOne(String sqlMapId, Object dataMap)
-        // String sqlMapId = "Notice.selectSearch";
-        // Object result = sharedDao.getList(sqlMapId, dataMap);
-        // result.put("resultList", this.selectSearch(dataMap));
-        
+       
         HashMap result1 = new HashMap<>();
         result1.putAll(this.selectSearchWithPagination(dataMap));
         return result1;

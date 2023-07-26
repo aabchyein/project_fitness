@@ -16,6 +16,9 @@ public class AdminPageService {
     @Autowired
     SharedDao sharedDao;
 
+    @Autowired
+    NoticeService noticeService;
+
     // 전체 회원 조회
     public Object selectAll(Map dataMap) {
         String sqlMapId = "AdminPage.selectAll";
@@ -56,6 +59,14 @@ public class AdminPageService {
 
         ArrayList result = new ArrayList<>();
         result.add(this.selectAll(params));
+        return result;
+    }
+
+    public Object AdminInsert(Map params){
+        String sqlMap = "AdminPage.insert";
+        sharedDao.insert(sqlMap, params);
+        Object result = noticeService.selectSearch(params);
+            
         return result;
     }
 }

@@ -10,13 +10,19 @@
           </a>
           <!-- 검색창 -->
           <form class="d-flex col-lg-4">
-            <input class="form-control search-input me-2" type="search" id="search" placeholder="업체명이나 지역을 검색해 보세요"
+            <select name="search" id="">
+              <option value="COMPANY_NAME">업체명</option>
+              <option value="ADDRESS">주소</option>
+              <option value="ROAD_ADDRESS">도로명 주소</option>
+            </select>
+            <input class="form-control search-input me-2" type="text" name="words" value="" placeholder="업체명이나 지역을 입력하세요"
               aria-label="Search">
-            <button id="search" class="btn" style="background-color: #8B0000; color: white;" type="submit">검색</button>
+            <button id="search" class="btn" style="background-color: #8B0000; color: white;" type="submit" formaction="/Search" formmethod="get"
+              >검색</button>   
           </form>
           <div class="col-lg-6 text-lg-end">
             <ul class="navbar-nav ms-auto">
-              <sec:authorize access="hasRole('ROLE_ADMIN')">
+              <sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_GUEST')" >
                 <li class="nav-item">
                   <a class="nav-link" href="/adminPage">
                     <img src="/Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">
@@ -30,7 +36,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">커뮤니티</a>
                 <div class="dropdown-menu" aria-labelledby="communityDropdown">
-                  <a class="dropdown-item" href="/notice/Notice">게시판</a>
+                  <a class="dropdown-item" href="/Noticelogin">게시판</a>
                   <a class="dropdown-item" href="/Review">후기</a>
                 </div>
               </li>
