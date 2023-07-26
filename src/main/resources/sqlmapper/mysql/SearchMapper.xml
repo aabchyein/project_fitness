@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Search">
-        <!-- 운동시설 검색 with pagination -->
-	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
+        <!-- 운동시설 검색 -->
+        <select id="selectSearch" parameterType="Map" resultType="Map">
         SELECT * 
-        FROM db_fitness.company
+        FROM company
         where 1 = 1
         <choose>
             <when test="search == 'COMPANY_NAME'">
@@ -20,4 +20,30 @@
         ;
 	</select>
 
+        <!-- 운동시설 검색 with pagination -->
+	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM company
+        where 1 = 1
+        <choose>
+            <when test="search == 'COMPANY_NAME'">
+            and COMPANY_NAME like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ADDRESS'">
+            and ADDRESS like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ROAD_ADDRESS'">
+            and ROAD_ADDRESS like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>
+        limit #{pageBegin}, #{pageScale}
+        ;
+	</select>
+
+        <!-- 전체 검색 -->
+	<select id="selectTotal" parameterType="Map" resultType="int">
+        select count(*) as cnt
+        from db_fitness.company
+        ;
+	</select>
 </mapper>

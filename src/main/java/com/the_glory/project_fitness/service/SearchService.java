@@ -20,22 +20,16 @@ public class SearchService {
         public Object selectSearch(Map dataMap) {
             String sqlMapId = "Search.selectSearch";
     
+            HashMap all = new HashMap<>();
             Object result = sharedDao.getList(sqlMapId, dataMap);
-            return result;
+            Object result1 = this.pagination(dataMap);
+            all.put("result", result);
+            all.put("result1", result1);
+            return all;
         }
 
-        // public Object selectSearch(Object search, Object words) {
-        //     // Object getOne(String sqlMapId, Object dataMap)
-        //     Object sqlMapId = "Search.selectSearch";
-        //     HashMap dataMap = new HashMap<>();
-        //     dataMap.put("search", search);
-        //     dataMap.put("words", words);
-    
-        //     Object result = sharedDao.getList(sqlMapId, dataMap);
-        //     return result;
-        // }
-
-        public Map selectSearchWithPagination(Map dataMap) {
+        // 운동시설 검색 with pagination
+        public Map pagination(Map dataMap) {
             // 페이지 형성 위한 계산
             int totalCount = (int) this.selectSearchTotal(dataMap);
             
@@ -59,7 +53,7 @@ public class SearchService {
 
         public int selectSearchTotal(Map dataMap) {
             // Object getOne(String sqlMapId, Object dataMap);
-            String sqlMapId = "Search.selectSearchTotal";
+            String sqlMapId = "Search.selectTotal";
             // Object result = sharedDao.getList(sqlMapId, dataMap);
             // result.put("resultList", this.selectSearch(dataMap));
             return (int) sharedDao.getOne(sqlMapId, dataMap);
