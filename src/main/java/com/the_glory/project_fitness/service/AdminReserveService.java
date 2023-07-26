@@ -13,11 +13,27 @@ public class AdminReserveService {
     @Autowired
     SharedDao sharedDao;
 
-    // 회원 정보 삭제
-    public Object memberdelete(Map params) {
-        String sqlMapId = "AdminReserve.memdelete";
+    // 예약 정보 조회
+    public Object reserveSelectAll(Map params) {
+        String sqlMapId = "AdminReserve.reserveselectAll";
+
+        Object result = sharedDao.getList(sqlMapId, params);
+        return result;
+    }    
+
+    // 예약 정보 삭제
+    public Object reservedelete(Map params) {
+        String sqlMapId = "AdminReserve.reservedelete";
 
         Object result = sharedDao.delete(sqlMapId, params);
+        return result;
+    }
+
+    // 예약 정보 수정
+    public Object reserveupdate(Map params) {
+        String sqlMapId = "AdminReserve.reserveupdate";
+
+        Object result = sharedDao.update(sqlMapId, params);
         return result;
     }
 }

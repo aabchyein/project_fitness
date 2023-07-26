@@ -12,6 +12,13 @@
 </head>
 
 <body>
+  <%
+  HashMap params=(HashMap) request.getAttribute("params");
+  String searchStr=(String) params.getOrDefault("search", "");
+  ArrayList list = (ArrayList) request.getAttribute("result");
+  for(int i=0; i < list.size(); i = i+1) {
+    HashMap record=(HashMap) list.get(i);
+ %>
   <!-- 상단 네비게이션 바 -->
   <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
@@ -20,6 +27,7 @@
         <div>
             <div>
               <table>
+                <form>
                 <thead>
                   <tr>
                     <th>COMPANY_NAME</th>
@@ -30,28 +38,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <%
-                  HashMap params=(HashMap) request.getAttribute("params");
-                  String searchStr=(String) params.getOrDefault("search", "");
-                  ArrayList list = (ArrayList) request.getAttribute("result");
-                  for(int i=0; i < list.size(); i = i+1) {
-                    HashMap record=(HashMap) list.get(i);
-                 %>
                   <tr>
                     <td><%= record.get("COMPANY_NAME") %></td>
                     <td><%= record.get("PHONE_NUMBER") %></td>
                     <td><%= record.get("ADDRESS") %></td>
                     <td><%= record.get("ROAD_ADDRESS") %></td>
-                    <form>
                     <th>
+                      <input type="hidden" name="COMPANY_ID" value='<%= record.get("COMPANY_ID") %>'>
                       <button class="btn btn-primary" type="submit" formaction="/reserve">예약</button>
                     </th>
-                    </form>
                   </tr>
                   <%
                   }
                   %>
                 </tbody>
+              </form>
               </table>
             </div>
         </div>

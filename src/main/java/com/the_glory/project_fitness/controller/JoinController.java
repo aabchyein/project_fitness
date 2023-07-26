@@ -14,15 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.the_glory.project_fitness.security.JoinsService;
+
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
-import com.the_glory.project_fitness.service.JoinService;
+
 
 @Controller
 public class JoinController {
 
     @Autowired
-    JoinService joinService;
+    
+    JoinsService usersService;
 
     @GetMapping({ "/Join" })
     public ModelAndView main(ModelAndView modelAndView) {
@@ -32,7 +35,7 @@ public class JoinController {
 
     @PostMapping({ "/joininsert" })
     public ModelAndView Joininsert(@RequestParam Map datamap, ModelAndView modelAndView) {
-        Object result = joinService.JoinInsert(datamap);
+        Object result = usersService.insertWithAuths(datamap);
         modelAndView.addObject("datamap", datamap);
         modelAndView.addObject("result", result);
         modelAndView.setViewName("/WEB-INF/views/Fitness/GYM/gym.jsp");

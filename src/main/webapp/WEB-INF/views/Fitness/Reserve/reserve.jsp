@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,20 +21,16 @@
 
 
 <body>
-  <!-- 메인 -->
-
-
-
   <!-- 상단 네비게이션 바 -->
-  <%@ include file="/WEB-INF/views/Fitness/LoginHeader.jsp" %>
+  <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
   <!-- 상담 예약 -->
-
   <div class="container p-5">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">상담 예약</h5>
         <form>
+          <input type="hidden" name="ID" value="user654">
           <div class="form-group m-5">
             <label for="datepicker">날짜 선택:</label>
             <input class="datepicker my-custom-calendar" type="date" name="RESERVATION_DATE" id="datepicker">
@@ -58,8 +55,11 @@
             </select>
           </div>
           <div class="form-group m-5">
-            <label for="centerName">센터명</label>
-            <textarea class="form-control" name="COMPANY_ID" id="centerName" rows="2" required=""></textarea>
+            <%
+            HashMap record = (HashMap) request.getAttribute("result");
+            %> 
+            <label for="COMPANY_NAME">센터명 :  <%= record.get("COMPANY_NAME") %></label>
+            <input type="hidden" class="form-control" name="COMPANY_ID" value='<%= record.get("COMPANY_ID") %>'></input>
           </div>
           <div class="form-group m-5">
             <label for="notes">상담 시 참고할 부분을 적어주세요. (병력 및 신체 이상, 원하시는 점이나 기대하는 점)
@@ -69,9 +69,7 @@
           <div class="row">
             <div class="col-md-12 text-center">
               <a href="/gym_login" class="btn btn-secondary">취소</a>
-
-              <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#completionModal"
-                onclick="showConfirmation();">완료</button>
+              <button type="submit" class="btn btn-primary" formaction="/reserveinsert" >완료</button>
             </div>
           </div>
         </form>
@@ -81,40 +79,38 @@
 
   <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
 
-    <!-- <script>
-      $(function () {
-        $("#datepicker").datepicker({
-          minDate: 0 // 오늘 이전 날짜 선택 불가
-        });
-      });
+    <script>
+      // $(function () {
+      //   $("#datepicker").datepicker({
+      //     minDate: 0 // 오늘 이전 날짜 선택 불가
+      //   });
+      // });
 
-      function showConfirmation() {
-        // Perform any necessary validation or checks before showing the confirmation alert
-        const date = document.getElementById("datepicker").value;
-        const time = document.getElementById("timepicker").value;
-        const centerName = document.getElementById("centerName").value;
-        const notes = document.getElementById("notes").value;
+      // function gymloginconnect() {
+      //   window.location.href = "/Gym_Login";
+      // }
+      // function gymloginNoconnect() {
+      //   window.location.href = "/reserve";
+      // }
+      
+      // $(function showConfirmation() {
+      //   // Perform any necessary validation or checks before showing the confirmation alert
+      //   const date = document.getElementById("datepicker").value;
+      //   const time = document.getElementById("timepicker").value;
+      //   const centerName = document.getElementById("centerName").value;
+      //   const notes = document.getElementById("notes").value;
 
-        if (date && time && centerName && notes) {
-          // All fields are filled, show confirmation alert
-          alert("예약이 완료되었습니다!");
-          gymloginconnect();
-        } else {
-          // Show error message or perform any necessary actions if the fields are not filled
-          alert("내용이 입력되지 않았습니다.");
-          gymloginNoconnect();
-        }
-      }
-
-      function gymloginconnect() {
-        window.location.href = "/Gym_Login";
-      }
-      function gymloginNoconnect() {
-        window.location.href = "/reserve";
-      }
-
-
-    </script> -->
+      //   if (date && time && centerName && notes) {
+      //     // All fields are filled, show confirmation alert
+      //     alert("예약이 완료되었습니다!");
+      //     gymloginconnect();
+      //   } else {
+      //     // Show error message or perform any necessary actions if the fields are not filled
+      //     alert("내용이 입력되지 않았습니다.");
+      //     gymloginNoconnect();
+      //   }
+      // });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

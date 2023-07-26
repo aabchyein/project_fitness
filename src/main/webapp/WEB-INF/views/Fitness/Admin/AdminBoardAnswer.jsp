@@ -18,7 +18,7 @@
 
         <body>
             <!-- 상단 네비게이션 바 -->
-            <%@ include file="/WEB-INF/views/Fitness/Admin_header.jsp" %>
+            <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
                 <div class="container-fluid">
                     <!-- 관리자 페이지 content -->

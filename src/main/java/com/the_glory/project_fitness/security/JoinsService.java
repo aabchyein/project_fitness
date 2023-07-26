@@ -7,11 +7,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.the_glory.project_fitness.utils.Commons;
 import com.the_glory.project_fitness.dao.SharedDao;
+import com.the_glory.project_fitness.security.AuthsService;
+
 
 @Service
 @Transactional
-public class UsersService {
+public class JoinsService {
 
     @Autowired
     SharedDao sharedDao;
@@ -28,8 +31,8 @@ public class UsersService {
     // 회원가입
     public Object insert(Map dataMap) {
         //password 암호화
-        String password = (String) dataMap.get("password");
-        dataMap.put("password", bCryptPasswordEncoder.encode(password));
+        String password = (String) dataMap.get("PASSWORD");
+        dataMap.put("PASSWORD", bCryptPasswordEncoder.encode(password));
         String sqlMapId = "Users.insert";
         Object result = sharedDao.insert(sqlMapId, dataMap);
         return result;
