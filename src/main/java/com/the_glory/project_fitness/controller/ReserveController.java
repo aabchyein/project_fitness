@@ -26,9 +26,7 @@ public class ReserveController {
 
     @GetMapping({"/reserve"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = reserveService.select(params);
         modelAndView.addObject("params", params);
-        modelAndView.addObject("result", result);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Reserve/reserve.jsp");
         return modelAndView;
     }

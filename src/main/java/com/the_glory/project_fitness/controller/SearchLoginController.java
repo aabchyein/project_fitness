@@ -32,7 +32,7 @@ public class SearchLoginController {
     }
     @GetMapping({"/Searchlogin1"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = searchService.selectSearchWithPagination(params);
+        Object result = searchService.selectSearch(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
         

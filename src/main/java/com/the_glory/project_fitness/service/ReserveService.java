@@ -30,7 +30,7 @@ public class ReserveService {
 
     public Object select(Map dataMap){
         String sql = "Reserve.select";
-        Object result = sharedDao.getOne(sql, dataMap);
+        Object result = sharedDao.getList(sql, dataMap);
         return result;
     }
 }
