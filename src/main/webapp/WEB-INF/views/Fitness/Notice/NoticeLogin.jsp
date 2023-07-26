@@ -105,7 +105,7 @@
                   <ul class="pagination justify-content-center">
                     <li class="page-item">
                       <a class="page-link"
-                        href="/Noticelogin?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
+                        href='/Noticelogin?currentPage=<%= paginations.getPreviousPage() %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>Previous</a>
                       <span aria-hidden="true">&lt;</span>
                       </a>
                     </li>
@@ -118,7 +118,7 @@
                       </li>
                       <% } %>
                         <li class="page-item">
-                          <a class="page-link" href="/Noticelogin?currentPage=<%= paginations.getNextPage() %>">Next</a>
+                          <a class="page-link" href='/Noticelogin?currentPage=<%= paginations.getNextPage() %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>Next</a>
                           <span aria-hidden="true">&gt;</span>
                           </a>
                         </li>
