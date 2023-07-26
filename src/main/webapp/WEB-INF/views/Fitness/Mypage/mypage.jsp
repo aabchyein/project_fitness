@@ -76,6 +76,7 @@
                       </tr>
                 </table>
                 <form action="">
+                  <input type="hidden" name="GENDER_ID" value='<%= result.get("GENDER_ID") %>'>
                   <div class="text-lg-end">
 
                     <button type="submit" class="btn btn-secondary" style="opacity: 0.8;" name="ID"

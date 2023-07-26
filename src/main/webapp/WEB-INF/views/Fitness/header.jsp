@@ -10,9 +10,15 @@
           </a>
           <!-- 검색창 -->
           <form class="d-flex col-lg-4">
-            <input class="form-control search-input me-2" type="search" id="search" placeholder="업체명이나 지역을 검색해 보세요"
+            <select name="search" id="">
+              <option value="COMPANY_NAME">업체명</option>
+              <option value="ADDRESS">주소</option>
+              <option value="ROAD_ADDRESS">도로명 주소</option>
+            </select>
+            <input class="form-control search-input me-2" type="text" name="words" value="" placeholder="업체명이나 지역을 입력하세요"
               aria-label="Search">
-            <button id="search" class="btn" style="background-color: #8B0000; color: white;" type="submit">검색</button>
+            <button id="search" class="btn" style="background-color: #8B0000; color: white;" type="submit" formaction="/Search" formmethod="get"
+              >검색</button>   
           </form>
           <div class="col-lg-6 text-lg-end">
             <ul class="navbar-nav ms-auto">

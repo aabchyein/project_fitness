@@ -1,5 +1,6 @@
 package com.the_glory.project_fitness.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,16 +17,27 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
+import com.the_glory.project_fitness.service.SearchService;
 
 @Controller
 public class SearchLoginController {
     @Autowired
-    CommonService commonService;
+    SearchService searchService;
 
     @GetMapping({"/Searchlogin"})
     public ModelAndView main(ModelAndView modelAndView) {
         modelAndView.addObject("name", "bwh");
-        modelAndView.setViewName("/WEB-INF/views/Fitness//Search/SearchLogin.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Search/SearchLogin.jsp");
+        return modelAndView;
+    }
+    @GetMapping({"/Searchlogin1"})
+    public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = searchService.selectSearchWithPagination(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+        
+        // modelAndView.addObject("params", "result");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Search/SearchLogin.jsp");
         return modelAndView;
     }
 }
