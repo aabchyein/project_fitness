@@ -40,7 +40,7 @@
                                         <a href="/Adminnotice" class="text-decoration-none nav-link">공지사항 관리</a>
                                     </li>
                                     <li class="d-flex align-items-center">
-                                        <a href="/NoticePage.html" class="text-decoration-none nav-link">관리자설정</a>
+                                        <a href="/adminPowerSetting" class="text-decoration-none nav-link">관리자 설정</a>
                                     </li>
                                 </ul>
                             </div>

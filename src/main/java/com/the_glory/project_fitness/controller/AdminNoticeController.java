@@ -15,15 +15,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.CommonService;
+import com.the_glory.project_fitness.service.NoticeService;
 
 @Controller
 public class AdminNoticeController {
     @Autowired
     CommonService fitnessService;
 
+    @Autowired
+    NoticeService noticeService;
+    
+
     @GetMapping({"/Adminnotice"})
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
+    public ModelAndView Adminnotice(@RequestParam Map dataMap, ModelAndView modelAndView) {
+        Object result = noticeService.selectSearch(dataMap);
+        modelAndView.addObject("params", dataMap);
+        modelAndView.addObject("result", result);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_notice.jsp");
         return modelAndView;
     }
