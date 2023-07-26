@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@ page import="java.util.HashMap, java.util.ArrayList" %>
+    <%@ page import = "com.the_glory.project_fitness.UniqueID.UniqueID" %>
 
         <!DOCTYPE html>
         <html lang="en">
@@ -49,6 +50,9 @@
                             <h1 class="admin-header">게시판 답변 등록</h1>
                             <div class="container">
                                 <% HashMap record=(HashMap)request.getAttribute("record"); %>
+                                <% HashMap result=(HashMap)request.getAttribute("params"); %>
+                                
+                             
                                         <div class="mb-3">
                                             <label for="name" class="form-label">작성자</label>
                                             <input type="text" class="form-control" value='<%= record.get("ID") %>'  readonly>
@@ -59,29 +63,30 @@
                                             <input type="text" class="form-control" value='<%= record.get("CONTENTS") %>' readonly>
                                         </div>
                                         
-                                        <form id="answer-form">
+                                        <%       
+                                        UniqueID uniqueid = new UniqueID();
+                                        String uuid = uniqueid.generatUuid();
+                                        %>
+                                    <form id="answer-form">
 
                                         <div class="mb-3">
                                             <label for="answer" class="form-label">답변 내용</label>
-                                            <input type="text" class="form-control" id="answer"
+                                            <input type="text" class="form-control" id="answer" name="ANSWER"
                                                 placeholder="답변 내용을 입력하세요">
                                         </div>
-
+                                        
                                         <div>
-                                            <input type="hidden" name="ADMIN_ID" value=" ">
+                                            <input type="hidden" name="ADMIN_ID" value='<%= result.get("ADMIN_ID") %>'>
                                         </div>
                                         <div>
-                                            <input type="hidden" name="ANSWER" value="">
+                                            <input type="hidden" name="BOARD_ANSWER_ID" value="<%= uuid %>">
                                         </div>
                                         <div>
-                                            <input type="hidden" name="BOARD_ANSWER_ID" value="">
-                                        </div>
-                                        <div>
-                                            <input type="hidden" name="BOARD_ID" value="">
+                                            <input type="hidden" name="BOARD_ID" value='<%= result.get("BOARD_ID") %>'>
                                         </div>
 
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">등록</button>
+                                            <button type="submit" class="btn btn-primary" formaction="/fitness/insertAndSelectSearch"formmethod="get">등록</button>
                                         </div>
                                     </form>
                             </div>

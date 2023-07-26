@@ -67,8 +67,6 @@
                             for (int i=0; i < arrayList.size(); i=i+1) {
                                 HashMap record = (HashMap) arrayList.get(i);
                             %>
-                            <input type="hidden" name="BOARD_ANSWER_ID" value='<%= record.get("BOARD_ANSWER_ID") %>'>
-                            <input type="hidden" name="BOARD_ID" value='<%= record.get("BOARD_ID") %>'>
                             <tr>
                                 <td name="number"><%= i+1 %></td>
                                 <td name="ID"><%= record.get("ID") %></td>
@@ -83,6 +81,8 @@
                                     <input type="hidden" name="BOARD_ANSWER_ID" value='<%= record.get("BOARD_ANSWER_ID") %>'>
                                     <input type="hidden" name="BOARD_ID" value='<%= record.get("BOARD_ID") %>'>
                                    <input type="hidden" name="CONTENTES" value='<%= record.get("CONTENTS") %>'>
+                                   <input type="hidden" name="ADMIN_ID" value='<%= record.get("ADMIN_ID") %>'>
+
                                     <button type="submit" class="btn btn-secondary" 
                                         formaction="/fitness/insertAndcome" formmethod="get">등록</button>
                                     </form>
