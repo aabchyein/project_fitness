@@ -32,6 +32,9 @@
                             <a href="/adminPage" class="text-decoration-none nav-link">회원 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
+                            <a href="/adminReserve" class="text-decoration-none nav-link">예약 관리</a>
+                        </li>
+                        <li class="d-flex align-items-center">
                             <a href="/fitness/AdminBoardAll" class="text-decoration-none nav-link">게시판 관리</a>
                         </li>
                         <li class="d-flex align-items-center">
@@ -56,6 +59,7 @@
                                 <th>아이디</th>
                                 <th>예약날짜</th>
                                 <th>예약시간</th>
+                                <th>변경시간</th>
                                 <th>센터명</th>
                                 <th>참고사항</th>
                                 <th>확인</th>
@@ -67,19 +71,41 @@
                             for(int i=0; i < list.size(); i=i+1) {
                                 HashMap record = (HashMap) list.get(i);
                             %>
+                            <form action="">
                             <tr>
                                 <td><%= i+1 %></td>
-                                <td name="NAME" value='<%= record.get("NAME") %>'><%= record.get("NAME") %></td>
-                                <td name="ID" value='<%= record.get("ID") %>'><%= record.get("ID") %></td>
-                                <td><input type="text" name="RESERVATION_DATE" value='<%= record.get("RESERVATION_DATE") %>'></td>
-                                <td><input type="text" name="RESERVATION_TIME" value='<%= record.get("RESERVATION_TIME") %>'></td>
-                                <td><input type="text" name="COMPANY_NAME" value='<%= record.get("COMPANY_NAME") %>'></td>
-                                <td name="NOTES" value='<%= record.get("NOTES") %>'><%= record.get("NOTES") %></td>
+                                <td><%= record.get("NAME") %></td>
+                                <td><%= record.get("ID") %></td>
+                                <td>
+                                    <input class="datepicker my-custom-calendar" type="date" name="RESERVATION_DATE" id="datepicker" value='<%= record.get("RESERVATION_DATE") %>'>
+                                <td>
+                                    <%= record.get("RESERVATION_TIME") %>
+                                </td>
+                                <td>
+                                    <select class="form-control" id="timepicker" name="RESERVATION_TIME" value='<%= record.get("RESERVATION_TIME") %>'>
+                                        <option>10:00 - 11:00</option>
+                                        <option>11:00 - 12:00</option>
+                                        <option>12:00 - 13:00</option>
+                                        <option>13:00 - 14:00</option>
+                                        <option>14:00 - 15:00</option>
+                                        <option>15:00 - 16:00</option>
+                                        <option>16:00 - 17:00</option>
+                                        <option>17:00 - 18:00</option>
+                                        <option>18:00 - 19:00</option>
+                                        <option>19:00 - 20:00</option>
+                                        <option>20:00 - 21:00</option>
+                                      </select>
+                                <td><%= record.get("COMPANY_NAME") %></td>
+                                <td><%= record.get("NOTES") %></td>
                                 <td class="admin-actions">
-                                    <button type="submit" class="btn btn-light" formaction="">수정</button>
-                                    <button class="btn btn-danger">삭제</button>
+                                    
+                                    <input type="hidden" name="ID" value='<%= record.get("ID") %>'>
+                                    <button type="submit" class="btn btn-light" formaction="/adminReserveUpdate" formmethod="get">수정</button>
+                                    <button class="btn btn-danger" formaction="/adminReserveDelete" formmethod="get">삭제</button>
+                                    
                                 </td>
                             </tr>
+                          </form>
                             <%
                             }
                             %>

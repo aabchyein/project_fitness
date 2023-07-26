@@ -104,19 +104,19 @@ public class AdminBoardService {
 
 
    // 회원 정보 삭제
-    public Object deleteAndSelectSearch(String  BOARD_ID, Map params){
-        datamap.put("BOARD_ID",BOARD_ID);
-        HashMap result = new HashMap<>();
-        // String sqlMapId = "CarInfors.delete";
-        // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
-        result.put("deleteCount", this.delete(params));
+    // public Object deleteAndSelectSearch(String  BOARD_ID, Map params){
+    //     datamap.put("BOARD_ID",BOARD_ID);
+    //     HashMap result = new HashMap<>();
+    //     // String sqlMapId = "CarInfors.delete";
+    //     // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
+    //     result.put("deleteCount", this.delete(params));
        
-        // sqlMapId = "CarInfors.selectSearch";
-        // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
+    //     // sqlMapId = "CarInfors.selectSearch";
+    //     // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
         
-        result.putAll(this.selectSearchWithPagination(params));
-        return result;
-    } 
+    //     result.putAll(this.selectSearchWithPagination(params));
+    //     return result;
+    // } 
 
 
     

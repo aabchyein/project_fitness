@@ -26,18 +26,20 @@ public class AdminReserveController {
 
     // 예약 정보 삭제
     @GetMapping("/adminReserveDelete")
-    public Object memberdelete(@RequestParam Map params, ModelAndView modelAndView) {
+    public Object adminReserveDelete(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = adminReserveService.reservedelete(params);
         modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminReserve.jsp");
         return modelAndView;
     }
 
     // 예약 정보 수정
     @GetMapping("/adminReserveUpdate")
-    public Object memberupdate(@RequestParam Map params, ModelAndView modelAndView) {
+    public Object adminReserveUpdate(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = adminReserveService.reserveupdate(params);
         modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminReserve.jsp");
         return modelAndView;
     }

@@ -44,17 +44,17 @@ public class AdminBoardController {
         return modelAndView;
     }
 
-    // delete 삭제 버튼
-    @GetMapping("/deleteAndSelectSearch")
-    public ModelAndView deleteAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
-        Object result = adminBoardService.deleteAndSelectSearch(params);
-        modelAndView.addObject("params", params);
-        modelAndView.addObject("result", result);
+    // // delete 삭제 버튼
+    // @GetMapping("/deleteAndSelectSearch")
+    // public ModelAndView deleteAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+    //     Object result = adminBoardService.deleteAndSelectSearch(params);
+    //     modelAndView.addObject("params", params);
+    //     modelAndView.addObject("result", result);
 
-        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
-        return modelAndView;
-    }
+    //     // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+    //     modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
+    //     return modelAndView;
+    // }
 
     // Mypageupdate 업데이트 버튼
     // @GetMapping("/AdminBoardupdate/{ID}")

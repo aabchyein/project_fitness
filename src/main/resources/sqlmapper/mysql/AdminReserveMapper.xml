@@ -19,12 +19,9 @@
 
     <!-- 에약 정보 수정 -->
     <update id="reserveupdate" parameterType="Map">
-        update reservation AS res
-            INNER JOIN company AS com
-            ON res.COMPANY_ID = com.COMPANY_ID
-        set res.RESERVATION_DATE = #{RESERVATION_DATE},
-            res.RESERVATION_TIME = #{RESERVATION_TIME},
-            com.COMPANY_NAME = #{COMPANY_NAME}
+        update reservation
+        set RESERVATION_DATE = #{RESERVATION_DATE},
+            RESERVATION_TIME = #{RESERVATION_TIME}
         where ID = #{ID};
     </update>
 </mapper>
