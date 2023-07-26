@@ -26,11 +26,11 @@
 %>
       <div class="form-group">
         <label for="title">제목:</label>
-        <input type="text" class="form-control" name="NOTICE_TITLE" value='<%= record.get("NOTICE_TITLE") %>' id="title" >
+        <input type="text" class="form-control" name="NOTICE_TITLE" value='<%= record.get("NOTICE_TITLE") %>' id="title" readonly>
       </div>
       <div class="form-group">
         <label for="author" >작성자:</label>
-        <input type="text" class="form-control" name="ID" value='<%= record.get("ID") %>' id="author"  >
+        <input type="text" class="form-control" name="ID" value='<%= record.get("ID") %>' id="author" readonly >
       </div>
       <div>
         <input type="hidden" name="NOTICE_DATE">
@@ -40,7 +40,7 @@
       </div>
       <div class="form-group">
         <label for="content">내용:</label>
-        <textarea class="form-control" name="NOTICE_CONTENTS"  id="content" rows="5" ><%= record.get("NOTICE_CONTENTS") %></textarea>
+        <textarea class="form-control" name="NOTICE_CONTENTS"  id="content" rows="5" readonly><%= record.get("NOTICE_CONTENTS") %></textarea>
       </div>
       <div class="d-flex justify-content-between">
           <a href="/Noticelogin" class="btn btn-outline-primary">목록</a>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
-
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -18,6 +18,7 @@
     </head>
 
     <body>
+      <sec:authentication property="principal" var="userDetailsBean" />
       <!-- 상단 네비게이션 바 -->
       <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
@@ -96,9 +97,11 @@
                 </table>
               </div>
               <!-- 글작성 버튼 -->
+              <sec:authorize access="isAuthenticated()">
               <div class="container text-end">
                 <a href="/guest/boardmemo" class="btn btn-secondary">글작성</a>
               </div>
+              </sec:authorize>
             </div>
           </div>
 
