@@ -12,10 +12,7 @@
     from board
 	inner join board_answer
     on board.board_id = board_answer.BOARD_ID
-      <if test="pageScale != null">
-            ORDER BY DATE DESC
-            LIMIT #{pageBegin}, #{pageScale}
-    </if>
+ 
     ;  
 	</select>
 
@@ -34,6 +31,9 @@
     DELETE FROM db_fitness.board
     WHERE BOARD_ID = #{BOARD_ID}
     </delete>
+
+    
+
 
     <!-- 회원 정보 삭제 -->
     <delete id="memdelete" parameterType="Map">

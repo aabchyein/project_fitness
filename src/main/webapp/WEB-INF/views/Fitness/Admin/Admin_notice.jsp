@@ -32,6 +32,9 @@
                                         <a href="/adminPage" class="text-decoration-none nav-link">회원 관리</a>
                                     </li>
                                     <li class="d-flex align-items-center">
+                                        <a href="/adminReserve" class="text-decoration-none nav-link">예약 관리</a>
+                                    </li>
+                                    <li class="d-flex align-items-center">
                                         <a href="/fitness/AdminBoardAll" class="text-decoration-none nav-link">게시판
                                             관리</a>
                                     </li>

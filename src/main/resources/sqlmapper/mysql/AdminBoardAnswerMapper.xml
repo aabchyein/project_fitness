@@ -8,6 +8,21 @@
       FROM db_fitness.board_answer
       WHERE 1 = 1;
 	</select>
+  
+  <!-- 입력 버튼  -->
+	<insert id="insert" parameterType="Map" >
+        insert into board_answer (ADMIN_ID,ANSWER,BOARD_ANSWER_ID,BOARD_ID)
+        value (#{ADMIN_ID},#{ANSWER} ,#{BOARD_ANSWER_ID},#{BOARD_ID});
+    </insert>
+
+
+ 
+<!-- 게시판 삭제 버튼  -->
+<delete id="delete" parameterType="Map">
+    DELETE FROM db_fitness.board_answer
+    WHERE BOARD_ANSWER_ID =  #{BOARD_ANSWER_ID}
+    </delete>
+
 
 
     <!-- Answer 삭제
@@ -22,11 +37,7 @@
     WHERE BOARD_ID = #{BOARD_ID};
     </delete> -->
 
-    <!-- 입력 버튼  -->
-	<insert id="insert" parameterType="Map" >
-        insert into board_answer (ADMIN_ID,ANSWER,BOARD_ANSWER_ID,BOARD_ID)
-        value (#{ADMIN_ID},#{ANSWER} ,#{BOARD_ANSWER_ID},#{BOARD_ID});
-    </insert>
+  
 
 
     <!-- 검색 with pagination

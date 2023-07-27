@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     <!-- 메뉴 navbar -->
     <sec:authentication property="principal" var="userDetailsBean" />
     <form action="">
@@ -10,7 +10,7 @@
           </a>
           <!-- 검색창 -->
           <form class="d-flex col-lg-4">
-            <select name="search" id="">
+            <select class="btn btn-light custom-select" type="button" name="search" id="search-option">
               <option value="COMPANY_NAME">업체명</option>
               <option value="ADDRESS">주소</option>
               <option value="ROAD_ADDRESS">도로명 주소</option>
@@ -22,7 +22,7 @@
           </form>
           <div class="col-lg-6 text-lg-end">
             <ul class="navbar-nav ms-auto">
-              <sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_GUEST')" >
+              <sec:authorize access=" hasRole('ROLE_ADMIN')" >
                 <li class="nav-item">
                   <a class="nav-link" href="/adminPage">
                     <img src="/Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">

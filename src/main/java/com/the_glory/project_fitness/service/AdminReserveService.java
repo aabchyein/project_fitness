@@ -24,17 +24,18 @@ public class AdminReserveService {
     // 예약 정보 삭제
     public Object reservedelete(Map params) {
         String sqlMapId = "AdminReserve.reservedelete";
+        sharedDao.delete(sqlMapId, params);
 
-        Object result = sharedDao.delete(sqlMapId, params);
+        Object result = this.reserveSelectAll(params);
         return result;
     }
 
     // 예약 정보 수정
     public Object reserveupdate(Map params) {
-        HashMap result = new HashMap<>();
         String sqlMapId =  "AdminReserve.reserveupdate";
-        result.put("update", sharedDao.update(sqlMapId, params));
-        result.putAll((Map) this.reserveSelectAll(params));
+        sharedDao.update(sqlMapId, params);
+
+        Object result = this.reserveSelectAll(params);
         return result;
     }
 }

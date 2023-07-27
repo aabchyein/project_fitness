@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.HashMap, java.util.ArrayList" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,12 +16,13 @@
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.11.0/dist/css/bootstrap-datepicker.min.css">
 
-  <link rel="stylesheet" href="./CSS/reserve.css">
-  <link rel="stylesheet" href="./CSS/mainmenu.css">
+  <link rel="stylesheet" href="/CSS/reserve.css">
+  <link rel="stylesheet" href="/CSS/mainmenu.css">
 
 
 
 <body>
+  <sec:authentication property="principal" var="userDetailsBean" />
   <!-- 상단 네비게이션 바 -->
   <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
@@ -30,7 +32,7 @@
       <div class="card-body">
         <h5 class="card-title">상담 예약</h5>
         <form>
-          <input type="hidden" name="ID" value="user654">
+          <input type="hidden" name="ID" value=${userDetailsBean.username}>
           <div class="form-group m-5">
             <label for="datepicker">날짜 선택:</label>
             <input class="datepicker my-custom-calendar" type="date" name="RESERVATION_DATE" id="datepicker">
@@ -56,7 +58,7 @@
           </div>
           <div class="form-group m-5">
             <%
-            HashMap record = (HashMap) request.getAttribute("result");
+            HashMap record = (HashMap) request.getAttribute("params");
             %> 
             <label for="COMPANY_NAME">센터명 :  <%= record.get("COMPANY_NAME") %></label>
             <input type="hidden" class="form-control" name="COMPANY_ID" value='<%= record.get("COMPANY_ID") %>'></input>
@@ -68,8 +70,8 @@
           </div>
           <div class="row">
             <div class="col-md-12 text-center">
-              <a href="/gym_login" class="btn btn-secondary">취소</a>
-              <button type="submit" class="btn btn-primary" formaction="/reserveinsert" >완료</button>
+              <a href="/main" class="btn btn-secondary">취소</a>
+              <button type="submit" class="btn btn-primary" formaction="/guest/reserveinsert" formmethod="get" >완료</button>
             </div>
           </div>
         </form>

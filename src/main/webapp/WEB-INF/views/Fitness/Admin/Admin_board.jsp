@@ -33,6 +33,9 @@
                                         <a href="/adminPage" class="text-decoration-none nav-link">회원 관리</a>
                                     </li>
                                     <li class="d-flex align-items-center">
+                                        <a href="/adminReserve" class="text-decoration-none nav-link">예약 관리</a>
+                                    </li>
+                                    <li class="d-flex align-items-center">
                                         <a href="/fitness/AdminBoardAll" class="text-decoration-none nav-link">게시판
                                             관리</a>
                                     </li>
@@ -64,7 +67,8 @@
                                     </thead>
                                     <tbody>
                                         <% ArrayList arrayList=(ArrayList) request.getAttribute("result"); for (int i=0;
-                                            i < arrayList.size(); i=i+1) { HashMap record=(HashMap) arrayList.get(i); %>
+                                            i < arrayList.size(); i=i+1) { HashMap record=(HashMap) arrayList.get(i); 
+                                                if (arrayList != null){ %>
                                             <tr>
                                                 <td name="number">
                                                     <%= i+1 %>
@@ -104,15 +108,21 @@
                                                                 formmethod="get">등록</button>
                                                         </form>
                                                         <form action="">
+                                                            <input type="hidden" name="BOARD_ID"
+                                                            value='<%= record.get("BOARD_ID") %>'>
+                                                            <input type="hidden" name="BOARD_ANSWER_ID"
+                                                                value='<%= record.get("BOARD_ANSWER_ID") %>'>
                                                             <button class="btn btn-danger"
-                                                                formaction="/fitness/deleteAndSelectSearch"
-                                                                formmethod="get">삭제</button>
+                                                                formaction='/fitness/deleteAndSelectSearch'
+                                                                formmethod="get" >삭제</button>
                                                         </form>
                                                     </td>
                                                 </form>
                                             </tr>
 
                                             <% } %>
+                                            <% } %>
+
                                                 <!-- 다른 게시글 데이터 추가 -->
                                     </tbody>
                                 </table>

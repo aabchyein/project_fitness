@@ -12,23 +12,23 @@ import com.the_glory.project_fitness.utils.Paginations;
 @Service
 
 public class AdminBoardService {
-   
+
     @Autowired
     private SharedDao sharedDao;
     AdminBoardAnswerService adminBoardAnswerService;
 
     // 전체 검색
-    public Object selectAll(Map dataMap){
+    public Object selectAll(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap)
         String sqlMapId = "AdminBoard.selectAll";
         Object result = sharedDao.getList(sqlMapId, dataMap);
         // result.put("resultList", this.selectSearch(dataMap));
-        HashMap result1 = new HashMap<>();
-        result1.putAll(this.selectSearchWithPagination(dataMap));
+        // HashMap result1 = new HashMap<>();
+        // result1.putAll(this.selectSearchWithPagination(dataMap));
         return result;
     }
 
-    // 검색(조건-search : YEAR, CAR_NAME)
+    // (페이지네이션)
     public Map selectSearchWithPagination(Map dataMap) {
         // 페이지 형성 위한 계산
         int totalCount = (int) this.selectTotal(dataMap);
@@ -51,8 +51,7 @@ public class AdminBoardService {
         return result;
     }
 
-    
-    // selectTotal 수
+    // selectTotal 총수
     public Object selectTotal(Map dataMap) {
         String sqlMapId = "AdminBoard.selectTotal";
 
@@ -60,8 +59,7 @@ public class AdminBoardService {
         return result;
     }
 
-    // // selectSearch 수
-
+    // selectSearch 수
     public Object selectSearch(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap)
         String sqlMapId = "AdminBoard.selectSearch";
@@ -70,7 +68,7 @@ public class AdminBoardService {
         return result;
     }
 
-    // 검색(조건-search : YEAR, CAR_NAME)
+    // 검색()
     public Object selectSearch(String search, String words) {
         // Object getOne(String sqlMapId, Object dataMap)
         String sqlMapId = "AdminBoard.selectSearch";
@@ -83,48 +81,47 @@ public class AdminBoardService {
     }
 
     // public Object selectDetail(Map paramMap) {
-    //     // Object getOne(String sqlMapId, Object dataMap)
-    //     String sqlMapId = "AdminBoard.selectSearch"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
-    //     HashMap dataMap = new HashMap<>();
-    //     dataMap.put("BOARD_ID", paramMap);
+    // // Object getOne(String sqlMapId, Object dataMap)
+    // String sqlMapId = "AdminBoard.selectSearch"; // xml의 namespace와 각각 ID의 조합해서
+    // 유니크 아이디를 만듬
+    // HashMap dataMap = new HashMap<>();
+    // dataMap.put("BOARD_ID", paramMap);
 
-    //     Object result = sharedDao.getOne(sqlMapId, dataMap);
-    //     return result;
+    // Object result = sharedDao.getOne(sqlMapId, dataMap);
+    // return result;
     // }
 
+    // 회원세부정보
     public Object selectDetail(Map paramMap) {
         String sqlMapId = "AdminBoard.selectSearch"; // xml의 namespace와 각각 ID의 조합해서 유니크 아이디를 만듬
-      
-    
+
         Object result = sharedDao.getOne(sqlMapId, paramMap);
         return result;
     }
 
+    // 회원 정보 삭제
+    public Object deleteAndSelectSearch(Map dataMap) {
+        
+        // String sqlMapId = "CarInfors.delete";
+        // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
+        this.delete(dataMap);
+        Object result = (Object) this.selectAll(dataMap);
 
-    // MVC  view- delete1 
+        // sqlMapId = "CarInfors.selectSearch";
+        // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
+         return result;
+    }
+
+    // 회원 정보 삭제2(FK 삭제 후 PK 삭제) 후 출력
+    // MVC view- delete1
     public Object delete(Map params) {
         String sqlMapId = "AdminBoardAnswer.delete";
         String sqlMapId_1 = "AdminBoard.delete";
         Object result = sharedDao.delete(sqlMapId, params);
         Object result_1 = sharedDao.delete(sqlMapId_1, params);
-        return result; 
-    }
 
-    // MVC view -delete2 
-    public Object deleteAndSelectSearch(Map params) {
-        HashMap result = new HashMap<>();
-        // String sqlMapId = "CarInfors.delete";
-        // result.put("deleteCount", sharedDao.delete(sqlMapId, dataMap));
-        result.put("deleteCount", this.delete(params));
-
-        // sqlMapId = "CarInfors.selectSearch";
-        // result.put("resultList", sharedDao.getOne(sqlMapId, dataMap));
-        
-        // result.putAll(this.selectSearchWithPagination(params));
         return result;
     }
-
-
 
     // 2PC delete
     public Object deleteDouble(Map dataMap) {
@@ -138,15 +135,15 @@ public class AdminBoardService {
 
     // // MVC view -insertAndSelectSearch(등록)
     // public Object insertAndSelectSearch(Map dataMap) {
-    //     // UniqueID uniqueid = new UniqueID();
-    //     // String uuid = uniqueid.generatUuid();
-    //     // HashMap result = new HashMap<>();
-    //     // result.put("insertCount", this.insert(dataMap));
+    // // UniqueID uniqueid = new UniqueID();
+    // // String uuid = uniqueid.generatUuid();
+    // // HashMap result = new HashMap<>();
+    // // result.put("insertCount", this.insert(dataMap));
 
-    //     result.putAll(this.selectSearchWithPagination(dataMap));
-    //     return result;
+    // result.putAll(this.selectSearchWithPagination(dataMap));
+    // return result;
     // }
-    
+
     // MVC view -insert(등록)
     public Object insert(Map dataMap) {
         String sqlMapId = "AdminBoard.insert";
@@ -162,8 +159,5 @@ public class AdminBoardService {
 
         return result;
     }
-
-
-
 
 }
