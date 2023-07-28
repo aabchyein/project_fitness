@@ -22,13 +22,6 @@
           </form>
           <div class="col-lg-6 text-lg-end">
             <ul class="navbar-nav ms-auto">
-              <sec:authorize access=" hasRole('ROLE_ADMIN')" >
-                <li class="nav-item">
-                  <a class="nav-link" href="/adminPage">
-                    <img src="/Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">
-                  </a>
-                </li>
-              </sec:authorize>
               <li class="nav-item">
                 <a class="nav-link" href="/main">홈</a>
               </li>
@@ -60,6 +53,13 @@
                   <div class="dropdown-menu" aria-labelledby="loginDropdown">
                     <a class="dropdown-item" href="/Logout">로그아웃</a>
                     <a class="dropdown-item" href="/mypage?ID=${userDetailsBean.username}">마이페이지</a>
+              </sec:authorize>
+              <sec:authorize access=" hasRole('ROLE_ADMIN')" >
+                <li class="nav-item">
+                  <a class="nav-link" href="/adminPage">
+                    <img src="/Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">
+                  </a>
+                </li>
               </sec:authorize>
            
             </ul>
