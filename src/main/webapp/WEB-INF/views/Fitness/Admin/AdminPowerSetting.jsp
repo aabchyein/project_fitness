@@ -48,48 +48,35 @@
                                 </ul>
                             </div>
                         </nav>
-                    </div>
-                    <div class="col-10 mt-5 admin-content">
-                        <h1 class="admin-header">관리자 설정</h1>
-                        <div class="container admin-table">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>아이디</th>
-                                        <th>ADMIN</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <input type="text" name="ID">
-                                        </td>
-                                        <td>
-                                            <input type="text" name="UNIQUE_ID">
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
 
-
-                        <!-- 페이지 넘어가는 표시 -->
-                        <div class="text-center mt-4">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&lt;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&gt;</span>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="text-center container col-10 mt-5 admin-content">
+                            <h1 style="text-align: center; margin-top: 1cm; margin-bottom: 1cm;"><strong>관리자
+                                    관리</strong></h1>
+                            <div class="justify-content-between row p-5 m-3 h6 text-start">
+                                <div class="col">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 20%;">관리자 권한 부여ID</t>
+                                                <th style="width: 20%;">설정</t>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <form action="/admininsert" method="post">
+                                                <tr>
+                                                    <td>
+                                                        <input type="text" name="ID">
+                                                    </td>
+                                                    <input type="hidden" name="UNIQUE_ID" value="ROLE_ADMIN">
+                                                    <td>
+                                                        <button type="submit" class="btn btn-primary">확인</button>
+                                                    </td>
+                                                </tr>
+                                            </form>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
