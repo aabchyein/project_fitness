@@ -56,23 +56,29 @@
                     <th>업체명</th>
                     <th>리뷰</th>
                     <th>작성자</th>
-                    <th>작성일</th>
                     <th>별점</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <%
+                  ArrayList list = (ArrayList) request.getAttribute("result");
+                  for(int i=0; i < list.size(); i = i+1) {
+                    HashMap record = (HashMap) list.get(i);
+                  %>
                   <tr>
-                    <td>1</td>
+                    <td><%= i+1 %></td>
                     <td>
-                      <a href="https://gymboxx.co.kr/" title="구로-짐박스" style="font-weight: 500;">짐박스피트니스 구로디지털단지점</a>
+                      <a href='https://map.naver.com?query=<%= record.get("COMPANY_NAME") %>' style="font-weight: 500;"><%= record.get("COMPANY_NAME") %></a>
                     </td>
-                    <td>리뷰내용</td>
-                    <td>djfid</td>
-                    <td>2023-07-15</td>
+                    <td><%= record.get("REVIEW") %></td>
+                    <td><%= record.get("ID") %></td>
                     <td>
-                      4.0 <span class="yellow-star"> ★★★★</span>&nbsp; (29)
+                      <%= record.get("GRADE") %><span class="yellow-star"> ★</span>&nbsp; (29)
                     </td>
                   </tr>
+                  <%
+                  }
+                  %>
                 </tbody>
               </table>
             </div>
