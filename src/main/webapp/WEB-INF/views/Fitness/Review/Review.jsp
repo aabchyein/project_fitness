@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList" %>
+
     <!DOCTYPE html>
     <html lang="en">
 
@@ -35,7 +37,7 @@
                 </div>
                 <input type="text" class="form-control" id="inputText" placeholder="선택" readonly>
                 <div class="input-group-append">
-                  <button class="btn btn-primary" onclick="search()">검색</button>
+                  <button class="btn btn-primary">검색</button>
                 </div>
               </div>
             </div>
@@ -49,12 +51,12 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th style="width: 10%;">번호</th>
-                    <th style="width: 20%;">업체명</th>
-                    <th style="width: 30%;">리뷰</th>
-                    <th style="width: 10%;">작성자</th>
-                    <th style="width: 10%;">작성일</th>
-                    <th style="width: 20%;">별점</th>
+                    <th>번호</th>
+                    <th>업체명</th>
+                    <th>리뷰</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>별점</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -68,28 +70,6 @@
                     <td>2023-07-15</td>
                     <td>
                       4.0 <span class="yellow-star"> ★★★★</span>&nbsp; (29)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <a href="https://blog.naver.com/ablegym32" title="구로-에이블짐" style="font-weight: 500;">에이블짐
-                        구로디지털단지역점</a>
-                    </td>
-                    <td>훌륭한 서비스를 제공합니다.</td>
-                    <td>
-                      3.0<span class="yellow-star"> ★★★</span>&nbsp; (81)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <a href="https://m.spoany.co.kr/branch/branch_detail.html?base_seq=ODc=" title="구로-스포애니"
-                        style="font-weight: 500;">스포애니 가산디지털단지역점</a>
-                    </td>
-                    <td>매우 만족스러운 시설입니다.</td>
-                    <td>
-                      5.0 <span class="yellow-star"> ★★★★★</span>&nbsp;(20)
                     </td>
                   </tr>
                 </tbody>
@@ -152,12 +132,6 @@
                 document.getElementById('selectMenu').replaceWith(inputText);
               }
             }
-
-            function search() {
-              var inputValue = document.getElementById('inputText').value;
-              alert('입력된 값: ' + inputValue);
-            }
-
           </script>
     </body>
 
