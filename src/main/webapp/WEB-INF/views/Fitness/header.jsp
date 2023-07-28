@@ -28,7 +28,7 @@
                     <img src="/Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">
                   </a>
                 </li>
-                </sec:authorize>
+              </sec:authorize>
               <li class="nav-item">
                 <a class="nav-link" href="/main">홈</a>
               </li>
