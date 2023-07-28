@@ -59,7 +59,8 @@ public class AdminPageController {
         Object result = adminpageService.AdminInsert(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
-        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/adminPage.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminPowerSetting.jsp");
         return modelAndView;
     }   
+
 }

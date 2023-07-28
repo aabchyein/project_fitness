@@ -64,9 +64,10 @@ public class AdminPageService {
 
     public Object AdminInsert(Map params){
         String sqlMap = "AdminPage.insert";
-        sharedDao.insert(sqlMap, params);
-        Object result = noticeService.selectSearch(params);
+       Object result = sharedDao.insert(sqlMap, params);
+
             
         return result;
     }
+    
 }
