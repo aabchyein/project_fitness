@@ -16,15 +16,29 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
+import com.the_glory.project_fitness.service.ReviewService;
+
 
 @Controller
 public class ReviewController {
     @Autowired
     CommonService fitnessService;
+    @Autowired
+    ReviewService reviewService;
 
     @GetMapping({"/Review"})
-    public ModelAndView main(ModelAndView modelAndView) {
-        modelAndView.addObject("name", "bwh");
+    public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = reviewService.selectAll(params);
+        modelAndView.addObject("result", result);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Review/Review.jsp");
+        return modelAndView;
+    }
+
+    @GetMapping("/insert")
+    public ModelAndView insert(@RequestParam Map paramMap, ModelAndView modelAndView) {
+        Object result = reviewService.insert(paramMap);
+
+        modelAndView.addObject("result", result);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Review/Review.jsp");
         return modelAndView;
     }

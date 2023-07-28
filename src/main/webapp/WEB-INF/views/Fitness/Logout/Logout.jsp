@@ -4,7 +4,7 @@
     <html>
 
     <head>
-        <title>홈페이지</title>
+        <title>로그아웃</title>
         <!-- 부트스트랩 링크 추가 -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>

@@ -21,16 +21,28 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/Image/헬스3.jpg" class="d-block w-100" alt="이미지1">
+          <img src="/Image/운동1.jpg" class="d-block w-100" alt="이미지1">
         </div>
         <div class="carousel-item">
-          <img src="/Image/헬스4.jpg" class="d-block w-100" alt="이미지2">
+          <img src="/Image/운동2.jpg" class="d-block w-100" alt="이미지2">
         </div>
         <div class="carousel-item">
-          <img src="/Image/헬스5.jpg" class="d-block w-100" alt="이미지3">
+          <img src="/Image/운동3.jpg" class="d-block w-100" alt="이미지3">
         </div>
         <div class="carousel-item">
-          <img src="/Image/헬스6.jpg" class="d-block w-100" alt="이미지3">
+          <img src="/Image/운동4.jpg" class="d-block w-100" alt="이미지3">
+        </div>
+        <div class="carousel-item">
+          <img src="/Image/운동5.jpg" class="d-block w-100" alt="이미지3">
+        </div>
+        <div class="carousel-item">
+          <img src="/Image/운동6.jpg" class="d-block w-100" alt="이미지3">
+        </div>
+        <div class="carousel-item">
+          <img src="/Image/운동7.jpg" class="d-block w-100" alt="이미지3">
+        </div>
+        <div class="carousel-item">
+          <img src="/Image/운동8.jpg" class="d-block w-100" alt="이미지3">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"

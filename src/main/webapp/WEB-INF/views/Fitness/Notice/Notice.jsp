@@ -44,7 +44,7 @@
                           <option value="ID" <%=(searchStr.equals("ID")) ? "selected" : "" %>>작성자</option>
                         </select>
                       </div>
-                      <input type="text" class="form-control" name="words" placeholder="검색어를 입력하세요" id="search-input">
+                      <input type="text" class="form-control" name="words" placeholder="검색어를 입력하세요" id="search-notice">
                       <div class="input-group-append">
                         <button class="btn btn-primary" type="submit" formaction="/notice/Notice"
                           formmethod="get">검색</button>
@@ -106,13 +106,11 @@
 
             <!-- 페이지 넘어가는 표시 -->
             <% Paginations paginations=(Paginations)result.get("paginations"); %>
-              <div>총 갯수 : <%= paginations.getTotalCount() %>
                   <div class="text-center mt-4">
                     <ul class="pagination justify-content-center">
                       <li class="page-item">
                         <a class="page-link"
                           href="/notice/Notice?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
-                        <span aria-hidden="true">&lt;</span>
                         </a>
                       </li>
                       <% for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd(); i=i+1){ %>
@@ -128,7 +126,6 @@
                           <li class="page-item">
                             <a class="page-link"
                               href="/notice/Notice?currentPage=<%= paginations.getNextPage() %>">Next</a>
-                            <span aria-hidden="true">&gt;</span>
                             </a>
                           </li>
                     </ul>
