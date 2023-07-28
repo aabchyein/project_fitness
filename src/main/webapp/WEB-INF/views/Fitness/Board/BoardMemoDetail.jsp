@@ -43,7 +43,7 @@
         <textarea class="form-control" name="NOTICE_CONTENTS"  id="content" rows="5" readonly><%= record.get("NOTICE_CONTENTS") %></textarea>
       </div>
       <div class="d-flex justify-content-between">
-          <a href="/Noticelogin" class="btn btn-outline-primary">목록</a>
+          <a href="/Noticelogin" class="btn btn-outline-primary m-2">목록</a>
       </div>
   </div>
 

@@ -17,7 +17,6 @@
 
 
   <!-- 검색 부분 -->
-
   <h1 style="text-align: center; margin-top: 1cm; margin-bottom: 1cm;">REVIEW</h1>
   <div class="container">
     <div class="row justify-content-center">

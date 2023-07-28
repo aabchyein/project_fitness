@@ -36,8 +36,8 @@
                       <% HashMap params=(HashMap) request.getAttribute("params");
                         String searchStr=(String)params.getOrDefault("search", "" );
                         HashMap result=(HashMap) request.getAttribute("result");
-                        ArrayList list=(ArrayList) result.get("result");
-                        for(int i=0; i <list.size(); i++){
+                        ArrayList list=(ArrayList) result.get("resultList");
+                        for(int i=0; i < list.size(); i++){
                           HashMap record=(HashMap)list.get(i);
                         %>
                       <tr>
@@ -68,20 +68,19 @@
           </div>
         
             <!-- pagination -->
-            <% HashMap map=(HashMap) result.get("result1"); %>
-              <% Paginations paginations=(Paginations)map.get("paginations"); %>
+              <% Paginations paginations=(Paginations) result.get("paginations"); %>
                 <% if ( paginations !=null){ %>
                   <div>
                     <div class="text-center mt-4">
                       <ul class="pagination justify-content-center">
                         <li class="page-item">
                           <a class="page-link"
-                            href="/search?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
+                            href="/Search?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
                           </a>
                         </li>
                         <% for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd(); i=i+1){ %>
                           <li class="page-item">
-                            <a class="page-link" href="/search?currentPage=<%= i %>">
+                            <a class="page-link" href="/Search?currentPage=<%= i %>">
                               <%= i %>
                             </a>
                           </li>
@@ -90,7 +89,7 @@
               <li class="page-item"><a class="page-link" href="#">2</a></li>
               <li class="page-item"><a class="page-link" href="#">3</a></li> -->
                             <li class="page-item">
-                              <a class="page-link" href="/search?currentPage=<%= paginations.getNextPage() %>">Next</a>
+                              <a class="page-link" href="/Search?currentPage=<%= paginations.getNextPage() %>">Next</a>
                               </a>
                             </li>
                       </ul>
