@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -53,7 +54,7 @@ public class AdminPageController {
         return modelAndView;
     }
  
-     @GetMapping("/admininsert")
+     @PostMapping("/admininsert")
     public Object Admininsert(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = adminpageService.AdminInsert(params);
         modelAndView.addObject("params", params);
