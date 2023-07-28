@@ -9,7 +9,7 @@
             <img src="/Image/로고2.png" alt="로고" height="120">
           </a>
           <!-- 검색창 -->
-          <form class="col-lg-4">
+          <form class="d-flex col-lg-6">
             <select class="btn btn-light custom-select" type="button" name="search" id="search-option">
               <option value="COMPANY_NAME">업체명</option>
               <option value="ADDRESS">주소</option>
@@ -17,7 +17,7 @@
             </select>
             <input class="form-control search-input" type="text" name="words" value="" placeholder="업체명이나 지역을 입력하세요"
               aria-label="Search">
-            <button id="search" class="btn" style="background-color: #8B0000; color: white;" type="submit" formaction="/Search" formmethod="get"
+            <button id="search" class="btn" style="background-color: #8B0000; color: white; " type="submit" formaction="/Search" formmethod="get"
               >검색</button>   
           </form>
           <div class="col-lg-4 text-lg-end">

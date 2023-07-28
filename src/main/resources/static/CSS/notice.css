@@ -3,62 +3,11 @@
   margin-bottom: 20px;
 }
 
-  .login-form {
-      border: 3px solid #ccc;
-      padding: 60px;
-      border-radius: 10px;
-  }
 
   /* 검색창 스타일링 */
-  .search-input {
+  .search-notice {
       display: flex;
       justify-content: flex-end;
       flex-basis: 70%;
       max-width: 500px;
   }
-
-  .carouselExampleControls {
-      height: 5%;
-  }
-
-  /* Footer 스타일링 */
-  .footer {
-      background-color: #f8f9fa;
-      padding: 20px;
-      text-align: center;
-  }
-
-  .logo {
-      font-weight: bold;
-      font-size: 24px;
-  }
-
-  .navbar a {
-    font-size : 17px;
-  }
-
-  
-.footer-section.links a {
-    color: black;
-    text-decoration: none;
-    font-size: 12px;
-  }
-  
-  .footer-bottom p {
-    font-size: 12px
-  }
-  
-  .footer-center p {
-    font-size: 13px;
-    margin: 0;
-  }
-  
-  #callcenter p {
-    font-size: 14px;
-  }
-  
-  #infors p {
-    margin: 0;
-    font-size: 12px;
-  }
-  
