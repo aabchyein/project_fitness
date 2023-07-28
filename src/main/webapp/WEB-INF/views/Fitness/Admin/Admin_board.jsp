@@ -57,7 +57,6 @@
                                         <tr>
                                             <th>번호</th>
                                             <th>아이디</th>
-                                            <th>시설명</th>
                                             <th>제목</th>
                                             <th>내용</th>
                                             <th>등록일</th>
@@ -75,9 +74,6 @@
                                                 </td>
                                                 <td name="ID">
                                                     <%= record.get("ID") %>
-                                                </td>
-                                                <td name="center">
-                                                    <%= record.get("CENTER") %>
                                                 </td>
                                                 <td name="title">
                                                     <%= record.get("TITLE") %>
