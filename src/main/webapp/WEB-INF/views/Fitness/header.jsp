@@ -15,13 +15,13 @@
               <option value="ADDRESS">주소</option>
               <option value="ROAD_ADDRESS">도로명 주소</option>
             </select>
-            <input class="form-control search-input me-2" type="text" name="words" value="" placeholder="업체명이나 지역을 입력하세요"
+            <input class="form-control search-input" type="text" name="words" value="" placeholder="업체명이나 지역을 입력하세요"
               aria-label="Search">
             <button id="search" class="btn" style="background-color: #8B0000; color: white; " type="submit" formaction="/Search" formmethod="get"
               >검색</button>   
           </form>
-          <div class="col-lg-6 text-lg-end">
-            <ul class="navbar-nav ms-auto">
+          <div class="col-lg-4 text-lg-end">
+            <ul class="navbar-nav me-auto">
               <li class="nav-item">
                 <a class="nav-link" href="/main">홈</a>
               </li>

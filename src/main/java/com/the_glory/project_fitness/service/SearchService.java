@@ -20,12 +20,8 @@ public class SearchService {
         public Object selectSearch(Map dataMap) {
             String sqlMapId = "Search.selectSearch";
     
-            HashMap all = new HashMap<>();
-            Object result = sharedDao.getList(sqlMapId, dataMap);
-            Object result1 = this.pagination(dataMap);
-            all.put("result", result);
-            all.put("result1", result1);
-            return all;
+            Object result = this.pagination(dataMap);
+            return result;
         }
 
         // 운동시설 검색 with pagination
