@@ -1,3 +1,4 @@
+use db_fitness;
 INSERT INTO GENDER (GENDER_ID, GENDER)
 VALUES
   ('GEN01', '남'),

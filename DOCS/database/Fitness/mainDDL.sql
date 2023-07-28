@@ -1,3 +1,4 @@
+use db_fitness;
 
 CREATE TABLE AUTH_NAMES
 (
