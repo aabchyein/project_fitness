@@ -94,7 +94,7 @@
                   </table>
                 </div>
                 <!-- 글작성 버튼 -->
-                0<sec:authorize access="isAuthenticated()">
+                <sec:authorize access="isAuthenticated()">
                                                        <0div class="container text-end">
                     <form action="/guest/boardmemo" method="get">
                       <button class="btn btn-primary" type="submit">글작성</button>
