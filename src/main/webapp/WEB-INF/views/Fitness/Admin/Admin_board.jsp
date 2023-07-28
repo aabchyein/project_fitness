@@ -57,7 +57,6 @@
                                         <tr>
                                             <th>번호</th>
                                             <th>아이디</th>
-                                            <th>시설명</th>
                                             <th>제목</th>
                                             <th>내용</th>
                                             <th>등록일</th>
@@ -67,17 +66,14 @@
                                     </thead>
                                     <tbody>
                                         <% ArrayList arrayList=(ArrayList) request.getAttribute("result"); for (int i=0;
-                                            i < arrayList.size(); i=i+1) { HashMap record=(HashMap) arrayList.get(i); if
-                                            (arrayList !=null){ %>
+                                            i < arrayList.size(); i=i+1) { HashMap record=(HashMap) arrayList.get(i); 
+                                                if (arrayList != null){ %>
                                             <tr>
                                                 <td name="number">
                                                     <%= i+1 %>
                                                 </td>
                                                 <td name="ID">
                                                     <%= record.get("ID") %>
-                                                </td>
-                                                <td name="center">
-                                                    <%= record.get("CENTER") %>
                                                 </td>
                                                 <td name="title">
                                                     <%= record.get("TITLE") %>
@@ -109,54 +105,44 @@
                                                         </form>
                                                         <form action="">
                                                             <input type="hidden" name="BOARD_ID"
-                                                                value='<%= record.get("BOARD_ID") %>'>
+                                                            value='<%= record.get("BOARD_ID") %>'>
                                                             <input type="hidden" name="BOARD_ANSWER_ID"
                                                                 value='<%= record.get("BOARD_ANSWER_ID") %>'>
                                                             <button class="btn btn-danger"
                                                                 formaction='/fitness/deleteAndSelectSearch'
-                                                                formmethod="get">삭제</button>
+                                                                formmethod="get" >삭제</button>
                                                         </form>
                                                     </td>
                                                 </form>
                                             </tr>
 
                                             <% } %>
-                                                <% } %>
+                                            <% } %>
 
-                                                    <!-- 다른 게시글 데이터 추가 -->
+                                                <!-- 다른 게시글 데이터 추가 -->
                                     </tbody>
                                 </table>
                             </div>
 
 
-                            <!-- 페이지 loop로 뽑아내기 -->
-                            <% Paginations paginations=(Paginations)result.get("paginations"); %>
-                                <div class="text-center mt-4">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item">
-                                            <a class="page-link"
-                                                href='/Admin_board?currentPage=<%= paginations.getPreviousPage() %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>Previous</a>
+                            <!-- 페이지 넘어가는 표시 -->
+                            <div class="text-center mt-4">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
                                             <span aria-hidden="true">&lt;</span>
-                                            </a>
-                                        </li>
-
-                                        <% for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd(); i=i+1){
-                                            %>
-                                            <li class="page-item">
-                                                <a class="page-link"
-                                                    href='/Admin_board?currentPage=<%= i %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>
-                                                    <%= i %>
-                                                </a>
-                                            </li>
-                                            <% } %>
-                                                <li class="page-item">
-                                                    <a class="page-link"
-                                                        href='/Admin_board?currentPage=<%= paginations.getNextPage() %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>Next</a>
-                                                    <span aria-hidden="true">&gt;</span>
-                                                    </a>
-                                                </li>
-                                    </ul>
-                                </div>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&gt;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

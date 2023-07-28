@@ -54,8 +54,32 @@ public class AdminBoardController {
         return modelAndView;
     }
 
+    // Mypageupdate 업데이트 버튼
+    // @GetMapping("/AdminBoardupdate/{ID}")
+    // public ModelAndView update(@PathVariable String ID, @RequestParam Map
+    // paramMap, ModelAndView modelAndView) {
+    // Object result = adminBoardService.AdminBoardupdate(ID, paramMap);
+    // modelAndView.addObject("result", result);
+    // modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
 
-     // insert and selectsearch
+    // return modelAndView;
+    // }
+
+    // // insert답변 등록 버튼
+    // @PostMapping("/insert")
+    // public ResponseEntity insert(@RequestBody Map paramMap) {
+    // Object result = adminBoardAnswerService.insert(paramMap);
+    // return ResponseEntity.ok().body(result);
+    // }
+
+    // // insertAndSelectSearch답변 등록 버튼
+    // @GetMapping("/insertAndSelectSearch")
+    // public ResponseEntity insertAndSelectSearch(@RequestBody Map paramMap) {
+    // Object result = adminBoardService.insertAndSelectSearch(paramMap);
+    // return ResponseEntity.ok().body(result);
+    // }
+
+    // insert and selectsearch
     @GetMapping("/insertAndSelectSearch")
     public ModelAndView insertAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = adminBoardAnswerService.insert(params);
@@ -67,9 +91,18 @@ public class AdminBoardController {
         return modelAndView;
     }
 
+    // // 등록버튼 링크
+    // @GetMapping("/insertAndcome/{BOARD_ID}")
+    // public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView
+    // modelAndView) {
+    // Object result = adminBoardService.selectDetail(params);
+    // modelAndView.addObject("params", params);
+    // modelAndView.addObject("result", result);
+    // modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
+    // return modelAndView;
+    // }
 
-
-      @GetMapping("/insertAndcome")
+    @GetMapping("/insertAndcome")
     public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView modelAndView) {
 
         Object record = adminBoardService.selectDetail(params);
@@ -98,46 +131,6 @@ public class AdminBoardController {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
         return modelAndView;
     }
-
-    // Mypageupdate 업데이트 버튼
-    // @GetMapping("/AdminBoardupdate/{ID}")
-    // public ModelAndView update(@PathVariable String ID, @RequestParam Map
-    // paramMap, ModelAndView modelAndView) {
-    // Object result = adminBoardService.AdminBoardupdate(ID, paramMap);
-    // modelAndView.addObject("result", result);
-    // modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
-
-    // return modelAndView;
-    // }
-
-    // // insert답변 등록 버튼
-    // @PostMapping("/insert")
-    // public ResponseEntity insert(@RequestBody Map paramMap) {
-    // Object result = adminBoardAnswerService.insert(paramMap);
-    // return ResponseEntity.ok().body(result);
-    // }
-
-    // // insertAndSelectSearch답변 등록 버튼
-    // @GetMapping("/insertAndSelectSearch")
-    // public ResponseEntity insertAndSelectSearch(@RequestBody Map paramMap) {
-    // Object result = adminBoardService.insertAndSelectSearch(paramMap);
-    // return ResponseEntity.ok().body(result);
-    // }
-
-   
-
-    // // 등록버튼 링크
-    // @GetMapping("/insertAndcome/{BOARD_ID}")
-    // public ModelAndView insertAndcome(@RequestParam Map params, ModelAndView
-    // modelAndView) {
-    // Object result = adminBoardService.selectDetail(params);
-    // modelAndView.addObject("params", params);
-    // modelAndView.addObject("result", result);
-    // modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminBoardAnswer.jsp");
-    // return modelAndView;
-    // }
-
-  
 
     // // /selectDetail/BOARD01
     // @GetMapping("/SelectDetail/{BOARD_ID}")
