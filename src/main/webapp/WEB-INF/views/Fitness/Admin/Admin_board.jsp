@@ -59,6 +59,7 @@
                                             <th>아이디</th>
                                             <th>제목</th>
                                             <th>내용</th>
+                                            <th>답변</th>
                                             <th>등록일</th>
                                             <th>조회수</th>
                                             <th>확인</th>
@@ -80,6 +81,9 @@
                                                 </td>
                                                 <td name="content">
                                                     <%= record.get("CONTENTS") %>
+                                                </td>
+                                                <td name="content">
+                                                    <%= record.get("ANSWER") %>
                                                 </td>
                                                 <td name="date">
                                                     <%= record.get("DATE") %>
