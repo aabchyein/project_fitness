@@ -44,7 +44,7 @@
                           <option value="ID" <%=(searchStr.equals("ID")) ? "selected" : "" %>>작성자</option>
                         </select>
                       </div>
-                      <input type="text" class="form-control" name="words" placeholder="검색어를 입력하세요" id="search-input">
+                      <input type="text" class="form-control" name="words" placeholder="검색어를 입력하세요" id="search-notice">
                       <div class="input-group-append">
                         <button class="btn btn-primary" type="submit" formaction="/notice/Notice"
                           formmethod="get">검색</button>
