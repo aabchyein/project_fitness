@@ -21,7 +21,9 @@ public class AdminBoardService {
     public Object selectAll(Map dataMap) {
         // Object getOne(String sqlMapId, Object dataMap)
         String sqlMapId = "AdminBoard.selectAll";
-        Object result = sharedDao.getList(sqlMapId, dataMap);
+        HashMap result = new HashMap<>();
+        result.putAll(this.selectSearchWithPagination(dataMap));
+        result.put("resultList", sharedDao.getList(sqlMapId, dataMap));
         // result.put("resultList", this.selectSearch(dataMap));
         // HashMap result1 = new HashMap<>();
         // result1.putAll(this.selectSearchWithPagination(dataMap));
@@ -158,6 +160,17 @@ public class AdminBoardService {
         Object result = sharedDao.update(sqlMapId, dataMap);
 
         return result;
+    }
+
+
+  // ★2023-07-28 추가 
+    // MVC view -selectSearchTotal(업데이트)
+    public int selectSearchTotal(Map dataMap) {
+        // Object getOne(String sqlMapId, Object dataMap);
+        String sqlMapId = "AdminBoard.selectSearchTotal";
+        // Object result = sharedDao.getList(sqlMapId, dataMap);
+        // result.put("resultList", this.selectSearch(dataMap));
+        return (int) sharedDao.getOne(sqlMapId, dataMap);
     }
 
 }
