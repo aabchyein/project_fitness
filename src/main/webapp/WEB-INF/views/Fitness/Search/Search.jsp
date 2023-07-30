@@ -97,9 +97,6 @@
                   </div>
                   <% } else { %>
                     <% } %>
-                      </div>
-                      </div>
-                      </div>
 
                       <!-- footer -->
                       <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>

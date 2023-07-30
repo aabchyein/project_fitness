@@ -30,10 +30,8 @@
             request.getAttribute("result"); %>
             <h1 style="text-align: center; margin-top: 1cm; margin-bottom: 1cm;"><strong>게시판</strong></h1>
             <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-md-6">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
+              <div class="row m-auto justify-content-center">
+                    <div class="col-md-6">
                       <form>
                         <div class="input-group">
                           <div class="input-group-prepend">
@@ -57,9 +55,8 @@
                         </div>
                       </form>
                     </div>
-                  </div>
                 </div>
-              </div>
+              </div>              
 
               <!-- 테이블 -->
               <div class="text-center container">
