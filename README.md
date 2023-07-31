@@ -21,3 +21,20 @@
 ### 의뢰팀 의뢰서 : [백구팀 의뢰서](https://docs.google.com/presentation/d/1F1A8kZYeWbRLkwIavHiKYDt0bs5q0TtsvjOItMvXVCY/edit?usp=sharing)
 ### [NamingRule](src/main/resources/static/Image/README/네이밍룰.png) ![NamingRule](src/main/resources/static/Image/README/네이밍룰.png)
 ### [DB구성](DOCS/database/Fitness/main.png) : ![ERD](https://github.com/estskyway/project_fitness/assets/132973368/35e2b079-a376-4b62-ba4c-9977478c2a7c)
+### 팀원별 구현 기능
+* 김민정
+* 김혜인
+* 봉원희
+* 임거산
+
+### 화면 구성
+### 주요 기능
+### 주요 코드
+### 구현 영상
+
+
+### 구현할 기능   
+* 메뉴 : 메뉴바 하단에 운동별 카테고리 추가 후 클릭 시 지역별로 검색 결과가 도출될 수 있게 구성할 예정
+
+# 프로젝트 종료
+* 느낀점
