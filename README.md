@@ -20,5 +20,4 @@
 # 프로젝트 진행
 ### 의뢰팀 의뢰서 : [백구팀 의뢰서](https://docs.google.com/presentation/d/1F1A8kZYeWbRLkwIavHiKYDt0bs5q0TtsvjOItMvXVCY/edit?usp=sharing)
 ### [NamingRule](src/main/resources/static/Image/README/네이밍룰.png) ![NamingRule](src/main/resources/static/Image/README/네이밍룰.png)
-
-![image](https://github.com/estskyway/project_fitness/assets/132973368/35e2b079-a376-4b62-ba4c-9977478c2a7c)
+### [DB구성](DOCS/database/Fitness/main.png) : ![ERD](https://github.com/estskyway/project_fitness/assets/132973368/35e2b079-a376-4b62-ba4c-9977478c2a7c)
