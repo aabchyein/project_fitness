@@ -46,10 +46,11 @@
 ### ■ 화면 구성
 1. 검색
    ![SEARCH](https://github.com/estskyway/project_fitness/assets/132973368/7cb548d6-3480-4ef8-a881-9a6ee93b13f3)
+   
 2. 로그인/로그아웃
    ![image](https://github.com/estskyway/project_fitness/assets/132973368/933b7a38-a4fc-4161-951f-0f17b3a7505c)
+   ![image](https://github.com/estskyway/project_fitness/assets/132973368/adf602d2-62a2-4dd1-9c76-555a6c75371b)
 
-4. 로그인/로그아웃
 5. 회원가입
 6. 마이페이지
 7. 커뮤니티
@@ -59,8 +60,11 @@
 
 ### ■ [구현 영상](https://www.youtube.com/watch?v=XolvrvT9olQ&feature=youtu.be)
 
-### ■ 차후 구현 예정 기능   
-* 메뉴 : 메뉴바 하단에 운동별 카테고리 추가 후 클릭 시 지역별로 검색 결과가 도출될 수 있게 구성할 예정
+### ■ 차후 구현 예정 기능
+* 메뉴바 하단에 체육시설 카테고리화
+  - 기구별 / 지역별 / 전용시설
+* 통계
+  - 시설 평점 통계 / 시설 평점 순위
 
 # 프로젝트 종료
 ### 느낀점
