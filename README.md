@@ -18,11 +18,16 @@
 
 
 # 프로젝트 진행
-### 의뢰팀 의뢰서 : [백구팀 의뢰서](https://docs.google.com/presentation/d/1F1A8kZYeWbRLkwIavHiKYDt0bs5q0TtsvjOItMvXVCY/edit?usp=sharing)
+### 의뢰서 : [백구팀 의뢰서](https://docs.google.com/presentation/d/1F1A8kZYeWbRLkwIavHiKYDt0bs5q0TtsvjOItMvXVCY/edit?usp=sharing)
+### 요구사항 정의서 : [백구팀 요구사항 정의서](https://docs.google.com/spreadsheets/d/1jdIUc4vH_-bnxaLaqOzVPo4ezpznmvHz/edit?usp=sharing&ouid=109657498147653913589&rtpof=true&sd=true)
+![image](https://github.com/estskyway/project_fitness/assets/132973368/21e53e0e-0194-4225-bc1a-bbd781dcf45e)
 ### [NamingRule](src/main/resources/static/Image/README/네이밍룰.png) ![NamingRule](src/main/resources/static/Image/README/네이밍룰.png)
 ### [DB구성](DOCS/database/Fitness/main.png) : ![ERD](https://github.com/estskyway/project_fitness/assets/132973368/35e2b079-a376-4b62-ba4c-9977478c2a7c)
 ### 팀원별 구현 기능
-* 김민정
+|김민정|김혜인|봉원희|임거산|
+|-----|-----|-----|-----|
+|메인화면|* |* |*|
+
 * 김혜인
 * 봉원희
 * 임거산
@@ -30,8 +35,9 @@
 ### 화면 구성
 ### 주요 기능
 ### 주요 코드
-### 구현 영상
 
+### 구현 영상
+[Youtube영상]()
 
 ### 구현할 기능   
 * 메뉴 : 메뉴바 하단에 운동별 카테고리 추가 후 클릭 시 지역별로 검색 결과가 도출될 수 있게 구성할 예정
