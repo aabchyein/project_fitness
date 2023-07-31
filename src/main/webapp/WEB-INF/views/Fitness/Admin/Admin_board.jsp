@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ page import="java.util.HashMap, java.util.ArrayList" %>
+    <%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
 
         <!DOCTYPE html>
         <html lang="en">
@@ -49,7 +49,7 @@
                             </div>
                         </nav>
                         <!-- 회원관리 데이터 -->
-                        <div class="col-10 mt-5 admin-content">
+                        <div class="col-9 mt-5 admin-content">
                             <h1 class="admin-header">게시판 관리</h1>
                             <div class="container admin-table">
                                 <table class="table table-bordered">
@@ -66,9 +66,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% ArrayList arrayList=(ArrayList) request.getAttribute("result"); for (int i=0;
-                                            i < arrayList.size(); i=i+1) { HashMap record=(HashMap) arrayList.get(i); 
-                                                if (arrayList != null){ %>
+                                        <% HashMap params=(HashMap) request.getAttribute("params");
+                                        HashMap result=(HashMap) request.getAttribute("result");%>
+                                        <% ArrayList arrayList=(ArrayList) result.get("resultList"); for (int i=0;
+                                            i < arrayList.size(); i=i+1) { HashMap record=(HashMap) arrayList.get(i); if
+                                            (arrayList !=null){ %>
                                             <tr>
                                                 <td name="number">
                                                     <%= i+1 %>
@@ -109,49 +111,63 @@
                                                         </form>
                                                         <form action="">
                                                             <input type="hidden" name="BOARD_ID"
-                                                            value='<%= record.get("BOARD_ID") %>'>
+                                                                value='<%= record.get("BOARD_ID") %>'>
                                                             <input type="hidden" name="BOARD_ANSWER_ID"
                                                                 value='<%= record.get("BOARD_ANSWER_ID") %>'>
                                                             <button class="btn btn-danger"
                                                                 formaction='/fitness/deleteAndSelectSearch'
-                                                                formmethod="get" >삭제</button>
+                                                                formmethod="get">삭제</button>
                                                         </form>
                                                     </td>
                                                 </form>
                                             </tr>
 
                                             <% } %>
-                                            <% } %>
+                                                <% } %>
 
-                                                <!-- 다른 게시글 데이터 추가 -->
+                                                    <!-- 다른 게시글 데이터 추가 -->
                                     </tbody>
                                 </table>
                             </div>
 
 
                             <!-- 페이지 넘어가는 표시 -->
-                            <div class="text-center mt-4">
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&lt;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <% Paginations paginations=(Paginations)result.get("paginations"); %>
+                                <div>총 갯수 : <%= paginations.getTotalCount() %>
+                                        <div class="text-center mt-4">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item">
+                                                    <a class="page-link"
+                                                        href="/fitness/AdminBoardAll?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
+                                                    <span aria-hidden="true">&lt;</span>
+                                                    </a>
+                                                </li>
+
+                                                <% for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd();
+                                                    i=i+1){ %>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="/fitness/AdminBoardAll?currentPage=<%= i %>">
+                                                            <%= i %>
+                                                        </a>
+                                                    </li>
+                                                    <% } %>
+                                                        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
                                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                                     <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&gt;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                                    <li class="page-item"> -->
+                                                        <li class="page-item">
+                                                            <a class="page-link"
+                                                                href="/fitness/AdminBoardAll?currentPage=<%= paginations.getNextPage() %>">Next</a>
+                                                            <span aria-hidden="true">&gt;</span>
+                                                            </a>
+                                                        </li>
+                                            </ul>
+                                        </div>
+                                </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 등록 모달
+                    <!-- 등록 모달
     <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -189,16 +205,17 @@
         </div>
     </div> -->
 
-                <!-- footer -->
-                <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
+                    <!-- footer -->
+                    <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
 
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-                        crossorigin="anonymous"></script>
-                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+                            crossorigin="anonymous"></script>
+                        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                        <script
+                            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         </body>
 
         </html>

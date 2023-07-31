@@ -18,8 +18,6 @@ public class SearchService {
 
         // 검색
         public Object selectSearch(Map dataMap) {
-            String sqlMapId = "Search.selectSearch";
-    
             Object result = this.pagination(dataMap);
             return result;
         }

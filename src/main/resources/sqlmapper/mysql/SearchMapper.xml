@@ -44,6 +44,18 @@
 	<select id="selectTotal" parameterType="Map" resultType="int">
         select count(*) as cnt
         from db_fitness.company
+        where 1 = 1
+        <choose>
+            <when test="search == 'COMPANY_NAME'">
+            and COMPANY_NAME like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ADDRESS'">
+            and ADDRESS like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ROAD_ADDRESS'">
+            and ROAD_ADDRESS like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>
         ;
 	</select>
 </mapper>

@@ -1,12 +1,10 @@
-#map-container {
-    height: 400px;
-    margin-bottom: 20px;
-}
-
-.yellow-star {
-    color: #ffc107;
-}
-
-table {
-    width: 80%;
-}
+  .star-rating {
+    display: inline-block;
+    font-size: 24px;
+  }
+  .star {
+    color: #ccc; /* 비어있는 별표 색상 설정 */
+  }
+  .star-filled {
+    color: #f2b01e; /* 색칠된 별표 색상 설정 */
+  }

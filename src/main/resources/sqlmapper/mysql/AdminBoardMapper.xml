@@ -63,7 +63,9 @@
         select count(*) as cnt
         from db_fitness.board
         ;
-	</select>
+	</select> 
+    
+    
 
     <!-- Admin_Answer입력 버튼  -->
     <insert id="insertAnswer" parameterType="Map" >
@@ -79,6 +81,22 @@
         FROM db_fitness.board
         where BOARD_ID = #{BOARD_ID}
         ;
-	</select>
+	</select> 
+
+
+	<select id="selectSearchTotal" parameterType="Map" resultType="int">
+        select count(*) as cnt
+        from db_fitness.board
+        where 1 = 1
+        <choose>
+            <when test="search == 'ID'">
+           and ID like CONCAT(#{words}, '%')
+            </when>
+            <when test="search == 'TITLE'">
+            and TITLE like CONCAT('%', #{words}, '%')
+            </when>
+      
+        </choose>  
+	</select> 
 
  </mapper>

@@ -43,7 +43,7 @@
       <div class="d-flex justify-content-between">
           <a href="/Noticelogin" class="btn btn-outline-primary">목록</a>
         <div>
-            <button type="submit" class="btn btn-primary" formaction="/memoinsertAndSelectSearch" formmethod="post">등록</button>
+            <button type="submit" class="btn btn-primary" formaction="/guest/memoinsertAndSelectSearch" formmethod="post">등록</button>
             <a href="/Noticelogin" class="btn btn-light">취소</a>
         </div>
       </div>
