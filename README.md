@@ -4,16 +4,16 @@
 ### ■ 사이트 : [ProjectFitness](https://project-fitness-ddxja.run.goorm.site/)
 ### ![main](src/main/resources/static/Image/README/main.png)
 ### ■ 프로젝트 소개
-   : 이 프로젝트는 무엇이고 왜 필요한지 간략하게 소개합니다.
-   1. 합리적인 가격 정보 부재
-   2. 헬스케어 시설의 리뷰를 찾기 어려움
-   3. 상담 예약 기능의 미비<br> 위 불편사항을 해소하기 위해 이용자가 원하는 시설을 쉽고 빠르게 검색하고 상담 예약까지 할 수 있도록 도와주는 사이트
+   1. 다양한 체육시설을 쉽고 빠르게 검색
+   2. 이용자들의 후기와 평점 확인 가능
+   3. 정보 검색 후 상담 예약까지 가능한 웹사이트
 ### ■ Stacks
 * 사용언어 : HTML, CSS, JavaScript, Java
 * 기술 : JSP, JQuery, Ajax
 * 프레임워크 : SpringBoot, Spring Security, Bootstrap
 * 개발툴 : Visual Studio Code
 * DB: MySQL, MyBatis
+* 서버: Goorm.IDE
 -------------------------------
 # 프로젝트 진행
 ### ■ [의뢰서](https://drive.google.com/file/d/1lblekpdEg2pe1_rxwwxioMyzvDHQJ29q/view?usp=drive_link)
@@ -47,7 +47,8 @@
 1. 검색
    ![SEARCH](https://github.com/estskyway/project_fitness/assets/132973368/7cb548d6-3480-4ef8-a881-9a6ee93b13f3)
 2. 로그인/로그아웃
-   
+   ![image](https://github.com/estskyway/project_fitness/assets/132973368/933b7a38-a4fc-4161-951f-0f17b3a7505c)
+
 4. 로그인/로그아웃
 5. 회원가입
 6. 마이페이지
