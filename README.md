@@ -7,13 +7,26 @@
    1. 다양한 체육시설을 쉽고 빠르게 검색
    2. 이용자들의 후기와 평점 확인 가능
    3. 정보 검색 후 상담 예약까지 가능한 웹사이트
-### ■ 🔧Stacks
-* 사용언어 : HTML, CSS, JavaScript, Java
-* 기술 : JSP, JQuery, Ajax
-* 프레임워크 : SpringBoot, Spring Security, Bootstrap
-* 개발툴 : Visual Studio Code
-* DB: MySQL, MyBatis
-* 서버: Goorm.IDE
+### 📚 Stacks
+* 사용언어<br>
+<img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white">
+
+* 기술<br>
+<img src="https://img.shields.io/badge/JSP-0769AD?style=for-the-badge&logo=JSP&logoColor=white"> <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"> <img src="https://img.shields.io/badge/Ajax-007396?style=for-the-badge&logo=Ajax&logoColor=white">
+
+* 프레임워크<br>
+<img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/Spring%20Security-6DB33F?style=for-the-badge&logo=Spring%20Security&logoColor=white"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
+
+* 개발툴<br>
+<img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white">
+
+* 협업툴<br>
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+* DB<br>
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> MyBatis
+
+* 서버<br>
+Goorm.IDE
 -------------------------------
 # 프로젝트 진행
 ### ■ [의뢰서](https://drive.google.com/file/d/1lblekpdEg2pe1_rxwwxioMyzvDHQJ29q/view?usp=drive_link)
