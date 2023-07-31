@@ -44,17 +44,39 @@
 ||**기초코드작성** <br>(**비로그인**) 게시판<br>(**로그인**) 메인화면/게시판/게시물작성|
 
 ### ■ 화면 구성
-1. 검색
-   ![SEARCH](https://github.com/estskyway/project_fitness/assets/132973368/7cb548d6-3480-4ef8-a881-9a6ee93b13f3)
-   
-2. 로그인/로그아웃
-   ![LOGIN](https://github.com/estskyway/project_fitness/assets/132973368/933b7a38-a4fc-4161-951f-0f17b3a7505c)
-   ![LOGOUT](https://github.com/estskyway/project_fitness/assets/132973368/adf602d2-62a2-4dd1-9c76-555a6c75371b)
+|검색|
+|----|
+|![SEARCH](https://github.com/estskyway/project_fitness/assets/132973368/7cb548d6-3480-4ef8-a881-9a6ee93b13f3)|<br>
 
-5. 회원가입
-6. 마이페이지
-7. 커뮤니티
-8. 관리자
+|로그인|
+|------|
+|![LOGIN](https://github.com/estskyway/project_fitness/assets/132973368/933b7a38-a4fc-4161-951f-0f17b3a7505c)|<br>
+
+|로그아웃|
+|-------|
+|![LOGOUT](https://github.com/estskyway/project_fitness/assets/132973368/adf602d2-62a2-4dd1-9c76-555a6c75371b)|<br>
+
+|회원가입|
+|-------|
+|![image](https://github.com/estskyway/project_fitness/assets/132973368/a1b6a70d-5647-4446-83ad-de9bd0c9beae)|<br>
+
+|마이페이지|
+|---------|
+|![image](https://github.com/estskyway/project_fitness/assets/132973368/387dd3ba-0e99-4e0d-bd84-f8392432d1f5)|<br>
+
+|게시판|
+|--------|
+|게시판|
+|![image](https://github.com/estskyway/project_fitness/assets/132973368/55618f3d-0861-4d20-91bd-31a7b02fdc15)|<br>
+
+|리뷰|
+|----|
+|![image](https://github.com/estskyway/project_fitness/assets/132973368/4fd25612-edd3-45d7-a3b8-a6ae82a38773)|<br>
+
+|관리자|
+|------|
+|![image](https://github.com/estskyway/project_fitness/assets/132973368/df8ec4f3-5719-4a32-a464-8d5a08431e90)|
+
 ### ■ 주요 기능
 ### ■ 주요 코드
 
