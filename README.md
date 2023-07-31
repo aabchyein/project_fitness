@@ -48,8 +48,8 @@
    ![SEARCH](https://github.com/estskyway/project_fitness/assets/132973368/7cb548d6-3480-4ef8-a881-9a6ee93b13f3)
    
 2. 로그인/로그아웃
-   ![image](https://github.com/estskyway/project_fitness/assets/132973368/933b7a38-a4fc-4161-951f-0f17b3a7505c)
-   ![image](https://github.com/estskyway/project_fitness/assets/132973368/adf602d2-62a2-4dd1-9c76-555a6c75371b)
+   ![LOGIN](https://github.com/estskyway/project_fitness/assets/132973368/933b7a38-a4fc-4161-951f-0f17b3a7505c)
+   ![LOGOUT](https://github.com/estskyway/project_fitness/assets/132973368/adf602d2-62a2-4dd1-9c76-555a6c75371b)
 
 5. 회원가입
 6. 마이페이지
