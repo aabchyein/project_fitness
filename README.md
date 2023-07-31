@@ -19,11 +19,12 @@
 
 
 # 프로젝트 진행
-### 의뢰서 : [백구팀 의뢰서](https://drive.google.com/file/d/1lblekpdEg2pe1_rxwwxioMyzvDHQJ29q/view?usp=drive_link)
-### 요구사항 정의서 : [백구팀 요구사항 정의서](https://docs.google.com/spreadsheets/d/1jdIUc4vH_-bnxaLaqOzVPo4ezpznmvHz/edit?usp=sharing&ouid=109657498147653913589&rtpof=true&sd=true)
-![image](https://github.com/estskyway/project_fitness/assets/132973368/21e53e0e-0194-4225-bc1a-bbd781dcf45e)
+### [의뢰서](https://drive.google.com/file/d/1lblekpdEg2pe1_rxwwxioMyzvDHQJ29q/view?usp=drive_link)
+![image](https://github.com/estskyway/project_fitness/assets/132973368/cf90839b-4581-40fa-92bd-08112727f565)
+### [요구사항 정의서](https://docs.google.com/spreadsheets/d/1jdIUc4vH_-bnxaLaqOzVPo4ezpznmvHz/edit?usp=sharing&ouid=109657498147653913589&rtpof=true&sd=true)
+![image](https://github.com/estskyway/project_fitness/assets/132973368/04854b3c-eb55-49ca-9d94-2957533bced8)
 ### [NamingRule](src/main/resources/static/Image/README/네이밍룰.png) ![NamingRule](src/main/resources/static/Image/README/네이밍룰.png)
-### [DB구성](DOCS/database/Fitness/main.png) : ![ERD](https://github.com/estskyway/project_fitness/assets/132973368/35e2b079-a376-4b62-ba4c-9977478c2a7c)
+### [DB구성](DOCS/database/Fitness/main.png) ![ERD](https://github.com/estskyway/project_fitness/assets/132973368/35e2b079-a376-4b62-ba4c-9977478c2a7c)
 ### 팀원별 구현 기능
 **김민정**
 |프론트엔드|백엔드|
