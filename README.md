@@ -84,8 +84,13 @@
 |![image](https://github.com/estskyway/project_fitness/assets/132973368/df8ec4f3-5719-4a32-a464-8d5a08431e90)|
 
 ### ■ 주요 기능
-
-### ■ 주요 코드
+😊사용자 
+ -회원가입 -> 검색 (지역&업체) -> 예약 -> 마이페이지 -> 예약 조회 및 수정, 삭제
+ -마이페이지(회원 기본정보 확인 및 수정)
+ -후기 작성 및 별점 적용(업체 위치를 네이버맵에서 확인가능.)
+ <br>
+😊관리자
+ -회원, 예약, 게시판, 공지사항 수정, 삭제 및 관리자 설정
 
 ### ■ [구현 영상](https://www.youtube.com/watch?v=XolvrvT9olQ&feature=youtu.be)
 
