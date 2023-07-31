@@ -109,7 +109,7 @@
 
 ### ■ 🎥[구현 영상](https://www.youtube.com/watch?v=XolvrvT9olQ&feature=youtu.be)
 
-### ■ 차후 구현 예정 기능
+### ■ 구현 예정 기능
 * 메뉴바 하단에 체육시설 카테고리화
   - 기구별 / 지역별 / 전용시설
 * 통계
