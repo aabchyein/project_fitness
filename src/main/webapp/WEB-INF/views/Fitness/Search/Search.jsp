@@ -24,11 +24,11 @@
                   <form>
                     <thead>
                       <tr>
-                        <th>회사명</th>
-                        <th>전화번호</th>
-                        <th>주소</th>
-                        <th>도로명주소</th>
-                        <th>예약</th>
+                        <th class="col-2">회사명</th>
+                        <th class="col-1">전화번호</th>
+                        <th class="col-4">주소</th>
+                        <th class="col-4">도로명주소</th>
+                        <th class="col-1">예약</th>
                       </tr>
                     </thead>
                     
@@ -42,7 +42,7 @@
                         %>
                       <tr>
                         <td>
-                          <%= record.get("COMPANY_NAME") %>
+                          <a href='https://map.naver.com?query=<%= record.get("COMPANY_NAME") %>' style="font-weight: 500;"><%= record.get("COMPANY_NAME") %></a>
                         </td>
                         <td>
                           <%= record.get("PHONE_NUMBER") %>
