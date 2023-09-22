@@ -23,6 +23,7 @@ public class ReviewController {
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = reviewService.selectAll(params);
         modelAndView.addObject("result", result);
+        modelAndView.addObject("params", params);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Review/Review.jsp");
         return modelAndView;
     }

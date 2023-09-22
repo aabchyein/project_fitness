@@ -16,4 +16,44 @@
         values
         (#{REVIEW_ID}, #{REVIEW}, #{GRADE}, #{ID}, #{COMPANY_ID});
         </insert>
+
+        <!-- 시설명 조회 -->
+        <select id="selectCompanyName" parameterType="Map" resultType="Map">
+        select COMPANY_NAME
+        from COMPANY
+        ;
+        </select>
+
+         <!-- total count -->
+	<select id="selectTotal" parameterType="Map" resultType="int">
+        select count(*) as cnt
+        from review as rev
+                inner join company as com
+                on rev.COMPANY_ID = com.COMPANY_ID
+        <choose>
+            <when test="search == 'COMPANY_NAME'">
+            and com.COMPANY_NAME like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ID'">
+            and rev.ID like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>
+        ;
+	</select>
+        <select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM review as rev
+                inner join company as com
+                on rev.COMPANY_ID = com.COMPANY_ID
+        <choose>
+            <when test="search == 'COMPANY_NAME'">
+            and com.COMPANY_NAME like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ID'">
+            and rev.ID like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>
+        limit #{pageBegin}, #{pageScale}
+        ;
+	</select>
 </mapper>
