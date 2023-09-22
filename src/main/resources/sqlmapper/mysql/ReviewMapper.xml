@@ -23,8 +23,23 @@
         from COMPANY
         ;
         </select>
+        <!-- 검색어의 유무에 따른 처리 -->
+        <select id="CompanyNameSearch" parameterType="Map" resultType="Map">
+        select COMPANY_NAME
+        from COMPANY
+        where 1 = 1
+        <choose>
+                <when test="words != null">
+                and COMPANY_NAME like CONCAT('%', #{words}, '%')
+                </when>
+                <when test="words == null">
+                or COMPANY_NAME
+                </when>
+        </choose>
+        ;
+        </select>
 
-         <!-- total count -->
+         <!-- 시설 및 작성자 검색 total count -->
 	<select id="selectTotal" parameterType="Map" resultType="int">
         select count(*) as cnt
         from review as rev

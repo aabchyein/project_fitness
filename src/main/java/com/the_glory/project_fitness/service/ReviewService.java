@@ -22,6 +22,12 @@ public class ReviewService {
     @Autowired
     Commons commons;
 
+    public Object SearchSelect(Map dataMap){
+        String sql = "Review.CompanyNameSearch";
+        Object result = sharedDao.getList(sql, dataMap);
+        return result;
+    }
+
     public Object selectAll(Map dataMap){
         Object result = this.selectPaging(dataMap);
         // Object result = sharedDao.getList(sql, dataMap);

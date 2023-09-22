@@ -107,7 +107,7 @@
               <!-- 글작성 버튼 -->
               <sec:authorize access="isAuthenticated()">
                 <div class="container text-end">
-                  <a href="/Reviewmemo" class="btn btn-secondary">글작성</a>
+                  <a href="/CompanyNameSearch" class="btn btn-secondary">글작성</a>
                 </div>
               </sec:authorize>
             </div>

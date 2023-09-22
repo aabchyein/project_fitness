@@ -38,4 +38,13 @@ public class ReviewMemoController {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Review/ReviewMemo.jsp");
         return modelAndView;
     }
+
+    @GetMapping({"/CompanyNameSearch"})
+    public ModelAndView CompanyNameSearch(@RequestParam Map paramMap, ModelAndView modelAndView) {
+        Object result = reviewService.SearchSelect(paramMap);
+        modelAndView.addObject("result", result);
+        modelAndView.addObject("params", paramMap);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Review/ReviewMemo.jsp");
+        return modelAndView;
+    }
 }
