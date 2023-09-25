@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     <%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
-
+    <%@ page import = "com.the_glory.project_fitness.UniqueID.UniqueID" %>
 
       <sec:authentication property="principal" var="userDetailsBean" />
 
@@ -26,40 +26,52 @@
 
           <!-- 리뷰 작성 -->
           <div class="container p-5">
+
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title text-center">Review 작성</h5>
-                <form id="reviewForm">
-                  <div class="form-group">
-                    <label for="id">
-                      <h4>작성자</h4>
+
+                <div class="form-group">
+                  <label for="id">
+                    <h4> ${userDetailsBean.memberName} 님</h4>
+                  </label>
+                  <input class="form-control" type="hidden" name="ID" id="id" value="${userDetailsBean.memberName}"
+                    required>
+                </div>
+                <form action="">
+                  <div class="form-group mt-3 row">
+                    <label for="facilitylist">
+                      <h4>시설명</h4>
                     </label>
-                    <input class="form-control" type="text" name="ID" id="id" value="${userDetailsBean.memberName}"
-                      required>
-                  </div>
-                  <form>
-                    <div class="form-group">
-                      <label for="facilitylist">시설명</label>
-                      <input class="form-control width-50%" type="text" name="words" id="search">
-                      <button type="sumbit" onclick="company();">검색</button>
-                      <select id="facilitylist">
-                        <%ArrayList list=(ArrayList)request.getAttribute("result"); for(int i=0; i < list.size(); i=i+1)
-                          { HashMap map=(HashMap) list.get(i); %>
-                          <option name="COMPANY_NAME" value="<%= map.get(" COMPANY_NAME")%>"><%=
-                              map.get("COMPANY_NAME")%>
-                          </option>
-                          <% }%>
-                      </select>
+                    <div class="col-4">
+                      <input class="form-control" type="text" name="words" id="search" placeholder="검색어를 입력하세요.">
                     </div>
-                  </form>
+                    <div class="col-2">
+                      <button type="submit" onclick="company()">검색</button>
+                    </div>
+                  </div>
+                </form>
+                <form action="/insert">
+                  <div>
+                    <select name="COMPANY_ID">
+                      <%ArrayList list=(ArrayList)request.getAttribute("result"); 
+                        for(int i=0; i < list.size(); i=i+1) {
+                        HashMap map=(HashMap) list.get(i); %>    
+                        <option value="<%= map.get("COMPANY_ID")%>"><%= map.get("COMPANY_NAME")%> 
+                        </option>
+                      <% }%>
+                    </select>
+                  </div>
                   <div class="form-group">
                     <label for="content">내용</label>
-                    <textarea class="form-control" id="content" rows="5"></textarea>
+                    <textarea class="form-control" id="content" rows="5" name="REVIEW"></textarea>
                   </div>
-                  <div class="form-group">
-                    <label for="rating">별점</label>
+                  <div class="form-group  mt-3">
+                    <label for="rating">
+                      <h4>별점</h4>
+                    </label>
                     <div class="rating-dropdown">
-                      <select id="rating">
+                      <select id="rating" name="GRADE">
                         <option value="" disabled selected hidden>별점을 선택하세요</option>
                         <option value="5">★★★★★</option>
                         <option value="4">★★★★</option>
@@ -76,19 +88,29 @@
                       </div>
                     </div>
                   </div>
+                  <%       
+                  UniqueID uniqueid = new UniqueID();
+                  String uuid = uniqueid.generatUuid();
+                  %>
                   <div class="row">
                     <div class="col-md-12 text-center">
-                      <button type="submit" class="btn btn-primary" onclick="move();">작성 완료</button>
+                  
+                      <input type="hidden" name="REVIEW_ID" value="<%= uuid %>">
+                      <input type="hidden" name="ID" value="${userDetailsBean.memberName}">
+                      <button type="submit" class="btn btn-primary">작성 완료</button>
                     </div>
                   </div>
+                </form>
 
-                  <!-- <body>
+
+                <!-- <body>
                     <input type='text' id='inputSearch' />
                   </body> -->
 
-                </form>
+
               </div>
             </div>
+
           </div>
 
           <!-- Footer -->
@@ -114,10 +136,8 @@
             });
           });
         });
+        
 
-        function move() {
-          window.location.href = "/Review"
-        }
 
         function company() {
           var searchValue = document.getElementById('search').value;
@@ -146,7 +166,7 @@
               console.error('There was a problem with the fetch operation:', error);
             });
         }
-      
+
         // var locList = [
         //   '영등포본동',
         //   '영등포동',

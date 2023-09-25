@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,8 +32,9 @@ public class ReviewController {
     @GetMapping("/insert")
     public ModelAndView insert(@RequestParam Map paramMap, ModelAndView modelAndView) {
         Object result = reviewService.insert(paramMap);
-
-        modelAndView.addObject("result", result);
+        Object result1 = reviewService.selectAll(paramMap);
+        modelAndView.addObject("params", paramMap);
+        modelAndView.addObject("result", result1);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Review/Review.jsp");
         return modelAndView;
     }

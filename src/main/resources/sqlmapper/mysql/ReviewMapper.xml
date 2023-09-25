@@ -25,12 +25,13 @@
         </select>
         <!-- 검색어의 유무에 따른 처리 -->
         <select id="CompanyNameSearch" parameterType="Map" resultType="Map">
-        select COMPANY_NAME
+        select COMPANY_NAME, COMPANY_ID
         from COMPANY
         where 1 = 1
         <choose>
                 <when test="words != null">
                 and COMPANY_NAME like CONCAT('%', #{words}, '%')
+                or ADDRESS like CONCAT('%', #{words}, '%')
                 </when>
                 <when test="words == null">
                 or COMPANY_NAME
