@@ -52,7 +52,7 @@
                     </div>
                   </div>
                 </form>
-                <form action="/insert">
+                <form action="/insert" id="insertForm">
                   <div>
                     <select name="COMPANY_ID">
                       <%ArrayList list=(ArrayList)request.getAttribute("result"); 
@@ -64,8 +64,9 @@
                     </select>
                   </div>
                   <div class="form-group mt-3">
-                    <label for="content">내용</label>
-                    <textarea class="form-control" id="content" rows="5" name="REVIEW"></textarea>
+                    <label for="editor">내용</label>
+                    <div class="form-control" id="editor" rows="5"style="height: 150px;" class="form-control" ></div>
+                    <input type="hidden" name="REVIEW" id="contentInput" />
                   </div>
                   <div class="form-group  mt-3">
                     <label for="rating">
@@ -119,6 +120,23 @@
 
 
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+            <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+            <script>
+                var quill = new Quill('#editor', {
+                    theme: 'snow'
+                });
+
+                quill.setContents(${content}); // jsp 문법을 해석하는 와중에 생기는 오류임.
+
+                // Set hidden input value before form submission
+                let form = document.querySelector('#insertForm');
+                form.onsubmit = function () {
+                    var contentInput = document.querySelector('#contentInput');
+                    contentInput.value = quill.root.innerHTML;
+                    return true;
+                };
+            </script>
+
       
       <script>
         const ratingDropdown = document.querySelector('.rating-dropdown');

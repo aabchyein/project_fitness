@@ -11,11 +11,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.11.0/dist/css/bootstrap-datepicker.min.css">
-
   <link rel="stylesheet" href="/CSS/reserve.css">
   <link rel="stylesheet" href="/CSS/mainmenu.css">
 
@@ -31,7 +30,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">상담 예약</h5>
-        <form>
+        <form action="/guest/reserveinsert" formmethod="get" id="insertForm">
           <input type="hidden" name="ID" value=${userDetailsBean.username}>
           <div class="form-group m-5">
             <label for="datepicker">날짜 선택:</label>
@@ -64,14 +63,15 @@
             <input type="hidden" class="form-control" name="COMPANY_ID" value='<%= record.get("COMPANY_ID") %>'></input>
           </div>
           <div class="form-group m-5">
-            <label for="notes">상담 시 참고할 부분을 적어주세요. (병력 및 신체 이상, 원하시는 점이나 기대하는 점)
+            <label for="editor">상담 시 참고할 부분을 적어주세요. (병력 및 신체 이상, 원하시는 점이나 기대하는 점)
             </label>
-            <textarea class="form-control" name="NOTES" id="notes" rows="2" required=""></textarea>
+            <div class="form-control"  id="editor" rows="2" style="height: 150px;" required=""></div>
+            <input type="hidden" name="NOTES" id="contentInput" />
           </div>
           <div class="row">
             <div class="col-md-12 text-center">
               <a href="/main" class="btn btn-secondary">취소</a>
-              <button type="submit" class="btn btn-primary" formaction="/guest/reserveinsert" formmethod="get" >완료</button>
+              <button type="submit" class="btn btn-primary" >완료</button>
             </div>
           </div>
         </form>
@@ -117,6 +117,22 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+        quill.setContents(${content}); // jsp 문법을 해석하는 와중에 생기는 오류임.
+
+        // Set hidden input value before form submission
+        let form = document.querySelector('#insertForm');
+        form.onsubmit = function () {
+            var contentInput = document.querySelector('#contentInput');
+            contentInput.value = quill.root.innerHTML;
+            return true;
+        };
+    </script>
 
 </body>
 
