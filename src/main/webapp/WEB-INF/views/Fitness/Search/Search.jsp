@@ -42,7 +42,7 @@
                         %>
                       <tr>
                         <td>
-                          <a href='https://map.naver.com?query=<%= record.get("COMPANY_NAME") %>' style="font-weight: 500;"><%= record.get("COMPANY_NAME") %></a>
+                          <a href='https://map.naver.com?query=<%= record.get("COMPANY_NAME") %>' style="font-weight: 500;" target="_blank"><%= record.get("COMPANY_NAME") %></a>
                         </td>
                         <td>
                           <%= record.get("PHONE_NUMBER") %>

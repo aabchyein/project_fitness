@@ -92,6 +92,13 @@
     <!-- 회원 정보 삭제 -->
     <delete id="memdelete" parameterType="Map">
     DELETE FROM db_fitness.notice
-    WHERE ID = #{ID};
+    WHERE NOTICE_ID = #{NOTICE_ID};
     </delete>
+
+    <update id="NoticeUpdate" parameterType="Map">
+    update notice
+    SET NOTICE_TITLE = #{NOTICE_TITLE} , NOTICE_CONTENTS = #{NOTICE_CONTENTS}
+    where NOTICE_ID like #{NOTICE_ID};
+    </update>
+    
  </mapper>

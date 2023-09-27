@@ -133,13 +133,13 @@
 
                             <!-- 페이지 넘어가는 표시 -->
                             <% Paginations paginations=(Paginations)result.get("paginations"); %>
-                                <div>총 갯수 : <%= paginations.getTotalCount() %>
+                                <div>
                                         <div class="text-center mt-4">
                                             <ul class="pagination justify-content-center">
                                                 <li class="page-item">
                                                     <a class="page-link"
                                                         href="/fitness/AdminBoardAll?currentPage=<%= paginations.getPreviousPage() %>">Previous</a>
-                                                    <span aria-hidden="true">&lt;</span>
+                                                    
                                                     </a>
                                                 </li>
 
@@ -151,14 +151,10 @@
                                                         </a>
                                                     </li>
                                                     <% } %>
-                                                        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"> -->
                                                         <li class="page-item">
                                                             <a class="page-link"
                                                                 href="/fitness/AdminBoardAll?currentPage=<%= paginations.getNextPage() %>">Next</a>
-                                                            <span aria-hidden="true">&gt;</span>
+                                                         
                                                             </a>
                                                         </li>
                                             </ul>

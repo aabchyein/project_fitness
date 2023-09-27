@@ -54,158 +54,157 @@
                                 request.getAttribute("result"); %>
                                 <h1 style="text-align: center; margin-top: 1cm; margin-bottom: 1cm;"><strong>공지사항
                                         관리</strong></h1>
-                                <div class="container">
-                                    <div class="row justify-content-center">
-                                        <div class="col-md-6">
-                                            <form>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <select class="btn btn-outline-secondary custom-select"
-                                                            type="button" id="search-option" name="search">
-                                                            <option value="choose">선택</option>
-                                                            <option value="NOTICE_TITLE"
-                                                                <%=(searchStr.equals("NOTICE_TITLE")) ? "selected" : ""
-                                                                %>
-                                                                >제목
-                                                            </option>
-                                                            <option value="NOTICE_CONTENTS"
-                                                                <%=(searchStr.equals("NOTICE_CONTENTS")) ? "selected"
-                                                                : "" %>
-                                                                >내용</option>
-                                                            <option value="ID" <%=(searchStr.equals("ID")) ? "selected"
-                                                                : "" %>>작성자</option>
-                                                        </select>
-                                                    </div>
-                                                    <input type="text" class="form-control" name="words"
-                                                        placeholder="검색어를 입력하세요" id="search-input">
-                                                    <div class="input-group-append">
-                                                        <button class="btn btn-primary" type="submit"
-                                                            formaction="/notice/Notice" formmethod="get">검색</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
                                 <!-- 테이블 -->
-                                <div class="text-center container">
-                                    <div class="justify-content-between row p-5 m-3 h6 text-start">
-                                        <div class="col">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th style=""><strong>번호</strong></th>
-                                                        <th style=""><strong>제목</strong></th>
-                                                        <th style="">작성자</th>
-                                                        <th style="">날짜</th>
-                                                        <th style="">조회수</th>
-                                                        <th style="">수정</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <% ArrayList resultList=(ArrayList)result.get("resultList"); for(int
-                                                        i=0; i < resultList.size(); i=i+1){ HashMap
-                                                        record=(HashMap)resultList.get(i); %>
+                                <form action="">
+                                    <div class="text-center container">
+                                        <div class="justify-content-between row p-5 m-3 h6 text-start">
+                                            <div class="col">
+                                                <table class="table">
+                                                    <thead>
                                                         <tr>
-                                                            <td>
-                                                                <%= i+1 %>
-                                                            </td>
-                                                            <td>
-                                                                <%= record.get("NOTICE_TITLE") %>
-                                                            </td>
-                                                            <td>
-                                                                <%= record.get("ID") %>
-                                                            </td>
-                                                            <td>
-                                                                <%= record.get("NOTICE_DATE") %>
-                                                            </td>
-                                                            <td>
-                                                                <%= record.get("NOTICE_VIEWS") %>
-                                                            </td>
-                                                            <form>
-                                                                <td class="admin-actions">
-                                                                    <form action="">
-
-                                                                        <button type="submit" class="btn btn-secondary"
-                                                                            formaction="#" formmethod="get">등록</button>
-                                                                    </form>
-                                                                    <form action="">
-                                                                        <button class="btn btn-danger" formaction="#"
-                                                                            formmethod="get">삭제</button>
-                                                                    </form>
-                                                                </td>
-                                                            </form>
+                                                            <th style=""><strong>번호</strong></th>
+                                                            <th style=""><strong>제목</strong></th>
+                                                            <th style="">작성자</th>
+                                                            <th style="">날짜</th>
+                                                            <th style="">조회수</th>
+                                                            <th style="">수정</th>
                                                         </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <% ArrayList resultList=(ArrayList)result.get("resultList");
+                                                            for(int i=0; i < resultList.size(); i=i+1){ HashMap
+                                                            record=(HashMap)resultList.get(i); %>
+                                                            <tr>
+                                                                <td>
+                                                                    <%= i+1 %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= record.get("NOTICE_TITLE") %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= record.get("ID") %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= record.get("NOTICE_DATE") %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= record.get("NOTICE_VIEWS") %>
+                                                                </td>
+                                                                <form>
+                                                                    <td class="admin-actions">
+                                                                        <form action="">
+                                                                            <input type="hidden" name="NOTICE_ID" value="<%= record.get("NOTICE_ID") %>">
+                                                                            <input type="hidden" name="NOTICE_TITLE" value="<%= record.get("NOTICE_TITLE") %>">
+                                                                            <input type="hidden" name="NOTICE_CONTENTS" value="<%= record.get("NOTICE_CONTENTS") %>">
+
+                                                                            <button type="submit"
+                                                                                class="btn btn-secondary" formaction="/AdminnoticeUpdata"
+                                                                                formmethod="get">수정</button>
+                                                                        </form>
+                                                                        <form action="">
+                                                                            <input type="hidden" name="NOTICE_ID"
+                                                                                value="<%= record.get(" NOTICE_ID") %>">
+                                                                            <button type="submit" class="btn btn-danger"
+                                                                                formaction="/AdminnoticeDelete"
+                                                                                formmethod="get">삭제</button>
+                                                                        </form>
+                                                                    </td>
+                                                                </form>
+                                                            </tr>
+                                                            <% } %>
+                                                            
+                                                    </tbody>
+                                                    
+
+                                                </table>
+                                                <div class="container mt-2">
+                                                    <a href="/guest/boardmemo" class="btn btn-outline-success">글작성</a>
+                                                  </div>
+                                                <div class="container mt-3">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-6">
+                                                            <form>
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <select class="btn btn-outline-secondary custom-select"
+                                                                            type="button" id="search-option" name="search">
+                                                                            <option value="choose">선택</option>
+                                                                            <option value="NOTICE_TITLE"
+                                                                                <%=(searchStr.equals("NOTICE_TITLE")) ? "selected" : ""
+                                                                                %>
+                                                                                >제목
+                                                                            </option>
+                                                                            <option value="NOTICE_CONTENTS"
+                                                                                <%=(searchStr.equals("NOTICE_CONTENTS")) ? "selected"
+                                                                                : "" %>
+                                                                                >내용</option>
+                                                                            <option value="ID" <%=(searchStr.equals("ID")) ? "selected"
+                                                                                : "" %>>작성자</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" name="words"
+                                                                        placeholder="검색어를 입력하세요" id="search-input">
+                                                                    <div class="input-group-append">
+                                                                        <button class="btn btn-outline-primary" type="submit"
+                                                                            formaction="/Adminnotice" formmethod="get">검색</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- 페이지 넘어가는 표시 -->
+                                <% Paginations paginations=(Paginations)result.get("paginations"); %>
+                                    <% if ( paginations !=null){ %>
+                                        <div>
+                                            <div class="text-center mt-4">
+                                                <ul class="pagination justify-content-center">
+                                                    <li class="page-item">
+                                                        <a class="page-link"
+                                                            href='/Adminnotice?currentPage=<%= paginations.getPreviousPage() %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>Previous</a>
+                                                        </a>
+                                                    </li>
+
+                                                    <% for(int i=paginations.getBlockStart();i
+                                                        <=paginations.getBlockEnd(); i=i+1){ %>
+                                                        <li class="page-item">
+                                                            <a class="page-link"
+                                                                href='/Adminnotice?currentPage=<%= i %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>
+                                                                <%= i %>
+                                                            </a>
+                                                        </li>
                                                         <% } %>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-<!-- 
-                                등록 모달
-                                <div class="modal fade" id="registrationModal" tabindex="-1"
-                                    aria-labelledby="registrationModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="registrationModalLabel">게시글 등록</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <!-- 등록 폼 내용 -->
-<!-- 
-                                                <form>
-                                                    <div class="mb-3">
-                                                        <label for="name" class="form-label">작성자</label>
-                                                        <input type="text" class="form-control" id="name"
-                                                            placeholder="작성자를 입력하세요" readonly>>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="date" class="form-label">작성일자</label>
-                                                        <input type="date" class="form-control" id="date">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="title" class="form-label">제목</label>
-                                                        <input type="text" class="form-control" id="title"
-                                                            placeholder="제목을 입력하세요" readonly>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="question" class="form-label">질문 내용</label>
-                                                        <textarea class="form-control" id="question" rows="3"
-                                                            placeholder="질문 내용을 입력하세요" readonly></textarea>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="answer" class="form-label">답변 내용</label>
-                                                        <textarea class="form-control" id="answer" rows="3"
-                                                            placeholder="답변 내용을 입력하세요"></textarea>
-                                                    </div>
-
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary"
-                                                    data-bs-dismiss="modal">등록</button>
-
+                                                            <li class="page-item">
+                                                                <a class="page-link"
+                                                                    href='/Adminnotice?currentPage=<%= paginations.getNextPage() %>&search=<%= params.getOrDefault("search", "") %>&words=<%= params.getOrDefault("words", "") %>'>Next</a>
+                                                                </a>
+                                                            </li>
+                                                </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                </div> -->
                         </div>
-                    </div>
-                    <!-- footer -->
-                    <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
+                        <% } else { %>
+                            <% } %>
 
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-                            crossorigin="anonymous"></script>
-                        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-                        <script
-                            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                    </div>
+                </div>
+                <!-- footer -->
+                <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+                        crossorigin="anonymous"></script>
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         </body>
 
         </html>

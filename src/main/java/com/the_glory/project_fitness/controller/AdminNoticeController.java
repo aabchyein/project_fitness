@@ -28,7 +28,32 @@ public class AdminNoticeController {
 
     @GetMapping({"/Adminnotice"})
     public ModelAndView Adminnotice(@RequestParam Map dataMap, ModelAndView modelAndView) {
-        Object result = noticeService.selectSearch(dataMap);
+        Object result = noticeService.selectSearchWithPagination(dataMap);
+        modelAndView.addObject("params", dataMap);
+        modelAndView.addObject("result", result);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_notice.jsp");
+        return modelAndView;
+    }
+
+    @GetMapping({"/AdminnoticeDelete"})
+    public ModelAndView AdminnoticeDelete(@RequestParam Map dataMap, ModelAndView modelAndView) {        
+        noticeService.memdelete(dataMap);
+        Object result = noticeService.selectSearchWithPagination(dataMap);
+        modelAndView.addObject("params", dataMap);
+        modelAndView.addObject("result", result);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_notice.jsp");
+        return modelAndView;
+    }
+    @GetMapping({"/AdminnoticeUpdata"})
+    public ModelAndView AdminnoticeUpdata(@RequestParam Map params, ModelAndView modelAndView) {             
+        modelAndView.addObject("params", params);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminNoticeMemoUpdata.jsp");
+        return modelAndView;
+    }
+    @PostMapping({"/AdminnoticeUpdataSelect"})
+    public ModelAndView AdminnoticUpdataselect(@RequestParam Map dataMap, ModelAndView modelAndView) {        
+        noticeService.noticeUpdate(dataMap);
+        Object result = noticeService.selectSearchWithPagination(dataMap);
         modelAndView.addObject("params", dataMap);
         modelAndView.addObject("result", result);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_notice.jsp");

@@ -121,5 +121,12 @@ public class NoticeService {
         return result;
     }
 
+    public Object noticeUpdate(Map dataMap){
+        String sql = "Notice.NoticeUpdate";
+        Object result = sharedDao.update(sql, dataMap);
+        return result;
+    }
+
+
     
 }

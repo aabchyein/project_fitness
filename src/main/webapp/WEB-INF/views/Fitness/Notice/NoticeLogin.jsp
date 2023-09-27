@@ -100,9 +100,7 @@
                   </div>
                   <!-- 글작성 버튼 -->
                   <sec:authorize access="isAuthenticated()">
-                    <div class="container text-end">
-                      <a href="/guest/boardmemo" class="btn btn-secondary">글작성</a>
-                    </div>
+                    
                   </sec:authorize>
                 </div>
               </div>
