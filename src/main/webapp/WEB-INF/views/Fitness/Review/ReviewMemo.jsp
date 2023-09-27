@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="./CSS/mainmenu.css">
         <link rel="stylesheet" href="./CSS/reviews.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <title>리뷰 작성</title>
@@ -62,7 +63,7 @@
                       <% }%>
                     </select>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group mt-3">
                     <label for="content">내용</label>
                     <textarea class="form-control" id="content" rows="5" name="REVIEW"></textarea>
                   </div>
@@ -118,7 +119,7 @@
 
 
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-      </body>
+      
       <script>
         const ratingDropdown = document.querySelector('.rating-dropdown');
         const ratingSelect = ratingDropdown.querySelector('select');
@@ -232,5 +233,5 @@
         // });
 
       </script>
-
+</body>
       </html>

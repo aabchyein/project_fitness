@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.the_glory.project_fitness.dao.SharedDao;
+import com.the_glory.project_fitness.utils.Paginations;
 
 @Service
 public class AdminReserveService {
@@ -17,7 +18,7 @@ public class AdminReserveService {
     public Object reserveSelectAll(Map params) {
         String sqlMapId = "AdminReserve.reserveselectAll";
 
-        Object result = sharedDao.getList(sqlMapId, params);
+        Object result = this.pagination(params);
         return result;
     }    
 
@@ -38,4 +39,33 @@ public class AdminReserveService {
         Object result = this.reserveSelectAll(params);
         return result;
     }
+      public Map pagination(Map dataMap) {
+            // 페이지 형성 위한 계산
+            int totalCount = (int) this.selectSearchTotal(dataMap);
+            
+            int currentPage =1;
+            if (dataMap.get("currentPage") != null) {
+                currentPage = Integer.parseInt((String) dataMap.get("currentPage")); // from client in param
+            }
+    
+            Paginations paginations = new Paginations(totalCount, currentPage);
+            HashMap result = new HashMap<>();
+            result.put("paginations", paginations); // 페이지에 대한 정보
+            
+            // page record 수
+            String sqlMapId = "AdminReserve.selectSearchWithPagination";
+            dataMap.put("pageScale", paginations.getPageScale());
+            dataMap.put("pageBegin", paginations.getPageBegin());
+    
+            result.put("resultList", sharedDao.getList(sqlMapId, dataMap)); // 표현된 레코드 정보
+            return result;
+        }
+
+        public int selectSearchTotal(Map dataMap) {
+            // Object getOne(String sqlMapId, Object dataMap);
+            String sqlMapId = "AdminReserve.selectTotal";
+            // Object result = sharedDao.getList(sqlMapId, dataMap);
+            // result.put("resultList", this.selectSearch(dataMap));
+            return (int) sharedDao.getOne(sqlMapId, dataMap);
+        }
 }

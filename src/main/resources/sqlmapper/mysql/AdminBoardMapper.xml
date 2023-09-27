@@ -62,6 +62,14 @@
 	<select id="selectTotal" parameterType="Map" resultType="int">
         select count(*) as cnt
         from db_fitness.board
+         <choose>
+            <when test="search == 'ID'">
+            and ID like CONCAT(#{words}, '%')
+            </when>
+            <when test="search == 'TITLE'">
+            and TITLE like CONCAT(#{words}, '%')
+            </when>
+        </choose> 
         ;
 	</select> 
     

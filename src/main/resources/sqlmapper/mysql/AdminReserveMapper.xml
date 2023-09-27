@@ -24,4 +24,43 @@
             RESERVATION_TIME = #{RESERVATION_TIME}
         where ID = #{ID};
     </update>
+    <select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM reservation AS res
+        INNER JOIN company AS com
+        ON res.COMPANY_ID = com.COMPANY_ID
+        INNER JOIN member_information AS mem
+        ON res.ID = mem.ID
+        <choose>
+            <when test="search == 'NAME'">
+            and mem.NAME like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ID'">
+            and mem.ID like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>  
+        limit #{pageBegin}, #{pageScale}
+        ;
+	</select>
+
+        <!-- 전체 검색 -->
+	<select id="selectTotal" parameterType="Map" resultType="int">
+        select count(*) as cnt
+        FROM reservation AS res
+        INNER JOIN company AS com
+        ON res.COMPANY_ID = com.COMPANY_ID
+        INNER JOIN member_information AS mem
+        ON res.ID = mem.ID
+        <choose>
+            <when test="search == 'NAME'">
+            and mem.NAME like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ID'">
+            and mem.ID like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>  
+        where 1 = 1       
+        ;
+	</select>
+
 </mapper>
