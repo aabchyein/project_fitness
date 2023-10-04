@@ -74,7 +74,7 @@
                           <%= i+1 %>
                         </td>
                         <td>
-                          <a href='https://map.naver.com?query=<%= record.get("COMPANY_NAME") %>'
+                          <a href='https://map.naver.com?query=<%= record.get("ADDRESS") %>'
                             style="font-weight: 500;" target="_blank">
                             <%= record.get("COMPANY_NAME") %>
                           </a>
