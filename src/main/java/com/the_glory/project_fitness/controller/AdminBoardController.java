@@ -85,8 +85,6 @@ public class AdminBoardController {
         Object result = adminBoardAnswerService.insert(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
-        modelAndView.addObject("params", "result");
-        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_board.jsp");
         return modelAndView;
     }

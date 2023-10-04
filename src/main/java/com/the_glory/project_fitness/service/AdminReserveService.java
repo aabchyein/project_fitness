@@ -39,27 +39,27 @@ public class AdminReserveService {
         Object result = this.reserveSelectAll(params);
         return result;
     }
-      public Map pagination(Map dataMap) {
-            // 페이지 형성 위한 계산
-            int totalCount = (int) this.selectSearchTotal(dataMap);
-            
-            int currentPage =1;
-            if (dataMap.get("currentPage") != null) {
-                currentPage = Integer.parseInt((String) dataMap.get("currentPage")); // from client in param
-            }
-    
-            Paginations paginations = new Paginations(totalCount, currentPage);
-            HashMap result = new HashMap<>();
-            result.put("paginations", paginations); // 페이지에 대한 정보
-            
-            // page record 수
-            String sqlMapId = "AdminReserve.selectSearchWithPagination";
-            dataMap.put("pageScale", paginations.getPageScale());
-            dataMap.put("pageBegin", paginations.getPageBegin());
-    
-            result.put("resultList", sharedDao.getList(sqlMapId, dataMap)); // 표현된 레코드 정보
-            return result;
+    public Map pagination(Map dataMap) {
+        // 페이지 형성 위한 계산
+        int totalCount = (int) this.selectSearchTotal(dataMap);
+        
+        int currentPage =1;
+        if (dataMap.get("currentPage") != null) {
+            currentPage = Integer.parseInt((String) dataMap.get("currentPage")); // from client in param
         }
+
+        Paginations paginations = new Paginations(totalCount, currentPage);
+        HashMap result = new HashMap<>();
+        result.put("paginations", paginations); // 페이지에 대한 정보
+        
+        // page record 수
+        String sqlMapId = "AdminReserve.selectSearchWithPagination";
+        dataMap.put("pageScale", paginations.getPageScale());
+        dataMap.put("pageBegin", paginations.getPageBegin());
+
+        result.put("resultList", sharedDao.getList(sqlMapId, dataMap)); // 표현된 레코드 정보
+        return result;
+    }
 
         public int selectSearchTotal(Map dataMap) {
             // Object getOne(String sqlMapId, Object dataMap);

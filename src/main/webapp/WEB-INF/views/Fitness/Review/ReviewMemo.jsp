@@ -103,13 +103,6 @@
                     </div>
                   </div>
                 </form>
-
-
-                <!-- <body>
-                    <input type='text' id='inputSearch' />
-                  </body> -->
-
-
               </div>
             </div>
 
@@ -186,69 +179,7 @@
             });
         }
 
-        // var locList = [
-        //   '영등포본동',
-        //   '영등포동',
-        //   '여의동',
-        //   '당산1동',
-        //   '당산2동',
-        //   '도림동',
-        //   '문래동',
-        //   '양평1동',
-        //   '양평2동',
-        //   '신길1동',
-        //   '신길2동',
-        //   '신길3동',
-        //   '신길4동',
-        //   '신길5동',
-        //   '신길6동',
-        //   '신길7동',
-        //   '대림1동',
-        //   '대림2동',
-        // ];
-
-        // $(document).ready(function () {
-        //   // input필드에 자동완성 기능을 걸어준다
-        //   $('#inputSearch').autocomplete({
-        //     source: locList,
-        //     focus: function (event, ui) {
-        //       return false;
-        //     },
-        //     select: function (event, ui) { },
-        //     minLength: 1,
-        //     delay: 100,
-        //     autoFocus: true,
-        //   });
-        // });
-        // $("#inputSearch").autocomplete({
-        //   source: function (request, response) {
-        //     $.ajax({
-        //       url: stat_path + "/locList",
-        //       type: "POST",
-        //       dataType: "json",
-        //       data: { value: request.term },
-        //       success: function (data) {
-        //         response(
-        //           $.map(data, function (item) {
-        //             return {
-        //               label: item.AREA_NAME,
-        //               value: item.AREA_NAME,
-        //               idx: item.IDX,
-        //             }
-        //           })
-        //         )
-        //       }
-        //     })
-        //   },
-        //   focus: function (event, ui) {
-        //     return false;
-        //   },
-        //   select: function (event, ui) {
-        //     console.log(ui.item.idx)
-        //   },
-        //   delay: 100,
-        //   autoFocus: true
-        // });
+       
 
       </script>
 </body>

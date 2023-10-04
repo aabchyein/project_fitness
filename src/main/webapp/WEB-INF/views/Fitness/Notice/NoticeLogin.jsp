@@ -30,38 +30,12 @@
             request.getAttribute("result"); %>
             <h1 style="text-align: center; margin-top: 1cm; margin-bottom: 1cm;"><strong>게시판</strong></h1>
             <div class="container">
-              <div class="row m-auto justify-content-center">
-                    <div class="col-md-6">
-                      <form>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <select class="btn btn-outline-secondary custom-select" type="button" id="search-option"
-                              name="search">
-                              <option value="choose">선택</option>
-                              <option value="NOTICE_TITLE" <%=(searchStr.equals("NOTICE_TITLE")) ? "selected" : "" %>>제목
-                              </option>
-                              <option value="NOTICE_CONTENTS" <%=(searchStr.equals("NOTICE_CONTENTS")) ? "selected" : ""
-                                %>>내용</option>
-                              <option value="ID" <%=(searchStr.equals("ID")) ? "selected" : "" %>>작성자</option>
-                            </select>
-                          </div>
-                          <input type="text" class="form-control" name="words"
-                            value='<%= params.getOrDefault("words", "") %>' placeholder="검색어를 입력하세요"
-                            id="keydownEnter" />
-                          <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit" formaction="" formmethod="get"
-                              onclick="comOption()">검색</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                </div>
-              </div>              
+             
 
               <!-- 테이블 -->
               <div class="text-center container">
                 <div class="justify-content-between row p-5 m-3 h6 text-start">
-                  <div class="col">
+                  <div class="row">
                     <table class="table">
                       <thead>
                         <tr>
@@ -97,6 +71,32 @@
                           <% } %>
                       </tbody>
                     </table>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-md-6">
+                    <form>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <select class="btn btn-outline-secondary custom-select" type="button" id="search-option"
+                            name="search">
+                            <option value="choose">선택</option>
+                            <option value="NOTICE_TITLE" <%=(searchStr.equals("NOTICE_TITLE")) ? "selected" : "" %>>제목
+                            </option>
+                            <option value="NOTICE_CONTENTS" <%=(searchStr.equals("NOTICE_CONTENTS")) ? "selected" : ""
+                              %>>내용</option>
+                            <option value="ID" <%=(searchStr.equals("ID")) ? "selected" : "" %>>작성자</option>
+                          </select>
+                        </div>
+                        <input type="text" class="form-control" name="words"
+                          value='<%= params.getOrDefault("words", "") %>' placeholder="검색어를 입력하세요"
+                          id="keydownEnter" />
+                        <div class="input-group-append">
+                          <button class="btn btn-primary" type="submit" formaction="" formmethod="get"
+                            onclick="comOption()">검색</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
                   </div>
                   <!-- 글작성 버튼 -->
                   <sec:authorize access="isAuthenticated()">

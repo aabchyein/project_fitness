@@ -44,14 +44,15 @@
     <!-- 검색 with pagination -->
 	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
         SELECT *
-        FROM db_fitness.board
-        WHERE 1 = 1
+        from board
+        inner join board_answer
+        on board.board_id = board_answer.BOARD_ID
         <choose>
             <when test="search == 'ID'">
-            and ID like CONCAT(#{words}, '%')
+            and board.ID like CONCAT(#{words}, '%')
             </when>
             <when test="search == 'TITLE'">
-            and TITLE like CONCAT(#{words}, '%')
+            and board.TITLE like CONCAT(#{words}, '%')
             </when>
         </choose>  
         limit #{pageBegin}, #{pageScale} 
@@ -61,13 +62,15 @@
     <!-- total count -->
 	<select id="selectTotal" parameterType="Map" resultType="int">
         select count(*) as cnt
-        from db_fitness.board
+        from board
+        inner join board_answer
+        on board.board_id = board_answer.BOARD_ID
          <choose>
             <when test="search == 'ID'">
-            and ID like CONCAT(#{words}, '%')
+            and board.ID like CONCAT(#{words}, '%')
             </when>
             <when test="search == 'TITLE'">
-            and TITLE like CONCAT(#{words}, '%')
+            and board.TITLE like CONCAT(#{words}, '%')
             </when>
         </choose> 
         ;

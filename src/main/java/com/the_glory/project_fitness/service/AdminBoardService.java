@@ -23,7 +23,7 @@ public class AdminBoardService {
         String sqlMapId = "AdminBoard.selectAll";
         HashMap result = new HashMap<>();
         result.putAll(this.selectSearchWithPagination(dataMap));
-        result.put("resultList", sharedDao.getList(sqlMapId, dataMap));
+        // result.put("resultList", sharedDao.getList(sqlMapId, dataMap));
         // result.put("resultList", this.selectSearch(dataMap));
         // HashMap result1 = new HashMap<>();
         // result1.putAll(this.selectSearchWithPagination(dataMap));
