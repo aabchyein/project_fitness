@@ -41,19 +41,16 @@ public class NoticeLoginController {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeLogin.jsp");
         return modelAndView;
     }
+    @GetMapping({ "/noticmemoDetail/{BOARD_ID}" })
+    public ModelAndView selectDetail(@PathVariable String BOARD_ID, @RequestParam Map params, ModelAndView modelAndView) {
+        Object record = noticeService.selectDetail(BOARD_ID, params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("record", record);
 
-    // @GetMapping("/Noticelogin2")
-    // public ModelAndView selectSearch(@RequestParam Map params, ModelAndView modelAndView) {
-    //     Object result = noticeService.selectSearch(params);
-    //     //Object result = commonService.selectAll(params);
-
-    //     HashMap rtnTmp = new HashMap<>();
-    //     rtnTmp.put("resultList", result);
-
-    //     modelAndView.addObject("params", params);
-    //     modelAndView.addObject("result", result);
-
-    //     modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
-    //     return modelAndView;
-    // }
+        // modelAndView.addObject("params", "result");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeMemoDetail.jsp");
+        return modelAndView;
+    }
+   
 }

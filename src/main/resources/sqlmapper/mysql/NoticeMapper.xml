@@ -59,7 +59,8 @@
             <when test="search == 'ID'">
             and ID like CONCAT('%', #{words}, '%')
             </when>
-        </choose>  
+        </choose>
+        ;  
 	</select>
 
     <!-- 입력 -->

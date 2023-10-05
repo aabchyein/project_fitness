@@ -47,8 +47,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <% ArrayList resultList=(ArrayList)result.get("resultList"); for(int i=0; i < resultList.size();
-                          i=i+1){ HashMap record=(HashMap)resultList.get(i); %>
+                        <% ArrayList resultList=(ArrayList)result.get("resultList"); 
+                        for(int i=0; i < resultList.size();i=i+1) { 
+                          HashMap record=(HashMap)resultList.get(i); %>
                           <tr>
                             <td>
                               <%= i+1 %>
