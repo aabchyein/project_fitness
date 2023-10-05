@@ -24,6 +24,7 @@ public class AdminPageController {
     public ModelAndView selectAll(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = adminpageService.selectAll(params);
         modelAndView.addObject("result", result);
+        modelAndView.addObject("params", params);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/AdminPage.jsp");
         return modelAndView;
     }

@@ -31,4 +31,43 @@
         values
         (#{UNIQUE_ID},#{ID});
     </insert>
+
+    <select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM member_information AS mem
+            INNER JOIN board
+            ON mem.ID = board.ID
+            INNER JOIN board_answer
+            ON board.BOARD_ID = board_answer.BOARD_ID
+        <choose>
+            <when test="search == 'NAME'">
+            and mem.NAME like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ID'">
+            and mem.ID like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>  
+        limit #{pageBegin}, #{pageScale}
+        ;
+	</select>
+
+        <!-- 전체 검색 -->
+	<select id="selectTotal" parameterType="Map" resultType="int">
+        select count(*) as cnt
+        FROM member_information AS mem
+            INNER JOIN board
+            ON mem.ID = board.ID
+            INNER JOIN board_answer
+            ON board.BOARD_ID = board_answer.BOARD_ID
+        <choose>
+            <when test="search == 'NAME'">
+            and mem.NAME like CONCAT('%', #{words}, '%')
+            </when>
+            <when test="search == 'ID'">
+            and mem.ID like CONCAT('%', #{words}, '%')
+            </when>
+        </choose>  
+        where 1 = 1       
+        ;
+	</select>
 </mapper>

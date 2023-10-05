@@ -16,7 +16,6 @@ public class AdminReserveService {
 
     // 예약 정보 조회
     public Object reserveSelectAll(Map params) {
-        String sqlMapId = "AdminReserve.reserveselectAll";
 
         Object result = this.pagination(params);
         return result;

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.util.HashMap, java.util.ArrayList" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList, com.the_glory.project_fitness.utils.Paginations" %>
         <!DOCTYPE html>
         <html lang="en">
 
@@ -63,9 +63,10 @@
                                     </thead>
                                     <tbody>
                                         <%
-                                        ArrayList List=(ArrayList)request.getAttribute("result");
-                                        for(int i=0; i < List.size(); i=i+1) {
-                                            HashMap record=(HashMap) List.get(i);
+                                        HashMap list=(HashMap)request.getAttribute("result");
+                                        ArrayList lists = (ArrayList)list.get("resultList");
+                                        for(int i=0; i < lists.size(); i=i+1) {
+                                            HashMap record=(HashMap) lists.get(i);
                                         %>
                                         <form>
                                             <input type="hidden" name="ID" value='<%= record.get("ID") %>'>
@@ -93,26 +94,71 @@
                                         <% } %>
                                     </tbody>
                                 </table>
+                                <% String searchStr=(String)
+                                list.getOrDefault("search", "" );
+                                %>
+                                <div class="container mt-3">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-6">
+                                            <form>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <select class="btn btn-outline-secondary custom-select"
+                                                            type="button" id="search-option" name="search">
+                                                            <option value="choose">선택</option>
+                                                            <option value="NAME"
+                                                                <%=(searchStr.equals("NAME")) ? "selected" : ""
+                                                                %>
+                                                                >이름
+                                                            </option>
+                                                            <option value="ID" <%=(searchStr.equals("ID")) ? "selected"
+                                                                : "" %>>아이디</option>
+                                                        </select>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="words"
+                                                        placeholder="아이디 또는 이름을 검색하세요." id="search-input">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary" type="submit"
+                                                            formaction="/adminPage" formmethod="get">검색</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- 페이지 넘어가는 표시 -->
-                            <div class="text-center mt-4">
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&lt;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&gt;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <% Paginations paginations=(Paginations)list.get("paginations"); %>
+                            <% if ( paginations !=null){ %>
+                                <div>
+                                    <div class="text-center mt-4">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                    href='/adminPage?currentPage=<%= paginations.getPreviousPage() %>&search=<%= list.getOrDefault("search", "") %>&words=<%= list.getOrDefault("words", "") %>'>Previous</a>
+                                                </a>
+                                            </li>
+
+                                            <% for(int i=paginations.getBlockStart();i <=paginations.getBlockEnd();
+                                                i=i+1){ %>
+                                                <li class="page-item">
+                                                    <a class="page-link"
+                                                        href='/adminPage?currentPage=<%= i %>&search=<%= list.getOrDefault("search", "") %>&words=<%= list.getOrDefault("words", "") %>'>
+                                                        <%= i %>
+                                                    </a>
+                                                </li>
+                                                <% } %>
+                                                    <li class="page-item">
+                                                        <a class="page-link"
+                                                            href='/adminPage?currentPage=<%= paginations.getNextPage() %>&search=<%= list.getOrDefault("search", "") %>&words=<%= list.getOrDefault("words", "") %>'>Next</a>
+                                                        </a>
+                                                    </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <% } else { %>
+                                    <% } %>
                         </div>
                     </div>
                 </div>
