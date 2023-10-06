@@ -40,20 +40,21 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th style="width: 10%;"><strong>번호</strong></th>
-                          <th style="width: 40%;"><strong>공지사항</strong></th>
+                          <th style="width: 10%;"><strong></strong></th>
+                          <th style="width: 40%;"><strong>제목</strong></th>
                           <th style="width: 20%;">작성자</th>
                           <th style="width: 20%;">날짜</th>
                           <th style="width: 20%;">조회수</th>
                         </tr>
                       </thead>
                       <tbody>
+                        <!-- 공시사항 출력부분 -->
                         <% ArrayList resultList=(ArrayList)result.get("resultList"); 
                         for(int i=0; i < resultList.size();i=i+1) { 
                           HashMap record=(HashMap)resultList.get(i); %>
                           <tr>
                             <td>
-                              <%= i+1 %>
+                              <strong>공지사항</strong> 
                             </td>
                             <td>
                               <a href='/guest/boardmemoDetail/<%= record.get("NOTICE_ID") %>'>
@@ -71,13 +72,7 @@
                             </td>
                           </tr>
                           <% } %>
-                          <tr>
-                            <th style="width: 10%;"><strong>번호</strong></th>
-                            <th style="width: 40%;"><strong>제목</strong></th>
-                            <th style="width: 20%;">작성자</th>
-                            <th style="width: 20%;">날짜</th>
-                            <th style="width: 20%;">조회수</th>
-                          </tr>
+                          <!-- 게시물 출력부분 -->
                           <% 
                           ArrayList List=(ArrayList)result1.get("resultList"); 
                           for(int i=0; i < List.size();i=i+1) { 

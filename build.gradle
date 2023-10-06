@@ -30,6 +30,7 @@ dependencies {
 	// spring-boot-security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.security:spring-security-taglibs'
+	implementation 'com.google.code.gson:gson:2.8.7'
 
 }
 

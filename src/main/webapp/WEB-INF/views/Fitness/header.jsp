@@ -53,6 +53,7 @@
                   <div class="dropdown-menu" aria-labelledby="loginDropdown">
                     <a class="dropdown-item" href="/Logout">로그아웃</a>
                     <a class="dropdown-item" href="/mypage?ID=${userDetailsBean.username}">마이페이지</a>
+                  </div>
               </sec:authorize>
               <sec:authorize access=" hasRole('ROLE_ADMIN')" >
                 <li class="nav-item">

@@ -29,6 +29,9 @@
                                         <a href="/" class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
                                     </li>
                                     <li class="d-flex align-items-center">
+                                        <a href="/charts/google_charts_scatter" class="text-decoration-none nav-link">차트 관리</a>
+                                    </li>
+                                    <li class="d-flex align-items-center">
                                         <a href="/adminPage" class="text-decoration-none nav-link">회원 관리</a>
                                     </li>
                                     <li class="d-flex align-items-center">
