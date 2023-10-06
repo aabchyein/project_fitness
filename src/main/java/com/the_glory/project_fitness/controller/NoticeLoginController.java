@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.the_glory.project_fitness.service.AdminBoardService;
 import com.the_glory.project_fitness.service.CarInforsService;
 import com.the_glory.project_fitness.service.CommonService;
 import com.the_glory.project_fitness.service.NoticeService;
@@ -23,6 +24,9 @@ import com.the_glory.project_fitness.service.NoticeService;
 public class NoticeLoginController {
     @Autowired
     NoticeService noticeService;
+
+    @Autowired
+    AdminBoardService adminBoardService;
 
     @GetMapping({"/Noticelogin1"})
     public ModelAndView main(ModelAndView modelAndView) {
@@ -34,16 +38,18 @@ public class NoticeLoginController {
     @GetMapping({"/Noticelogin"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
         Object result = noticeService.selectSearch(params);
+        Object result1 = adminBoardService.selectboard(params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("result", result);
+        modelAndView.addObject("board", result1);
         
         // modelAndView.addObject("params", "result");
         modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeLogin.jsp");
         return modelAndView;
     }
-    @GetMapping({ "/noticmemoDetail/{BOARD_ID}" })
+    @GetMapping({ "/noticememoDetail/{BOARD_ID}" })
     public ModelAndView selectDetail(@PathVariable String BOARD_ID, @RequestParam Map params, ModelAndView modelAndView) {
-        Object record = noticeService.selectDetail(BOARD_ID, params);
+        Object record = adminBoardService.selectDetail(BOARD_ID, params);
         modelAndView.addObject("params", params);
         modelAndView.addObject("record", record);
 
@@ -52,5 +58,15 @@ public class NoticeLoginController {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeMemoDetail.jsp");
         return modelAndView;
     }
-   
+    @PostMapping("/insertAndSelect")
+    public ModelAndView insertAndSelect(@RequestParam Map params, ModelAndView modelAndView) {
+        adminBoardService.insert(params);
+        Object result = noticeService.selectSearch(params);
+        Object result1 = adminBoardService.selectboard(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+        modelAndView.addObject("board", result1);
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeLogin.jsp");
+        return modelAndView;
+    }
 }

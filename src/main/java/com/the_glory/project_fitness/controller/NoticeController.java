@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.the_glory.project_fitness.service.AdminBoardService;
 import com.the_glory.project_fitness.service.NoticeService;
 
 @Controller
@@ -21,6 +22,10 @@ import com.the_glory.project_fitness.service.NoticeService;
 public class NoticeController {
     @Autowired
     NoticeService noticeService;
+    
+     @Autowired
+    AdminBoardService adminBoardService;
+
 
     @GetMapping({"/Notice"})
     public ModelAndView main(@RequestParam Map params, ModelAndView modelAndView) {
@@ -49,4 +54,27 @@ public class NoticeController {
         return modelAndView;
     }
 
+    @GetMapping({ "/noticememo" })
+    public ModelAndView Noticememo(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.selectAll(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        // modelAndView.addObject("params", "result");
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Notice/NoticeMemo.jsp");
+        return modelAndView;
+    }
+
+    @PostMapping("/memoinsertAndSelectSearch")
+    public ModelAndView insertAndSelectSearch(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = noticeService.insertAndSelectSearch(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        // modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        modelAndView.setViewName("/WEB-INF/views/Fitness/Admin/Admin_notice.jsp");
+        return modelAndView;
+    }
+    
 }

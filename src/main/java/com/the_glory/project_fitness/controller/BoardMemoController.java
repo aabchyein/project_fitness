@@ -58,4 +58,6 @@ public class BoardMemoController {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Board/BoardMemoDetail.jsp");
         return modelAndView;
     }
+  
+
 }

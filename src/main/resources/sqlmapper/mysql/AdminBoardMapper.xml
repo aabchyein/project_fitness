@@ -15,13 +15,19 @@
  
     ;  
 	</select>
+    <select id="selectboard" parameterType="Map" resultType="Map">
+    select *
+    from board
+	where 1=1
+    ;  
+	</select>
 
       <!-- 입력 버튼  -->
 	<insert id="insert" parameterType="Map" >
         insert into db_fitness.board
         (NUMBER, ID, TITLE,CONTENTS, DATE,VIEWS,BOARD_ID)
         values
-        (#{NUMBER}, #{ID}, #{TITLE},  #{CONTENTS}, #{DATE},#{VIEWS} ,#{BOARD_ID})
+        ('1', #{ID}, #{TITLE},  #{CONTENTS}, now(),#{VIEWS} ,#{BOARD_ID})
     </insert>
 
 
@@ -108,6 +114,47 @@
             </when>
       
         </choose>  
+	</select> 
+
+    <select id="selectDetail" parameterType="Map" resultType="Map">
+    SELECT * 
+    FROM db_fitness.board
+    where BOARD_ID = #{BOARD_ID}
+    ; 
+	</select>
+
+    <!-- 게시판용 -->
+     <!-- 검색 with pagination -->
+	<select id="selectSearchWithPagination2" parameterType="Map" resultType="Map">
+        SELECT *
+        from board
+        where 1 =1
+        <choose>
+            <when test="search == 'ID'">
+            and ID like CONCAT(#{words}, '%')
+            </when>
+            <when test="search == 'TITLE'">
+            and TITLE like CONCAT(#{words}, '%')
+            </when>
+        </choose>  
+        limit #{pageBegin}, #{pageScale} 
+        ;
+	</select>
+
+    <!-- total count -->
+	<select id="selectTotal2" parameterType="Map" resultType="int">
+        select count(*) as cnt
+        from board
+         where 1 =1
+         <choose>
+            <when test="search == 'ID'">
+            and ID like CONCAT(#{words}, '%')
+            </when>
+            <when test="search == 'TITLE'">
+            and TITLE like CONCAT(#{words}, '%')
+            </when>
+        </choose> 
+        ;
 	</select> 
 
  </mapper>

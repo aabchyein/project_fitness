@@ -27,20 +27,21 @@
 
           <% HashMap params=(HashMap) request.getAttribute("params"); String
             searchStr=(String)params.getOrDefault("search", "" ); HashMap result=(HashMap)
-            request.getAttribute("result"); %>
+            request.getAttribute("result");
+            HashMap result1 = (HashMap)request.getAttribute("board"); %>
             <h1 style="text-align: center; margin-top: 1cm; margin-bottom: 1cm;"><strong>게시판</strong></h1>
             <div class="container">
              
 
               <!-- 테이블 -->
               <div class="text-center container">
-                <div class="justify-content-between row p-5 m-3 h6 text-start">
+                <div class="justify-content-between row p-1 m-3 h6 text-start">
                   <div class="row">
                     <table class="table">
                       <thead>
                         <tr>
                           <th style="width: 10%;"><strong>번호</strong></th>
-                          <th style="width: 40%;"><strong>제목</strong></th>
+                          <th style="width: 40%;"><strong>공지사항</strong></th>
                           <th style="width: 20%;">작성자</th>
                           <th style="width: 20%;">날짜</th>
                           <th style="width: 20%;">조회수</th>
@@ -70,8 +71,46 @@
                             </td>
                           </tr>
                           <% } %>
+                          <tr>
+                            <th style="width: 10%;"><strong>번호</strong></th>
+                            <th style="width: 40%;"><strong>제목</strong></th>
+                            <th style="width: 20%;">작성자</th>
+                            <th style="width: 20%;">날짜</th>
+                            <th style="width: 20%;">조회수</th>
+                          </tr>
+                          <% 
+                          ArrayList List=(ArrayList)result1.get("resultList"); 
+                          for(int i=0; i < List.size();i=i+1) { 
+                          HashMap board=(HashMap)List.get(i); %>
+                          <tr>
+                            <td>
+                              <%= i+1 %>
+                            </td>
+                            <td>
+                              <a href='/noticememoDetail/<%= board.get("BOARD_ID") %>'>
+                                <%= board.get("TITLE") %>
+                              </a>
+                            </td>
+                            <td>
+                              <%= board.get("ID") %>
+                            </td>
+                            <td>
+                              <%= board.get("DATE") %>
+                            </td>
+                            <td>
+                              <%= board.get("VIEWS") %>
+                            </td>
+                          </tr>
+                          <% } %>
                       </tbody>
                     </table>
+                  </div>
+                  <div class="row justify-content-end m-2">
+                  <sec:authorize access="isAuthenticated()">
+                    <div class="">
+                      <a href="/notice/noticememo" class="btn btn-outline-success">글작성</a>
+                    </div>
+                  </sec:authorize>
                   </div>
                   <div class="row justify-content-center">
                     <div class="col-md-6">
@@ -81,9 +120,9 @@
                           <select class="btn btn-outline-secondary custom-select" type="button" id="search-option"
                             name="search">
                             <option value="choose">선택</option>
-                            <option value="NOTICE_TITLE" <%=(searchStr.equals("NOTICE_TITLE")) ? "selected" : "" %>>제목
+                            <option value="TITLE" <%=(searchStr.equals("TITLE")) ? "selected" : "" %>>제목
                             </option>
-                            <option value="NOTICE_CONTENTS" <%=(searchStr.equals("NOTICE_CONTENTS")) ? "selected" : ""
+                            <option value="CONTENTS" <%=(searchStr.equals("CONTENTS")) ? "selected" : ""
                               %>>내용</option>
                             <option value="ID" <%=(searchStr.equals("ID")) ? "selected" : "" %>>작성자</option>
                           </select>
@@ -100,14 +139,12 @@
                   </div>
                   </div>
                   <!-- 글작성 버튼 -->
-                  <sec:authorize access="isAuthenticated()">
-                    
-                  </sec:authorize>
+                  
                 </div>
               </div>
 
               <!-- 페이지 넘어가는 표시 -->
-              <% Paginations paginations=(Paginations)result.get("paginations"); %>
+              <% Paginations paginations=(Paginations)result1.get("paginations"); %>
                 <div class="text-center mt-4">
                   <ul class="pagination justify-content-center">
                     <li class="page-item">
