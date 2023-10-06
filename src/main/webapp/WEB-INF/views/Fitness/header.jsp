@@ -45,7 +45,7 @@
               </sec:authorize>
               <sec:authorize access="isAuthenticated()">
                 <li class="nav-link">
-                 환영합니다. ${userDetailsBean.memberName} 님
+                 ${userDetailsBean.username} 님
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="" id="loginDropdown" role="button" data-toggle="dropdown"

@@ -90,7 +90,7 @@
                                                 </td>
                                                 <td class="admin-actions">
                                                     <button class="btn btn-secondary" id="" formaction="/adminPageDetail" formmethod="get">조회</button>
-                                                    <button class="btn btn-danger" formaction="/adminPageDelete" formmethod="get">삭제</button>
+                                                    <!-- <button class="btn btn-danger" formaction="/adminPageDelete" formmethod="get">삭제</button> -->
                                                 </td>
                                             </tr>
                                         </form>

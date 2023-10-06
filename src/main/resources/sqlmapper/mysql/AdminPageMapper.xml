@@ -34,11 +34,9 @@
 
     <select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
         SELECT * 
-        FROM member_information AS mem
-            INNER JOIN board
-            ON mem.ID = board.ID
-            INNER JOIN board_answer
-            ON board.BOARD_ID = board_answer.BOARD_ID
+        FROM member_information as mem
+    	INNER JOIN gender as gen
+        ON mem.gender_id = gen.gender_id
         <choose>
             <when test="search == 'NAME'">
             and mem.NAME like CONCAT('%', #{words}, '%')
@@ -54,11 +52,9 @@
         <!-- 전체 검색 -->
 	<select id="selectTotal" parameterType="Map" resultType="int">
         select count(*) as cnt
-        FROM member_information AS mem
-            INNER JOIN board
-            ON mem.ID = board.ID
-            INNER JOIN board_answer
-            ON board.BOARD_ID = board_answer.BOARD_ID
+        FROM member_information as mem
+    	INNER JOIN gender as gen
+        ON mem.gender_id = gen.gender_id
         <choose>
             <when test="search == 'NAME'">
             and mem.NAME like CONCAT('%', #{words}, '%')
