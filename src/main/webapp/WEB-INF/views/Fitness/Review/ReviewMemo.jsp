@@ -36,7 +36,7 @@
                   <label for="id">
                     <h4> ${userDetailsBean.memberName} 님</h4>
                   </label>
-                  <input class="form-control" type="hidden" name="ID" id="id" value="${userDetailsBean.memberName}"
+                  <input class="form-control" type="hidden" name="ID" id="id" value="${userDetailsBean.username}"
                     required>
                 </div>
                 <form action="">
