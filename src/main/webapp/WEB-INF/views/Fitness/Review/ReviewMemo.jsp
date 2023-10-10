@@ -34,10 +34,10 @@
 
                 <div class="form-group">
                   <label for="id">
-                    <h4> ${userDetailsBean.memberName} 님</h4>
+                    <h4> ${userDetailsBean.username} 님</h4>
                   </label>
-                  <input class="form-control" type="hidden" name="ID" id="id" value="${userDetailsBean.username}"
-                    required>
+                  <!-- <input class="form-control" type="hidden" name="ID" id="id" value="${userDetailsBean.username}"
+                    required> -->
                 </div>
                 <form action="">
                   <div class="form-group mt-3 row">
@@ -98,7 +98,7 @@
                     <div class="col-md-12 text-center">
                   
                       <input type="hidden" name="REVIEW_ID" value="<%= uuid %>">
-                      <input type="hidden" name="ID" value="${userDetailsBean.memberName}">
+                      <input type="hidden" name="ID" value="${userDetailsBean.username}">
                       <button type="submit" class="btn btn-primary">작성 완료</button>
                     </div>
                   </div>
