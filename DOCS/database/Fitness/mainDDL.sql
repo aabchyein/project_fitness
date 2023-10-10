@@ -42,7 +42,7 @@ CREATE TABLE COMMONS_CODE
   ATTRIBUTION_1         varchar(60)   NULL     COMMENT '속성_1',
   ATTRIBUTION_2         varchar(60)   NULL     COMMENT '속성_2',
   DESCRIPTION           varchar(1000) NULL     COMMENT '코드설명',
-  SYSTEM_CODE_YN        varchar(40)   NOT NULL DEFAULT N COMMENT '초기 시스템 코드 여부',
+  SYSTEM_CODE_YN        varchar(40)   NOT NULL DEFAULT 'N' COMMENT '초기 시스템 코드 여부',
   USE_YN                varchar(40)   NOT NULL COMMENT '사용 여부',
   REGISTER_SEQ          varchar(50)   NOT NULL COMMENT '등록자SEQ',
   REGISTRY_DATE         varchar(20)   NOT NULL COMMENT '등록일자',
@@ -71,7 +71,7 @@ CREATE TABLE GENDER
 
 CREATE TABLE LOCAL_HUMAN
 (
-  LOCAL_NAME  VARBINARY(50) NOT NULL COMMENT '지역',
+  LOCAL_NAME  VARCHAR(100) NOT NULL COMMENT '지역',
   HUMAN_COUNT INTEGER       NOT NULL COMMENT '인구수'
 ) COMMENT '지역별인구';
 
