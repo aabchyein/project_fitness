@@ -136,6 +136,8 @@
                 let lineChart = new google.visualization.LineChart(document.querySelector('#lineChart'));
                 lineChart.draw(lineData, lineOptions);
             }
+            // var jsonString = '[{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]';
+            // var jsonArray = JSON.parse(jsonString); json을 array 형식 변환. 
 
             // Coordinates and Location Names
             let locations = [
