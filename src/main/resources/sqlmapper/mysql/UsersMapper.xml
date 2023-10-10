@@ -10,9 +10,9 @@
     <!-- 입력 -->
         <insert id="insert" parameterType="Map">
          insert into member_information
-        (NAME,ID,PASSWORD,BIRTHDATE,PHONE_NUMBER,EMAIL_ADDRESS,ADDRESS,GENDER_ID)
+        (NAME,ID,PASSWORD,BIRTHDATE,PHONE_NUMBER,EMAIL_ADDRESS,ADDRESS,GENDER_ID,JOIN_DATE)
         values
-        (#{NAME},#{ID},#{PASSWORD},#{BIRTHDATE},#{PHONE_NUMBER},#{EMAIL_ADDRESS},#{ADDRESS},#{GENDER_ID});
+        (#{NAME},#{ID},#{PASSWORD},#{BIRTHDATE},#{PHONE_NUMBER},#{EMAIL_ADDRESS},#{ADDRESS},#{GENDER_ID}, now());
         </insert>
 
 </mapper>
