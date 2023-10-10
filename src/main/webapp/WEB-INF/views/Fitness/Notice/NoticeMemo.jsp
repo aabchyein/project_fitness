@@ -27,8 +27,8 @@
       String uuid = uniqueid.generatUuid(); %>
       <input type="hidden" name="BOARD_ID" value="<%= uuid %>">
       <div class="form-group mt-4">
-        <label for="author" ><h3>작성자 : ${userDetailsBean.memberName} 님</h3></label>
-        <input type="hidden" class="form-control" name="ID" id="author" value="${userDetailsBean.memberName}">
+        <label for="author" ><h3>작성자 : ${userDetailsBean.username} 님</h3></label>
+        <input type="hidden" class="form-control" name="ID" id="author" value="${userDetailsBean.username}">
       </div>
       <div>
         <input type="hidden" name="DATE">
