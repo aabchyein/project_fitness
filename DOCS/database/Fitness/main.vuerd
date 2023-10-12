@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -155,
-    "scrollLeft": -172,
-    "zoomLevel": 1,
+    "scrollTop": -186,
+    "scrollLeft": -76,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -1622,7 +1622,7 @@
         "id": "55d16cfc-f8bf-458d-9bb9-4f60bd2a8073"
       },
       {
-        "name": "LOCAL_HUMAN",
+        "name": "TOTAL_PEOPLE",
         "comment": "지역별인구",
         "columns": [
           {
@@ -1649,7 +1649,7 @@
             "id": "011ebada-468e-4314-b57d-3b58d5e1c94f"
           },
           {
-            "name": "HUMAN_COUNT",
+            "name": "POEPLE_COUNT",
             "comment": "인구수",
             "dataType": "INTEGER",
             "default": "",
@@ -1664,7 +1664,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 103.11181640625,
+              "widthName": 107.47265625,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
@@ -1674,14 +1674,99 @@
         ],
         "ui": {
           "active": false,
-          "left": 15,
-          "top": 342,
-          "zIndex": 8,
-          "widthName": 99.525390625,
+          "left": 16.1111,
+          "top": 259.7783,
+          "zIndex": 46,
+          "widthName": 101.9501953125,
           "widthComment": 67
         },
         "visible": true,
         "id": "c7cb26a2-a8da-4038-b0dd-f2af3f88a822"
+      },
+      {
+        "name": "COUNT_TABLE",
+        "comment": "지역별 인구&업체수",
+        "columns": [
+          {
+            "name": "LOCAL",
+            "comment": "지역",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "ab855575-492c-4252-a255-833b33b6170f"
+          },
+          {
+            "name": "POEPLE_COUNT",
+            "comment": "인구수",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 107.47265625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "296c3f9e-dde6-4eb9-b50a-4ee62b4af728"
+          },
+          {
+            "name": "COMPANY_COUNT",
+            "comment": "업체수",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 120.21240234375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e3ca7296-b33f-44f5-b4f5-79626e44595c"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 29.3334,
+          "top": 407.1113,
+          "zIndex": 64,
+          "widthName": 95.666015625,
+          "widthComment": 118.28271484375
+        },
+        "visible": true,
+        "id": "311e002b-3ca6-4820-bb25-21d59b8b42b6"
       }
     ],
     "indexes": []
