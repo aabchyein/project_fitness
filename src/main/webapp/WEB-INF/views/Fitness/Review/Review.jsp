@@ -63,11 +63,14 @@
                       <th>리뷰</th>
                       <th>작성자</th>
                       <th>별점</th>
+                      <th>sentiment</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <% HashMap list=(HashMap) request.getAttribute("result"); ArrayList map=(ArrayList)
-                      list.get("resultList"); for(int i=0; i < map.size(); i=i+1) { HashMap record=(HashMap) map.get(i);
+                    <% HashMap list=(HashMap) request.getAttribute("result"); 
+                    ArrayList map=(ArrayList) list.get("resultList"); 
+                    for(int i=0; i < map.size(); i=i+1) { 
+                      HashMap record=(HashMap) map.get(i);
                       %>
                       <tr>
                         <td>
@@ -99,6 +102,9 @@
                                           <% } %>
                             </div>
                         </td>
+                        <td>
+                          <div id="resultDisplay"></div>
+                        </td>
                       </tr>
                       <% } %>
                   </tbody>
@@ -106,6 +112,9 @@
               </div>
               <!-- 글작성 버튼 -->
               <sec:authorize access="isAuthenticated()">
+                <div class="text-start">
+                  <button type="submit" id="predict">sentiment</button>
+                </div>
                 <div class="container text-end">
                   <a href="/CompanyNameSearch" class="btn btn-secondary">글작성</a>
                 </div>
@@ -149,7 +158,6 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-                <script src="/src/main/resources/static/js/review.js"></script>
+                <script src="/js/review.js"></script>
       </body>
-
       </html>

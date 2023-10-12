@@ -1,4 +1,4 @@
-  
+
 let predictObject = document.querySelector('#predict') // id:#, class:. , tag:그대로 사용
 predictObject.addEventListener('click', (event)=>{
     event.preventDefault();  // submit 정지
@@ -11,7 +11,11 @@ predictObject.addEventListener('click', (event)=>{
 
     // request backend and then return dict (html의 특정태그만 갱신하고자 함)
     fetch('http://127.0.0.1:8000/api_v1/sentimentmachine', {
-     
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(request_dict)
    })
    .then(response => response.json())
    .then(data => {   //data는 dictionary 형태가 들어있음
@@ -27,3 +31,4 @@ predictObject.addEventListener('click', (event)=>{
    .catch(error => console.error(error));
 
 });
+

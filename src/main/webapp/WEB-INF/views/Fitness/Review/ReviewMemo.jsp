@@ -63,11 +63,16 @@
                       <% }%>
                     </select>
                   </div>
+                  <form action="">
                   <div class="form-group mt-3">
                     <label for="editor">내용</label>
-                    <div class="form-control" id="editor" rows="5"style="height: 150px;" class="form-control" ></div>
-                    <input type="hidden" name="REVIEW" id="contentInput" />
+                    <input  class="form-control" type="text" name="REVIEW" id="contentInput" rows="5"style="height: 150px;" class="form-control" >
                   </div>
+                  <div class="text-end mt-3">
+                    <button type="submit" class="btn btn-secondary" id="predict">sentiment</button>
+                    <div name="sentiment" id="resultDisplay"></div>
+                  </div>
+                 </form>
                   <div class="form-group  mt-3">
                     <label for="rating">
                       <h4>별점</h4>
@@ -114,7 +119,7 @@
 
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
             <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-            <script>
+            <!-- <script>
                 var quill = new Quill('#editor', {
                     theme: 'snow'
                 });
@@ -128,7 +133,7 @@
                     contentInput.value = quill.root.innerHTML;
                     return true;
                 };
-            </script>
+            </script> -->
 
       
       <script>
@@ -162,7 +167,7 @@
             })
             .then(data => {
               // JSON 응답을 받아서 배열에 저장
-              var list = data; // JSON 데이터가 배열로 저장됩니다.
+              var list = JSON.parse(data); // JSON 데이터가 배열로 저장됩니다.
 
               // list 배열을 사용하여 작업을 수행할 수 있습니다.
               console.log(list); // 예를 들어, 배열을 콘솔에 출력
@@ -178,9 +183,43 @@
               console.error('There was a problem with the fetch operation:', error);
             });
         }
-
-       
-
       </script>
+      <!-- <script>
+        let predictObject = document.querySelector('#predict') // id:#, class:. , tag:그대로 사용
+        predictObject.addEventListener('click', (event)=>{
+            event.preventDefault();  // submit 정지
+      
+            // 서버로 보낼 데이터 준비
+            let comment = document.querySelector('#contentInput').value;
+        
+            let request_dict = {"reviews":comment};
+            // console.log(`request_dict : ${request_dict}`);
+        
+            // request backend and then return dict (html의 특정태그만 갱신하고자 함)
+            fetch('http://127.0.0.1:8000/api_v1/sentimentmachine', {
+             method: 'POST',
+             headers: {
+               'Content-Type': 'application/json'
+             },
+             body: JSON.stringify(request_dict)
+           })
+           .then(response => response.json())
+           .then(data => {   //data는 dictionary 형태가 들어있음
+                console.log(data)
+                const answer = data.sentiment;
+                // const sentimentResult = data.sentiment
+                // // 여기에서 페이지를 다른 jsp 파일로 이동
+                // window.location.href = '/Review?sentiment=' + sentimentResult; // 이동하려는 JSP 파일의 경로
+      
+                // Display the result in the resultDisplay div
+                document.querySelector('#resultDisplay').innerHTML = `결과 : ${answer}`;
+           })
+           .catch(error => console.error(error));
+        
+        });
+        
+        </script> -->
+        <script src="/js/review_memo.js"></script>
 </body>
+
       </html>
