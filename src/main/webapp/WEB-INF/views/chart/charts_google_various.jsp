@@ -55,46 +55,78 @@
                     </div>
                 </nav>
                 <div class="container mt-4 col-9">
-                    <div class="row">
+                    <div class="">
+                        <button type="button" class="text-start" style="width: auto;" onclick="golist();">가입자현황확인</button>
                         <!-- Bar Chart -->
-                        <div class="col" id="barChart"></div>
+                        
+                        <div  style="height:fit-content" id="barChart" ></div>
+                        
 
                     </div>
                     <div class="row">
                         <!-- Pie Chart and Line Chart -->
+                        
                         <div class="col-sm-6" id="pieChart"></div>
                         <div class="col-sm-6" id="lineChart"></div>
                     </div>
 
                     <!-- Google Maps Container -->
                     <div class="row">
-                        <div class="col" id="map"></div>
+                        <!-- <div class="col" id="map"></div> -->
                     </div>
                 </div>
             </div>
         </div>
         <!-- JavaScript Code -->
         <script type='text/javascript'>
+        // function golist() {
+        //     fetch('/genderstatic')
+        //         .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.json(); // JSON 데이터를 받습니다.
+        //         })
+        //         .then(data => {
+        //         // 서버에서 받은 데이터를 처리합니다.
+        //         console.log(data);
+        //         var dataArray = JSON.parse(data);
+        //         barChart(dataArray); // 데이터 배열을 전달하여 그래프를 그립니다.
+        //         })
+        //         .catch(error => {
+        //         console.error('There was a problem with the fetch operation:', error);
+        //         });
+        //     }
+
+        //     function barChart(dataArray) {
+        //     let barData = google.visualization.arrayToDataTable(dataArray); // 데이터 배열을 사용하여 DataTable을 생성합니다.
+            
+        //     // Options for Bar Chart
+        //     let barOptions = {
+        //         title: 'Bar Chart'
+        //     };
+        //     let barChart = new google.visualization.BarChart(document.querySelector('#barChart'));
+        //     barChart.draw(barData, barOptions);
+        //     }
+       
             // Load the Visualization API and the corechart package
             google.charts.load('current', { 'packages': ['corechart'] });
 
             // Set a callback to run when the Google Visualization API is loaded
             google.charts.setOnLoadCallback(drawCharts);
 
+            
             // Function to draw the charts
             function drawCharts() {
                 // Data for Bar Chart
-                let barData = google.visualization.arrayToDataTable([
-                    ['Category', 'Value'],
-                    ['Category A', 10],
-                    ['Category B', 20],
-                    ['Category C', 15]
-                ]);
+                // let barData = data;
 
-                // Options for Bar Chart
-                let barOptions = {
-                    title: 'Bar Chart'
-                };
+                // // Options for Bar Chart
+                // let barOptions = {
+                //     title: 'Bar Chart'
+                // };
+                // let barChart = new google.visualization.BarChart(document.querySelector('#barChart'));
+                // barChart.draw(barData, barOptions);
 
                 // Data for Pie Chart
                 let pieData = google.visualization.arrayToDataTable([
@@ -127,8 +159,7 @@
                     legend: { position: 'bottom' }
                 };
 
-                let barChart = new google.visualization.BarChart(document.querySelector('#barChart'));
-                barChart.draw(barData, barOptions);
+                
 
                 let pieChart = new google.visualization.PieChart(document.querySelector('#pieChart'));
                 pieChart.draw(pieData, pieOptions);
@@ -176,12 +207,13 @@
             }
         </script>
         <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
-
+        <!-- <script src="./js/chart_fetch.js"></script> -->
             <!-- Bootstrap Bundle with Popper.js and Bootstrap JS -->
             <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
             <!-- Google Maps API Script -->
             <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async
                 defer></script>
+            <script src="/js/chart_fetch.js"></script>
 
 </body>
 
