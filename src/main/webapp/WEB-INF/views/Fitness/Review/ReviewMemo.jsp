@@ -70,8 +70,7 @@
                   </div>
                   <div class="text-end mt-3">
                     <button type="submit" class="btn btn-secondary" id="predict">sentiment</button> 
-                   <p id="resultDisplay"></p>
-                    
+                    <div id="resultDisplay"></div>                    
                   </div>
              
                   <div class="form-group  mt-3">
