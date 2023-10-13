@@ -3,9 +3,11 @@ package com.the_glory.project_fitness.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -37,5 +39,11 @@ public class ReviewController {
         modelAndView.addObject("result", result1);
         modelAndView.setViewName("/WEB-INF/views/Fitness/Review/Review.jsp");
         return modelAndView;
+    }
+
+    @GetMapping("/sentiment")
+    public ResponseEntity sentiment(@RequestParam Map paramMap) {
+        Object result = reviewService.selectReview(paramMap);
+        return ResponseEntity.ok().body(result);
     }
 }

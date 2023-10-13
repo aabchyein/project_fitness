@@ -84,4 +84,9 @@ public class ReviewService {
             return (int) sharedDao.getOne(sqlMapId, dataMap);
         }
 
+        public Object selectReview(Map dataMap) {
+            String sqlMapId = "Review.selectReview";
+            Object result = sharedDao.getList(sqlMapId, dataMap);
+            return result;
+        }
 }

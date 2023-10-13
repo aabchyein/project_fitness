@@ -63,7 +63,11 @@
                       <th>리뷰</th>
                       <th>작성자</th>
                       <th>별점</th>
-                      <th>sentiment</th>
+                      <th>
+                        <form action="">
+                          <button type="submit" class="btn btn-secondary" id="predict">sentiment</button>
+                        </form>
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -84,6 +88,7 @@
                         </td>
                         <td>
                           <%= record.get("REVIEW") %>
+                          <input type="hidden" id="reviewvalue" value="<%= record.get("REVIEW") %>">
                         </td>
                         <td>
                           <%= record.get("ID") %>
@@ -103,7 +108,7 @@
                             </div>
                         </td>
                         <td>
-                          <div id="resultDisplay"></div>
+                          
                         </td>
                       </tr>
                       <% } %>
@@ -112,9 +117,6 @@
               </div>
               <!-- 글작성 버튼 -->
               <sec:authorize access="isAuthenticated()">
-                <div class="text-start">
-                  <button type="submit" id="predict">sentiment</button>
-                </div>
                 <div class="container text-end">
                   <a href="/CompanyNameSearch" class="btn btn-secondary">글작성</a>
                 </div>

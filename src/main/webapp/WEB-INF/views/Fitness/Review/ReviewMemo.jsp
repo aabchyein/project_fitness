@@ -63,16 +63,17 @@
                       <% }%>
                     </select>
                   </div>
-                  <form action="">
+                  
                   <div class="form-group mt-3">
                     <label for="editor">내용</label>
                     <input  class="form-control" type="text" name="REVIEW" id="contentInput" rows="5"style="height: 150px;" class="form-control" >
                   </div>
                   <div class="text-end mt-3">
-                    <button type="submit" class="btn btn-secondary" id="predict">sentiment</button>
-                    <div name="sentiment" id="resultDisplay"></div>
+                    <button type="submit" class="btn btn-secondary" id="predict">sentiment</button> 
+                   <p id="resultDisplay"></p>
+                    
                   </div>
-                 </form>
+             
                   <div class="form-group  mt-3">
                     <label for="rating">
                       <h4>별점</h4>

@@ -1,4 +1,3 @@
-  
 let predictObject = document.querySelector('#predict') // id:#, class:. , tag:그대로 사용
 predictObject.addEventListener('click', (event)=>{
     event.preventDefault();  // submit 정지
@@ -23,6 +22,8 @@ predictObject.addEventListener('click', (event)=>{
 
         // Display the result in the resultDisplay div
         document.querySelector('#resultDisplay').innerHTML = `${answer}`;
+        document.querySelector('#resultinput').innerHTML = `${answer}`;
+
    })
    .catch(error => console.error(error));
 
