@@ -64,8 +64,8 @@
                       <th>작성자</th>
                       <th>별점</th>
                       <th>
-                        <form action="">
-                          <button type="submit" class="btn btn-secondary" id="predict">sentiment</button>
+                        <form id="predict-form">
+                          <button type="button" class="btn btn-secondary" id="predict">sentiment</button>
                         </form>
                       </th>
                     </tr>
@@ -88,7 +88,7 @@
                         </td>
                         <td>
                           <%= record.get("REVIEW") %>
-                          <input type="hidden" id="reviewvalue" value="<%= record.get("REVIEW") %>">
+                          <input type="hidden" class="review-value" id="reviewvalue" value="<%= record.get("REVIEW") %>">
                         </td>
                         <td>
                           <%= record.get("ID") %>
@@ -108,7 +108,7 @@
                             </div>
                         </td>
                         <td>
-                          
+                          <%= record.get("SENTIMENT") %>
                         </td>
                       </tr>
                       <% } %>
@@ -155,9 +155,8 @@
             <% } %>
               <!-- footer -->
               <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
-
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
                 <script src="/js/review.js"></script>

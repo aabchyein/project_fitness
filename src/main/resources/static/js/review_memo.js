@@ -27,7 +27,18 @@ predictObject.addEventListener('click', (event)=>{
 
         // Display the result in the resultDisplay div
         document.querySelector('#resultDisplay').innerHTML = `${answer}`;
-        document.querySelector('#resultinput').innerHTML = `${answer}`;
+        // document.querySelector('#resultinput').innerHTML = `${answer}`;
+
+        // 폼에 결과 값을 추가
+        const form = document.querySelector('#insertForm');
+        const hiddenInput = document.createElement('input');
+        hiddenInput.type = 'hidden';
+        hiddenInput.name = 'SENTIMENT'; // form에서 사용할 이름
+        hiddenInput.value = answer;
+        form.appendChild(hiddenInput);
+
+        // 폼 제출
+        // form.submit();
    })
    .catch(error => console.error(error));
 
