@@ -99,9 +99,5 @@ public class AdminPageService {
             return (int) sharedDao.getOne(sqlMapId, dataMap);
         }
     
-        public Object genderstatic(Map dataMap){
-            String sql =  "AdminPage.genderstatic";
-            Object result = sharedDao.getList(sql, dataMap);
-            return result;
-        }
+       
 }

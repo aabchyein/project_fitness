@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ChartPage">
+
+<select id="genderstatic" parameterType="Map" resultType="Map">
+    select
+    (select count(*)
+    from member_information
+    where GENDER_ID like 'gen01') as male,
+    (select count(*)
+    from member_information
+    where GENDER_ID like 'gen02') as female
+    ;
+</select>
+
+<select id="piechart" parameterType="Map" resultType="Map">
+select LOCAL,(COMPANY_COUNT/PEOPLE_COUNT * 100) as ratio
+from count_table
+order by ratio DESC
+;
+</select>
+
+<select id="linechart" parameterType="Map" resultType="Map">
+select date_format(join_date,'%Y-%m') as join_month, count(JOIN_DATE)as datecount
+from member_information
+group by join_month
+order by join_month
+;
+</select>
+
+
+
+</mapper>

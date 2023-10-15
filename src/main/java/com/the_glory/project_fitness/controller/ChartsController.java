@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.the_glory.project_fitness.service.AdminPageService;
+import com.the_glory.project_fitness.service.ChartPageService;
 
 @Controller
 public class ChartsController {
@@ -27,6 +28,9 @@ public class ChartsController {
     
     @Autowired
     AdminPageService adminPageService;
+
+    @Autowired
+    ChartPageService chartPageService;
 
     
 
@@ -54,7 +58,27 @@ public class ChartsController {
     @GetMapping("/genderstatic")
     public ResponseEntity genderstatic(@RequestParam Map paramMap) {
         // 여기서 paramMap을 사용하여 작업을 수행하고 결과 데이터를 생성합니다.
-        Object result = adminPageService.genderstatic(paramMap);
+        Object result = chartPageService.genderstatic(paramMap);
+       
+
+        // ResponseEntity를 사용하여 JSON 응답을 반환합니다.
+        return ResponseEntity.ok().body(result);
+    }
+
+    @GetMapping("/piechart")
+    public ResponseEntity Piechart(@RequestParam Map paramMap) {
+        // 여기서 paramMap을 사용하여 작업을 수행하고 결과 데이터를 생성합니다.
+        Object result = chartPageService.piechart(paramMap);
+       
+
+        // ResponseEntity를 사용하여 JSON 응답을 반환합니다.
+        return ResponseEntity.ok().body(result);
+    }
+    
+    @GetMapping("/linechart")
+    public ResponseEntity Linechart(@RequestParam Map paramMap) {
+        // 여기서 paramMap을 사용하여 작업을 수행하고 결과 데이터를 생성합니다.
+        Object result = chartPageService.linechart(paramMap);
        
 
         // ResponseEntity를 사용하여 JSON 응답을 반환합니다.

@@ -60,113 +60,31 @@
                         <!-- Bar Chart -->
                         
                         <div  style="height:fit-content" id="barChart" ></div>
-                        
-
                     </div>
-                    <div class="row">
+
+                    <div class="">
+                        <button type="button" class="text-start" style="width: auto;" onclick="showlinechart();">월별 가입자 현황</button>
+                        <div class="" id="lineChart"></div>
+                    </div>
+
+                    <div class="">
                         <!-- Pie Chart and Line Chart -->
+                        <button type="button" class="text-start" style="width: auto;" onclick="showpiechart();">지역 체육시설 비율</button>
+                        <div class="" id="pieChart"></div>
                         
-                        <div class="col-sm-6" id="pieChart"></div>
-                        <div class="col-sm-6" id="lineChart"></div>
                     </div>
-
-                    <!-- Google Maps Container -->
-                    <div class="row">
-                        <!-- <div class="col" id="map"></div> -->
-                    </div>
+                    
                 </div>
             </div>
         </div>
         <!-- JavaScript Code -->
         <script type='text/javascript'>
-        // function golist() {
-        //     fetch('/genderstatic')
-        //         .then(response => {
-        //         if (!response.ok) {
-        //             throw new Error('Network response was not ok');
-        //         }
-        //         return response.json(); // JSON 데이터를 받습니다.
-        //         })
-        //         .then(data => {
-        //         // 서버에서 받은 데이터를 처리합니다.
-        //         console.log(data);
-        //         var dataArray = JSON.parse(data);
-        //         barChart(dataArray); // 데이터 배열을 전달하여 그래프를 그립니다.
-        //         })
-        //         .catch(error => {
-        //         console.error('There was a problem with the fetch operation:', error);
-        //         });
-        //     }
-
-        //     function barChart(dataArray) {
-        //     let barData = google.visualization.arrayToDataTable(dataArray); // 데이터 배열을 사용하여 DataTable을 생성합니다.
-            
-        //     // Options for Bar Chart
-        //     let barOptions = {
-        //         title: 'Bar Chart'
-        //     };
-        //     let barChart = new google.visualization.BarChart(document.querySelector('#barChart'));
-        //     barChart.draw(barData, barOptions);
-        //     }
-       
+        
             // Load the Visualization API and the corechart package
             google.charts.load('current', { 'packages': ['corechart'] });
 
             // Set a callback to run when the Google Visualization API is loaded
             google.charts.setOnLoadCallback(drawCharts);
-
-            
-            // Function to draw the charts
-            function drawCharts() {
-                // Data for Bar Chart
-                // let barData = data;
-
-                // // Options for Bar Chart
-                // let barOptions = {
-                //     title: 'Bar Chart'
-                // };
-                // let barChart = new google.visualization.BarChart(document.querySelector('#barChart'));
-                // barChart.draw(barData, barOptions);
-
-                // Data for Pie Chart
-                let pieData = google.visualization.arrayToDataTable([
-                    ['Fruit', 'Quantity'],
-                    ['Apple', 30],
-                    ['Banana', 20],
-                    ['Orange', 50]
-                ]);
-
-                // Options for Pie Chart
-                let pieOptions = {
-                    title: 'Pie Chart'
-                };
-
-                // Data for Line Chart
-                let lineData = new google.visualization.DataTable();
-                lineData.addColumn('number', 'X');
-                lineData.addColumn('number', 'Line1');
-                lineData.addColumn('number', 'Line2');
-                // 첫줄은 x값, 둘째줄은 Line1값, 셋째줄은 Line2값
-                lineData.addRows([
-                    [1, 5, 7],
-                    [2, 9, 3],
-                    [3, 2, 6]
-                ]);
-
-                let lineOptions = {
-                    title: 'Line Chart',
-                    curveType: 'function',
-                    legend: { position: 'bottom' }
-                };
-
-                
-
-                let pieChart = new google.visualization.PieChart(document.querySelector('#pieChart'));
-                pieChart.draw(pieData, pieOptions);
-
-                let lineChart = new google.visualization.LineChart(document.querySelector('#lineChart'));
-                lineChart.draw(lineData, lineOptions);
-            }
             // var jsonString = '[{"name": "John", "age": 30}, {"name": "Jane", "age": 25}]';
             // var jsonArray = JSON.parse(jsonString); json을 array 형식 변환. 
 

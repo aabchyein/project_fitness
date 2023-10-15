@@ -67,15 +67,6 @@
         ;
 	</select>
 
-    <select id="genderstatic" parameterType="Map" resultType="Map">
-    select
-    (select count(*)
-    from member_information
-    where GENDER_ID like 'gen01') as male,
-    (select count(*)
-    from member_information
-    where GENDER_ID like 'gen02') as female
-    ;
-    </select>
+    
 
 </mapper>
