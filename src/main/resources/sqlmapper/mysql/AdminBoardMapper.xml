@@ -10,9 +10,8 @@
 	<select id="selectAll" parameterType="Map" resultType="Map">
     select *
     from board
-	inner join board_answer
+	left join board_answer
     on board.board_id = board_answer.BOARD_ID
- 
     ;  
 	</select>
     <select id="selectboard" parameterType="Map" resultType="Map">
@@ -51,7 +50,7 @@
 	<select id="selectSearchWithPagination" parameterType="Map" resultType="Map">
         SELECT *
         from board
-        inner join board_answer
+        left join board_answer
         on board.board_id = board_answer.BOARD_ID
         <choose>
             <when test="search == 'ID'">
@@ -69,7 +68,7 @@
 	<select id="selectTotal" parameterType="Map" resultType="int">
         select count(*) as cnt
         from board
-        inner join board_answer
+        left join board_answer
         on board.board_id = board_answer.BOARD_ID
          <choose>
             <when test="search == 'ID'">
