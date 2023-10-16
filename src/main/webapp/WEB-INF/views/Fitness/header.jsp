@@ -58,7 +58,7 @@
               </sec:authorize>
               <sec:authorize access=" hasRole('ROLE_ADMIN')" >
                 <li class="nav-item">
-                  <a class="nav-link" href="/adminPage">
+                  <a class="nav-link" href="/charts/google_charts_scatter">
                     <img src="/Image/house.jpg.png" alt="" style="width: 35px; height: 35px;  margin-top: -0.5em;">
                   </a>
                 </li>
