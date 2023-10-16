@@ -8,15 +8,15 @@
   <title>고객게시판</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/CSS/mainmenu.css">
-  <link rel="stylesheet" href="/CSS/reviews.css">
+  
   
 </head>
 <body>
   <!-- 상단 네비게이션 바 -->
   <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
-
+  
   <div class="container mt-5">
-    <h2>고객게시판</h2>
+    <h2>게시판</h2>
     <%
   HashMap record = (HashMap) request.getAttribute("record");
   if (record == null) {
@@ -49,7 +49,7 @@
   <!-- footer -->
   <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

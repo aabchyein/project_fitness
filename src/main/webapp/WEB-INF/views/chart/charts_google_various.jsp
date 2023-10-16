@@ -27,33 +27,8 @@
         <div class="container-fluid">
             <!-- 관리자 페이지 content -->
             <div class="row g-20 vh-50">
-                <nav class="p-5 bg-dark navbar-dark d-md-block col-2 ">
-                    <div>
-                        <ul class="list-unstyled navbar-nav">
-                            <li class="d-flex align-items-center">
-                                <a href="/" class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <a href="/charts/google_charts_scatter" class="text-decoration-none nav-link">차트 관리</a>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <a href="/adminPage" class="text-decoration-none nav-link">회원 관리</a>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <a href="/adminReserve" class="text-decoration-none nav-link">예약 관리</a>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <a href="/fitness/AdminBoardAll" class="text-decoration-none nav-link">게시판 관리</a>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <a href="/Adminnotice" class="text-decoration-none nav-link">공지사항 관리</a>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <a href="/adminPowerSetting" class="text-decoration-none nav-link">관리자 설정</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+               <!-- 관리자 전용 메뉴 -->
+               <%@ include file="\WEB-INF\views\Fitness\Admin\Admin_menu.jsp"%>
                 <div class="container mt-4 col-9">
                     <div class="">
                         <button type="button" class="text-start" style="width: auto;" onclick="golist();">가입자현황확인</button>
@@ -127,10 +102,8 @@
         <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
         <!-- <script src="./js/chart_fetch.js"></script> -->
             <!-- Bootstrap Bundle with Popper.js and Bootstrap JS -->
-            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
-            <!-- Google Maps API Script -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async
-                defer></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
             <script src="/js/chart_fetch.js"></script>
 
 </body>

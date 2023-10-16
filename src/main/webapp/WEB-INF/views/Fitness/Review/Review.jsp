@@ -58,12 +58,12 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>번호</th>
-                      <th>업체명</th>
-                      <th>리뷰</th>
-                      <th>작성자</th>
-                      <th>별점</th>
-                      <th>감성예측</th>
+                      <th style="width: 5%;">번호</th>
+                      <th style="width: 25%;">업체명</th>
+                      <th style="width: 35%;">리뷰</th>
+                      <th style="width: 10%;">작성자</th>
+                      <th style="width: 20%;">별점</th>
+                      <th style="width: 10%;">감성예측</th>
                     </tr>
                   </thead>
                   <tbody>
