@@ -63,11 +63,7 @@
                       <th>리뷰</th>
                       <th>작성자</th>
                       <th>별점</th>
-                      <th>
-                        <form id="predict-form">
-                          <button type="button" class="btn btn-secondary" id="predict">sentiment</button>
-                        </form>
-                      </th>
+                      <th>감성예측</th>
                     </tr>
                   </thead>
                   <tbody>

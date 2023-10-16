@@ -20,7 +20,7 @@ predictObject.addEventListener('click', (event)=>{
    .then(response => response.json())
    .then(data => {   //data는 dictionary 형태가 들어있음
         console.log(data)
-        const answer = data.sentiment;
+        const answer = data.SENTIMENT;
         // const sentimentResult = data.sentiment
         // // 여기에서 페이지를 다른 jsp 파일로 이동
         // window.location.href = '/Review?sentiment=' + sentimentResult; // 이동하려는 JSP 파일의 경로
