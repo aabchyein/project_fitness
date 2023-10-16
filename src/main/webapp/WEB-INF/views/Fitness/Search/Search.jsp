@@ -28,7 +28,9 @@
                         <th class="col-1">전화번호</th>
                         <th class="col-4">주소</th>
                         <th class="col-4">도로명주소</th>
+                        <sec:authorize access="isAuthenticated()">
                         <th class="col-1">예약</th>
+                        </sec:authorize>
                       </tr>
                     </thead>
                     
@@ -53,11 +55,13 @@
                         <td>
                           <%= record.get("ROAD_ADDRESS") %>
                         </td>
+                        <sec:authorize access="isAuthenticated()">
                         <td>
                           <input type="hidden" name="COMPANY_ID" value='<%= record.get("COMPANY_ID") %>'>
                           <input type="hidden" name="COMPANY_NAME" value='<%= record.get("COMPANY_NAME") %>'>
                           <button class="btn btn-primary" type="submit" formaction="/guest/reserve" formmethod="get">예약</button>
                         </td>
+                        </sec:authorize>
                       </tr>
                       <% } %>
                     </tbody>
