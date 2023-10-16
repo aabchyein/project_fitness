@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -186,
-    "scrollLeft": -76,
+    "scrollTop": -184,
+    "scrollLeft": -77,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -585,13 +585,36 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             }
+          },
+          {
+            "name": "SENTIMENT",
+            "comment": "감성예측",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 77.11181640625,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "5024c20c-da2a-4086-bb37-53ff4db51080"
           }
         ],
         "ui": {
           "active": false,
           "left": 980.1917,
           "top": 614.2936,
-          "zIndex": 8,
+          "zIndex": 14,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1699,7 +1722,7 @@
           "active": false,
           "left": 29.3334,
           "top": 407.1113,
-          "zIndex": 13,
+          "zIndex": 12,
           "widthName": 95.666015625,
           "widthComment": 118.28271484375
         },
@@ -1863,7 +1886,7 @@
             "cf32c916-b509-40f9-9b09-ae574aec8e64"
           ],
           "x": 980.1917,
-          "y": 700.0436,
+          "y": 710.2936,
           "direction": "left"
         },
         "constraintName": "",
@@ -1889,7 +1912,7 @@
             "3037bff5-18d1-41f8-8613-bdbc6d5c143f"
           ],
           "x": 1396.3655281249999,
-          "y": 700.0436,
+          "y": 710.2936,
           "direction": "right"
         },
         "constraintName": "",

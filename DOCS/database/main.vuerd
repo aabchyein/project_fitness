@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -727,
-    "scrollLeft": -17,
+    "scrollTop": -535,
+    "scrollLeft": -271,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -585,13 +585,36 @@
               "widthDataType": 87.71875,
               "widthDefault": 60
             }
+          },
+          {
+            "name": "SENTIMENT",
+            "comment": "감성예측",
+            "dataType": "VARCHAR(50)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 77.11181640625,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "c0847443-3675-4503-bb45-19854628ecf0"
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 980.1917,
           "top": 614.2936,
-          "zIndex": 8,
+          "zIndex": 13,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1755,7 +1778,7 @@
             "cf32c916-b509-40f9-9b09-ae574aec8e64"
           ],
           "x": 980.1917,
-          "y": 700.0436,
+          "y": 710.2936,
           "direction": "left"
         },
         "constraintName": "",
@@ -1781,7 +1804,7 @@
             "3037bff5-18d1-41f8-8613-bdbc6d5c143f"
           ],
           "x": 1381.9055671874999,
-          "y": 700.0436,
+          "y": 710.2936,
           "direction": "right"
         },
         "constraintName": "",
