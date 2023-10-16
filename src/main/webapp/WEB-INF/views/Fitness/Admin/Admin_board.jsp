@@ -55,19 +55,19 @@
                                                 <td name="ID">
                                                     <%= record.get("ID") %>
                                                 </td>
-                                                <td name="title">
+                                                <td name="TITLE">
                                                     <%= record.get("TITLE") %>
                                                 </td>
-                                                <td name="content">
+                                                <td name="CONTENTS">
                                                     <%= record.get("CONTENTS") %>
                                                 </td>
-                                                <td name="content">
+                                                <td name="ANSWER">
                                                     <%= record.get("ANSWER") %>
                                                 </td>
-                                                <td name="date">
+                                                <td name="DATE">
                                                     <%= record.get("DATE") %>
                                                 </td>
-                                                <td name="date">
+                                                <td name="VIEWS">
                                                     <%= record.get("VIEWS") %>
                                                 </td>
                                                 <form>
