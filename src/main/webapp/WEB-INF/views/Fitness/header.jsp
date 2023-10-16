@@ -26,7 +26,7 @@
                 <a class="nav-link" href="/main">홈</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" id="communityDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">커뮤니티</a>
                 <div class="dropdown-menu" aria-labelledby="communityDropdown">
                   <a class="dropdown-item" href="/Noticelogin">게시판</a>
@@ -48,12 +48,13 @@
                  ${userDetailsBean.username} 님
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="" id="loginDropdown" role="button" data-toggle="dropdown"
+                  <a class="nav-link dropdown-toggle" id="loginDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">로그아웃</a>
                   <div class="dropdown-menu" aria-labelledby="loginDropdown">
                     <a class="dropdown-item" href="/Logout">로그아웃</a>
                     <a class="dropdown-item" href="/mypage?ID=${userDetailsBean.username}">마이페이지</a>
                   </div>
+                </li>
               </sec:authorize>
               <sec:authorize access=" hasRole('ROLE_ADMIN')" >
                 <li class="nav-item">

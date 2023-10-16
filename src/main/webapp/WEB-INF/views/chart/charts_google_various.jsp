@@ -127,10 +127,8 @@
         <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
         <!-- <script src="./js/chart_fetch.js"></script> -->
             <!-- Bootstrap Bundle with Popper.js and Bootstrap JS -->
-            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
-            <!-- Google Maps API Script -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async
-                defer></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
             <script src="/js/chart_fetch.js"></script>
 
 </body>
