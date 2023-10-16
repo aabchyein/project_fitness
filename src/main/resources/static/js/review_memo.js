@@ -20,14 +20,25 @@ predictObject.addEventListener('click', (event)=>{
    .then(response => response.json())
    .then(data => {   //data는 dictionary 형태가 들어있음
         console.log(data)
-        const answer = data.sentiment;
+        const answer = data.SENTIMENT;
         // const sentimentResult = data.sentiment
         // // 여기에서 페이지를 다른 jsp 파일로 이동
         // window.location.href = '/Review?sentiment=' + sentimentResult; // 이동하려는 JSP 파일의 경로
 
         // Display the result in the resultDisplay div
         document.querySelector('#resultDisplay').innerHTML = `${answer}`;
-        document.querySelector('#resultinput').innerHTML = `${answer}`;
+        // document.querySelector('#resultinput').innerHTML = `${answer}`;
+
+        // 폼에 결과 값을 추가
+        const form = document.querySelector('#insertForm');
+        const hiddenInput = document.createElement('input');
+        hiddenInput.type = 'hidden';
+        hiddenInput.name = 'SENTIMENT'; // form에서 사용할 이름
+        hiddenInput.value = answer;
+        form.appendChild(hiddenInput);
+
+        // 폼 제출
+        // form.submit();
    })
    .catch(error => console.error(error));
 

@@ -5,10 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>고객게시판</title>
+  <title>공지사항게시판</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/CSS/mainmenu.css">
-  <link rel="stylesheet" href="/CSS/reviews.css">
   
 </head>
 <body>
@@ -16,7 +15,7 @@
   <%@ include file="/WEB-INF/views/Fitness/header.jsp" %>
 
   <div class="container mt-5">
-    <h2>고객게시판</h2>
+    <h2>공지사항</h2>
     <%
   HashMap record = (HashMap) request.getAttribute("record");
   if (record == null) {
@@ -28,7 +27,7 @@
         <input type="text" class="form-control" name="NOTICE_TITLE" value='<%= record.get("NOTICE_TITLE") %>' id="title" readonly>
       </div>
       <div class="form-group">
-        <label for="author" >작성자:</label>
+        <label for="author" >관리자:</label>
         <input type="text" class="form-control" name="ID" value='<%= record.get("ID") %>' id="author" readonly >
       </div>
       <div>
@@ -48,8 +47,7 @@
 
   <!-- footer -->
   <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

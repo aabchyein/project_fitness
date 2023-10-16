@@ -58,16 +58,12 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>번호</th>
-                      <th>업체명</th>
-                      <th>리뷰</th>
-                      <th>작성자</th>
-                      <th>별점</th>
-                      <th>
-                        <form action="">
-                          <button type="submit" class="btn btn-secondary" id="predict">sentiment</button>
-                        </form>
-                      </th>
+                      <th style="width: 5%;">번호</th>
+                      <th style="width: 25%;">업체명</th>
+                      <th style="width: 35%;">리뷰</th>
+                      <th style="width: 10%;">작성자</th>
+                      <th style="width: 20%;">별점</th>
+                      <th style="width: 10%;">감성예측</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -88,7 +84,7 @@
                         </td>
                         <td>
                           <%= record.get("REVIEW") %>
-                          <input type="hidden" id="reviewvalue" value="<%= record.get("REVIEW") %>">
+                          <input type="hidden" class="review-value" id="reviewvalue" value="<%= record.get("REVIEW") %>">
                         </td>
                         <td>
                           <%= record.get("ID") %>
@@ -108,7 +104,7 @@
                             </div>
                         </td>
                         <td>
-                          
+                          <%= record.get("SENTIMENT") %>
                         </td>
                       </tr>
                       <% } %>
@@ -155,9 +151,8 @@
             <% } %>
               <!-- footer -->
               <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
-
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
                 <script src="/js/review.js"></script>

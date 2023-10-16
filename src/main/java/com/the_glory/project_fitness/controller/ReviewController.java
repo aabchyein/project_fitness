@@ -40,10 +40,4 @@ public class ReviewController {
         modelAndView.setViewName("/WEB-INF/views/Fitness/Review/Review.jsp");
         return modelAndView;
     }
-
-    @GetMapping("/sentiment")
-    public ResponseEntity sentiment(@RequestParam Map paramMap) {
-        Object result = reviewService.selectReview(paramMap);
-        return ResponseEntity.ok().body(result);
-    }
 }

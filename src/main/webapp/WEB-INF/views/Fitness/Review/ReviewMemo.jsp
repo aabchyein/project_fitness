@@ -70,7 +70,7 @@
                   </div>
                   <div class="text-end mt-3">
                     <button type="submit" class="btn btn-secondary" id="predict">sentiment</button> 
-                    <div id="resultDisplay"></div>                    
+                    <div name="sentiment" id="resultDisplay"></div>                    
                   </div>
              
                   <div class="form-group  mt-3">
@@ -104,7 +104,7 @@
                   
                       <input type="hidden" name="REVIEW_ID" value="<%= uuid %>">
                       <input type="hidden" name="ID" value="${userDetailsBean.username}">
-                      <button type="submit" class="btn btn-primary">작성 완료</button>
+                      <button type="submit" class="btn btn-primary" id="commit">작성 완료</button>
                     </div>
                   </div>
                 </form>

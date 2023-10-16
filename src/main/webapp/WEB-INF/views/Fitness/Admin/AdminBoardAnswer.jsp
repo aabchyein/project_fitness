@@ -23,33 +23,8 @@
                 <div class="container-fluid">
                     <!-- 관리자 페이지 content -->
                     <div class="row g-20 vh-50">
-                        <nav class="p-5 bg-dark navbar-dark d-md-block col-2 ">
-                            <div>
-                                <ul class="list-unstyled navbar-nav">
-                                    <li class="d-flex align-items-center">
-                                        <a href="/" class="text-decoration-none nav-link fs-5 fw-bold">관리자페이지</a>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <a href="/charts/google_charts_scatter" class="text-decoration-none nav-link">차트 관리</a>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <a href="/adminPage" class="text-decoration-none nav-link">회원 관리</a>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <a href="/adminReserve" class="text-decoration-none nav-link">예약 관리</a>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <a href="/fitness/AdminBoardAll" class="text-decoration-none nav-link">게시판 관리</a>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <a href="/Adminnotice" class="text-decoration-none nav-link">공지사항 관리</a>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <a href="/adminPowerSetting" class="text-decoration-none nav-link">관리자 설정</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
+                        <!-- 관리자 전용 메뉴 -->
+                        <%@ include file="\WEB-INF\views\Fitness\Admin\Admin_menu.jsp"%>
 
                        
                         <!-- 게시판 답변 등록 폼 -->
@@ -104,13 +79,8 @@
                 <%@ include file="/WEB-INF/views/Fitness/footer.jsp" %>
 
 
-                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-                                crossorigin="anonymous"></script>
-                            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-                            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         </body>
 
         </html>
