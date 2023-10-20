@@ -20,14 +20,13 @@
           <div class="container m-5">
             <div class="justify-content-between row p-5 m-3 h6 text-start">
               <div>
-                <table>
+                <table class="table table-striped">
                   <form>
                     <thead>
                       <tr>
-                        <th class="col-2">회사명</th>
-                        <th class="col-1">전화번호</th>
-                        <th class="col-4">주소</th>
-                        <th class="col-4">도로명주소</th>
+                        <th class="col-2">업체명</th>
+                        <th class="col-2">전화번호</th>
+                        <th class="col-7">주소</th>
                         <sec:authorize access="isAuthenticated()">
                         <th class="col-1">예약</th>
                         </sec:authorize>
@@ -42,6 +41,7 @@
                         for(int i=0; i < list.size(); i++){
                           HashMap record=(HashMap)list.get(i);
                         %>
+                      
                       <tr>
                         <td>
                           <a href='https://map.naver.com?query=<%= record.get("ADDRESS") %>' style="font-weight: 500;" target="_blank"><%= record.get("COMPANY_NAME") %></a>
@@ -51,9 +51,8 @@
                         </td>
                         <td>
                           <%= record.get("ADDRESS") %>
-                        </td>
-                        <td>
-                          <%= record.get("ROAD_ADDRESS") %>
+                          <br>
+                          도로명주소 : <%= record.get("ROAD_ADDRESS") %>
                         </td>
                         <sec:authorize access="isAuthenticated()">
                         <td>
@@ -63,6 +62,7 @@
                         </td>
                         </sec:authorize>
                       </tr>
+                      
                       <% } %>
                     </tbody>
                   </form>
