@@ -28,6 +28,4 @@ order by join_month
 ;
 </select>
 
-
-
 </mapper>

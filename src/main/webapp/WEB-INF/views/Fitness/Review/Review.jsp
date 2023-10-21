@@ -62,7 +62,7 @@
                       <th style="width: 25%;">업체명</th>
                       <th style="width: 35%;">리뷰</th>
                       <th style="width: 10%;">작성자</th>
-                      <th style="width: 20%;">별점</th>
+                      <th style="width: 15%;">별점</th>
                       <th style="width: 10%;">감성예측</th>
                     </tr>
                   </thead>

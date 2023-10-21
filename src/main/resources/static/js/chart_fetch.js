@@ -32,7 +32,8 @@ function golist() {
         hAxis: {
             minValue:0,
             maxValue:10
-        }
+        },
+        colors:['#87CEEB','#FFC0CB']
     };
     let barChart = new google.visualization.BarChart(document.querySelector('#barChart'));
     barChart.draw(barData, barOptions);
