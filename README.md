@@ -1,5 +1,7 @@
-# [THE GLORY] 1차 프로젝트 (Project_Fitness)
-### ■ 프로젝트 기간 : 2023.07.07 - 2023.07.28
+# [THE GLORY] Healthcare 시설 예약 웹사이트 제작 프로젝트
+### ■ 프로젝트 기간
+ - 1차 : 2023.07.07 - 2023.07.28
+ - 2차 : 2023.09.18 - 2023.10.17
 ### ■ 팀원 : 김민정, 김혜인, 봉원희, 임거산
 ### ■ 사이트 : [ProjectFitness](https://project-fitness-ddxja.run.goorm.site/)
 ### ![main](src/main/resources/static/Image/README/main.png)
