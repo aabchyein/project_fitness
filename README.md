@@ -88,12 +88,14 @@
 
 |🔷게시판🔷|
 |--------|
-|![image](https://github.com/estskyway/project_fitness/assets/132973368/55618f3d-0861-4d20-91bd-31a7b02fdc15)|
+|![image](https://github.com/estskyway/project_fitness/assets/132973368/7654780c-39b9-4e6e-b513-2038c03909c2)
+|
 <br>
 
 |🔷리뷰🔷|
 |----|
-|![image](https://github.com/estskyway/project_fitness/assets/132973368/4fd25612-edd3-45d7-a3b8-a6ae82a38773)
+|![image](https://github.com/estskyway/project_fitness/assets/132973368/a601580d-c86f-418c-8e8e-0ce9c963b764)
+|
 <br>
 
 |🔷관리자🔷|
