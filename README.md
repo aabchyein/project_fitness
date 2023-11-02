@@ -5,7 +5,7 @@
 ### ■ 팀명 : 더글로리
 ### ■ 팀원 : 김민정, 김혜인, 봉원희, 임거산
 ### ■ 사이트 : [ProjectFitness](https://project-fitness-ddxja.run.goorm.site/)
-### ![main](src/main/resources/static/Image/README/main.png)
+### ![main](src/main/resources/static/Image/README/newhome.png)
 ### ■ 프로젝트 소개
    1. 다양한 체육시설을 쉽고 빠르게 검색
    2. 이용자들의 후기와 평점 확인 가능
