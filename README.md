@@ -11,26 +11,17 @@
    2. 이용자들의 후기와 평점 확인 가능
    3. 정보 검색 후 상담 예약까지 가능한 웹사이트
 ### 📚 Stacks
-* 사용언어<br>
-  <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white">
+* 웹개발<br>
+  [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699608738170?alt=media&token=cefa9134-fc42-47f8-9232-50b47de8cdbd)](https://github.com/msdio/stackticon)
 
-* 기술<br>
-  <img src="https://img.shields.io/badge/JSP-0769AD?style=for-the-badge&logo=JSP&logoColor=white"> <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"> <img src="https://img.shields.io/badge/Ajax-007396?style=for-the-badge&logo=Ajax&logoColor=white">
-
-* 프레임워크<br>
-  <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/Spring%20Security-6DB33F?style=for-the-badge&logo=Spring%20Security&logoColor=white"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
-
-* 개발툴<br>
-  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white">
-
-* 협업툴<br>
-  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+* 개발 환경 및 도구<br>
+  [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699608791528?alt=media&token=ead8a9a8-9ee3-4800-9493-592bfd2ddb5f)](https://github.com/msdio/stackticon)
 
 * DB<br>
-  <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+  [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699608841016?alt=media&token=3c67671d-faa4-4610-83a1-7de58ec5c992)](https://github.com/msdio/stackticon)
 
-* 서버<br>
-  <img src="https://img.shields.io/badge/Goorm.IDE-000000?style=for-the-badge&logo=Goorm.IDE&logoColor=white">
+* 데이터분석<br>
+  [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699609172716?alt=media&token=c0fc214c-0441-417d-b3d5-af8e0c211b12)](https://github.com/msdio/stackticon)
 -------------------------------
 # 프로젝트 진행
 ### ■ [의뢰서](https://drive.google.com/file/d/1lblekpdEg2pe1_rxwwxioMyzvDHQJ29q/view?usp=drive_link)
@@ -40,28 +31,9 @@
 ### ■ [요구사항 정의서](https://docs.google.com/spreadsheets/d/1jdIUc4vH_-bnxaLaqOzVPo4ezpznmvHz/edit?usp=sharing&ouid=109657498147653913589&rtpof=true&sd=true)
 ![image](https://github.com/estskyway/project_fitness/assets/132973368/8c641b6a-4aa5-4ed0-a29b-fba95e4d8e99)
 ### ■ 팀원별 구현 기능
-🔆**김민정**
-|프론트엔드|백엔드|
-|----------|------|
-|(**로그인**) 로그아웃/후기작성/회원정보수정/상담예약/회원정보<br>(**관리자**) 게시판관리/회원정보관리/공지사항관리/메인화면/로그인/로그아웃|(**비로그인**) 메인화면<br>(**관리자**) 게시판관리/공지사항관리 <br>* **PPT제작** *|
-
-🔆**김혜인**
-|프론트엔드|백엔드|
-|----------|------|
-|(**비로그인**) 메인화면/회원가입/로그인/게시판/검색화면<br>(**로그인**) 메인화면/게시판/게시물작성/후기화면/검색화면|(**비로그인**) 검색화면<br>(**로그인**) 후기화면/후기작성화면/회원정보수정/상담예약<br>(**관리자**) 예약관리 <br>* **README작성** *|
-
-🔆**봉원희**
-|프론트엔드|백엔드|
-|----------|-------|
-|(**관리자**) 관리자권한부여|(**비로그인**) 회원가입/로그인<br>(**로그인**) 메인화면/검색화면/로그아웃/회원정보/관리자권한부여|
-
-🔆**임거산**
-|백엔드|
-|------|
-|* **기초코드작성** * <br>(**비로그인**) 게시판 <br>(**로그인**) 메인화면/게시판/게시물작성 <br>* **발표** *|
-
+![image](https://github.com/estskyway/project_fitness/assets/132973368/b9b882be-f4c5-4542-b85e-b0b24f3f4ec0)
 ### ■ 화면 구성
-|🔷검색🔷|
+|검색🔎|
 |----|
 |![SEARCH](https://github.com/estskyway/project_fitness/assets/132973368/7cb548d6-3480-4ef8-a881-9a6ee93b13f3)|
 <br>
