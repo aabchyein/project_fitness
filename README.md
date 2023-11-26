@@ -33,7 +33,7 @@
 ![image](https://github.com/estskyway/project_fitness/assets/132973368/8c641b6a-4aa5-4ed0-a29b-fba95e4d8e99)
 #### ■ 팀원별 구현 기능
 ![image](https://github.com/estskyway/project_fitness/assets/132973368/b9b882be-f4c5-4542-b85e-b0b24f3f4ec0)
-#### ■ 🎥[구현 영상](https://www.youtube.com/watch?v=XolvrvT9olQ&feature=youtu.be)
+#### ■ 🎥[구현 영상](https://www.youtube.com/watch?v=v8n-iRfLj0k)
 #### ■ 주요 기능
 **<사용자>**
 - 회원가입 -> 검색 (지역&업체) -> 예약 -> 마이페이지 -> 예약 조회 및 수정, 삭제
