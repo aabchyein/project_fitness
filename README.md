@@ -6,7 +6,7 @@
 #### ■ 팀원 : 김민정, 김혜인, 봉원희, 임거산
 #### ■ 사이트 : [ProjectFitness](https://project-fitness-ddxja.run.goorm.site/)
 ##### ![main](src/main/resources/static/Image/README/newhome.png)
-#### ■ [PDF 파일](https://drive.google.com/file/d/1iDlmDffGZ9_zB26ea_TzM0E7Ui-_Rrv2/view?usp=sharing)
+#### ■ [PDF 파일](https://drive.google.com/file/d/1ZcSq8NtnQHCI5Sp5jGWMXkuodp2mco1n/view?usp=sharing)
 #### ■ 프로젝트 소개
    1. 다양한 체육시설을 쉽고 빠르게 검색
    2. 이용자들의 후기와 평점 확인 가능
