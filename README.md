@@ -1,17 +1,17 @@
-# Healthcare 시설 예약 웹사이트 제작 프로젝트
-### ■ 팀명 : 더글로리
+## Healthcare 시설 예약 웹사이트 제작 프로젝트
+#### ■ 팀명 : 더글로리
 #### ■ 프로젝트 기간
  - 1차 : 2023.07.07 - 2023.07.28
  - 2차 : 2023.09.18 - 2023.10.17
 #### ■ 팀원 : 김민정, 김혜인, 봉원희, 임거산
 #### ■ 사이트 : [ProjectFitness](https://project-fitness-ddxja.run.goorm.site/)
 ##### ![main](src/main/resources/static/Image/README/newhome.png)
-#### ■ [PDF 파일](https://drive.google.com/drive/u/1/folders/1g6NIxtgih2QcdtS7cM3FF2sKi7ZuD0U6)
-### ■ 프로젝트 소개
+#### ■ [PDF 파일](https://drive.google.com/file/d/1iDlmDffGZ9_zB26ea_TzM0E7Ui-_Rrv2/view?usp=sharing)
+#### ■ 프로젝트 소개
    1. 다양한 체육시설을 쉽고 빠르게 검색
    2. 이용자들의 후기와 평점 확인 가능
    3. 정보 검색 후 상담 예약까지 가능한 웹사이트
-### 📚 Stacks
+##### 📚 Stacks
 * 웹개발<br>
   [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699608738170?alt=media&token=cefa9134-fc42-47f8-9232-50b47de8cdbd)](https://github.com/msdio/stackticon)
 
@@ -23,79 +23,62 @@
 
 * 데이터분석<br>
   [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699609172716?alt=media&token=c0fc214c-0441-417d-b3d5-af8e0c211b12)](https://github.com/msdio/stackticon)
--------------------------------
-# 프로젝트 진행
-### ■ [의뢰서](https://drive.google.com/file/d/1lblekpdEg2pe1_rxwwxioMyzvDHQJ29q/view?usp=drive_link)
+
+## 프로젝트 진행
+##### ■ [의뢰서](https://drive.google.com/file/d/1lblekpdEg2pe1_rxwwxioMyzvDHQJ29q/view?usp=drive_link)
 ![image](https://github.com/estskyway/project_fitness/assets/132973368/cf90839b-4581-40fa-92bd-08112727f565)
-### ■ [NamingRule](src/main/resources/static/Image/README/네이밍룰.png) ![NamingRule](src/main/resources/static/Image/README/네이밍룰.png)
-### ■ [DB구성](DOCS/database/Fitness/main.png) ![ERD](https://github.com/estskyway/project_fitness/assets/132973368/bf9c3d9a-1869-49f0-ac34-dfd82b0d03ce)
-### ■ [요구사항 정의서](https://docs.google.com/spreadsheets/d/1jdIUc4vH_-bnxaLaqOzVPo4ezpznmvHz/edit?usp=sharing&ouid=109657498147653913589&rtpof=true&sd=true)
+##### ■ [NamingRule](src/main/resources/static/Image/README/네이밍룰.png) ![NamingRule](src/main/resources/static/Image/README/네이밍룰.png)
+##### ■ [DB구성](DOCS/database/Fitness/main.png) ![ERD](https://github.com/estskyway/project_fitness/assets/132973368/bf9c3d9a-1869-49f0-ac34-dfd82b0d03ce)
+##### ■ [요구사항 정의서](https://docs.google.com/spreadsheets/d/1jdIUc4vH_-bnxaLaqOzVPo4ezpznmvHz/edit?usp=sharing&ouid=109657498147653913589&rtpof=true&sd=true)
 ![image](https://github.com/estskyway/project_fitness/assets/132973368/8c641b6a-4aa5-4ed0-a29b-fba95e4d8e99)
-### ■ 팀원별 구현 기능
+#### ■ 팀원별 구현 기능
 ![image](https://github.com/estskyway/project_fitness/assets/132973368/b9b882be-f4c5-4542-b85e-b0b24f3f4ec0)
-### ■ 화면 구성
-|검색🔎|
+#### ■ 🎥[구현 영상](https://www.youtube.com/watch?v=XolvrvT9olQ&feature=youtu.be)
+#### ■ 주요 기능
+**<사용자>**
+- 회원가입 -> 검색 (지역&업체) -> 예약 -> 마이페이지 -> 예약 조회 및 수정, 삭제
+- 마이페이지(회원 기본정보 확인 및 수정)
+- 후기 작성 및 별점 적용(업체 위치를 네이버맵에서 확인)
+
+**<관리자>**
+- 회원관리, 예약관리, 게시판관리, 공지사항 수정/삭제, 관리자 설정
+
+#### ■ 화면 구성
+|검색|
 |----|
 |![SEARCH](https://github.com/estskyway/project_fitness/assets/132973368/7cb548d6-3480-4ef8-a881-9a6ee93b13f3)|
 <br>
 
-|🔷로그인🔷|
+|**로그인**|
 |------|
 |![image](https://github.com/estskyway/project_fitness/assets/132973368/19245a28-abd7-41ea-bd6a-e20ff5049496)|
 <br>
 
-|🔷로그아웃🔷|
+|**로그아웃**|
 |-------|
 |![image](https://github.com/estskyway/project_fitness/assets/132973368/377beadb-effc-46bb-bca8-12b52082b462)|
 <br>
 
-|🔷회원가입🔷|
+|**회원가입**|
 |-------|
 |![image](https://github.com/estskyway/project_fitness/assets/132973368/a1b6a70d-5647-4446-83ad-de9bd0c9beae)|
 <br>
 
-|🔷마이페이지🔷|
+|**마이페이지**|
 |---------|
 |![image](https://github.com/estskyway/project_fitness/assets/132973368/387dd3ba-0e99-4e0d-bd84-f8392432d1f5)|
 <br>
 
-|🔷게시판🔷|
+|**게시판**|
 |--------|
-|![image](https://github.com/estskyway/project_fitness/assets/132973368/7654780c-39b9-4e6e-b513-2038c03909c2)
-|
+|![image](https://github.com/estskyway/project_fitness/assets/132973368/7654780c-39b9-4e6e-b513-2038c03909c2)|
 <br>
 
-|🔷리뷰🔷|
+|**리뷰**|
 |----|
-|![image](https://github.com/estskyway/project_fitness/assets/132973368/a601580d-c86f-418c-8e8e-0ce9c963b764)
-|
+|![image](https://github.com/estskyway/project_fitness/assets/132973368/a601580d-c86f-418c-8e8e-0ce9c963b764)|
 <br>
 
-|🔷관리자🔷|
+|**관리자**|
 |------|
 |![image](https://github.com/estskyway/project_fitness/assets/132973368/df8ec4f3-5719-4a32-a464-8d5a08431e90)|
-
-### ■ 주요 기능
-😊사용자
-  - 회원가입 -> 검색 (지역&업체) -> 예약 -> 마이페이지 -> 예약 조회 및 수정, 삭제<br>
-  - 마이페이지(회원 기본정보 확인 및 수정)<br>
-  - 후기 작성 및 별점 적용(업체 위치를 네이버맵에서 확인가능.)
-<br>
-😊관리자<br>
-
-  - 회원, 예약, 게시판, 공지사항 수정, 삭제 및 관리자 설정
-
-### ■ 🎥[구현 영상](https://www.youtube.com/watch?v=XolvrvT9olQ&feature=youtu.be)
-
-### ■ 구현 예정 기능
-* 메뉴바 하단에 체육시설 카테고리화
-  - 기구별 / 지역별 / 전용시설
-* 통계
-  - 시설 평점 통계 / 시설 평점 순위
--------------------------------
-# 프로젝트 종료
-### 💟느낀점💟
-  - 봉원희 (PM)<br>PM으로써 프로젝트 의뢰 PPT 부터 순탄하지 못한 시작을 하게된 점에 대한 미안한 마음을 가지고 프로젝트를 시작하게 되었습니다. 그러함에도 1차 성과가 어느정도 마무리 된듯한 결과를 볼 수 있어서 한결 마음이 가벼워지는 것을 느낍니다. 확실히 프로젝트를 진행하면서 많은 것을 다시금 배우고 느끼는 계기가 되었습니다. 기본적인 CRUD 구성을 하는 것은 물론이고, 후기 항목에서 업체명을 이용하여 네이버맵으로 직접적인 링크를 적용하는 것, 처음으로 데이터베이스를 구성해본 점, MYPAGE를 작성할때 예약내용이 없는 상태에서 나오는 에러를 발생하지 않게 하는 법 등 진행을 하면서 수업 진행만으로 알 수 없는 또 다른 상황에 대해 고민할 수 있었던 점에서 힘들었지만 좋았습니다. 길다고 생각했던 3주간의 프로젝트가 순식간에 지나갔고 진행하는 과정에서 잘 따라와준 팀원들에게 감사하고, 2차에는 더 나아진 구성을 보여 주었으면 좋겠습니다.
-  - 김민정 <br>처음 프로젝트에 참여하며 개인적 역량과 팀 내 위치를 자기 반성과 평가를 통해 파악하였고, PM 및 팀원들의 지원으로 초기 업무 적응을 빠르게 이뤄냈습니다; 이 과정에서 부족하지만 1차 프로젝트를 성공적으로 마무리하며 문제 해결과 업무 최적화 능력을 향상시켰고, 강화된 팀 내 커뮤니케이션을 바탕으로 서로의 의견을 존중하며 효율적인 업무 방안을 모색하였습니다. 그리고 조금씩이지만 팀원들에게 한걸음 더 다가갈 수 있는 계기가 되어서 좋았고 의지할 팀원이 생겼다는 것이 너무 든든하다.
-  - 김혜인 <br>3주에 걸친 프로젝트를 하면서 배운 것들이 많다고 생각합니다. 수업을 들을 때는 잘 이해되지 않았던 개념들이 실제로 혼자서 코드를 직접 작성하고 오류를 해결해 보면서 개념이 잡히고 이해가 되었던 것 같습니다. 그리고 다른 팀원들이 작성한 코드를 보면서 분석해보고 이해하면서 더 많은 공부를 할 수 있었습니다. 서로 소통하고 협업하면서 같이 성장할 수 있었던 시간이었던 것 같습니다. 앞에서 잘 끌어준 PM을 비롯해서 저의 부족한 부분을 채워주며 같이 고생한 팀원들에게 너무 고맙고 좋은 팀원들과 함께 하나의 프로젝트를 무사히 마무리 했다는 것에 의미를 두고 싶습니다.
-  - 임거산 <br>이번 프로젝트를 하면서 제대로 이해하지 못한 부분을 조금이라도 더 이해하며 코딩을 할 수 있었고 chat gpt와 대화도 가장 많이 해봤습니다. 그리고 이번 기회에 조원들에게 많이 의지를 해서 좋은 결과를 같이 만들 수 있는 값진 경험을 할 수 있어서 좋았습니다.
