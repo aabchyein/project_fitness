@@ -1,11 +1,12 @@
 # Healthcare 시설 예약 웹사이트 제작 프로젝트
-### ■ 프로젝트 기간
+### ■ 팀명 : 더글로리
+#### ■ 프로젝트 기간
  - 1차 : 2023.07.07 - 2023.07.28
  - 2차 : 2023.09.18 - 2023.10.17
-### ■ 팀명 : 더글로리
-### ■ 팀원 : 김민정, 김혜인, 봉원희, 임거산
-### ■ 사이트 : [ProjectFitness](https://project-fitness-ddxja.run.goorm.site/)
-### ![main](src/main/resources/static/Image/README/newhome.png)
+#### ■ 팀원 : 김민정, 김혜인, 봉원희, 임거산
+#### ■ 사이트 : [ProjectFitness](https://project-fitness-ddxja.run.goorm.site/)
+##### ![main](src/main/resources/static/Image/README/newhome.png)
+#### ■ [PDF 파일](https://drive.google.com/drive/u/1/folders/1g6NIxtgih2QcdtS7cM3FF2sKi7ZuD0U6)
 ### ■ 프로젝트 소개
    1. 다양한 체육시설을 쉽고 빠르게 검색
    2. 이용자들의 후기와 평점 확인 가능
